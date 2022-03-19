@@ -31,8 +31,6 @@ body {
 
 nav {
   height: 6rem;
-  /* background-color: #304cb2; */
-  /* background-color: #FFBF27 */
 }
 
 ul li {
@@ -50,4 +48,12 @@ ul a {
 
 ul a:hover {
   opacity: 50%;
+}
+
+.Home {
+  width: 85vw;
+  margin: auto;
+  text-align: center;
+  background-color: #1a2c80;
+  min-height: 100vh;
 }
