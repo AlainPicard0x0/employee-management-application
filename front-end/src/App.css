@@ -7,10 +7,35 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  background-color: #f4f4f4;
+  background-color: #fff;
+  /* background-color: #304cb2; */
+  /* background-color: #1a2c80; */
 }
 
 .App {
-  width: 95vw;
   margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  margin: auto;
+}
+
+nav {
+  height: 6rem;
+  /* background-color: #304cb2; */
+  /* background-color: #FFBF27 */
+}
+
+ul li {
+  display: inline;
+  list-style: none;
+}
+
+ul a {
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 15px;
 }
