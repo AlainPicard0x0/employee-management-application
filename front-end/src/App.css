@@ -54,6 +54,7 @@ ul a:hover {
   width: 85vw;
   margin: auto;
   text-align: center;
+  color: #fff;
   background-color: #1a2c80;
   min-height: 100vh;
 }
