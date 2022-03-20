@@ -50,7 +50,10 @@ ul a:hover {
   opacity: 50%;
 }
 
-.home {
+.home,
+.login,
+.register,
+.portal {
   width: 85vw;
   margin: auto;
   text-align: center;
