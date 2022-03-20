@@ -1,5 +1,19 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {    
+const Login = ({login, setLogin}) => {    
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(login) {
+            navigate("/portal");
+        }
+        else {
+            navigate("/login");
+        }
+    }, [login, navigate])
+
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -10,6 +24,7 @@ const Login = () => {
         console.log(email + " " + password);
         userInputEmail.value = "";
         userInputPassword.value = "";
+        setLogin(true);
     }
 
     return (
@@ -18,7 +33,7 @@ const Login = () => {
             <form className="login-form" onSubmit={ handleSubmit }>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input id="email" type="email" placeholder="Enter Email" required></input>
+                    <input id="email" type="text" placeholder="Enter Email" required></input>
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
