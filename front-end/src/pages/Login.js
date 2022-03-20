@@ -1,6 +1,5 @@
 
-const Login = () => {
-    
+const Login = () => {    
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -9,6 +8,8 @@ const Login = () => {
         let email = userInputEmail.value;
         let password = userInputPassword.value;
         console.log(email + " " + password);
+        userInputEmail.value = "";
+        userInputPassword.value = "";
     }
 
     return (
