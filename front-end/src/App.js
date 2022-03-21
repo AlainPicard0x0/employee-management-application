@@ -5,6 +5,7 @@ import Home from "./pages/Home.js";
 import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
 import Portal from "./pages/Portal.js";
+import NotFound from "./pages/NotFound.js";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={ <Login login={login} setLogin={setLogin} /> }></Route>
           <Route path="/register" element={ <Register login={login} /> }></Route>
           <Route path="/portal" element={ <Portal login={login} /> }></Route>
+          <Route path="*" element={ <NotFound /> }></Route>
         </Routes>
       </BrowserRouter>
 
