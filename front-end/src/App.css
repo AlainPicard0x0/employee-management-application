@@ -53,7 +53,8 @@ ul a:hover {
 .home,
 .login,
 .register,
-.portal {
+.portal,
+.not-found {
   width: 85vw;
   margin: auto;
   text-align: center;
