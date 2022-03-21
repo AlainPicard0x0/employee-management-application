@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <Home /> } exact></Route>
           <Route path="/login" element={ <Login login={login} setLogin={setLogin} /> }></Route>
-          <Route path="/register" element={ <Register /> }></Route>
+          <Route path="/register" element={ <Register login={login} /> }></Route>
           <Route path="/portal" element={ <Portal login={login} /> }></Route>
         </Routes>
       </BrowserRouter>

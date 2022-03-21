@@ -1,5 +1,14 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Register = ({login}) => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(login) {
+            navigate("/portal")
+        }
+    }, [login, navigate])
 
     function onSubmit(e) {
         e.preventDefault();
