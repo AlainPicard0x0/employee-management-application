@@ -69,3 +69,9 @@ ul a:hover {
   width: 400px;
   margin: auto;
 }
+
+.form-group input,
+.form-group button {
+  width: 300px;
+  margin: auto;
+}
