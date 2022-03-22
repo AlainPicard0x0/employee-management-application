@@ -62,3 +62,16 @@ ul a:hover {
   background-color: #1a2c80;
   min-height: 100vh;
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+}
+
+.form-group input,
+.form-group button {
+  width: 300px;
+  margin: auto;
+}
