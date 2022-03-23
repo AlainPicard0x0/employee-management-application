@@ -80,5 +80,5 @@ ul a:hover {
 .form-group button {
   width: 300px;
   height: 2.5rem;
-  margin: auto;
+  margin: 0 auto 5px auto;
 }
