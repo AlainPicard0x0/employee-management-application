@@ -79,5 +79,6 @@ ul a:hover {
 .form-group input,
 .form-group button {
   width: 300px;
+  height: 2.5rem;
   margin: auto;
 }
