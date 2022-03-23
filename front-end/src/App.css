@@ -85,4 +85,9 @@ ul a:hover {
 
 .form-group button {
   margin-top: 20px;
+  background-image: linear-gradient(#ffbf27 ,#9c6e01);
+  border: none;
+  color: #1a2c80;
+  font-size: large;
+  font-weight: bold;
 }
