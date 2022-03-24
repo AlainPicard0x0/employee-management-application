@@ -29,6 +29,7 @@ function App() {
         body: JSON.stringify(newEmployee)
       })
       .then(response => {
+        // return response.json() causes error in browser [unexpected token in json response]
         return response;
       })
       .then(data => {
