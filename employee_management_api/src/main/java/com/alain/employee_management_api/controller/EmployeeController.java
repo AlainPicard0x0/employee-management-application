@@ -14,21 +14,25 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    @CrossOrigin
     @GetMapping
     public List<Employee> findEmployees() {
         return employeeService.findAllEmployees();
     }
 
+    @CrossOrigin
     @PostMapping
     public void addEmployee(@RequestBody Employee employee) {
         employeeService.addEmployee(employee);
     }
 
+    @CrossOrigin
     @DeleteMapping("/{employeeId}")
     public void deleteEmployee(@PathVariable("employeeId") Long employeeId) {
         employeeService.deleteEmployee(employeeId);
     }
 
+    @CrossOrigin
     @PutMapping("/{employeeId}")
     public void updateEmployee(@PathVariable("employeeId") Long employeeId, @RequestParam(required = false) String firstName, @RequestParam(required = false) String lastName, @RequestParam(required = false) String email, @RequestParam(required = false) String password) {
         employeeService.updateEmployee(employeeId, firstName, lastName, email, password);
