@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({login, setLogin}) => {    
+const Login = ({login, setLogin, createEmployee}) => {    
 
     const navigate = useNavigate();
 
@@ -25,6 +25,8 @@ const Login = ({login, setLogin}) => {
         userInputEmail.value = "";
         userInputPassword.value = "";
         setLogin(true);
+        createEmployee();
+        
     }
 
     return (
@@ -40,7 +42,7 @@ const Login = ({login, setLogin}) => {
                     <input id="password" type="password" placeholder="Enter Password" required></input>
                 </div>
                 <div className="form-group">
-                    <button id="login-button">Login</button>
+                    <button id="login-button" >Login</button>
                 </div>
             </form>            
         </div>
