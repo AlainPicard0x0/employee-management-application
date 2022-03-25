@@ -21,6 +21,12 @@ public class EmployeeController {
     }
 
     @CrossOrigin
+    @GetMapping("/{employeeId}")
+    public Employee findEmployeeById(@PathVariable("employeeId") Long employeeId) {
+        return employeeService.findEmployeeById(employeeId);
+    }
+
+    @CrossOrigin
     @PostMapping
     public void addEmployee(@RequestBody Employee employee) {
         employeeService.addEmployee(employee);
