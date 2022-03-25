@@ -42,11 +42,18 @@ function App() {
 
   const authenticateEmployee = async (employeeId, email, password) => {
     try {
-      fetch(`${api}${employeeId}`, {
+      fetch(`${api}/${employeeId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json"
         }
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        return data;
       })
     }
     catch(err) {
@@ -81,7 +88,7 @@ function App() {
         < Header />
         <Routes>
           <Route path="/" element={ <Home /> } exact></Route>
-          <Route path="/login" element={ <Login login={login} setLogin={setLogin} /> }></Route>
+          <Route path="/login" element={ <Login login={login} setLogin={setLogin} authenticateEmployee={authenticateEmployee} /> }></Route>
           <Route path="/register" element={ <Register login={login} createEmployee={createEmployee} /> }></Route>
           <Route path="/portal" element={ <Portal login={login} setLogin={setLogin} /> }></Route>
           <Route path="*" element={ <NotFound /> }></Route>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({login, setLogin}) => {    
+const Login = ({login, setLogin, authenticateEmployee}) => {    
 
     const navigate = useNavigate();
 
@@ -23,7 +23,9 @@ const Login = ({login, setLogin}) => {
         const userInputPassword = document.getElementById("password");
         let email = userInputEmail.value;
         let password = userInputPassword.value;
+        authenticateEmployee(employeeId);
         console.log(email + " " + password);
+        userInputEmployeeId.value = "";
         userInputEmail.value = "";
         userInputPassword.value = "";
         setLogin(true);
