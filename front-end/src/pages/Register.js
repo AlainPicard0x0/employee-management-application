@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Register = ({login}) => {
+const Register = ({login, createEmployee}) => {
     const navigate = useNavigate();
 
     useEffect(() => {

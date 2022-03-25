@@ -74,8 +74,8 @@ function App() {
         < Header />
         <Routes>
           <Route path="/" element={ <Home /> } exact></Route>
-          <Route path="/login" element={ <Login login={login} setLogin={setLogin} createEmployee={createEmployee} /> }></Route>
-          <Route path="/register" element={ <Register login={login} /> }></Route>
+          <Route path="/login" element={ <Login login={login} setLogin={setLogin} /> }></Route>
+          <Route path="/register" element={ <Register login={login} createEmployee={createEmployee} /> }></Route>
           <Route path="/portal" element={ <Portal login={login} setLogin={setLogin} /> }></Route>
           <Route path="*" element={ <NotFound /> }></Route>
         </Routes>

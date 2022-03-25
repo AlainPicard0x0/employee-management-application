@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({login, setLogin, createEmployee}) => {    
+const Login = ({login, setLogin}) => {    
 
     const navigate = useNavigate();
 
@@ -25,7 +25,6 @@ const Login = ({login, setLogin, createEmployee}) => {
         userInputEmail.value = "";
         userInputPassword.value = "";
         setLogin(true);
-        createEmployee();
         
     }
 
