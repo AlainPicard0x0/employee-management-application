@@ -12,21 +12,13 @@ function App() {
   const api = `http://localhost:8080/api/employees`
   const [login, setLogin] = useState(false);  
 
-  // need to add parameter here to take in new employee
   const createEmployee = async (firstName, lastName, email, password) => {
     let newEmployee = {
       "firstName": firstName,
       "lastName": lastName,
       "email": email,
       "password": password
-    }
-      
-    // let newEmployee = {
-    //   "firstName": "Evan",
-    //   "lastName": "Picard",
-    //   "email": "evan@gmail",
-    //   "password": "password"
-    // }  
+    }  
     try {
       fetch(api, {
         method: "POST",
@@ -46,6 +38,21 @@ function App() {
     catch(err) {
       console.log("Error: " + err);
     }
+  }
+
+  const authenticateEmployee = async (employeeId, email, password) => {
+    try {
+      fetch(`${api}${employeeId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+    }
+    catch(err) {
+      console.log(err);
+    }
+    
   }
 
   const deleteEmployee = async (employeeId) => {
