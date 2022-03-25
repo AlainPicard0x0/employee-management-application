@@ -9,11 +9,12 @@ import NotFound from "./pages/NotFound.js";
 import "./App.css";
 
 function App() {
+  const api = `http://localhost:8080/api/employees`
   const [login, setLogin] = useState(false);  
 
   // need to add parameter here to take in new employee
   const createEmployee = async () => {
-    const api = `http://localhost:8080/api/employees`  
+      
     let newEmployee = {
       "firstName": "Evan",
       "lastName": "Picard",
@@ -33,12 +34,30 @@ function App() {
         return response;
       })
       .then(data => {
-        return console.log("Success: " + data)
+        return console.log("Success: " + data);
       })
     }
     catch(err) {
       console.log("Error: " + err);
     }
+  }
+
+  const deleteEmployee = async () => {
+    try {
+      fetch(`${api}${employeeId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      })
+      .then(response => {
+        return response;
+      })
+    }
+    catch(err) {
+      console.log("Error: " + err);
+    }
+    
   }
 
   
