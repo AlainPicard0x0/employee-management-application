@@ -13,14 +13,20 @@ function App() {
   const [login, setLogin] = useState(false);  
 
   // need to add parameter here to take in new employee
-  const createEmployee = async () => {
-      
+  const createEmployee = async (firstName, lastName, email, password) => {
     let newEmployee = {
-      "firstName": "Evan",
-      "lastName": "Picard",
-      "email": "evan@gmail",
-      "password": "password"
-    }  
+      "firstName": firstName,
+      "lastName": lastName,
+      "email": email,
+      "password": password
+    }
+      
+    // let newEmployee = {
+    //   "firstName": "Evan",
+    //   "lastName": "Picard",
+    //   "email": "evan@gmail",
+    //   "password": "password"
+    // }  
     try {
       fetch(api, {
         method: "POST",
@@ -42,7 +48,7 @@ function App() {
     }
   }
 
-  const deleteEmployee = async () => {
+  const deleteEmployee = async (employeeId) => {
     try {
       fetch(`${api}${employeeId}`, {
         method: "DELETE",
