@@ -17,6 +17,7 @@ const Register = ({login, createEmployee}) => {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
         createEmployee(firstName, lastName, email, password);
+        navigate("/login");
     }
 
     return (
