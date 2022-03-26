@@ -17,7 +17,7 @@ const Portal = ({login, setLogin}) => {
     return (
         <div className="portal">
             <h1>Employee Portal Page</h1>
-            <button onClick={() => setLogin(!login)}>Logout</button>
+            <button onClick={() => setLogin(false)}>Logout</button>
         </div>
     )
 }
