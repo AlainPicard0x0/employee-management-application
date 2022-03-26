@@ -25,7 +25,9 @@ const Portal = ({login, setLogin}) => {
                     <h2>Right Side</h2>
                 </div>
             </div>
-            
+            <main id="portal-main">
+                
+            </main>
             <button onClick={() => setLogin(false)}>Logout</button>
         </div>
     )
