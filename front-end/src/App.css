@@ -59,7 +59,7 @@ ul a:hover {
   margin: auto;
   text-align: center;
   color: #fff;
-  background-color: #1a2c80;
+  /* background-color: #1a2c80; */
   min-height: 100vh;
 }
 
@@ -90,4 +90,9 @@ ul a:hover {
   color: #1a2c80;
   font-size: large;
   font-weight: bold;
+}
+
+.portal-nav {
+  min-height: 6rem;
+  background-image: linear-gradient(#2544cc, #1a2c80);
 }

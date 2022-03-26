@@ -16,6 +16,10 @@ const Portal = ({login, setLogin}) => {
 
     return (
         <div className="portal">
+            <div className="portal-nav">
+                <h1>Employee</h1>
+                <h2>Portal</h2>
+            </div>
             <h1>Employee Portal Page</h1>
             <button onClick={() => setLogin(false)}>Logout</button>
         </div>
