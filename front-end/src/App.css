@@ -95,4 +95,10 @@ ul a:hover {
 .portal-nav {
   min-height: 6rem;
   background-image: linear-gradient(#2544cc, #1a2c80);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  line-height: 1.0;
 }
