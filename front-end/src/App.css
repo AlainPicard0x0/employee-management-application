@@ -127,6 +127,10 @@ ul a:hover {
 .portal-profile h3 {
   color: #ffbf27;
   font-size: 1rem;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: flex-start;
+  align-self: center;
+  margin-left: 10px;
 }
 
 .user-icon-background {
@@ -142,4 +146,21 @@ ul a:hover {
 .fa-user {
   height: 65px;
   margin: 10px;
+}
+
+.portal-profile h2 {
+  grid-area: 2 / 2 / 4 / 3;
+  align-self: center;
+}
+
+#my-profile-btn {
+  grid-area: 4 / 3 / 5 / 4;
+  width: 120px;
+  height: 30px;
+  justify-self:center;
+  align-self: flex-end;
+  background-image: linear-gradient(#ffbf27 ,#9c6e01);
+  border: none;
+  border-radius: 5px;
+  box-shadow: #000 1px 1px 3px;
 }

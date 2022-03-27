@@ -38,8 +38,7 @@ const Portal = ({login, setLogin}) => {
                         <FontAwesomeIcon icon={faUser} />
                     </div>                    
                     <h2>John Doe</h2>
-                    <button>My Profile</button>
-                    
+                    <button id="my-profile-btn">My Profile</button>                    
                 </div>
             </main>
             <button onClick={() => setLogin(false)}>Logout</button>
