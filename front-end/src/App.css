@@ -225,8 +225,8 @@ ul a:hover {
 /* Pie Chart*/
 
 
-.pie {
-  --p: 60;
+.vacation-pie {
+  --p: 40;
   --b: 8px;
   --c: orange; 
   --w: 150px;
@@ -236,11 +236,23 @@ ul a:hover {
   display: inline-grid;
   place-content: center;
   margin: 5px;
-  font-size: 25px;
-  font-weight: bold;
 }
 
-.pie:before {
+.sick-pie {
+  --p: 75;
+  --b: 8px;
+  --c: orange; 
+  --w: 150px;
+  width: var(--w);
+  height: var(--w);
+  position: relative;
+  display: inline-grid;
+  place-content: center;
+  margin: 5px;
+}
+
+.sick-pie:before,
+.vacation-pie:before {
   content: "";
   position: absolute;
   border-radius: 50%;

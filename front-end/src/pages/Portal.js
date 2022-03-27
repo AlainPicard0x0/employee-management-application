@@ -49,7 +49,7 @@ const Portal = ({login, setLogin}) => {
                     </div>
 
                     <div className="portal-sick-leave">
-                        <div className="sick-leave-hours">
+                        <div className="sick-pie">
                             <div className="hours-left">
                                 <h2>16</h2>
                                 <p>hours left</p>
@@ -60,8 +60,8 @@ const Portal = ({login, setLogin}) => {
                         </div>
                     </div>
 
-                    {/* <div className="portal-vacation-leave">
-                        <div className="vacation-leave-hours">
+                    <div className="portal-vacation-leave">
+                        <div className="vacation-pie">
                             <div className="hours-left">
                                 <h2>32</h2>
                                 <p>hours left</p>
@@ -70,9 +70,9 @@ const Portal = ({login, setLogin}) => {
                         <div className="vacation-leave-title">
                             <h4>Vacation Leave</h4>
                         </div>
-                    </div> */}
+                    </div>
 
-                    <div className="pie">60%</div>
+                    {/* <div className="pie">60%</div> */}
 
                 </div>
 
