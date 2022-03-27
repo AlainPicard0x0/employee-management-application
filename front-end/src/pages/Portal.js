@@ -16,6 +16,7 @@ const Portal = ({login, setLogin}) => {
         if(login) {
             navigate("/portal");
             findVacationHoursRemaining();
+            findSickHoursRemaining();
         }
         else {
             navigate("/login");
@@ -24,10 +25,17 @@ const Portal = ({login, setLogin}) => {
 
     const findVacationHoursRemaining = () => {
         const vacationHoursRemaining = document.getElementById("vacation-pie");
-        const vacationValue = vacationHoursRemaining.innerText;
-        // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 hours)          
-        vacationHoursRemaining.style.setProperty("--p", parseInt(vacationValue) * 1.25);
-        let myValue = getComputedStyle(vacationHoursRemaining).getPropertyValue("--p");
+        const vacationValue = parseInt(vacationHoursRemaining.innerText);
+        // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)          
+        vacationHoursRemaining.style.setProperty("--p", vacationValue * 1.25);
+        // find computed style of --p
+        // let myValue = getComputedStyle(vacationHoursRemaining).getPropertyValue("--p");
+    }
+    const findSickHoursRemaining = () => {
+        const sickHoursRemaining = document.getElementById("sick-pie");
+        const sickValue = parseInt(sickHoursRemaining.innerText);
+        // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
+        sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
     }
 
     return (
@@ -59,9 +67,9 @@ const Portal = ({login, setLogin}) => {
                     </div>
 
                     <div className="portal-sick-leave">
-                        <div className="sick-pie">
+                        <div id="sick-pie">
                             <div className="hours-left">
-                                <h2 className="sick-hours-remaining">16</h2>
+                                <h2 className="sick-hours-remaining">8</h2>
                                 <p>hours left</p>
                             </div>                            
                         </div>
@@ -73,7 +81,7 @@ const Portal = ({login, setLogin}) => {
                     <div className="portal-vacation-leave">
                         <div id="vacation-pie">
                             <div className="hours-left">
-                                <h2 id="vacation-hours-remaining">40</h2>
+                                <h2 id="vacation-hours-remaining">60</h2>
                                 <p>hours left</p>
                             </div>
                         </div>
@@ -81,8 +89,6 @@ const Portal = ({login, setLogin}) => {
                             <h4>Vacation Leave</h4>
                         </div>
                     </div>
-
-                    {/* <div className="pie">60%</div> */}
 
                 </div>
 
