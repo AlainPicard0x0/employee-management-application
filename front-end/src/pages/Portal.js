@@ -40,6 +40,29 @@ const Portal = ({login, setLogin}) => {
                     <h2>John Doe</h2>
                     <button id="my-profile-btn">My Profile</button>                    
                 </div>
+                <div className="portal-leave-balance">
+                    <div className="leave-balance-title">
+                        <h3>My Leave</h3>
+                    </div>
+                    <div className="portal-sick-leave">
+                        <div className="sick-leave-hours">
+                            <h2>16</h2>
+                            <p>hours left</p>
+                        </div>
+                        <div className="sick-leave-title">
+                            <h4>Sick Leave</h4>
+                        </div>
+                    </div>
+                    <div className="portal-vacation-leave">
+                    <div className="vacation-leave-hours">
+                            <h2>32</h2>
+                            <p>hours left</p>
+                        </div>
+                        <div className="vacation-leave-title">
+                            <h4>Vacation Leave</h4>
+                        </div>
+                    </div>
+                </div>
             </main>
             <button onClick={() => setLogin(false)}>Logout</button>
         </div>
