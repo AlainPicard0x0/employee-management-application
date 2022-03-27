@@ -238,7 +238,7 @@ ul a:hover {
   margin: 5px;
 }
 
-.sick-pie {
+#sick-pie {
   --p: 75;
   --b: 8px;
   --c: orange; 
@@ -251,7 +251,7 @@ ul a:hover {
   margin: 5px;
 }
 
-.sick-pie:before,
+#sick-pie:before,
 #vacation-pie:before {
   content: "";
   position: absolute;
