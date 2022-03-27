@@ -33,9 +33,10 @@ const Portal = ({login, setLogin}) => {
             </div>
             <main id="portal-main">
                 <div className="portal-profile">
-                    <h3>My Profile</h3>
-                    <img className="profile-pic"></img>
-                    <FontAwesomeIcon icon={faUser} />
+                    <h3>My Profile</h3>                    
+                    <div className="user-icon-background">
+                        <FontAwesomeIcon icon={faUser} />
+                    </div>                    
                     <h2>John Doe</h2>
                     <button>My Profile</button>
                     
