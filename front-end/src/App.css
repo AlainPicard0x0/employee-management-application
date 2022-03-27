@@ -187,10 +187,11 @@ ul a:hover {
 }
 
 .portal-sick-leave {
-  grid-area: 3 / 1 / 6 / 2;
+  grid-area: 2 / 1 / 6 / 2;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .sick-leave-hours {
@@ -204,5 +205,19 @@ ul a:hover {
 }
 
 .portal-vacation-leave {
-  grid-area: 3 / 2 / 6 / 3;
+  grid-area: 2 / 2 / 6 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vacation-leave-hours {
+  border: #000 1px solid;
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
