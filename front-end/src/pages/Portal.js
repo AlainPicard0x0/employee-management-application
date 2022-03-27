@@ -28,7 +28,7 @@ const Portal = ({login, setLogin}) => {
                     <h2>PORTAL</h2>
                 </div>
                 <div className="portal-col-right">
-                    <h2>Right Side</h2>
+                    <button onClick={() => setLogin(false)}>Logout</button>
                 </div>
             </div>
             <main id="portal-main">
@@ -75,7 +75,7 @@ const Portal = ({login, setLogin}) => {
                 </div>
 
             </main>
-            <button onClick={() => setLogin(false)}>Logout</button>
+            
         </div>
     )
 }
