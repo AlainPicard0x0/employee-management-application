@@ -164,3 +164,15 @@ ul a:hover {
   border-radius: 5px;
   box-shadow: #000 1px 1px 3px;
 }
+
+.portal-leave-balance {
+  margin: 10px 0;
+  grid-area: 1 / 2 / 4 / 3; 
+  background-color: #fff;
+  color:#000;
+  border-radius: 5px;
+  box-shadow: #000 1px 1px 10px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
