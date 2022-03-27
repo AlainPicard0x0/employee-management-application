@@ -25,10 +25,9 @@ const Portal = ({login, setLogin}) => {
     const findVacationHoursRemaining = () => {
         const vacationHoursRemaining = document.getElementById("vacation-pie");
         const vacationValue = vacationHoursRemaining.innerText;
-        console.log(typeof(vacationHoursRemaining.innerText));        
-        vacationHoursRemaining.style.setProperty("--p", parseInt(vacationValue));
+        // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 hours)          
+        vacationHoursRemaining.style.setProperty("--p", parseInt(vacationValue) * 1.25);
         let myValue = getComputedStyle(vacationHoursRemaining).getPropertyValue("--p");
-        console.log(myValue);
     }
 
     return (
