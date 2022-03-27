@@ -10,15 +10,26 @@ import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons'
 const Portal = ({login, setLogin}) => {
 
     const navigate = useNavigate();
+    
 
     useEffect(() => {
         if(login) {
             navigate("/portal");
+            findVacationHoursRemaining();
         }
         else {
             navigate("/login");
         }
     }, [login, navigate])
+
+    const findVacationHoursRemaining = () => {
+        const vacationHoursRemaining = document.getElementById("vacation-pie");
+        const vacationValue = vacationHoursRemaining.innerText;
+        console.log(typeof(vacationHoursRemaining.innerText));        
+        vacationHoursRemaining.style.setProperty("--p", parseInt(vacationValue));
+        let myValue = getComputedStyle(vacationHoursRemaining).getPropertyValue("--p");
+        console.log(myValue);
+    }
 
     return (
         <div className="portal">
@@ -49,9 +60,9 @@ const Portal = ({login, setLogin}) => {
                     </div>
 
                     <div className="portal-sick-leave">
-                        <div className="sick-leave-hours">
+                        <div className="sick-pie">
                             <div className="hours-left">
-                                <h2>16</h2>
+                                <h2 className="sick-hours-remaining">16</h2>
                                 <p>hours left</p>
                             </div>                            
                         </div>
@@ -60,19 +71,19 @@ const Portal = ({login, setLogin}) => {
                         </div>
                     </div>
 
-                    {/* <div className="portal-vacation-leave">
-                        <div className="vacation-leave-hours">
+                    <div className="portal-vacation-leave">
+                        <div id="vacation-pie">
                             <div className="hours-left">
-                                <h2>32</h2>
+                                <h2 id="vacation-hours-remaining">40</h2>
                                 <p>hours left</p>
                             </div>
                         </div>
                         <div className="vacation-leave-title">
                             <h4>Vacation Leave</h4>
                         </div>
-                    </div> */}
+                    </div>
 
-                    <div className="pie">60%</div>
+                    {/* <div className="pie">60%</div> */}
 
                 </div>
 
