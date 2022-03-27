@@ -120,10 +120,13 @@ ul a:hover {
   border-radius: 5px;
   box-shadow: #000 1px 1px 10px;
   display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .portal-profile h3 {
   color: #ffbf27;
+  font-size: 1rem;
 }
 
 .user-icon-background {
