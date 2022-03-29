@@ -10,22 +10,22 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
             navigate("/portal");
         }
         else {
-            navigate("/login");
+            navigate("/");
         }
     }, [login, navigate])
 
 
     function handleSubmit(e) {
         e.preventDefault();
-        const userInputEmployeeId = document.getElementById("employeeId");
-        const employeeId = userInputEmployeeId.value;
+        // const userInputEmployeeId = document.getElementById("employeeId");
+        // const employeeId = userInputEmployeeId.value;
         const userInputEmail = document.getElementById("email");
         const userInputPassword = document.getElementById("password");
         let email = userInputEmail.value;
         let password = userInputPassword.value;
-        authenticateEmployee(employeeId);
+        // authenticateEmployee(employeeId);
         console.log(email + " " + password);
-        userInputEmployeeId.value = "";
+        // userInputEmployeeId.value = "";
         userInputEmail.value = "";
         userInputPassword.value = "";
         setLogin(true);

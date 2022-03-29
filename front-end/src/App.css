@@ -94,6 +94,10 @@ ul a:hover {
   text-align: left;
 } 
 
+.login-form-header p {
+  color:rgb(66, 75, 83);
+}
+
 .login-form {
   grid-row: 2 / 3;
   align-self: center;
