@@ -36,6 +36,7 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
         <div className="login">
             <h1>Login Page</h1>
             <div className="login-form-container">
+                <div className="login-col-left">
                 <form className="login-form" onSubmit={ handleSubmit }>
                     <div className="form-group">
                         <label htmlFor="employeeId">Employee Id</label>
@@ -52,7 +53,11 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
                     <div className="form-group">
                         <button id="login-button" >Login</button>
                     </div>
-                </form>            
+                </form>   
+                </div>                 
+                <div className="login-col-right">
+                    
+                </div>        
             </div>
             
         </div>
