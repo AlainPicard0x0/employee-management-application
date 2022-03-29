@@ -66,12 +66,12 @@ ul a:hover {
 .login-form-container {
   width: 1000px;
   height: 600px;
-  border: #000 solid 1px;
   margin: auto;
   display: grid;
   grid-template-rows: 1;
   grid-template-columns: 1.1fr 2fr;
   background-color: #f4f4f4;  
+  border-radius: 5px;
 }
 
 .login-col-left {
@@ -85,6 +85,14 @@ ul a:hover {
   border-radius: 5px;
   box-shadow: darkgray 0.5px 0.5px 6px;
 }
+
+.login-form-header {
+  color: #000;
+  grid-row: 1 / 2;
+  align-self: flex-end;
+  justify-self: center;
+  text-align: left;
+} 
 
 .login-form {
   grid-row: 2 / 3;
@@ -109,7 +117,7 @@ ul a:hover {
   width: 250px;
   text-align: left;
   margin: 15px auto 0 auto;
-  color: #000;
+  color: rgb(66, 75, 83);
 }
 
 .form-group input,

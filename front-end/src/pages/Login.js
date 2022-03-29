@@ -37,6 +37,10 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
             <h1>Login Page</h1>
             <div className="login-form-container">
                 <div className="login-col-left">
+                    <div className="login-form-header">
+                        <h2>Login</h2>
+                        <p>Don't have an account yet? <a href="./register">Sign Up</a></p>
+                    </div>
                     <form className="login-form" onSubmit={ handleSubmit }>
                         {/* <div className="form-group">
                             <label htmlFor="employeeId">Employee Id</label>
