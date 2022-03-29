@@ -70,9 +70,16 @@ ul a:hover {
   margin: auto;
   display: grid;
   grid-template-rows: 1;
-  grid-template-columns: 1fr 2fr;
-  background-color: #f4f4f4;
-  padding: 10px;
+  grid-template-columns: 1.1fr 2fr;
+  background-color: #f4f4f4;  
+}
+
+.login-col-left {
+  grid-area: 1 / 1 / 2 / 2;
+  border: solid #000 1px;
+  width: 325px;
+  height: 550px;
+  margin: auto;
 }
 
 .login-col-right {
@@ -85,7 +92,7 @@ ul a:hover {
 .form-group {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 300px;
   margin: auto;
 }
 
