@@ -34,7 +34,6 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
 
     return (
         <div className="login">
-            <h1>Login Page</h1>
             <div className="login-form-container">
                 <div className="login-col-left">
                     <div className="login-form-header">
@@ -62,8 +61,7 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
                 <div className="login-col-right">
 
                 </div>        
-            </div>
-            
+            </div>            
         </div>
     )
 }
