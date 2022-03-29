@@ -71,6 +71,8 @@ ul a:hover {
   display: grid;
   grid-template-rows: 1;
   grid-template-columns: 1fr 2fr;
+  background-color: #f4f4f4;
+  padding: 10px;
 }
 
 .login-col-right {
