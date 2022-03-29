@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header.js";
-import Home from "./pages/Home.js";
 import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
 import Portal from "./pages/Portal.js";
@@ -40,9 +39,9 @@ function App() {
     }
   }
 
-  const authenticateEmployee = async (employeeId, email, password) => {
+  const authenticateEmployee = async (email, password) => {
     try {
-      fetch(`${api}/${employeeId}`, {
+      fetch(`${api}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json"
@@ -87,8 +86,7 @@ function App() {
       <BrowserRouter>
         < Header />
         <Routes>
-          <Route path="/" element={ <Home /> } exact></Route>
-          <Route path="/login" element={ <Login login={login} setLogin={setLogin} authenticateEmployee={authenticateEmployee} /> }></Route>
+          <Route path="/" element={ <Login login={login} setLogin={setLogin} authenticateEmployee={authenticateEmployee} /> }></Route>
           <Route path="/register" element={ <Register login={login} createEmployee={createEmployee} /> }></Route>
           <Route path="/portal" element={ <Portal login={login} setLogin={setLogin} /> }></Route>
           <Route path="*" element={ <NotFound /> }></Route>

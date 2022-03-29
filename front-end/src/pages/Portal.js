@@ -19,7 +19,7 @@ const Portal = ({login, setLogin}) => {
             findSickHoursRemaining();
         }
         else {
-            navigate("/login");
+            navigate("/");
         }
     }, [login, navigate])
 
