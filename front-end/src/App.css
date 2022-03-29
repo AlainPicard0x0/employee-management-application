@@ -63,6 +63,13 @@ ul a:hover {
   min-height: 100vh;
 }
 
+.login-form-container {
+  width: 1000px;
+  height: 600px;
+  border: #000 solid 1px;
+  margin: auto;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
