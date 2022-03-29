@@ -37,26 +37,26 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
             <h1>Login Page</h1>
             <div className="login-form-container">
                 <div className="login-col-left">
-                <form className="login-form" onSubmit={ handleSubmit }>
-                    <div className="form-group">
-                        <label htmlFor="employeeId">Employee Id</label>
-                        <input id="employeeId" type="number" placeholder="Enter Employee Id" required></input>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="email">Email</label>
-                        <input id="email" type="text" placeholder="Enter Email" required></input>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
-                        <input id="password" type="password" placeholder="Enter Password" required></input>
-                    </div>
-                    <div className="form-group">
-                        <button id="login-button" >Login</button>
-                    </div>
-                </form>   
+                    <form className="login-form" onSubmit={ handleSubmit }>
+                        {/* <div className="form-group">
+                            <label htmlFor="employeeId">Employee Id</label>
+                            <input id="employeeId" type="number" placeholder="Enter Employee Id" required></input>
+                        </div> */}
+                        <div className="form-group">
+                            <label htmlFor="email">Email Address</label>
+                            <input id="email" type="text" placeholder="Enter Email" required></input>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input id="password" type="password" placeholder="Enter Password" required></input>
+                        </div>
+                        <div className="form-group">
+                            <button id="login-button" >Login</button>
+                        </div>
+                    </form>   
                 </div>                 
                 <div className="login-col-right">
-                    
+
                 </div>        
             </div>
             
