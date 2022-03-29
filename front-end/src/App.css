@@ -63,7 +63,8 @@ ul a:hover {
   min-height: 100vh;
 }
 
-.login-form-container {
+.login-form-container,
+.register-form-container {
   width: 1000px;
   height: 600px;
   margin: auto;
@@ -86,7 +87,20 @@ ul a:hover {
   box-shadow: darkgray 0.5px 0.5px 6px;
 }
 
-.login-form-header {
+.register-col-left {
+  grid-area: 1 / 1 / 2 / 2;
+  width: 325px;
+  height: 550px;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 1fr 2.5fr 1fr;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: darkgray 0.5px 0.5px 6px;
+}
+
+.login-form-header,
+.register-form-header {
   color: #000;
   grid-row: 1 / 2;
   align-self: flex-end;
@@ -94,16 +108,19 @@ ul a:hover {
   text-align: left;
 } 
 
-.login-form-header p {
+.login-form-header p,
+.register-form-header p {
   color:rgb(66, 75, 83);
 }
 
-.login-form {
+.login-form,
+.register-form {
   grid-row: 2 / 3;
   align-self: center;
 }
 
-.login-col-right {
+.login-col-right,
+.register-col-right {
   grid-area: 1 / 2 / 2 / 3;
   background-image: url("../public/images/employee-management-background-image01.jpg");
   background-repeat: no-repeat;
