@@ -68,6 +68,12 @@ ul a:hover {
   height: 600px;
   border: #000 solid 1px;
   margin: auto;
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: 1fr 2fr;
+  background-image: url("../public/images/employee-management-background-image01.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .form-group {
