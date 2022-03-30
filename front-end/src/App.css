@@ -19,9 +19,11 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   width: 90vw;
   margin: auto;
-  padding: 35px;
+  padding: 15px;
+  background-image: linear-gradient(#2544cc, #1a2c80);
 }
 
 .header h1 {
@@ -42,7 +44,7 @@ ul a {
   text-decoration: none;
   text-transform: uppercase;
   margin: 15px;
-  color: #304cb2;
+  color: #ffbf27;
   font-weight: bold;
 }
 
@@ -159,7 +161,7 @@ ul a:hover {
   font-weight: bold;
 }
 
-.portal-nav {
+/* .portal-nav {
   min-height: 5rem;
   background-image: linear-gradient(#2544cc, #1a2c80);
   display: flex;
@@ -168,7 +170,7 @@ ul a:hover {
   align-items: center;
   padding: 0 50px;
   line-height: 1.0;
-}
+} */
 
 #portal-main {
   height: 700px;
@@ -176,7 +178,6 @@ ul a:hover {
   background-color: #f5f5ff;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  /* grid-area: repeat(6, 1fr) repeat(3 1fr); */
 }
 
 .portal-profile {

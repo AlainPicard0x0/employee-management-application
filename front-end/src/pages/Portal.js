@@ -40,7 +40,7 @@ const Portal = ({login, setLogin}) => {
 
     return (
         <div className="portal">
-            <div className="portal-nav">
+            {/* <div className="portal-nav">
                 <div className="portal-col-left">
                     <p>Employee</p>
                     <h2>PORTAL</h2>
@@ -48,7 +48,7 @@ const Portal = ({login, setLogin}) => {
                 <div className="portal-col-right">
                     <button onClick={() => setLogin(false)}>Logout</button>
                 </div>
-            </div>
+            </div> */}
             <main id="portal-main">
 
                 <div className="portal-profile">
