@@ -222,12 +222,25 @@ ul a:hover {
 }
 
 #my-profile-btn {
-  grid-area: 4 / 3 / 5 / 4;
+  grid-area: 4 / 2 / 5 / 3;
   width: 120px;
   height: 30px;
   justify-self:center;
   align-self: flex-end;
   background-image: linear-gradient(#ffbf27 ,#9c6e01);
+  border: none;
+  border-radius: 5px;
+  box-shadow: #000 1px 1px 3px;
+}
+
+#logout-btn {
+  grid-area: 4 / 3 / 5 / 4;
+  width: 120px;
+  height: 30px;
+  justify-self: center;
+  align-self: flex-end;
+  background-image: linear-gradient(#ffbf27 ,#9c6e01);
+  font-weight: 600;
   border: none;
   border-radius: 5px;
   box-shadow: #000 1px 1px 3px;
