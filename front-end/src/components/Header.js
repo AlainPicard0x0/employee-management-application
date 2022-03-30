@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <nav>
             <div className="header">
-                <h1>Best Airlines</h1>
+                <h1>ABC Corp</h1>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>

@@ -303,6 +303,7 @@ ul a:hover {
   display: inline-grid;
   place-content: center;
   margin: 5px;
+  transform: rotate(180deg);
 }
 
 #sick-pie {
@@ -316,6 +317,11 @@ ul a:hover {
   display: inline-grid;
   place-content: center;
   margin: 5px;
+  transform: rotate(180deg);
+}
+
+.hours-left {
+  transform: rotate(180deg);
 }
 
 #sick-pie:before,
