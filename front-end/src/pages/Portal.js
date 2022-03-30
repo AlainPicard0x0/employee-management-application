@@ -57,7 +57,8 @@ const Portal = ({login, setLogin}) => {
                         <FontAwesomeIcon icon={faUser} />
                     </div>                    
                     <h2>John Doe</h2>
-                    <button id="my-profile-btn">My Profile</button>                    
+                    <button id="my-profile-btn">My Profile</button>  
+                    <button id="logout-btn" onClick={() => setLogin(false)}>Logout</button>                  
                 </div>
 
                 <div className="portal-leave-balance">
