@@ -19,7 +19,7 @@ function App() {
       "password": password
     }  
     try {
-      fetch(api, {
+      await fetch(api, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,15 +40,20 @@ function App() {
   }
 
   const authenticateEmployee = async (email, password) => {
+    let userLoginInfo = {
+      "email": email,
+      "password": password
+    }
     try {
-      fetch(`${api}`, {
-        method: "GET",
+      await fetch(`${api}/login`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json"
-        }
+        },
+        body: JSON.stringify(userLoginInfo) 
       })
       .then(response => {
-        return response.json();
+        return response;
       })
       .then(data => {
         console.log(data);

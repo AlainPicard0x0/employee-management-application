@@ -3,9 +3,11 @@ package com.alain.employee_management_api.controller;
 import com.alain.employee_management_api.entity.Employee;
 import com.alain.employee_management_api.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/employees")
@@ -20,10 +22,17 @@ public class EmployeeController {
         return employeeService.findAllEmployees();
     }
 
+//    @CrossOrigin
+//    @GetMapping("/{employeeId}")
+//    public Employee findEmployeeById(@PathVariable("employeeId") Long employeeId) {
+//        return employeeService.findEmployeeById(employeeId);
+//    }
+
     @CrossOrigin
-    @GetMapping("/{employeeId}")
-    public Employee findEmployeeById(@PathVariable("employeeId") Long employeeId) {
-        return employeeService.findEmployeeById(employeeId);
+    @PostMapping("/login")
+    public ResponseEntity<Employee>findUser(@RequestBody UserToUserForm form) {
+        System.out.println(form.getEmail());
+        return ResponseEntity.ok().build();
     }
 
     @CrossOrigin
@@ -44,4 +53,31 @@ public class EmployeeController {
         employeeService.updateEmployee(employeeId, firstName, lastName, email, password);
     }
 
+}
+
+class UserToUserForm {
+    private String email;
+    private String password;
+
+    public UserToUserForm(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    public UserToUserForm() {
+
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

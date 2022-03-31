@@ -25,11 +25,11 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
         let password = userInputPassword.value;
         // authenticateEmployee(employeeId);
         console.log(email + " " + password);
+        authenticateEmployee(email, password);
         // userInputEmployeeId.value = "";
         userInputEmail.value = "";
         userInputPassword.value = "";
-        setLogin(true);
-        
+        setLogin(true);        
     }
 
     return (
@@ -47,11 +47,11 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
                         </div> */}
                         <div className="form-group">
                             <label htmlFor="email">Email Address</label>
-                            <input id="email" type="text" placeholder="Enter Email" required></input>
+                            <input id="email" type="text" placeholder="Enter Email" name="email" required></input>
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
-                            <input id="password" type="password" placeholder="Enter Password" required></input>
+                            <input id="password" type="password" placeholder="Enter Password" name="password" required></input>
                         </div>
                         <div className="form-group">
                             <button id="login-button" >Login</button>
