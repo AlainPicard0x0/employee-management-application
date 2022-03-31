@@ -10,6 +10,8 @@ public interface EmployeeService {
 
     Employee findEmployeeById(Long id);
 
+    Employee authenticateEmployee(String email, String password);
+
     void addEmployee(Employee employee);
 
     void updateEmployee(Long id, String firstName, String lastName, String email, String password);

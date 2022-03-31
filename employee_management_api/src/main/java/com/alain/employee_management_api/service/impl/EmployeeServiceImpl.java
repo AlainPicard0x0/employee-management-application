@@ -4,6 +4,7 @@ import com.alain.employee_management_api.entity.Employee;
 import com.alain.employee_management_api.repository.EmployeeRepository;
 import com.alain.employee_management_api.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,6 +26,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee findEmployeeById(Long id) {
         return employeeRepository.findById(id).orElseThrow(() -> new IllegalStateException("Employee not found"));
+    }
+
+    @Override
+    public Employee authenticateEmployee(String email, String password) {
+        Employee user = employeeRepository.findUserByEmail(email);
+        if(user == null) {
+            System.out.println("User not Found: null");
+        }
+        else {
+            System.out.println("User found in database: " + user);
+        }
+        return user;
     }
 
     @Override
