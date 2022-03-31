@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header.js";
 import Login from "./pages/Login.js";
@@ -10,6 +10,7 @@ import "./App.css";
 function App() {
   const api = `http://localhost:8080/api/employees`
   const [login, setLogin] = useState(false);  
+  
 
   const createEmployee = async (firstName, lastName, email, password) => {
     let newEmployee = {
@@ -56,8 +57,14 @@ function App() {
         return response;
       })
       .then(data => {
-        console.log(data);
-        return data;
+        if(data.status !== 200) {
+          setLogin(false)
+          return data;
+        }
+        else {
+          setLogin(true);
+          return data;
+        }
       })
     }
     catch(err) {

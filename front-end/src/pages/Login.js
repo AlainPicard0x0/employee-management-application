@@ -28,8 +28,7 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
         authenticateEmployee(email, password);
         // userInputEmployeeId.value = "";
         userInputEmail.value = "";
-        userInputPassword.value = "";
-        setLogin(true);        
+        userInputPassword.value = "";        
     }
 
     return (

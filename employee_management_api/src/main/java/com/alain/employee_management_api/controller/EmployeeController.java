@@ -1,12 +1,15 @@
 package com.alain.employee_management_api.controller;
 
 import com.alain.employee_management_api.entity.Employee;
+import com.alain.employee_management_api.repository.EmployeeRepository;
 import com.alain.employee_management_api.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -15,6 +18,9 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
     @CrossOrigin
     @GetMapping
@@ -31,8 +37,19 @@ public class EmployeeController {
     @CrossOrigin
     @PostMapping("/login")
     public ResponseEntity<Employee>findUser(@RequestBody UserToUserForm form) {
-        System.out.println(form.getEmail());
-        return ResponseEntity.ok().build();
+        Employee user = employeeRepository.findUserByEmail(form.getEmail());
+        if(user == null) {
+            throw new IllegalStateException("User not found");
+        }
+        if(Objects.equals(user.getPassword(), form.getPassword())) {
+            System.out.println("Password matches: " + user.getPassword() + ":" + form.getPassword());
+            return ResponseEntity.ok().build();
+        }
+        else {
+            System.out.println("Password incorrect: " + user.getPassword() + ":" + form.getPassword());
+            return new ResponseEntity<Employee>(HttpStatus.BAD_REQUEST);
+        }
+
     }
 
     @CrossOrigin
