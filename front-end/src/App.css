@@ -322,7 +322,7 @@ ul a:hover {
 
 #sick-pie {
   --p: 75;
-  --b: 8px;
+  --b: 14px;
   --c: orange; 
   --w: 150px;
   width: var(--w);
@@ -332,6 +332,30 @@ ul a:hover {
   place-content: center;
   margin: 5px;
   transform: rotate(180deg);
+}
+
+#sick-pie-background {
+  --p: 100;
+  --b: 14px;
+  --c: #393939;
+  --w: 150px;
+  width: var(--w);
+  height: var(--w);
+  top: 212px;
+  position: absolute;
+  display: inline-grid;
+  place-content: center;
+  margin: 5px;
+  transform: rotate(180deg);
+}
+
+#sick-pie-background:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+  mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
 }
 
 .hours-left {
