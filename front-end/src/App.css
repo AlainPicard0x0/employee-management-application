@@ -358,6 +358,7 @@ ul a:hover {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
 
 #on-sick-leave-today {
@@ -382,4 +383,12 @@ ul a:hover {
 
 #vacation-awaiting-approval {
   grid-area: 3 / 2 / 4 / 3;
+}
+
+.portal-leave-number {
+  font-size: 2.5rem;
+}
+
+.portal-leave-text {
+  font-size: .8rem;
 }
