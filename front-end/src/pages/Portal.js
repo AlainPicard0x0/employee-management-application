@@ -95,22 +95,28 @@ const Portal = ({login, setLogin}) => {
 
                 <div className="portal-leave-status">
                     <div id="on-sick-leave-today">
-                        <p>On sick leave today</p>
+                        <p className="portal-leave-number">3</p>
+                        <p className="portal-leave-text">On sick leave today</p>
                     </div>
                     <div id="on-sick-leave-tomorrow">
-                        <p>On sick leave tomorrow</p>
+                        <p className="portal-leave-number">2</p>
+                        <p className="portal-leave-text">On sick leave tomorrow</p>
                     </div>
                     <div id="on-vacation-today">
-                        <p>On vacation today</p>
+                        <p className="portal-leave-number">4</p>
+                        <p className="portal-leave-text">On vacation today</p>
                     </div>
                     <div id="on-vacation-tomorrow">
-                        <p>On vacation tomorrow</p>
+                        <p className="portal-leave-number">5</p>
+                        <p className="portal-leave-text">On vacation tomorrow</p>
                     </div>
                     <div id="sick-leave-awaiting-approval">
-                        <p>Sick leave awaiting approval</p>
+                        <p className="portal-leave-number">0</p>
+                        <p className="portal-leave-text">Sick leave awaiting approval</p>
                     </div>
                     <div id="vacation-awaiting-approval">
-                        <p>Vacation awaiting approval</p>
+                        <p className="portal-leave-number">1</p>
+                        <p className="portal-leave-text">Vacation awaiting approval</p>
                     </div>
                 </div>
 
