@@ -347,3 +347,12 @@ ul a:hover {
   background: conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
   mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
 }
+
+.portal-leave-status {
+  grid-area: 1 / 3 / 5 / 4;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: #000 1px 1px 10px;
+  color: #000; 
+}
