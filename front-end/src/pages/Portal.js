@@ -68,10 +68,11 @@ const Portal = ({login, setLogin}) => {
                     </div>
 
                     <div className="portal-sick-leave">
-                        <div id="sick-pie-background">
-                           
-                        </div>
+                        
                         <div id="sick-pie">
+                            <div id="sick-pie-background">
+                            
+                            </div>
                             <div className="hours-left">
                                 <h2 className="sick-hours-remaining">8</h2>
                                 <p>hours left</p>
