@@ -175,7 +175,7 @@ ul a:hover {
 } */
 
 #portal-main {
-  height: 700px;
+  height: 800px;
   display: grid;
   background-color: #f5f5ff;
   grid-template-rows: repeat(6, 1fr);
