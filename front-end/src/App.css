@@ -180,6 +180,7 @@ ul a:hover {
   background-color: #f5f5ff;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(3, 1fr);
+  width: 100%;
 }
 
 .portal-profile {
