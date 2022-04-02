@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <nav>
-            <div className="header">
-                <h1>ABC Corp</h1>
+        <nav className="header">
+                <div>
+                    <h1>ABC Corp</h1>
+                </div>                
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
@@ -16,7 +17,7 @@ const Header = () => {
                         <Link to="/portal">Employee Portal</Link>
                     </li>
                 </ul>
-            </div>
+            
             
         </nav>
     )
