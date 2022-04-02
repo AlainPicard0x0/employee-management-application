@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header.js";
+import Footer from "./components/Footer.js";
 import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
 import Portal from "./pages/Portal.js";
@@ -104,7 +105,7 @@ function App() {
           <Route path="*" element={ <NotFound /> }></Route>
         </Routes>
       </BrowserRouter>
-
+      < Footer />
     </div>
           
     </>
