@@ -63,6 +63,7 @@ ul a:hover {
   color: #fff;
   /* background-color: #1a2c80; */
   min-height: 84vh;
+  display: flex;
 }
 
 .login-form-container,
@@ -75,6 +76,7 @@ ul a:hover {
   grid-template-columns: 1.1fr 2fr;
   background-color: #f4f4f4;  
   border-radius: 5px;
+  align-self: center;
 }
 
 .login-col-left {
