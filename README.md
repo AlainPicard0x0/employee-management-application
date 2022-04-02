@@ -1,4 +1,4 @@
-![Login/Registration with Java & React](./front-end/public/images/employee-management-application-image.png)
+![Login/Registration with Java & React](./front-end/public/images/employee-management-application-image-02.png)
 
 In the project directory, you can run:
 
