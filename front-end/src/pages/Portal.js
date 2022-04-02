@@ -123,6 +123,7 @@ const Portal = ({login, setLogin}) => {
                         <p className="portal-leave-text">Vacation awaiting approval</p>
                     </div>
                 </div>
+                {/* Add hours worked section? */}
 
             </main>
             

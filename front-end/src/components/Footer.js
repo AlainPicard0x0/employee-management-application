@@ -3,7 +3,8 @@
 const Footer = () => {
     return (
         <footer className="app-footer">
-            <p>Footer</p>
+            <p>Copyright &copy; 2022</p>
+            <p>Web Design by: Alain Picard</p>
         </footer>
     )
 }

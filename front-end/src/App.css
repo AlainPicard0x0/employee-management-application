@@ -62,7 +62,6 @@ ul a:hover {
   margin: auto;
   text-align: center;
   color: #fff;
-  /* background-color: #1a2c80; */
   min-height: 85.75vh;
   display: flex;
 }
@@ -428,6 +427,7 @@ ul a:hover {
   align-items: baseline;
   width: 90vw;
   margin: auto;
-  padding: 15px;
+  padding: 15px 55px 15px 55px;
   background-image: linear-gradient(#2544cc, #1a2c80);
+  color: #fff;
 }
