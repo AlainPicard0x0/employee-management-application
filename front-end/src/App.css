@@ -418,3 +418,13 @@ ul a:hover {
 .portal-leave-text {
   font-size: .8rem;
 }
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 90vw;
+  margin: auto;
+  padding: 15px;
+  background-image: linear-gradient(#2544cc, #1a2c80);
+}
