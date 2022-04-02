@@ -67,8 +67,7 @@ const Portal = ({login, setLogin}) => {
                         <h3>My Leave</h3>
                     </div>
 
-                    <div className="portal-sick-leave">
-                        
+                    <div className="portal-sick-leave">                        
                         <div id="sick-pie">
                             <div id="sick-pie-background">
                             
@@ -85,6 +84,9 @@ const Portal = ({login, setLogin}) => {
 
                     <div className="portal-vacation-leave">
                         <div id="vacation-pie">
+                            <div id="vacation-pie-background">
+                                
+                            </div>
                             <div className="hours-left">
                                 <h2 id="vacation-hours-remaining">60</h2>
                                 <p>hours left</p>

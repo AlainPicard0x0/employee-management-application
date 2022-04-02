@@ -175,7 +175,7 @@ ul a:hover {
 } */
 
 #portal-main {
-  height: 700px;
+  height: 800px;
   display: grid;
   background-color: #f5f5ff;
   grid-template-rows: repeat(6, 1fr);
@@ -311,7 +311,7 @@ ul a:hover {
 
 #vacation-pie {
   --p: 40;
-  --b: 8px;
+  --b: 14px;
   --c: orange; 
   --w: 150px;
   width: var(--w);
@@ -338,7 +338,8 @@ ul a:hover {
   z-index: 10;
 }
 
-#sick-pie-background {
+#sick-pie-background,
+#vacation-pie-background {
   --p: 100;
   --b: 14px;
   --c: #7e7e7e;
@@ -353,7 +354,8 @@ ul a:hover {
   transform: rotate(180deg);
 }
 
-#sick-pie-background:before {
+#sick-pie-background:before,
+#vacation-pie-background:before {
   content: "";
   position: absolute;
   border-radius: 50%;
