@@ -59,7 +59,8 @@ function App() {
       })
       .then(data => {
         if(data.status !== 200) {
-          setLogin(false)
+          setLogin(false);
+          alert("Username and/or Password incorrect");
           return data;
         }
         else {
