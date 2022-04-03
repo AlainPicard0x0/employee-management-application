@@ -10,7 +10,8 @@ import "./App.css";
 
 function App() {
   const api = `http://localhost:8080/api/employees`
-  const [login, setLogin] = useState(false);  
+  const [login, setLogin] = useState(false);
+  const [email, setEmail] = useState(null);  
   
 
   const createEmployee = async (firstName, lastName, email, password) => {
@@ -41,27 +42,46 @@ function App() {
     }
   }
 
-  const getSickHours = async (email) => {
-    try {
-      await fetch(`${api}/login`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "email": email
-        },
-      })
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-        return data;
-      })
-    }
-    catch(err) {
-      console.log(err);
-    }
-  }
+  // async function getSickHours(email) {
+  //   try {
+  //     const response = await fetch(`${api}/login`, {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "email": email
+  //       },
+  //     });
+  //     const data = await response.json();
+  //     console.log(data);
+  //     return data;
+  //   }
+  //   catch(err) {
+  //     console.log(err);
+  //   }
+  // }
+
+  // const getSickHours = async (email) => {
+  //   try {
+  //     await fetch(`${api}/login`, {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "email": email
+  //       },
+  //     })
+  //     .then(response => {
+  //       return response.json();
+  //     })
+  //     .then(data => {
+  //       console.log(data);
+  //       setSick(6);
+  //       return data;
+  //     })
+  //   }
+  //   catch(err) {
+  //     console.log(err);
+  //   }
+  // }
 
   const authenticateEmployee = async (email, password) => {
     let userLoginInfo = {
@@ -72,13 +92,12 @@ function App() {
       await fetch(`${api}/login`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "email": email
         },
         body: JSON.stringify(userLoginInfo) 
       })
       .then(response => {
-        console.log(response);
-        getSickHours(email);
         return response;
       })
       .then(data => {
@@ -88,10 +107,11 @@ function App() {
           return data;
         }
         else {
+          setEmail(email);
           setLogin(true);
           return data;
         }
-      })
+      })      
     }
     catch(err) {
       console.log(err);
@@ -124,9 +144,9 @@ function App() {
       <BrowserRouter>
         < Header />
         <Routes>
-          <Route path="/" element={ <Login login={login} setLogin={setLogin} authenticateEmployee={authenticateEmployee} /> }></Route>
+          <Route path="/" element={ <Login login={login} setLogin={setLogin} authenticateEmployee={authenticateEmployee}  /> }></Route>
           <Route path="/register" element={ <Register login={login} createEmployee={createEmployee} /> }></Route>
-          <Route path="/portal" element={ <Portal login={login} setLogin={setLogin} /> }></Route>
+          <Route path="/portal" element={ <Portal email={email} login={login} setLogin={setLogin} /> }></Route>
           <Route path="*" element={ <NotFound /> }></Route>
         </Routes>
       </BrowserRouter>

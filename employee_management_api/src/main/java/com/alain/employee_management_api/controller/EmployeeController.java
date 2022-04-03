@@ -43,6 +43,7 @@ public class EmployeeController {
         }
         if(Objects.equals(user.getPassword(), form.getPassword())) {
             System.out.println("Password matches: " + user.getPassword() + ":" + form.getPassword());
+            Long sickHours = employeeService.getSickHours(user.getEmail());
             return ResponseEntity.ok().build();
         }
         else {
@@ -54,6 +55,7 @@ public class EmployeeController {
     @CrossOrigin
     @GetMapping("/login")
     public Long getSickHours(@RequestHeader("email") String email) {
+        System.out.println(employeeService.getSickHours(email));
         return employeeService.getSickHours(email);
     }
 
