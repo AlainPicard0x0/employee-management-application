@@ -24,12 +24,16 @@ public class Employee {
     @Column(nullable = false)
     private String password;
 
-    public Employee(Long id, String firstName, String lastName, String email, String password) {
+    @Column(columnDefinition = "bigint default 0")
+    private Long sickLeave = 0L;
+
+    public Employee(Long id, String firstName, String lastName, String email, String password, Long sickLeave) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.sickLeave = sickLeave;
     }
 
     public Employee(String firstName, String lastName, String email, String password) {
@@ -78,6 +82,13 @@ public class Employee {
         this.password = password;
     }
 
+    public Long getSickLeave() {
+        return sickLeave;
+    }
+    public void setSickLeave(Long sickLeave) {
+        this.sickLeave = sickLeave;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -86,6 +97,7 @@ public class Employee {
                 ", lastName: '" + lastName + '\'' +
                 ", email: '" + email + '\'' +
                 ", password: '" + password + '\'' +
+                ", sickLeave: " + sickLeave +
                 '}';
     }
 }
