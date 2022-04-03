@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons'
@@ -9,27 +9,31 @@ import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Portal = ({email, login, setLogin}) => {
 
+    const [sickHours, setSickHours] = useState(null);
     const navigate = useNavigate();
-    const api = `http://localhost:8080/api/employees`    
+    const api = `http://localhost:8080/api/employees` 
+    // let employeeSickHours;   
 
     useEffect(() => {
         if(login) {
             navigate("/portal");
             findVacationHoursRemaining();  
-            fetch(`${api}/login`, {
-                method: "GET",
-                headers: {
-                  "Content-Type": "application/json",
-                  "email": email
-                },
-              })  
-              .then(response => {
-                  return response.json();
-              })            
-              .then(data => {
-                  console.log(data);
-                  return data;
-              })                             
+            findSickHoursRemaining();
+            // fetch(`${api}/login`, {
+            //     method: "GET",
+            //     headers: {
+            //       "Content-Type": "application/json",
+            //       "email": email
+            //     },
+            //   })  
+            //   .then(response => {
+            //       return response.json();
+            //   })            
+            //   .then(data => {
+            //       employeeSickHours = data;
+            //       console.log(employeeSickHours);
+            //       return data;
+            //   })                             
         }
         else {
             navigate("/");
@@ -45,23 +49,29 @@ const Portal = ({email, login, setLogin}) => {
         // let myValue = getComputedStyle(vacationHoursRemaining).getPropertyValue("--p");
     }
     const findSickHoursRemaining = () => {
-        const sickHoursRemaining = document.getElementById("sick-pie");
-        const sickValue = parseInt(sickHoursRemaining.innerText);
-        // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
-        sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
+        fetch(`${api}/login`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              "email": email
+            },
+          })  
+          .then(response => {
+              return response.json();
+          })            
+          .then(data => {
+            // employeeSickHours = data;
+            setSickHours(data);
+            const sickHoursRemaining = document.getElementById("sick-pie");
+            const sickValue = parseInt(sickHoursRemaining.innerText);
+            // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
+            console.log(sickValue);
+            sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
+        })
     }
 
     return (
         <div className="portal">
-            {/* <div className="portal-nav">
-                <div className="portal-col-left">
-                    <p>Employee</p>
-                    <h2>PORTAL</h2>
-                </div>
-                <div className="portal-col-right">
-                    <button onClick={() => setLogin(false)}>Logout</button>
-                </div>
-            </div> */}
             <main id="portal-main">
 
                 <div className="portal-profile">
@@ -86,7 +96,7 @@ const Portal = ({email, login, setLogin}) => {
                             
                             </div>
                             <div className="hours-left">
-                                <h2 className="sick-hours-remaining">8</h2>
+                                <h2 className="sick-hours-remaining">{sickHours}</h2>
                                 <p>hours left</p>
                             </div>                            
                         </div>
@@ -101,7 +111,7 @@ const Portal = ({email, login, setLogin}) => {
                                 
                             </div>
                             <div className="hours-left">
-                                <h2 id="vacation-hours-remaining">60</h2>
+                                <h2 id="vacation-hours-remaining">40</h2>
                                 <p>hours left</p>
                             </div>
                         </div>

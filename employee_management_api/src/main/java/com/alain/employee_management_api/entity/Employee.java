@@ -24,8 +24,8 @@ public class Employee {
     @Column(nullable = false)
     private String password;
 
-    @Column(columnDefinition = "bigint default 8")
-    private Long sickLeave = 8L;
+    @Column(columnDefinition = "bigint default 16")
+    private Long sickLeave = 16L;
 
     public Employee(Long id, String firstName, String lastName, String email, String password, Long sickLeave) {
         this.id = id;
