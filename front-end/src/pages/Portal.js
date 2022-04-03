@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons'
-
-
-
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 
 const Portal = ({email, login, setLogin}) => {
 
     const [sickHours, setSickHours] = useState(null);
     const navigate = useNavigate();
-    const api = `http://localhost:8080/api/employees` 
-    // let employeeSickHours;   
+    const api = `http://localhost:8080/api/employees`    
 
     useEffect(() => {
         if(login) {
@@ -30,8 +26,6 @@ const Portal = ({email, login, setLogin}) => {
         const vacationValue = parseInt(vacationHoursRemaining.innerText);
         // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)          
         vacationHoursRemaining.style.setProperty("--p", vacationValue * 1.25);
-        // find computed style of --p
-        // let myValue = getComputedStyle(vacationHoursRemaining).getPropertyValue("--p");
     }
     const findSickHoursRemaining = () => {
         fetch(`${api}/login`, {
@@ -45,7 +39,6 @@ const Portal = ({email, login, setLogin}) => {
               return response.json();
           })            
           .then(data => {
-            // employeeSickHours = data;
             setSickHours(data);
             const sickHoursRemaining = document.getElementById("sick-pie");
             const sickValue = parseInt(sickHoursRemaining.innerText);
@@ -135,8 +128,7 @@ const Portal = ({email, login, setLogin}) => {
                 </div>
                 {/* Add hours worked section? */}
 
-            </main>
-            
+            </main>            
         </div>
     )
 }
