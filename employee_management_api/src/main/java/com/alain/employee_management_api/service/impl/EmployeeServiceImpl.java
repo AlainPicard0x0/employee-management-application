@@ -83,4 +83,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         employeeRepository.deleteById(id);
     }
+
+    @Override
+    public Long getSickHours(String email) {
+        Employee employee = employeeRepository.findUserByEmail(email);
+        return employee.getSickLeave();
+    }
 }
