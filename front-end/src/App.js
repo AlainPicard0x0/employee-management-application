@@ -41,6 +41,28 @@ function App() {
     }
   }
 
+  const getSickHours = async (email) => {
+    try {
+      await fetch(`${api}/login`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "email": email
+        },
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        return data;
+      })
+    }
+    catch(err) {
+      console.log(err);
+    }
+  }
+
   const authenticateEmployee = async (email, password) => {
     let userLoginInfo = {
       "email": email,
@@ -55,6 +77,8 @@ function App() {
         body: JSON.stringify(userLoginInfo) 
       })
       .then(response => {
+        console.log(response);
+        getSickHours(email);
         return response;
       })
       .then(data => {

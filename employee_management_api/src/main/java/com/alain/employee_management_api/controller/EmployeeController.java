@@ -49,7 +49,12 @@ public class EmployeeController {
             System.out.println("Password incorrect: " + user.getPassword() + ":" + form.getPassword());
             return new ResponseEntity<Employee>(HttpStatus.BAD_REQUEST);
         }
+    }
 
+    @CrossOrigin
+    @GetMapping("/login")
+    public Long getSickHours(@RequestHeader("email") String email) {
+        return employeeService.getSickHours(email);
     }
 
     @CrossOrigin
