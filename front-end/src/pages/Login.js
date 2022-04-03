@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({login, setLogin, authenticateEmployee }) => {    
+const Login = ({login, authenticateEmployee }) => {    
 
     const navigate = useNavigate();
 
@@ -18,13 +18,10 @@ const Login = ({login, setLogin, authenticateEmployee }) => {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        // const userInputEmployeeId = document.getElementById("employeeId");
-        // const employeeId = userInputEmployeeId.value;
         const userInputEmail = document.getElementById("email");
         const userInputPassword = document.getElementById("password");
         let email = userInputEmail.value;
         let password = userInputPassword.value;
-        // authenticateEmployee(employeeId);
         console.log(email + " " + password);
         authenticateEmployee(email, password);
         userInputEmail.value = "";
@@ -40,10 +37,6 @@ const Login = ({login, setLogin, authenticateEmployee }) => {
                         <p>Don't have an account yet? <a href="./register">Sign Up</a></p>
                     </div>
                     <form className="login-form" onSubmit={ handleSubmit }>
-                        {/* <div className="form-group">
-                            <label htmlFor="employeeId">Employee Id</label>
-                            <input id="employeeId" type="number" placeholder="Enter Employee Id" required></input>
-                        </div> */}
                         <div className="form-group">
                             <label htmlFor="email">Email Address</label>
                             <input id="email" type="text" placeholder="Enter Email" name="email" required></input>

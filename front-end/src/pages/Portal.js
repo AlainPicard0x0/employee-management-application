@@ -18,22 +18,7 @@ const Portal = ({email, login, setLogin}) => {
         if(login) {
             navigate("/portal");
             findVacationHoursRemaining();  
-            findSickHoursRemaining();
-            // fetch(`${api}/login`, {
-            //     method: "GET",
-            //     headers: {
-            //       "Content-Type": "application/json",
-            //       "email": email
-            //     },
-            //   })  
-            //   .then(response => {
-            //       return response.json();
-            //   })            
-            //   .then(data => {
-            //       employeeSickHours = data;
-            //       console.log(employeeSickHours);
-            //       return data;
-            //   })                             
+            findSickHoursRemaining();   
         }
         else {
             navigate("/");

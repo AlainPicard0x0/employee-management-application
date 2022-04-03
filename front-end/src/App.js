@@ -42,47 +42,6 @@ function App() {
     }
   }
 
-  // async function getSickHours(email) {
-  //   try {
-  //     const response = await fetch(`${api}/login`, {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "email": email
-  //       },
-  //     });
-  //     const data = await response.json();
-  //     console.log(data);
-  //     return data;
-  //   }
-  //   catch(err) {
-  //     console.log(err);
-  //   }
-  // }
-
-  // const getSickHours = async (email) => {
-  //   try {
-  //     await fetch(`${api}/login`, {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "email": email
-  //       },
-  //     })
-  //     .then(response => {
-  //       return response.json();
-  //     })
-  //     .then(data => {
-  //       console.log(data);
-  //       setSick(6);
-  //       return data;
-  //     })
-  //   }
-  //   catch(err) {
-  //     console.log(err);
-  //   }
-  // }
-
   const authenticateEmployee = async (email, password) => {
     let userLoginInfo = {
       "email": email,
@@ -136,7 +95,6 @@ function App() {
     }
     
   }
-
   
   return (
     <>
@@ -144,7 +102,7 @@ function App() {
       <BrowserRouter>
         < Header />
         <Routes>
-          <Route path="/" element={ <Login login={login} setLogin={setLogin} authenticateEmployee={authenticateEmployee}  /> }></Route>
+          <Route path="/" element={ <Login login={login} authenticateEmployee={authenticateEmployee} /> }></Route>
           <Route path="/register" element={ <Register login={login} createEmployee={createEmployee} /> }></Route>
           <Route path="/portal" element={ <Portal email={email} login={login} setLogin={setLogin} /> }></Route>
           <Route path="*" element={ <NotFound /> }></Route>
