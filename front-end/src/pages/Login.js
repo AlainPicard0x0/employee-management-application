@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({login, setLogin, authenticateEmployee}) => {    
+const Login = ({login, setLogin, authenticateEmployee }) => {    
 
     const navigate = useNavigate();
 
     useEffect(() => {
         if(login) {
+            console.log(login)
             navigate("/portal");
         }
         else {
@@ -15,7 +16,7 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
     }, [login, navigate])
 
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
         // const userInputEmployeeId = document.getElementById("employeeId");
         // const employeeId = userInputEmployeeId.value;
@@ -26,9 +27,8 @@ const Login = ({login, setLogin, authenticateEmployee}) => {
         // authenticateEmployee(employeeId);
         console.log(email + " " + password);
         authenticateEmployee(email, password);
-        // userInputEmployeeId.value = "";
         userInputEmail.value = "";
-        userInputPassword.value = "";        
+        userInputPassword.value = "";   
     }
 
     return (

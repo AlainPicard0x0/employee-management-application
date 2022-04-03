@@ -7,16 +7,29 @@ import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons'
 
 
 
-const Portal = ({login, setLogin}) => {
+const Portal = ({email, login, setLogin}) => {
 
     const navigate = useNavigate();
-    
+    const api = `http://localhost:8080/api/employees`    
 
     useEffect(() => {
         if(login) {
             navigate("/portal");
-            findVacationHoursRemaining();
-            findSickHoursRemaining();
+            findVacationHoursRemaining();  
+            fetch(`${api}/login`, {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                  "email": email
+                },
+              })  
+              .then(response => {
+                  return response.json();
+              })            
+              .then(data => {
+                  console.log(data);
+                  return data;
+              })                             
         }
         else {
             navigate("/");
