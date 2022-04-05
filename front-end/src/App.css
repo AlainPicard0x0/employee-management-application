@@ -424,6 +424,18 @@ ul a:hover {
   font-size: .8rem;
 }
 
+.portal-sick-leave-request {
+  grid-area: 3 / 1 / 5 / 2;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: #000 1px 1px 10px; 
+}
+
+.sick-leave-request p {
+  color: #ffbf27;
+}
+
 .app-footer {
   display: flex;
   justify-content: space-between;
