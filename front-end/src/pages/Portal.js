@@ -126,6 +126,23 @@ const Portal = ({email, login, setLogin}) => {
                         <p className="portal-leave-text">Vacation awaiting approval</p>
                     </div>
                 </div>
+
+                <div className="portal-leave-request">
+                    <div className="sick-leave-request">
+                        <form className="sick-leave-form">
+                            <div className="form-group">
+                                <input type="number" id="sick-hours-requested" name="sick-hours-requested" required></input>
+                            </div>
+                            <div className="form-group">
+                                <button id="sick-hours-request-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="vacation-leave-request">
+
+                    </div>
+                </div>
+
                 {/* Add hours worked section? */}
 
             </main>            
