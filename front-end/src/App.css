@@ -427,12 +427,19 @@ ul a:hover {
 .portal-sick-leave-request {
   grid-area: 3 / 1 / 5 / 2;
   background-color: #fff;
-  margin: 10px;
+  margin: 0 10px 5px 10px;
   border-radius: 5px;
   box-shadow: #000 1px 1px 10px; 
 }
 
-.sick-leave-request p {
+.sick-leave-request {
+  display: flex;
+  height: 88%;
+  justify-content: center;
+  align-items: center;
+}
+
+.sick-leave-request h3 {
   color: #ffbf27;
 }
 

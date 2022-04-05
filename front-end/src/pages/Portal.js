@@ -128,8 +128,10 @@ const Portal = ({email, login, setLogin}) => {
                 </div>
 
                 <div className="portal-sick-leave-request">
-                    <div className="sick-leave-request">
-                        <p>Use Sick Hours</p>
+                    <div className="sick-leave-request-title">
+                        <h3 id="use-sick-hours">Use Sick Hours</h3>
+                    </div>
+                    <div className="sick-leave-request">                        
                         <form className="sick-leave-form">
                             <div className="form-group">
                                 <input type="number" id="sick-hours-requested" name="sick-hours-requested" required></input>
@@ -138,9 +140,6 @@ const Portal = ({email, login, setLogin}) => {
                                 <button id="sick-hours-request-btn">Submit</button>
                             </div>
                         </form>
-                    </div>
-                    <div className="vacation-leave-request">
-
                     </div>
                 </div>
 
