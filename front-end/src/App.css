@@ -434,13 +434,14 @@ ul a:hover {
 
 .sick-leave-request {
   display: flex;
-  height: 88%;
+  height: 84%;
   justify-content: center;
   align-items: center;
 }
 
-.sick-leave-request h3 {
+.portal-sick-leave-request h3 {
   color: #ffbf27;
+  margin-top: 10px;
 }
 
 .app-footer {

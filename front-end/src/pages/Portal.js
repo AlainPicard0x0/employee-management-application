@@ -134,6 +134,7 @@ const Portal = ({email, login, setLogin}) => {
                     <div className="sick-leave-request">                        
                         <form className="sick-leave-form">
                             <div className="form-group">
+                                <label htmlFor="sick-hours-requested">Enter # of Sick Hours to be used</label>
                                 <input type="number" id="sick-hours-requested" name="sick-hours-requested" required></input>
                             </div>
                             <div className="form-group">
