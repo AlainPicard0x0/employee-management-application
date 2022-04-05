@@ -48,6 +48,21 @@ const Portal = ({email, login, setLogin}) => {
         })
     }
 
+    const checkSickHoursInput = () => {
+        let sickHoursRequestedInput = document.getElementById("sick-hours-requested");
+        let sickHoursRemaining = document.getElementsByClassName("sick-hours-remaining")[0].innerText;
+        if(isNaN(sickHoursRequestedInput.value) || sickHoursRequestedInput.value < 1) {
+            sickHoursRequestedInput.value = 0;
+        }
+        if((sickHoursRemaining - sickHoursRequestedInput.value) < 0) {
+            alert("You do not have a sufficient number of sick hours remaining");
+            sickHoursRequestedInput.value = sickHoursRemaining;
+        }
+        console.log(sickHoursRemaining - sickHoursRequestedInput.value);
+    }
+
+    
+
     return (
         <div className="portal">
             <main id="portal-main">
@@ -135,7 +150,7 @@ const Portal = ({email, login, setLogin}) => {
                         <form className="sick-leave-form">
                             <div className="form-group">
                                 <label htmlFor="sick-hours-requested">Enter # of Sick Hours to be used</label>
-                                <input type="number" id="sick-hours-requested" name="sick-hours-requested" required></input>
+                                <input onChange={checkSickHoursInput} type="number" id="sick-hours-requested" name="sick-hours-requested" required></input>
                             </div>
                             <div className="form-group">
                                 <button id="sick-hours-request-btn">Submit</button>
