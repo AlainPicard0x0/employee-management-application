@@ -89,4 +89,16 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = employeeRepository.findUserByEmail(email);
         return employee.getSickLeave();
     }
+
+    @Override
+    public Long useSickHours(String email, Long sickHoursUsed) {
+        Employee employee = employeeRepository.findUserByEmail(email);
+        if(employee == null) {
+            throw new IllegalStateException("Employee not found");
+        }
+        Long sickLeaveRemaining = employee.getSickLeave() - sickHoursUsed;
+        employee.setSickLeave(sickLeaveRemaining);
+        System.out.println(employee.getSickLeave());
+        return employee.getSickLeave();
+    }
 }

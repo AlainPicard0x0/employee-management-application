@@ -19,4 +19,6 @@ public interface EmployeeService {
     void deleteEmployee(Long id);
 
     Long getSickHours(String email);
+
+    Long useSickHours(String email, Long sickHoursUsed);
 }

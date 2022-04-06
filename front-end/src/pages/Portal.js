@@ -61,7 +61,29 @@ const Portal = ({email, login, setLogin}) => {
         console.log(sickHoursRemaining - sickHoursRequestedInput.value);
     }
 
-    
+    const useSickHours = (e) => {
+        e.preventDefault();
+        let sickHoursRequestedInput = document.getElementById("sick-hours-requested").value;
+        fetch(`${api}/portal/sick-leave`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "email": email,
+                "sick-hours": sickHoursRequestedInput 
+            },
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);   
+            setSickHours(data);         
+            return data;
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }    
 
     return (
         <div className="portal">
@@ -147,7 +169,7 @@ const Portal = ({email, login, setLogin}) => {
                         <h3 id="use-sick-hours">Use Sick Hours</h3>
                     </div>
                     <div className="sick-leave-request">                        
-                        <form className="sick-leave-form">
+                        <form className="sick-leave-form" onSubmit={useSickHours}>
                             <div className="form-group">
                                 <label htmlFor="sick-hours-requested">Enter # of Sick Hours to be used</label>
                                 <input onChange={checkSickHoursInput} type="number" id="sick-hours-requested" name="sick-hours-requested" required></input>
