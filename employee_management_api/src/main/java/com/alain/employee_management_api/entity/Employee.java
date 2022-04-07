@@ -24,16 +24,16 @@ public class Employee {
     @Column(nullable = false)
     private String password;
 
-    @Column(columnDefinition = "bigint default 16")
+//    @Column(columnDefinition = "bigint default 16")
     private Long sickLeave = 16L;
 
-    public Employee(Long id, String firstName, String lastName, String email, String password, Long sickLeave) {
+    public Employee(Long id, String firstName, String lastName, String email, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.sickLeave = sickLeave;
+        System.out.println("Constructor 1 ran");
     }
 
     public Employee(String firstName, String lastName, String email, String password) {
@@ -41,10 +41,11 @@ public class Employee {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        System.out.println("Constructor 2 ran");
     }
 
     public Employee() {
-
+        System.out.println("Constructor 3 ran");
     }
 
     public Long getId() {
