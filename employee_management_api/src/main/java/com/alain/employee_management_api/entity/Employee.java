@@ -25,27 +25,33 @@ public class Employee {
     private String password;
 
 //    @Column(columnDefinition = "bigint default 16")
-    private Long sickLeave = 16L;
+    @Column(name = "sick_leave")
+    private Long sickLeave;
 
-    public Employee(Long id, String firstName, String lastName, String email, String password) {
+    public Employee(Long id, String firstName, String lastName, String email, String password, Long sickLeave) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.sickLeave = 16L;
         System.out.println("Constructor 1 ran");
+        System.out.println("Constructor 1: " + this.getSickLeave());
     }
 
-    public Employee(String firstName, String lastName, String email, String password) {
+    public Employee(String firstName, String lastName, String email, String password, Long sickLeave) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.sickLeave = 16L;
         System.out.println("Constructor 2 ran");
+        System.out.println("Constructor 2: " + this.getSickLeave());
     }
 
     public Employee() {
         System.out.println("Constructor 3 ran");
+        System.out.println("Constructor 3: " + this.getSickLeave());
     }
 
     public Long getId() {
