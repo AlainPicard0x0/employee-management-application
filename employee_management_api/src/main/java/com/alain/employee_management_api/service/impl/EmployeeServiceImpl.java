@@ -91,6 +91,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    @Transactional
     public Long useSickHours(String email, Long sickHoursUsed) {
         Employee employee = employeeRepository.findUserByEmail(email);
         if(employee == null) {
@@ -98,7 +99,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         Long sickLeaveRemaining = employee.getSickLeave() - sickHoursUsed;
         employee.setSickLeave(sickLeaveRemaining);
-        System.out.println(employee.getSickLeave());
+        System.out.println("line 101: " + employee.getSickLeave());
         return employee.getSickLeave();
     }
 }
