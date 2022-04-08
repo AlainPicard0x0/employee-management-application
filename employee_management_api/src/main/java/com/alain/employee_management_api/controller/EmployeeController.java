@@ -44,7 +44,11 @@ public class EmployeeController {
         if(Objects.equals(user.getPassword(), form.getPassword())) {
             System.out.println("Password matches: " + user.getPassword() + ":" + form.getPassword());
             Long sickHours = employeeService.getSickHours(user.getEmail());
-            return ResponseEntity.ok().build();
+            ResponseEntity<Employee> emplRes = ResponseEntity.ok(user);
+            System.out.println("Employee line 48 " + emplRes);
+//            return ResponseEntity.ok().build();
+//            return new ResponseEntity<Employee>();
+            return ResponseEntity.ok(user);
         }
         else {
             System.out.println("Password incorrect: " + user.getPassword() + ":" + form.getPassword());

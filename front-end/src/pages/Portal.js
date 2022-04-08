@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 
-const Portal = ({email, login, setLogin, getEmployee}) => {
+const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const [sickHours, setSickHours] = useState(null);
     const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Portal = ({email, login, setLogin, getEmployee}) => {
             navigate("/portal");
             findVacationHoursRemaining();  
             findSickHoursRemaining();  
-            getEmployee(api, 1); 
+            getEmployee(api, 1);
         }
         else {
             navigate("/");
