@@ -12,6 +12,7 @@ function App() {
   const api = `http://localhost:8080/api/employees`
   const [login, setLogin] = useState(false);
   const [email, setEmail] = useState(null);  
+  const [employee, setEmployee] = useState();
   
 
   const createEmployee = async (firstName, lastName, email, password, sickLeave) => {
@@ -58,10 +59,11 @@ function App() {
         body: JSON.stringify(userLoginInfo) 
       })
       .then(response => {
-        return response;
+        return response.json();
       })
       .then(data => {
-        if(data.status !== 200) {
+        // Need to check for correct status
+        if(data.status === 300) {
           setLogin(false);
           alert("Username and/or Password incorrect");
           return data;
@@ -69,6 +71,8 @@ function App() {
         else {
           setEmail(email);
           setLogin(true);
+          setEmployee(data);
+          console.log(data);
           return data;
         }
       })      
@@ -124,7 +128,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <Login login={login} authenticateEmployee={authenticateEmployee} /> }></Route>
           <Route path="/register" element={ <Register login={login} createEmployee={createEmployee} /> }></Route>
-          <Route path="/portal" element={ <Portal email={email} login={login} setLogin={setLogin} getEmployee={getEmployee} /> }></Route>
+          <Route path="/portal" element={ <Portal email={email} login={login} setLogin={setLogin} getEmployee={getEmployee} employee={employee} /> }></Route>
           <Route path="*" element={ <NotFound /> }></Route>
         </Routes>
       </BrowserRouter>
