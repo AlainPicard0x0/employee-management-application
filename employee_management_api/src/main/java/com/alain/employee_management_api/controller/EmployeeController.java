@@ -28,11 +28,11 @@ public class EmployeeController {
         return employeeService.findAllEmployees();
     }
 
-//    @CrossOrigin
-//    @GetMapping("/{employeeId}")
-//    public Employee findEmployeeById(@PathVariable("employeeId") Long employeeId) {
-//        return employeeService.findEmployeeById(employeeId);
-//    }
+    @CrossOrigin
+    @GetMapping(path = "{employeeId}")
+    public Employee findEmployeeById(@PathVariable("employeeId") Long employeeId) {
+        return employeeService.findEmployeeById(employeeId);
+    }
 
     @CrossOrigin
     @PostMapping("/login")
