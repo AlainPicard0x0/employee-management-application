@@ -59,22 +59,20 @@ function App() {
         body: JSON.stringify(userLoginInfo) 
       })
       .then(response => {
+        console.log(response.status);
+        if(response.status !== 200) {
+          
+          alert("Username or Password is Incorrect");
+        }
         return response.json();
       })
       .then(data => {
-        // Need to check for correct status
-        if(data.status === 300) {
-          setLogin(false);
-          alert("Username and/or Password incorrect");
-          return data;
-        }
-        else {
-          setEmail(email);
-          setLogin(true);
-          setEmployee(data);
-          console.log(data);
-          return data;
-        }
+        // Need to check for correct status       
+        setEmail(email);
+        setLogin(true);
+        setEmployee(data);
+        console.log(data);
+        return data;
       })      
     }
     catch(err) {
