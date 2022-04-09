@@ -60,18 +60,15 @@ function App() {
       })
       .then(response => {
         console.log(response.status);
-        if(response.status !== 200) {
-          
+        if(response.status !== 200) {          
           alert("Username or Password is Incorrect");
         }
         return response.json();
       })
-      .then(data => {
-        // Need to check for correct status       
+      .then(data => {       
         setEmail(email);
         setLogin(true);
         setEmployee(data);
-        console.log(data);
         return data;
       })      
     }
@@ -92,7 +89,6 @@ function App() {
       return response.json();
     })
     .then(data => {
-      console.log(data);
       return data;
     })
     .catch((error) => {
