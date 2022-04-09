@@ -220,7 +220,7 @@ ul a:hover {
 }
 
 .portal-profile h2 {
-  grid-area: 2 / 2 / 4 / 3;
+  grid-area: 2 / 2 / 3 / 4;
   align-self: center;
 }
 
