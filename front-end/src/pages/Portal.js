@@ -92,7 +92,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     <div className="user-icon-background">
                         <FontAwesomeIcon icon={faUser} />
                     </div>                    
-                    <h2>John Doe</h2>
+                    <h2>{`${employee.firstName} ${employee.lastName}`}</h2>
                     <button id="my-profile-btn">My Profile</button>  
                     <button id="logout-btn" onClick={() => setLogin(false)}>Logout</button>                  
                 </div>
