@@ -44,7 +44,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             const sickHoursRemaining = document.getElementById("sick-pie");
             const sickValue = parseInt(sickHoursRemaining.innerText);
             // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
-            console.log(sickValue);
             sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
         })
     }
@@ -59,7 +58,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             alert("You do not have a sufficient number of sick hours remaining");
             sickHoursRequestedInput.value = sickHoursRemaining;
         }
-        console.log(sickHoursRemaining - sickHoursRequestedInput.value);
     }
 
     const useSickHours = (e) => {
@@ -76,8 +74,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .then(response => {
             return response.json();
         })
-        .then(data => {
-            console.log(data);   
+        .then(data => { 
             setSickHours(data);         
             return data;
         })
