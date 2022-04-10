@@ -439,7 +439,7 @@ ul a:hover {
   align-items: center;
 }
 
-.portal-sick-leave-request h3 {
+#use-sick-hours {
   color: #ffbf27;
   margin-top: 10px;
 }
@@ -450,6 +450,11 @@ ul a:hover {
   margin: 5px 10px 5px 10px;
   box-shadow: #000 1px 1px 10px;
   border-radius: 5px; 
+}
+
+#use-vacation-hours {
+  color: #ffbf27;
+  margin-top: 10px;
 }
 
 .app-footer {
