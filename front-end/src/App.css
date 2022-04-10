@@ -444,6 +444,14 @@ ul a:hover {
   margin-top: 10px;
 }
 
+.portal-vacation-leave-request {
+  grid-area: 5 / 1 / 7 / 2;
+  background-color: #fff;
+  margin: 5px 10px 5px 10px;
+  box-shadow: #000 1px 1px 10px;
+  border-radius: 5px; 
+}
+
 .app-footer {
   display: flex;
   justify-content: space-between;
