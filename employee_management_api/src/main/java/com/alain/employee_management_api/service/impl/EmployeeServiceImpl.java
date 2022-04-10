@@ -87,6 +87,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Long getSickHours(String email) {
         Employee employee = employeeRepository.findUserByEmail(email);
+        if(employee == null) {
+            throw new IllegalStateException("Employee not found");
+        }
         return employee.getSickLeave();
     }
 
@@ -99,13 +102,27 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         Long sickLeaveRemaining = employee.getSickLeave() - sickHoursUsed;
         employee.setSickLeave(sickLeaveRemaining);
-        System.out.println("line 101: " + employee.getSickLeave());
         return employee.getSickLeave();
     }
 
     @Override
     public Long getVacationHours(String email) {
         Employee employee = employeeRepository.findUserByEmail(email);
+        if(employee == null) {
+            throw new IllegalStateException("Employee not found");
+        }
         return employee.getSickLeave();
+    }
+
+    @Override
+    @Transactional
+    public Long useVacationHours(String email, Long vacationHoursUsed) {
+        Employee employee = employeeRepository.findUserByEmail(email);
+        if(employee == null) {
+            throw new IllegalStateException("Employee not found");
+        }
+        Long vacationHoursRemaining = employee.getVacationLeave() - vacationHoursUsed;
+        employee.setVacationLeave(vacationHoursRemaining);
+        return employee.getVacationLeave();
     }
 }
