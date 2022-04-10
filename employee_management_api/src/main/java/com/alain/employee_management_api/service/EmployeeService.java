@@ -21,4 +21,8 @@ public interface EmployeeService {
     Long getSickHours(String email);
 
     Long useSickHours(String email, Long sickHoursUsed);
+
+    Long getVacationHours(String email);
+
+    Long useVacationHours(String email);
 }
