@@ -60,6 +60,18 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }
 
+    const checkVacationHoursInput = () => {
+        let vacationHoursRequestedInput = document.getElementById("vacation-hours-requested");
+        let vacationHoursRemaining = document.getElementById("vacation-hours-remaining").innerText;
+        if(isNaN(vacationHoursRequestedInput.value) || vacationHoursRequestedInput.value < 1) {
+            vacationHoursRequestedInput.value = 0;
+        }
+        if((vacationHoursRemaining - vacationHoursRequestedInput.value) < 0) {
+            alert("You do not have a sufficient number of vacation hours remaining");
+            vacationHoursRequestedInput.value = vacationHoursRemaining;
+        }
+    }
+
     const useSickHours = (e) => {
         e.preventDefault();
         let sickHoursRequestedInput = document.getElementById("sick-hours-requested").value;
@@ -187,7 +199,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <form className="vacation-leave-form">
                             <div className="form-group">
                                 <label htmlFor="vacation-hours-requested">Enter # of Vacation Hours to be used</label>
-                                <input type="number" id="vacation-hours-requested" name="vacation-hours-requested" required></input>
+                                <input onChange={checkVacationHoursInput} type="number" id="vacation-hours-requested" name="vacation-hours-requested" required></input>
                             </div>
                             <div className="form-group">
                                 <button id="vacation-hours-request-btn">Submit</button>
