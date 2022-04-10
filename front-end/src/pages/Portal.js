@@ -179,6 +179,23 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </div>
                 </div>
 
+                <div className="portal-vacation-leave-request">
+                    <div className="vacation-leave-request-title">
+                        <h3 id="use-vacation-hours">Use Vacation Hours</h3>
+                    </div>
+                    <div className="vacation-leave-request">
+                        <form className="vacation-leave-form">
+                            <div className="form-group">
+                                <label htmlFor="vacation-hours-requested">Enter # of Vacation Hours to be used</label>
+                                <input type="number" id="vacation-hours-requested" name="vacation-hours-requested" required></input>
+                            </div>
+                            <div className="form-group">
+                                <button id="vacation-hours-request-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
                 {/* Add hours worked section? */}
 
             </main>            
