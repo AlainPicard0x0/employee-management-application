@@ -28,30 +28,30 @@ public class Employee {
     @Column(name = "sick_leave")
     private Long sickLeave;
 
-    public Employee(Long id, String firstName, String lastName, String email, String password, Long sickLeave) {
+    @Column(name = "vacation_leave")
+    private Long vacationLeave;
+
+    public Employee(Long id, String firstName, String lastName, String email, String password, Long sickLeave, Long vacationLeave) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.sickLeave = 16L;
-        System.out.println("Constructor 1 ran");
-        System.out.println("Constructor 1: " + this.getSickLeave());
+        this.vacationLeave = 40L;
     }
 
-    public Employee(String firstName, String lastName, String email, String password, Long sickLeave) {
+    public Employee(String firstName, String lastName, String email, String password, Long sickLeave, Long vacationLeave) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.sickLeave = 16L;
-        System.out.println("Constructor 2 ran");
-        System.out.println("Constructor 2: " + this.getSickLeave());
+        this.vacationLeave = 40L;
     }
 
     public Employee() {
-        System.out.println("Constructor 3 ran");
-        System.out.println("Constructor 3: " + this.getSickLeave());
+
     }
 
     public Long getId() {
@@ -96,6 +96,13 @@ public class Employee {
         this.sickLeave = sickLeave;
     }
 
+    public Long getVacationLeave() {
+        return vacationLeave;
+    }
+    public void setVacationLeave(Long vacationLeave) {
+        this.vacationLeave = vacationLeave;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -105,6 +112,7 @@ public class Employee {
                 ", email: '" + email + '\'' +
                 ", password: '" + password + '\'' +
                 ", sickLeave: " + sickLeave +
+                ", vacationLeave: " + vacationLeave +
                 '}';
     }
 }
