@@ -181,7 +181,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     <div className="sick-leave-request">                        
                         <form className="sick-leave-form" onSubmit={useSickHours}>
                             <div className="form-group">
-                                <label htmlFor="sick-hours-requested">Enter # of Sick Hours to be used</label>
+                                <label htmlFor="sick-hours-requested">Enter # of Sick Hours to be used this pay check:</label>
                                 <input onChange={checkSickHoursInput} type="number" id="sick-hours-requested" name="sick-hours-requested" required></input>
                             </div>
                             <div className="form-group">
@@ -198,7 +198,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     <div className="vacation-leave-request">
                         <form className="vacation-leave-form">
                             <div className="form-group">
-                                <label htmlFor="vacation-hours-requested">Enter # of Vacation Hours to be used</label>
+                                <label htmlFor="vacation-hours-requested">Enter # of Vacation Hours to be used this pay check:</label>
                                 <input onChange={checkVacationHoursInput} type="number" id="vacation-hours-requested" name="vacation-hours-requested" required></input>
                             </div>
                             <div className="form-group">
