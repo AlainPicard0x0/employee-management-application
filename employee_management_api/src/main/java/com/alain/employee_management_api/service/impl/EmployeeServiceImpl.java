@@ -102,4 +102,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("line 101: " + employee.getSickLeave());
         return employee.getSickLeave();
     }
+
+    @Override
+    public Long getVacationHours(String email) {
+        Employee employee = employeeRepository.findUserByEmail(email);
+        return employee.getSickLeave();
+    }
 }
