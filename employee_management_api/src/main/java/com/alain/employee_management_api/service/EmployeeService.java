@@ -24,5 +24,5 @@ public interface EmployeeService {
 
     Long getVacationHours(String email);
 
-    Long useVacationHours(String email);
+    Long useVacationHours(String email, Long vacationHoursUsed);
 }
