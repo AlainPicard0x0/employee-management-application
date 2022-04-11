@@ -15,14 +15,12 @@ function App() {
   const [employee, setEmployee] = useState();
   
 
-  const createEmployee = async (firstName, lastName, email, password, sickLeave, vacationLeave) => {
+  const createEmployee = async (firstName, lastName, email, password) => {
     let newEmployee = {
       "firstName": firstName,
       "lastName": lastName,
       "email": email,
-      "password": password,
-      // "sickLeave": sickLeave,
-      // "vacationLeave": vacationLeave
+      "password": password
     }  
     try {
       await fetch(api, {
