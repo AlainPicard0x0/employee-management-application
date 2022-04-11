@@ -111,7 +111,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         if(employee == null) {
             throw new IllegalStateException("Employee not found");
         }
-        return employee.getSickLeave();
+        return employee.getVacationLeave();
     }
 
     @Override

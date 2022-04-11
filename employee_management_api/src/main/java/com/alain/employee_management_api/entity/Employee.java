@@ -26,28 +26,24 @@ public class Employee {
 
 //    @Column(columnDefinition = "bigint default 16")
     @Column(name = "sick_leave")
-    private Long sickLeave;
+    private Long sickLeave = 16L;
 
     @Column(name = "vacation_leave")
-    private Long vacationLeave;
+    private Long vacationLeave = 40L;
 
-    public Employee(Long id, String firstName, String lastName, String email, String password, Long sickLeave, Long vacationLeave) {
+    public Employee(Long id, String firstName, String lastName, String email, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.sickLeave = 16L;
-        this.vacationLeave = 40L;
     }
 
-    public Employee(String firstName, String lastName, String email, String password, Long sickLeave, Long vacationLeave) {
+    public Employee(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.sickLeave = 16L;
-        this.vacationLeave = 40L;
     }
 
     public Employee() {
