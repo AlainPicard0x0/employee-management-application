@@ -27,11 +27,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         fetch(`${api}/login/vacation`, {
             method: "GET",
             headers: {
-                "Content-type": "application/json",
+                "Content-Type": "application/json",
                 "email": email
-            }
+            },
         })
         .then(response => {
+            console.log(response);
             return response.json();
         })
         .then(data => {
@@ -52,6 +53,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             },
           })  
           .then(response => {
+              console.log(response);
               return response.json();
           })            
           .then(data => {

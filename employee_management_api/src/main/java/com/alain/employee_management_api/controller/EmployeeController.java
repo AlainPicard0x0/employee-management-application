@@ -72,6 +72,7 @@ public class EmployeeController {
     @CrossOrigin
     @GetMapping("/login/vacation")
     public Long getVacationHours(@RequestHeader("email") String email) {
+        System.out.println("line 75: " + employeeService.getVacationHours(email));
         return employeeService.getVacationHours(email);
     }
 

@@ -16,7 +16,7 @@ const Register = ({login, createEmployee}) => {
         const lastName = document.getElementById("last-name").value;
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-        createEmployee(firstName, lastName, email, password, 16);
+        createEmployee(firstName, lastName, email, password);
         navigate("/");
     }
 
