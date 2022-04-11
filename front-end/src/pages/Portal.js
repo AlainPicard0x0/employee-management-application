@@ -7,6 +7,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const [sickHours, setSickHours] = useState(null);
+    const [vacationHours, setVacationHours] = useState(null);
     const navigate = useNavigate();
     const api = `http://localhost:8080/api/employees`    
 
@@ -23,10 +24,24 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }, [login, navigate])
 
     const findVacationHoursRemaining = () => {
-        const vacationHoursRemaining = document.getElementById("vacation-pie");
-        const vacationValue = parseInt(vacationHoursRemaining.innerText);
-        // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)          
-        vacationHoursRemaining.style.setProperty("--p", vacationValue * 1.25);
+        fetch(`${api}/login`, {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "email": email
+            }
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            setVacationHours(data);
+            const vacationHoursRemaining = document.getElementById("vacation-pie");
+            const vacationValue = parseInt(vacationHoursRemaining.innerText);
+            // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)          
+            vacationHoursRemaining.style.setProperty("--p", vacationValue * 1.25);
+        })
+        
     }
     const findSickHoursRemaining = () => {
         fetch(`${api}/login`, {
@@ -136,7 +151,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 
                             </div>
                             <div className="hours-left">
-                                <h2 id="vacation-hours-remaining">40</h2>
+                                <h2 id="vacation-hours-remaining">{vacationHours}</h2>
                                 <p>hours left</p>
                             </div>
                         </div>

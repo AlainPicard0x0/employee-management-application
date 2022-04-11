@@ -69,6 +69,10 @@ public class EmployeeController {
         return employeeService.useSickHours(email, sickHours);
     }
 
+//    @CrossOrigin
+//    @GetMapping("/portal/vacation-leave")
+//    public Long use
+
     @CrossOrigin
     @PostMapping
     public void addEmployee(@RequestBody Employee employee) {
