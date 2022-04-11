@@ -24,7 +24,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }, [login, navigate])
 
     const findVacationHoursRemaining = () => {
-        fetch(`${api}/login`, {
+        fetch(`${api}/login/vacation`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json",
@@ -44,7 +44,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         
     }
     const findSickHoursRemaining = () => {
-        fetch(`${api}/login`, {
+        fetch(`${api}/login/sick`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
