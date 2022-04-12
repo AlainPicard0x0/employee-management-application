@@ -77,6 +77,12 @@ public class EmployeeController {
     }
 
     @CrossOrigin
+    @GetMapping("/portal/vacation-leave")
+    public Long useVacationHours(@RequestHeader("email") String email, @RequestHeader("vacation-hours") Long vacationHours) {
+        return employeeService.useVacationHours(email, vacationHours);
+    }
+
+    @CrossOrigin
     @PostMapping
     public void addEmployee(@RequestBody Employee employee) {
         employeeService.addEmployee(employee);
