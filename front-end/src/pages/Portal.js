@@ -110,7 +110,31 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .catch((err) => {
             console.log(err);
         })
-    }    
+    }   
+    
+    const useVacationHours = (e) => {
+        e.preventDefault();
+        // get # of vacation hours to use
+        let vacationHoursRequested = document.getElementById("vacation-hours-requested").value;
+        fetch(`${api}/portal/vacation-leave`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "email": email,
+                "vacation-hours": vacationHoursRequested
+            }
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            setVacationHours(data);
+            return data;
+        })
+        .catch((err) => {
+            console.log(err);
+        })        
+    }
 
     return (
         <div className="portal">
@@ -213,7 +237,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <h3 id="use-vacation-hours">Use Vacation Hours</h3>
                     </div>
                     <div className="vacation-leave-request">
-                        <form className="vacation-leave-form">
+                        <form className="vacation-leave-form" onSubmit={useVacationHours}>
                             <div className="form-group">
                                 <label htmlFor="vacation-hours-requested">Enter # of Vacation Hours to be used this pay check:</label>
                                 <input onChange={checkVacationHoursInput} type="number" id="vacation-hours-requested" name="vacation-hours-requested" required></input>
