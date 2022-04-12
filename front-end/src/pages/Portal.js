@@ -91,7 +91,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const useSickHours = (e) => {
         e.preventDefault();
-        let sickHoursRequestedInput = document.getElementById("sick-hours-requested").value;
+        let sickHoursRequestedField = document.getElementById("sick-hours-requested");
+        let sickHoursRequestedInput = sickHoursRequestedField.value;
         fetch(`${api}/portal/sick-leave`, {
             method: "GET",
             headers: {
@@ -104,7 +105,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             return response.json();
         })
         .then(data => { 
-            setSickHours(data);         
+            setSickHours(data);  
+            sickHoursRequestedField.value = 0;       
             return data;
         })
         .catch((err) => {
