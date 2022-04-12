@@ -114,8 +114,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     
     const useVacationHours = (e) => {
         e.preventDefault();
-        // get # of vacation hours to use
-        let vacationHoursRequested = document.getElementById("vacation-hours-requested").value;
+        let vacationHoursRequestedField = document.getElementById("vacation-hours-requested");
+        let vacationHoursRequested = vacationHoursRequestedField.value;
         fetch(`${api}/portal/vacation-leave`, {
             method: "GET",
             headers: {
@@ -129,6 +129,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => {
             setVacationHours(data);
+            vacationHoursRequestedField.value = 0;
             return data;
         })
         .catch((err) => {
