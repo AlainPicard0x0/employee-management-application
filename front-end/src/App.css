@@ -484,3 +484,16 @@ ul a:hover {
   background-image: linear-gradient(#2544cc, #1a2c80);
   color: #fff;
 }
+/* 15" Macbook Pro */
+@media (max-width:1680px) {
+  .header {
+    width: 95vw; 
+    padding: 0 15px 0 15px;
+  }
+
+  .login-form-container,
+  .register-form-container {
+    width: 1200px;
+    height: 750px;
+  }
+}
