@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
@@ -190,8 +192,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </div>
 
                 </div>
+                <div>
+                    <Calendar />
+                </div>
 
-                <div className="portal-leave-status">
+                {/* <div className="portal-leave-status">
                     <div id="on-sick-leave-today">
                         <p className="portal-leave-number">3</p>
                         <p className="portal-leave-text">On sick leave today</p>
@@ -216,7 +221,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <p className="portal-leave-number">1</p>
                         <p className="portal-leave-text">Vacation awaiting approval</p>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="portal-sick-leave-request">
                     <div className="sick-leave-request-title">
