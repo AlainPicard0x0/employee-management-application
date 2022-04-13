@@ -46,6 +46,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         
     }
+
+    const adjustSickPie = () => {
+        const sickHoursRemaining = document.getElementById("sick-pie");
+        const sickValue = parseInt(sickHoursRemaining.innerText);
+        // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
+        sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
+}
+
     const findSickHoursRemaining = () => {
         fetch(`${api}/login/sick`, {
             method: "GET",
@@ -60,10 +68,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
           })            
           .then(data => {
             setSickHours(data);
-            const sickHoursRemaining = document.getElementById("sick-pie");
-            const sickValue = parseInt(sickHoursRemaining.innerText);
+            adjustSickPie();
+            // const sickHoursRemaining = document.getElementById("sick-pie");
+            // const sickValue = parseInt(sickHoursRemaining.innerText);
             // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
-            sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
+            // sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
         })
     }
 
@@ -108,7 +117,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => { 
             setSickHours(data);  
-            sickHoursRequestedField.value = 0;       
+            sickHoursRequestedField.value = 0;    
+            adjustSickPie();   
             return data;
         })
         .catch((err) => {
