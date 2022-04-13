@@ -192,9 +192,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </div>
 
                 </div>
-                <div>
+                
+                <div className="portal-calendar">
                     <Calendar />
                 </div>
+                           
 
                 {/* <div className="portal-leave-status">
                     <div id="on-sick-leave-today">
