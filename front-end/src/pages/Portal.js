@@ -25,6 +25,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }, [login, navigate])
 
+    const adjustVacationPie = () => {
+        const vacationHoursRemaining = document.getElementById("vacation-pie");
+        const vacationValue = parseInt(vacationHoursRemaining.innerText);
+        // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)          
+        vacationHoursRemaining.style.setProperty("--p", vacationValue * 1.25);
+    }
+
     const findVacationHoursRemaining = () => {
         fetch(`${api}/login/vacation`, {
             method: "GET",
@@ -39,13 +46,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => {
             setVacationHours(data);
-            const vacationHoursRemaining = document.getElementById("vacation-pie");
-            const vacationValue = parseInt(vacationHoursRemaining.innerText);
-            // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)          
-            vacationHoursRemaining.style.setProperty("--p", vacationValue * 1.25);
+            adjustVacationPie();
         })
         
     }
+
+    
 
     const adjustSickPie = () => {
         const sickHoursRemaining = document.getElementById("sick-pie");
@@ -118,7 +124,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .then(data => { 
             setSickHours(data);  
             sickHoursRequestedField.value = 0;    
-            adjustSickPie();   
+            adjustSickPie(); 
             return data;
         })
         .catch((err) => {
@@ -144,6 +150,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .then(data => {
             setVacationHours(data);
             vacationHoursRequestedField.value = 0;
+            adjustVacationPie();
             return data;
         })
         .catch((err) => {
