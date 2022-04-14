@@ -474,6 +474,14 @@ ul a:hover {
   margin-top: 10px;
 }
 
+.time-card {
+  grid-area: 4 / 2 / 7 / 4;
+  background-color: #fff;
+  margin: 0 10px 5px 0;
+  border-radius: 5px;
+  box-shadow: #000 1px 1px 10px;
+}
+
 .app-footer {
   display: flex;
   justify-content: space-between;
