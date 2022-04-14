@@ -507,7 +507,7 @@ ul a:hover {
   }
 
   .form-group {
-    width: 350px;
+    width: 325px;
   }
   
   .form-group label {
@@ -517,7 +517,7 @@ ul a:hover {
   
   .form-group input,
   .form-group button {
-    width: 325px;
+    width: 275px;
     height: 2.5rem;
     padding: 3px;
   }
