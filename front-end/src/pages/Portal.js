@@ -278,30 +278,47 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
                 {/* Add hours worked section? */}
                 <div className="time-card">
-                    <div id="time-card-date">
-                        <p>Date</p>
+                    <div className="time-card-header">
+                        <div id="time-card-date">
+                            <p>Date</p>
+                        </div>
+                        <div id="time-card-in">
+                            <p>In</p>
+                        </div>
+                        <div id="time-card-out">
+                            <p>Out</p>
+                        </div>
+                        <div id="time-card-reg-hours">
+                            <p>Reg Hours</p>
+                        </div>
+                        <div id="time-card-vacation-hours">
+                            <p>Vacation</p>
+                        </div>
+                        <div id="time-card-sick-hours">
+                            <p>Sick Hours</p>
+                        </div>
+                        <div id="time-card-account-code">
+                            <p>Account Code</p>
+                        </div>
+                        <div id="time-card-total-hours">
+                            <p>Total Hours</p>
+                        </div>
                     </div>
-                    <div id="time-card-in">
-                        <p>In</p>
+                    <div className="time-card-body">
+                        <div className="monday-container">
+                            <div className="row-one">
+                                <div className="monday-row-one-date">
+                                    <p>Monday</p>
+                                </div>                                
+                            </div>
+                            <div className="row-two">
+                                <div className="monday-row-two-date">
+                                    <p>Monday 2nd Row</p>
+                                </div>                                
+                            </div>
+                        </div>
                     </div>
-                    <div id="time-card-out">
-                        <p>Out</p>
-                    </div>
-                    <div id="time-card-reg-hours">
-                        <p>Reg Hours</p>
-                    </div>
-                    <div id="time-card-vacation-hours">
-                        <p>Vacation</p>
-                    </div>
-                    <div id="time-card-sick-hours">
-                        <p>Sick Hours</p>
-                    </div>
-                    <div id="time-card-account-code">
-                        <p>Account Code</p>
-                    </div>
-                    <div id="time-card-total-hours">
-                        <p>Total Hours</p>
-                    </div>
+                    
                 </div>
 
             </main>            
