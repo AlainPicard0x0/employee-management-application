@@ -304,6 +304,20 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <p>Total Hours</p>
                         </div>
                     </div>
+                    <div className="time-card-body">
+                        <div className="monday-container">
+                            <div className="row-one">
+                                <div className="monday-row-one-date">
+                                    <p>Monday</p>
+                                </div>                                
+                            </div>
+                            <div className="row-two">
+                                <div className="monday-row-two-date">
+                                    <p>Monday 2nd Row</p>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
                     
                 </div>
 
