@@ -481,8 +481,19 @@ ul a:hover {
   border-radius: 5px;
   box-shadow: #000 1px 1px 10px;
   display: grid;
-  grid-template: 1fr repeat(5, 2fr) / 2fr 1fr 1fr 1fr 1fr 1fr 3fr 1fr;
+  grid-template: 1fr repeat(5, 2fr) / 2fr 1fr 1fr 1fr 1fr 1fr 2.5fr 1.5fr;
   color: #ffbf27;
+}
+
+#time-card-date,
+#time-card-in,
+#time-card-out,
+#time-card-reg-hours,
+#time-card-vacation-hours,
+#time-card-sick-hours,
+#time-card-account-code,
+#time-card-total-hours {
+  border: #000 1px solid;
 }
 
 .app-footer {
