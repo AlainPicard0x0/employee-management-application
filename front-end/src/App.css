@@ -485,6 +485,12 @@ ul a:hover {
   color: #ffbf27;
 }
 
+.time-card-header {
+  grid-area: 1 / 1 / 2 / 9;
+  display: grid;
+  grid-template: 1fr / 2fr 1fr 1fr 1fr 1fr 1fr 2.5fr 1.5fr;
+}
+
 #time-card-date,
 #time-card-in,
 #time-card-out,
@@ -495,6 +501,7 @@ ul a:hover {
 #time-card-total-hours {
   border: #000 1px solid;
 }
+
 
 .app-footer {
   display: flex;
