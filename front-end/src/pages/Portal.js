@@ -363,7 +363,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="tuesday-container">
                             <div className="row-one">
                                 <div className="tuesday-row-one-date">
-                                    <p>Monday</p>
+                                    <p>Tuesday</p>
                                 </div>   
                                 <div className="tuesday-row-one-in">
                                     <p>Time in</p>
@@ -389,7 +389,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="tuesday-row-two-date">
-                                    <p>Monday 2nd Row</p>
+                                    <p>Tuesday 2nd Row</p>
                                 </div>
                                 <div className="tuesday-row-two-in">
                                     <p>Time in</p>
