@@ -414,6 +414,172 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>                                
                             </div>
                         </div>
+
+                        <div className="wednesday-container">
+                            <div className="row-one">
+                                <div className="wednesday-row-one-date">
+                                    <p>Wednesday</p>
+                                </div>   
+                                <div className="wednesday-row-one-in">
+                                    <p>Time in</p>
+                                </div>
+                                <div className="wednesday-row-one-out">
+                                    <p>Time out</p>
+                                </div>
+                                <div className="wednesday-row-one-reg-hours">
+                                    <p>Reg Hours</p>    
+                                </div>
+                                <div className="wednesday-row-one-vacation-hours">
+                                    <p>Vac Hours</p>
+                                </div>
+                                <div className="wednesday-row-one-sick-hours">
+                                    <p>Sick Hours</p>                
+                                </div>                
+                                <div className="wednesday-row-one-account-code">
+                                    <p>Account Code</p>
+                                </div>
+                                <div className="wednesday-row-one-total-hours">
+                                    <p>Total Hours</p>
+                                </div>
+                            </div>
+                            <div className="row-two">
+                                <div className="wednesday-row-two-date">
+                                    <p>Wednesday 2nd Row</p>
+                                </div>
+                                <div className="wednesday-row-two-in">
+                                    <p>Time in</p>
+                                </div>
+                                <div className="wednesday-row-two-out">
+                                    <p>Time out</p>
+                                </div>
+                                <div className="wednesday-row-two-reg-hours">
+                                    <p>Reg Hours</p>    
+                                </div>
+                                <div className="wednesday-row-two-vacation-hours">
+                                    <p>Vac Hours</p>
+                                </div>
+                                <div className="wednesday-row-two-sick-hours">
+                                    <p>Sick Hours</p>                
+                                </div>                
+                                <div className="wednesday-row-two-account-code">
+                                    <p>Account Code</p>
+                                </div>
+                                <div className="wednesday-row-two-total-hours">
+                                    <p>Total Hours</p>
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <div className="thursday-container">
+                            <div className="row-one">
+                                <div className="thursday-row-one-date">
+                                    <p>Thursday</p>
+                                </div>   
+                                <div className="thursday-row-one-in">
+                                    <p>Time in</p>
+                                </div>
+                                <div className="thursday-row-one-out">
+                                    <p>Time out</p>
+                                </div>
+                                <div className="thursday-row-one-reg-hours">
+                                    <p>Reg Hours</p>    
+                                </div>
+                                <div className="thursday-row-one-vacation-hours">
+                                    <p>Vac Hours</p>
+                                </div>
+                                <div className="thursday-row-one-sick-hours">
+                                    <p>Sick Hours</p>                
+                                </div>                
+                                <div className="thursday-row-one-account-code">
+                                    <p>Account Code</p>
+                                </div>
+                                <div className="thursday-row-one-total-hours">
+                                    <p>Total Hours</p>
+                                </div>
+                            </div>
+                            <div className="row-two">
+                                <div className="thursday-row-two-date">
+                                    <p>Thursday 2nd Row</p>
+                                </div>
+                                <div className="thursday-row-two-in">
+                                    <p>Time in</p>
+                                </div>
+                                <div className="thursday-row-two-out">
+                                    <p>Time out</p>
+                                </div>
+                                <div className="thursday-row-two-reg-hours">
+                                    <p>Reg Hours</p>    
+                                </div>
+                                <div className="thursday-row-two-vacation-hours">
+                                    <p>Vac Hours</p>
+                                </div>
+                                <div className="thursday-row-two-sick-hours">
+                                    <p>Sick Hours</p>                
+                                </div>                
+                                <div className="thursday-row-two-account-code">
+                                    <p>Account Code</p>
+                                </div>
+                                <div className="thursday-row-two-total-hours">
+                                    <p>Total Hours</p>
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <div className="friday-container">
+                            <div className="row-one">
+                                <div className="friday-row-one-date">
+                                    <p>Friday</p>
+                                </div>   
+                                <div className="friday-row-one-in">
+                                    <p>Time in</p>
+                                </div>
+                                <div className="friday-row-one-out">
+                                    <p>Time out</p>
+                                </div>
+                                <div className="friday-row-one-reg-hours">
+                                    <p>Reg Hours</p>    
+                                </div>
+                                <div className="friday-row-one-vacation-hours">
+                                    <p>Vac Hours</p>
+                                </div>
+                                <div className="friday-row-one-sick-hours">
+                                    <p>Sick Hours</p>                
+                                </div>                
+                                <div className="friday-row-one-account-code">
+                                    <p>Account Code</p>
+                                </div>
+                                <div className="friday-row-one-total-hours">
+                                    <p>Total Hours</p>
+                                </div>
+                            </div>
+                            <div className="row-two">
+                                <div className="friday-row-two-date">
+                                    <p>Friday 2nd Row</p>
+                                </div>
+                                <div className="friday-row-two-in">
+                                    <p>Time in</p>
+                                </div>
+                                <div className="friday-row-two-out">
+                                    <p>Time out</p>
+                                </div>
+                                <div className="friday-row-two-reg-hours">
+                                    <p>Reg Hours</p>    
+                                </div>
+                                <div className="friday-row-two-vacation-hours">
+                                    <p>Vac Hours</p>
+                                </div>
+                                <div className="friday-row-two-sick-hours">
+                                    <p>Sick Hours</p>                
+                                </div>                
+                                <div className="friday-row-two-account-code">
+                                    <p>Account Code</p>
+                                </div>
+                                <div className="friday-row-two-total-hours">
+                                    <p>Total Hours</p>
+                                </div>                                
+                            </div>
+                        </div>
+
                     </div>
                     
                 </div>
