@@ -1,6 +1,6 @@
 ![Login/Registration with Java & React](./front-end/public/images/employee-management-application-image-02.png)
 
-
+![Employee Management Portal](./front-end/public/images/employee-management-portal-screen-shot01.png)
 #### To Run the Application do the following:
 
 - To Create a MySQL Database named "employeeservice" you will execute the following command:
