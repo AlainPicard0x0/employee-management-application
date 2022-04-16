@@ -489,6 +489,8 @@ ul a:hover {
   grid-area: 1 / 1 / 2 / 9;
   display: grid;
   grid-template: 1fr / 2fr 1fr 1fr 1fr 1fr 1fr 2.5fr 1.5fr;
+  color:#ffbf27;
+  font-weight: 900;
   background-image: linear-gradient(#2544cc, #1a2c80);
 }
 

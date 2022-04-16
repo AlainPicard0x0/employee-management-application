@@ -289,10 +289,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <p>Out</p>
                         </div>
                         <div id="time-card-reg-hours">
-                            <p>Reg Hours</p>
+                            <p>Reg<br></br>Hours</p>
                         </div>
                         <div id="time-card-vacation-hours">
-                            <p>Vacation</p>
+                            <p>Vacation Hours</p>
                         </div>
                         <div id="time-card-sick-hours">
                             <p>Sick Hours</p>
@@ -301,7 +301,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <p>Account Code</p>
                         </div>
                         <div id="time-card-total-hours">
-                            <p>Total Hours</p>
+                            <p>Total<br></br> Hours</p>
                         </div>
                     </div>
                     <div className="time-card-body">
