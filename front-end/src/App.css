@@ -489,6 +489,7 @@ ul a:hover {
   grid-area: 1 / 1 / 2 / 9;
   display: grid;
   grid-template: 1fr / 2fr 1fr 1fr 1fr 1fr 1fr 2.5fr 1.5fr;
+  background-image: linear-gradient(#2544cc, #1a2c80);
 }
 
 .time-card-body {
@@ -675,6 +676,258 @@ ul a:hover {
 }
 
 .tuesday-row-two-total-hours {
+  grid-area: 1 / 8 / 2 / 9;
+}
+
+.wednesday-container {
+  grid-area: 3 / 1 / 4 / 9;
+  display: grid;
+  grid-template: repeat(2, 1fr) / 2fr 1fr 1fr 1fr 1fr 1fr 2.5fr 1.5fr;
+}
+
+.wednesday-row-one-date {
+  grid-area: 1 / 1 / 2 / 2;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-two-date {
+  grid-area: 1 / 1 / 2 / 2;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-one-in {
+  grid-area: 1 / 2 / 2 / 3;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-two-in {
+  grid-area: 1 / 2 / 2 / 3;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-one-out {
+  grid-area: 1 / 3 / 2 / 4;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-two-out {
+  grid-area: 1 / 3 / 2 / 4;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-one-reg-hours {
+  grid-area: 1 / 4 / 2 / 5;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-two-reg-hours {
+  grid-area: 1 / 4 / 2 / 5;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-one-vacation-hours {
+  grid-area: 1 / 5 / 2 / 6;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-two-vacation-hours {
+  grid-area: 1 / 5 / 2 / 6;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-one-sick-hours {
+  grid-area: 1 / 6 / 2 / 7;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-two-sick-hours {
+  grid-area: 1 / 6 / 2 / 7;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-one-account-code {
+  grid-area: 1 / 7 / 2 / 8;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-two-account-code {
+  grid-area: 1 / 7 / 2 / 8;
+  border-right: #000 1px solid;
+}
+
+.wednesday-row-one-total-hours {
+  grid-area: 1 / 8 / 2 / 9;
+}
+
+.wednesday-row-two-total-hours {
+  grid-area: 1 / 8 / 2 / 9;
+}
+
+.thursday-container {
+  grid-area: 4 / 1 / 5 / 9;
+  display: grid;
+  grid-template: repeat(2, 1fr) / 2fr 1fr 1fr 1fr 1fr 1fr 2.5fr 1.5fr;
+}
+
+.thursday-row-one-date {
+  grid-area: 1 / 1 / 2 / 2;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-two-date {
+  grid-area: 1 / 1 / 2 / 2;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-one-in {
+  grid-area: 1 / 2 / 2 / 3;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-two-in {
+  grid-area: 1 / 2 / 2 / 3;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-one-out {
+  grid-area: 1 / 3 / 2 / 4;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-two-out {
+  grid-area: 1 / 3 / 2 / 4;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-one-reg-hours {
+  grid-area: 1 / 4 / 2 / 5;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-two-reg-hours {
+  grid-area: 1 / 4 / 2 / 5;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-one-vacation-hours {
+  grid-area: 1 / 5 / 2 / 6;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-two-vacation-hours {
+  grid-area: 1 / 5 / 2 / 6;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-one-sick-hours {
+  grid-area: 1 / 6 / 2 / 7;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-two-sick-hours {
+  grid-area: 1 / 6 / 2 / 7;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-one-account-code {
+  grid-area: 1 / 7 / 2 / 8;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-two-account-code {
+  grid-area: 1 / 7 / 2 / 8;
+  border-right: #000 1px solid;
+}
+
+.thursday-row-one-total-hours {
+  grid-area: 1 / 8 / 2 / 9;
+}
+
+.thursday-row-two-total-hours {
+  grid-area: 1 / 8 / 2 / 9;
+}
+
+.friday-container {
+  grid-area: 5 / 1 / 6 / 9;
+  display: grid;
+  grid-template: repeat(2, 1fr) / 2fr 1fr 1fr 1fr 1fr 1fr 2.5fr 1.5fr;
+}
+
+.friday-row-one-date {
+  grid-area: 1 / 1 / 2 / 2;
+  border-right: #000 1px solid;
+}
+
+.friday-row-two-date {
+  grid-area: 1 / 1 / 2 / 2;
+  border-right: #000 1px solid;
+}
+
+.friday-row-one-in {
+  grid-area: 1 / 2 / 2 / 3;
+  border-right: #000 1px solid;
+}
+
+.friday-row-two-in {
+  grid-area: 1 / 2 / 2 / 3;
+  border-right: #000 1px solid;
+}
+
+.friday-row-one-out {
+  grid-area: 1 / 3 / 2 / 4;
+  border-right: #000 1px solid;
+}
+
+.friday-row-two-out {
+  grid-area: 1 / 3 / 2 / 4;
+  border-right: #000 1px solid;
+}
+
+.friday-row-one-reg-hours {
+  grid-area: 1 / 4 / 2 / 5;
+  border-right: #000 1px solid;
+}
+
+.friday-row-two-reg-hours {
+  grid-area: 1 / 4 / 2 / 5;
+  border-right: #000 1px solid;
+}
+
+.friday-row-one-vacation-hours {
+  grid-area: 1 / 5 / 2 / 6;
+  border-right: #000 1px solid;
+}
+
+.friday-row-two-vacation-hours {
+  grid-area: 1 / 5 / 2 / 6;
+  border-right: #000 1px solid;
+}
+
+.friday-row-one-sick-hours {
+  grid-area: 1 / 6 / 2 / 7;
+  border-right: #000 1px solid;
+}
+
+.friday-row-two-sick-hours {
+  grid-area: 1 / 6 / 2 / 7;
+  border-right: #000 1px solid;
+}
+
+.friday-row-one-account-code {
+  grid-area: 1 / 7 / 2 / 8;
+  border-right: #000 1px solid;
+}
+
+.friday-row-two-account-code {
+  grid-area: 1 / 7 / 2 / 8;
+  border-right: #000 1px solid;
+}
+
+.friday-row-one-total-hours {
+  grid-area: 1 / 8 / 2 / 9;
+}
+
+.friday-row-two-total-hours {
   grid-area: 1 / 8 / 2 / 9;
 }
 
