@@ -158,6 +158,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })        
     }
 
+    // HTML on line 295
+    const calculateTime = () => {
+        let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
+        let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
+        let minutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
+        let hours = Math.floor((mondayTimeOut - mondayTimeIn) / 3600000)
+        console.log("hours: " + hours + " minutes: " + minutes);
+    }
+
     return (
         <div className="portal">
             <main id="portal-main">
@@ -213,34 +222,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 <div className="portal-calendar">
                     <Calendar />
                 </div>
-                           
-
-                {/* <div className="portal-leave-status">
-                    <div id="on-sick-leave-today">
-                        <p className="portal-leave-number">3</p>
-                        <p className="portal-leave-text">On sick leave today</p>
-                    </div>
-                    <div id="on-sick-leave-tomorrow">
-                        <p className="portal-leave-number">2</p>
-                        <p className="portal-leave-text">On sick leave tomorrow</p>
-                    </div>
-                    <div id="on-vacation-today">
-                        <p className="portal-leave-number">4</p>
-                        <p className="portal-leave-text">On vacation today</p>
-                    </div>
-                    <div id="on-vacation-tomorrow">
-                        <p className="portal-leave-number">5</p>
-                        <p className="portal-leave-text">On vacation tomorrow</p>
-                    </div>
-                    <div id="sick-leave-awaiting-approval">
-                        <p className="portal-leave-number">0</p>
-                        <p className="portal-leave-text">Sick leave awaiting approval</p>
-                    </div>
-                    <div id="vacation-awaiting-approval">
-                        <p className="portal-leave-number">1</p>
-                        <p className="portal-leave-text">Vacation awaiting approval</p>
-                    </div>
-                </div> */}
 
                 <div className="portal-sick-leave-request">
                     <div className="sick-leave-request-title">
@@ -311,10 +292,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>Monday</p>
                                 </div>   
                                 <div className="monday-row-one-in">
-                                    <input type="time" pattern="[0-9]{2}:[0-9]{2}"></input>
+                                    <input onChange={calculateTime} id="monday-time-in" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-out">
-                                    <p>Time out</p>
+                                    <input onChange={calculateTime} id="monday-time-out" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-reg-hours">
                                     <p>Reg Hours</p>    
