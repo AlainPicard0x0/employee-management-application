@@ -311,7 +311,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>Monday</p>
                                 </div>   
                                 <div className="monday-row-one-in">
-                                    <p>Time in</p>
+                                    <input type="time" pattern="[0-9]{2}:[0-9]{2}"></input>
                                 </div>
                                 <div className="monday-row-one-out">
                                     <p>Time out</p>
@@ -334,7 +334,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="monday-row-two-date">
-                                    <p>Monday 2nd Row</p>
+                                    <p></p>
                                 </div>
                                 <div className="monday-row-two-in">
                                     <p>Time in</p>
@@ -389,7 +389,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="tuesday-row-two-date">
-                                    <p>Tuesday 2nd Row</p>
+                                    <p></p>
                                 </div>
                                 <div className="tuesday-row-two-in">
                                     <p>Time in</p>
@@ -444,7 +444,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="wednesday-row-two-date">
-                                    <p>Wednesday 2nd Row</p>
+                                    <p></p>
                                 </div>
                                 <div className="wednesday-row-two-in">
                                     <p>Time in</p>
@@ -499,7 +499,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="thursday-row-two-date">
-                                    <p>Thursday 2nd Row</p>
+                                    <p></p>
                                 </div>
                                 <div className="thursday-row-two-in">
                                     <p>Time in</p>
@@ -554,7 +554,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="friday-row-two-date">
-                                    <p>Friday 2nd Row</p>
+                                    <p></p>
                                 </div>
                                 <div className="friday-row-two-in">
                                     <p>Time in</p>
