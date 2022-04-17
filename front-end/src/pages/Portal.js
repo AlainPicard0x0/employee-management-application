@@ -162,8 +162,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const calculateTime = () => {
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
         let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
+        let mondayTotalHours = document.getElementById("monday-total-hours");
         let minutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
         let hours = Math.floor((mondayTimeOut - mondayTimeIn) / 3600000)
+        if(minutes < 10) {
+            mondayTotalHours.innerText = hours + ":0" + minutes;
+        }
+        else {
+            mondayTotalHours.innerText = hours + ":" + minutes;
+        }        
         console.log("hours: " + hours + " minutes: " + minutes);
     }
 
@@ -310,7 +317,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>Account Code</p>
                                 </div>
                                 <div className="monday-row-one-total-hours">
-                                    <p>Total Hours</p>
+                                    <p id="monday-total-hours">Total Hours</p>
                                 </div>
                             </div>
                             <div className="row-two">
