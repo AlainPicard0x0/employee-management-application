@@ -158,22 +158,26 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })        
     }
 
-    // HTML on line 295
+    // HTML on line 325
     const calculateTime = () => {
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
         let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
+        let mondayRegHours = document.getElementById("monday-reg-hours");
         let mondayTotalHours = document.getElementById("monday-total-hours");
         let minutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
         let hours = Math.floor((mondayTimeOut - mondayTimeIn) / 3600000)
         console.log(mondayTimeOut);
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut)) {
+            mondayRegHours.innerText = "00:00";
             mondayTotalHours.innerText = "00:00";
         }
         else {
             if(minutes < 10) {
+                mondayRegHours.innerText = hours + ":0" + minutes;
                 mondayTotalHours.innerText = hours + ":0" + minutes;
             }
             else {
+                mondayRegHours.innerText = hours + ":" + minutes;
                 mondayTotalHours.innerText = hours + ":" + minutes;
             }        
         }
@@ -312,7 +316,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <input onChange={calculateTime} id="monday-time-out" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-reg-hours">
-                                    <p>Reg Hours</p>    
+                                    <p id="monday-reg-hours">Reg Hours</p>    
                                 </div>
                                 <div className="monday-row-one-vacation-hours">
                                     <p>Vac Hours</p>
