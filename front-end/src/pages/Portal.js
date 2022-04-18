@@ -75,10 +75,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
           .then(data => {
             setSickHours(data);
             adjustSickPie();
-            // const sickHoursRemaining = document.getElementById("sick-pie");
-            // const sickValue = parseInt(sickHoursRemaining.innerText);
-            // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
-            // sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
         })
     }
 
@@ -241,7 +237,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     <Calendar />
                 </div>
 
-                <div className="portal-sick-leave-request">
+                {/* <div className="portal-sick-leave-request">
                     <div className="sick-leave-request-title">
                         <h3 id="use-sick-hours">Use Sick Hours</h3>
                     </div>
@@ -256,9 +252,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="portal-vacation-leave-request">
+                {/* <div className="portal-vacation-leave-request">
                     <div className="vacation-leave-request-title">
                         <h3 id="use-vacation-hours">Use Vacation Hours</h3>
                     </div>
@@ -273,7 +269,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Add hours worked section? */}
                 <div className="time-card">
@@ -322,7 +318,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>Vac Hours</p>
                                 </div>
                                 <div className="monday-row-one-sick-hours">
-                                    <p>Sick Hours</p>                
+                                    <form className="" onSubmit={useSickHours}>
+                                        <div className="">
+                                            <input onChange={checkSickHoursInput} type="number" id="sick-hours-input" name="" defaultValue={0}></input>
+                                        </div>
+                                        <div className="">
+                                            <button id="">Submit</button>
+                                        </div>
+                                    </form>                
                                 </div>                
                                 <div className="monday-row-one-account-code">
                                     <p>Account Code</p>
