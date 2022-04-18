@@ -323,7 +323,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                             <input onChange={checkSickHoursInput} type="number" id="sick-hours-input" name="" defaultValue={0}></input>
                                         </div>
                                         <div className="">
-                                            <button id="">Submit</button>
+                                            <button id="sick-hours-btn">Submit</button>
                                         </div>
                                     </form>                
                                 </div>                
