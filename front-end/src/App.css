@@ -441,7 +441,7 @@ ul a:hover {
   font-size: .8rem;
 } */
 
-.portal-sick-leave-request {
+/* .portal-sick-leave-request {
   grid-area: 3 / 1 / 5 / 2;
   background-color: #fff;
   margin: 0 10px 5px 10px;
@@ -472,10 +472,10 @@ ul a:hover {
 #use-vacation-hours {
   color: #ffbf27;
   margin-top: 10px;
-}
+} */
 
 .time-card {
-  grid-area: 4 / 2 / 7 / 4;
+  grid-area: 4 / 1 / 7 / 4;
   background-color: #fff;
   margin: 0 10px 5px 0;
   border-radius: 5px;
@@ -572,6 +572,10 @@ ul a:hover {
 .monday-row-one-sick-hours {
   grid-area: 1 / 6 / 2 / 7;
   border-right: #000 1px solid;
+}
+
+#sick-hours-input {
+  width: 25px;
 }
 
 .monday-row-two-sick-hours {
