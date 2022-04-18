@@ -574,6 +574,13 @@ ul a:hover {
   border-right: #000 1px solid;
 }
 
+.sick-hours-form {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  align-items: center;
+}
+
 #sick-hours-input {
   width: 25px;
 }
