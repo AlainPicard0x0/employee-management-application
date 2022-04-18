@@ -165,12 +165,19 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let mondayTotalHours = document.getElementById("monday-total-hours");
         let minutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
         let hours = Math.floor((mondayTimeOut - mondayTimeIn) / 3600000)
-        if(minutes < 10) {
-            mondayTotalHours.innerText = hours + ":0" + minutes;
+        console.log(mondayTimeOut);
+        if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut)) {
+            mondayTotalHours.innerText = "00:00";
         }
         else {
-            mondayTotalHours.innerText = hours + ":" + minutes;
-        }        
+            if(minutes < 10) {
+                mondayTotalHours.innerText = hours + ":0" + minutes;
+            }
+            else {
+                mondayTotalHours.innerText = hours + ":" + minutes;
+            }        
+        }
+        
         console.log("hours: " + hours + " minutes: " + minutes);
     }
 
