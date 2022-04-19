@@ -582,7 +582,8 @@ ul a:hover {
 }
 
 #sick-hours-input {
-  width: 25px;
+  width: 45px;
+  text-align: right;
 }
 
 #sick-hours-btn {
