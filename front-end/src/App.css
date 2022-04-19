@@ -481,7 +481,7 @@ ul a:hover {
   border-radius: 5px;
   box-shadow: #000 1px 1px 10px;
   display: grid;
-  grid-template: 1fr repeat(5, 2fr) / 1fr 1fr 1fr 1fr 2fr 2fr 1.5fr 1fr;
+  grid-template: 1fr repeat(6, 2fr) / 1fr 1fr 1fr 1fr 2fr 2fr 1.5fr 1fr;
   color: #000;
 }
 

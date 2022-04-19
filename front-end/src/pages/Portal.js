@@ -582,6 +582,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                         </div>
 
+                        <div className="submit-container">
+                            <button>Submit for Approval</button>
+                        </div>
+
                     </div>
                     
                 </div>
