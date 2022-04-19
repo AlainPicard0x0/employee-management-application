@@ -960,12 +960,12 @@ ul a:hover {
 .row-two {
   border: #000 1px solid;
   border-top: none;
+  align-items: center;
 }
 
 .row-two {
   border-bottom: #000 2px solid;
 }
-
 
 .app-footer {
   display: flex;
