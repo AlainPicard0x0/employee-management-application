@@ -495,9 +495,9 @@ ul a:hover {
 }
 
 .time-card-body {
-  grid-area: 2 / 1 / 7 / 9;
+  grid-area: 2 / 1 / 8 / 9;
   display: grid;
-  grid-template: repeat(5, 2fr) / 1.5fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr;
+  grid-template: repeat(6, 2fr) / 1.5fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr;
 }
 
 .monday-container {
