@@ -578,11 +578,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         </div>
 
                         <div className="submit-container">
-                            <div>
-                                <button id="submit-container-save-btn">Save</button>
+                            <div className="save-btn-container">
+                                <button id="time-card-save-btn">Save</button>
                             </div>
-                            <div>
-                                <button id="submit-container-submit-btn">Submit for Approval</button>
+                            <div className="submit-btn-container">
+                                <button id="time-card-submit-btn">Submit for Approval</button>
                             </div>
                         </div>
 
