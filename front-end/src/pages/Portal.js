@@ -331,28 +331,28 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="monday-row-two-date">
-                                    <p></p>
+                                    
                                 </div>
                                 <div className="monday-row-two-in">
-                                    <p>Time in</p>
+                                    
                                 </div>
                                 <div className="monday-row-two-out">
-                                    <p>Time out</p>
+                                    
                                 </div>
                                 <div className="monday-row-two-reg-hours">
-                                    <p>Reg Hours</p>    
+                                        
                                 </div>
                                 <div className="monday-row-two-vacation-hours">
-                                    <p>Vac Hours</p>
+                                    
                                 </div>
                                 <div className="monday-row-two-sick-hours">
-                                    <p>Sick Hours</p>                
+                                                    
                                 </div>                
                                 <div className="monday-row-two-account-code">
-                                    <p>Account Code</p>
+                                    
                                 </div>
                                 <div className="monday-row-two-total-hours">
-                                    <p>Total Hours</p>
+                                    
                                 </div>                                
                             </div>
                         </div>
@@ -386,28 +386,28 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="tuesday-row-two-date">
-                                    <p></p>
+                                    
                                 </div>
                                 <div className="tuesday-row-two-in">
-                                    <p>Time in</p>
+                                    
                                 </div>
                                 <div className="tuesday-row-two-out">
-                                    <p>Time out</p>
+                                    
                                 </div>
                                 <div className="tuesday-row-two-reg-hours">
-                                    <p>Reg Hours</p>    
+                                        
                                 </div>
                                 <div className="tuesday-row-two-vacation-hours">
-                                    <p>Vac Hours</p>
+                                    
                                 </div>
                                 <div className="tuesday-row-two-sick-hours">
-                                    <p>Sick Hours</p>                
+                                                    
                                 </div>                
                                 <div className="tuesday-row-two-account-code">
-                                    <p>Account Code</p>
+                                    
                                 </div>
                                 <div className="tuesday-row-two-total-hours">
-                                    <p>Total Hours</p>
+                                    
                                 </div>                                
                             </div>
                         </div>
@@ -441,28 +441,28 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="wednesday-row-two-date">
-                                    <p></p>
+                                    
                                 </div>
                                 <div className="wednesday-row-two-in">
-                                    <p>Time in</p>
+                                    
                                 </div>
                                 <div className="wednesday-row-two-out">
-                                    <p>Time out</p>
+                                    
                                 </div>
                                 <div className="wednesday-row-two-reg-hours">
-                                    <p>Reg Hours</p>    
+                                        
                                 </div>
                                 <div className="wednesday-row-two-vacation-hours">
-                                    <p>Vac Hours</p>
+                                    
                                 </div>
                                 <div className="wednesday-row-two-sick-hours">
-                                    <p>Sick Hours</p>                
+                                                    
                                 </div>                
                                 <div className="wednesday-row-two-account-code">
-                                    <p>Account Code</p>
+                                    
                                 </div>
                                 <div className="wednesday-row-two-total-hours">
-                                    <p>Total Hours</p>
+                                    
                                 </div>                                
                             </div>
                         </div>
@@ -496,28 +496,28 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="thursday-row-two-date">
-                                    <p></p>
+                                    
                                 </div>
                                 <div className="thursday-row-two-in">
-                                    <p>Time in</p>
+                                    
                                 </div>
                                 <div className="thursday-row-two-out">
-                                    <p>Time out</p>
+                                    
                                 </div>
                                 <div className="thursday-row-two-reg-hours">
-                                    <p>Reg Hours</p>    
+                                       
                                 </div>
                                 <div className="thursday-row-two-vacation-hours">
-                                    <p>Vac Hours</p>
+                                    
                                 </div>
                                 <div className="thursday-row-two-sick-hours">
-                                    <p>Sick Hours</p>                
+                                                   
                                 </div>                
                                 <div className="thursday-row-two-account-code">
-                                    <p>Account Code</p>
+                                    
                                 </div>
                                 <div className="thursday-row-two-total-hours">
-                                    <p>Total Hours</p>
+                                    
                                 </div>                                
                             </div>
                         </div>
@@ -551,28 +551,28 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="row-two">
                                 <div className="friday-row-two-date">
-                                    <p></p>
+                                    
                                 </div>
                                 <div className="friday-row-two-in">
-                                    <p>Time in</p>
+                                    
                                 </div>
                                 <div className="friday-row-two-out">
-                                    <p>Time out</p>
+                                    
                                 </div>
                                 <div className="friday-row-two-reg-hours">
-                                    <p>Reg Hours</p>    
+                                       
                                 </div>
                                 <div className="friday-row-two-vacation-hours">
-                                    <p>Vac Hours</p>
+                                    
                                 </div>
                                 <div className="friday-row-two-sick-hours">
-                                    <p>Sick Hours</p>                
+                                                   
                                 </div>                
                                 <div className="friday-row-two-account-code">
-                                    <p>Account Code</p>
+                                    
                                 </div>
                                 <div className="friday-row-two-total-hours">
-                                    <p>Total Hours</p>
+                                    
                                 </div>                                
                             </div>
                         </div>
