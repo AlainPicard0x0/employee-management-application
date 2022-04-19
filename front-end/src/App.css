@@ -945,6 +945,20 @@ ul a:hover {
   grid-area: 1 / 8 / 2 / 9;
 }
 
+.submit-container {
+  grid-area: 6 / 1 / 7 / 9;
+  display: grid;
+  grid-template: 1fr 1fr / 1.5fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr;
+}
+
+.save-btn-container {
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+.submit-btn-container {
+  grid-area: 1 / 2 / 3 / 4;
+}
+
 #time-card-date,
 #time-card-in,
 #time-card-out,
