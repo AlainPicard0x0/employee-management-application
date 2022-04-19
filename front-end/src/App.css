@@ -586,14 +586,6 @@ ul a:hover {
   text-align: right;
 }
 
-#sick-hours-btn {
-  width: 90px;
-  height: 25px;
-  border-radius: 5px;
-  border: none;
-  background-image: linear-gradient(#ffbf27 ,#9c6e01);
-}
-
 .monday-row-two-sick-hours {
   grid-area: 1 / 6 / 2 / 7;
   border-right: #000 1px solid;
