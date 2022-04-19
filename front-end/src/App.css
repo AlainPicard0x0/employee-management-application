@@ -251,7 +251,7 @@ ul a:hover {
 
 .portal-leave-balance {
   margin: 10px 0;
-  grid-area: 1 / 2 / 4 / 3; 
+  grid-area: 1 / 2 / 3 / 3; 
   background-color: #fff;
   color:#000;
   border-radius: 5px;
