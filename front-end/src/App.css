@@ -963,12 +963,12 @@ ul a:hover {
   grid-area: 1 / 4 / 2 / 5;
 }
 
-.vacation-hours-total {
+.vacation-hours-total-container {
   grid-area: 1 / 5 / 2 / 6;
 }
 
-.sick-hours-total {
-
+.sick-hours-total-container {
+  grid-area: 1 / 6 / 2 / 7;
 }
 
 .total-hours-total {
