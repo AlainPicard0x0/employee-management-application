@@ -10,6 +10,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const [sickHours, setSickHours] = useState(null);
     const [vacationHours, setVacationHours] = useState(null);
+    const [value, onChange] = useState(new Date());
     const navigate = useNavigate();
     const api = `http://localhost:8080/api/employees`    
 
@@ -24,6 +25,21 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             navigate("/");
         }
     }, [login, navigate])
+
+    const getCurrentWeek = () => {
+        let week = {
+            0: "Sunday",
+            1: "Monday",
+            2: "Tuesday",
+            3: "Wednesday",
+            4: "Thursday",
+            5: "Friday",
+            6: "Saturday"
+        }
+        let today = new Date(Date.now());
+        let now = today.getDay();
+        console.log(week[now]);
+    }
 
     const adjustVacationPie = () => {
         const vacationHoursRemaining = document.getElementById("vacation-pie");
@@ -234,7 +250,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 </div>
                 
                 <div className="portal-calendar">
-                    <Calendar />
+                    <Calendar calendarType="US" onChange={onChange} value={value} />
                 </div>
 
                 {/* <div className="portal-sick-leave-request">
@@ -306,10 +322,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>Monday</p>
                                 </div>   
                                 <div className="monday-row-one-in">
-                                    <input onChange={calculateTime} id="monday-time-in" type="time"></input>
+                                    <input id="monday-time-in" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-out">
-                                    <input onChange={calculateTime} id="monday-time-out" type="time"></input>
+                                    <input id="monday-time-out" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-reg-hours">
                                     <div className="">
@@ -586,7 +602,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <button id="time-card-save-btn">Save</button>
                             </div>
                             <div className="submit-btn-container">
-                                <button id="time-card-submit-btn">Submit for Approval</button>
+                                <button onClick={getCurrentWeek} id="time-card-submit-btn">Submit for Approval</button>
                             </div>
                             <div className="reg-hours-total-container">
                                 <p className="reg-hours-total">0:00</p>
