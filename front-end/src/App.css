@@ -581,7 +581,9 @@ ul a:hover {
   align-items: center;
 }
 
-#sick-hours-input {
+#monday-sick-hours-input,
+#monday-reg-hours-input,
+#monday-vacation-hours-input {
   width: 45px;
   text-align: right;
 }
