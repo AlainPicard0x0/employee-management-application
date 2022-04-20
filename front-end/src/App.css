@@ -959,6 +959,22 @@ ul a:hover {
   grid-area: 1 / 2 / 3 / 4;
 }
 
+.reg-hours-total-container {
+  grid-area: 1 / 4 / 2 / 5;
+}
+
+.vacation-hours-total {
+
+}
+
+.sick-hours-total {
+
+}
+
+.total-hours-total {
+
+}
+
 #time-card-date,
 #time-card-in,
 #time-card-out,

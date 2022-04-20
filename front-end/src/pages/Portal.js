@@ -584,6 +584,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="submit-btn-container">
                                 <button id="time-card-submit-btn">Submit for Approval</button>
                             </div>
+                            <div className="reg-hours-total-container">
+                                <p className="reg-hours-total">0:00</p>
+                            </div>
                         </div>
 
                     </div>
