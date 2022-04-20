@@ -10,6 +10,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const [sickHours, setSickHours] = useState(null);
     const [vacationHours, setVacationHours] = useState(null);
+    const [value, onChange] = useState(new Date());
     const navigate = useNavigate();
     const api = `http://localhost:8080/api/employees`    
 
@@ -234,7 +235,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 </div>
                 
                 <div className="portal-calendar">
-                    <Calendar />
+                    <Calendar calendarType="US" onChange={onChange} value={value} />
                 </div>
 
                 {/* <div className="portal-sick-leave-request">
@@ -306,10 +307,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>Monday</p>
                                 </div>   
                                 <div className="monday-row-one-in">
-                                    <input onChange={calculateTime} id="monday-time-in" type="time"></input>
+                                    <input id="monday-time-in" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-out">
-                                    <input onChange={calculateTime} id="monday-time-out" type="time"></input>
+                                    <input id="monday-time-out" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-reg-hours">
                                     <div className="">
