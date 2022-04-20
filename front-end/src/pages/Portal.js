@@ -26,6 +26,21 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }, [login, navigate])
 
+    const getCurrentWeek = () => {
+        let week = {
+            0: "Sunday",
+            1: "Monday",
+            2: "Tuesday",
+            3: "Wednesday",
+            4: "Thursday",
+            5: "Friday",
+            6: "Saturday"
+        }
+        let today = new Date(Date.now());
+        let now = today.getDay();
+        console.log(week[now]);
+    }
+
     const adjustVacationPie = () => {
         const vacationHoursRemaining = document.getElementById("vacation-pie");
         const vacationValue = parseInt(vacationHoursRemaining.innerText);
@@ -587,7 +602,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <button id="time-card-save-btn">Save</button>
                             </div>
                             <div className="submit-btn-container">
-                                <button id="time-card-submit-btn">Submit for Approval</button>
+                                <button onClick={getCurrentWeek} id="time-card-submit-btn">Submit for Approval</button>
                             </div>
                             <div className="reg-hours-total-container">
                                 <p className="reg-hours-total">0:00</p>
