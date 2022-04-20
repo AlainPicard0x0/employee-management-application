@@ -949,6 +949,7 @@ ul a:hover {
   grid-area: 6 / 1 / 7 / 9;
   display: grid;
   grid-template: 1fr 1fr / 1.5fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr;
+  align-items: center;
 }
 
 .save-btn-container {
@@ -971,8 +972,8 @@ ul a:hover {
   grid-area: 1 / 6 / 2 / 7;
 }
 
-.total-hours-total {
-
+.total-hours-total-container {
+  grid-area: 1 / 8 / 2 / 9;
 }
 
 #time-card-date,
