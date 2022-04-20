@@ -312,21 +312,25 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <input onChange={calculateTime} id="monday-time-out" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-reg-hours">
-                                    <p id="monday-reg-hours">Reg Hours</p>    
+                                    <div className="">
+                                        <input type="number" id="monday-reg-hours-input" defaultValue={0}></input>
+                                    </div>    
                                 </div>
                                 <div className="monday-row-one-vacation-hours">
-                                    <p>Vac Hours</p>
+                                    <div className="">
+                                        <input type="number" id="monday-vacation-hours-input" defaultValue={0}></input>
+                                    </div>
                                 </div>
                                 <div className="monday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={checkSickHoursInput} type="number" id="sick-hours-input" name="" defaultValue={0}></input>
+                                        <input onChange={checkSickHoursInput} type="number" id="monday-sick-hours-input" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="monday-row-one-account-code">
-                                    <p>Account Code</p>
+                                    <p>11559 (Software Engineer)</p>
                                 </div>
                                 <div className="monday-row-one-total-hours">
-                                    <p id="monday-total-hours">Total Hours</p>
+                                    <p id="monday-total-hours">0:00</p>
                                 </div>
                             </div>
                             <div className="row-two">
