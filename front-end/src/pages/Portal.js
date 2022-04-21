@@ -26,19 +26,33 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }, [login, navigate])
 
-    const getCurrentWeek = () => {
+    const getCurrentWeek = () => {        
+        let today = new Date();
+        let numberOfDaysBefore = today.getDay();
+        let monday = new Date();
+        let tuesday = new Date();
+        let wednesday = new Date();
+        let thursday = new Date();
+        let friday = new Date();
+        monday.setDate(monday.getDate() - (numberOfDaysBefore - 1));
+        tuesday.setDate(tuesday.getDate() - (numberOfDaysBefore - 2));
+        wednesday.setDate(wednesday.getDate() - (numberOfDaysBefore - 3));
+        thursday.setDate(thursday.getDate() - (numberOfDaysBefore - 4));
+        friday.setDate(friday.getDate() - (numberOfDaysBefore - 5));
         let week = {
-            0: "Sunday",
-            1: "Monday",
-            2: "Tuesday",
-            3: "Wednesday",
-            4: "Thursday",
-            5: "Friday",
-            6: "Saturday"
+            "monday": monday.toDateString(),
+            "tuesday": tuesday.toDateString(),
+            "wednesday": wednesday.toDateString(),
+            "thursday": thursday.toDateString(),
+            "friday": friday.toDateString()
         }
-        let today = new Date(Date.now());
-        let now = today.getDay();
-        console.log(week[now]);
+        console.log(numberOfDaysBefore);
+        console.log(today.toDateString());
+        console.log(monday.toDateString());
+        console.log(week.tuesday);
+        console.log(week.wednesday);
+        console.log(week.thursday);
+        console.log(week.friday);
     }
 
     const adjustVacationPie = () => {
