@@ -513,25 +513,31 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>{week.thursday}</p>
                                 </div>   
                                 <div className="thursday-row-one-in">
-                                    <p>Time in</p>
+                                    <input id="thursday-time-in" type="time"></input>
                                 </div>
                                 <div className="thursday-row-one-out">
-                                    <p>Time out</p>
+                                    <input id="thursday-time-out" type="time"></input>
                                 </div>
                                 <div className="thursday-row-one-reg-hours">
-                                    <p>Reg Hours</p>    
+                                    <div className="">
+                                        <input type="number" id="thursday-reg-hours-input" defaultValue={0}></input>
+                                    </div>    
                                 </div>
                                 <div className="thursday-row-one-vacation-hours">
-                                    <p>Vac Hours</p>
+                                    <div className="">
+                                        <input type="number" id="thursday-vacation-hours-input" defaultValue={0}></input>
+                                    </div>
                                 </div>
-                                <div className="thursday-row-one-sick-hours">
-                                    <p>Sick Hours</p>                
+                                <div className="thursday-row-one-sick-hours">                                    
+                                    <div className="">
+                                        <input onChange={checkSickHoursInput} type="number" id="thursday-sick-hours-input" name="" defaultValue={0}></input>
+                                    </div>                                                 
                                 </div>                
                                 <div className="thursday-row-one-account-code">
-                                    <p>Account Code</p>
+                                    <p>11559 (Software Engineer)</p>
                                 </div>
                                 <div className="thursday-row-one-total-hours">
-                                    <p>Total Hours</p>
+                                    <p id="thursday-total-hours">0:00</p>
                                 </div>
                             </div>
                             <div className="row-two">
