@@ -586,7 +586,10 @@ ul a:hover {
 #monday-vacation-hours-input,
 #tuesday-sick-hours-input,
 #tuesday-reg-hours-input,
-#tuesday-vacation-hours-input {
+#tuesday-vacation-hours-input,
+#wednesday-sick-hours-input,
+#wednesday-reg-hours-input,
+#wednesday-vacation-hours-input {
   width: 45px;
   text-align: right;
 }
