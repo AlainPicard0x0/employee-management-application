@@ -13,6 +13,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const [value, onChange] = useState(new Date());
     const navigate = useNavigate();
     const api = `http://localhost:8080/api/employees`    
+    const [week, setWeek] = useState({});
 
     useEffect(() => {
         if(login) {
@@ -20,17 +21,16 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             findVacationHoursRemaining();  
             findSickHoursRemaining();  
             getEmployee(api, 1);
+            getCurrentWeek();
         }
         else {
             navigate("/");
         }
     }, [login, navigate])
 
-    const getCurrentWeek = () => {         
+    const getCurrentWeek = () => {        
         let today = new Date();
         let oldMonday = today.getDay();
-        // let thisMonday = 6;
-        // let newMonday = oldMonday - 1;
         let newMonday;
         switch(oldMonday) {
             case 0:
@@ -68,19 +68,19 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         wednesday.setDate(wednesday.getDate() - newMonday + 2);
         thursday.setDate(thursday.getDate() - newMonday + 3);
         friday.setDate(friday.getDate() - newMonday + 4);
-        let week = {
+        setWeek({
             "monday": monday.toDateString(),
             "tuesday": tuesday.toDateString(),
             "wednesday": wednesday.toDateString(),
             "thursday": thursday.toDateString(),
             "friday": friday.toDateString()
-        }
-        console.log(today.toDateString());
-        console.log(week.monday);
-        console.log(week.tuesday);
-        console.log(week.wednesday);
-        console.log(week.thursday);
-        console.log(week.friday);
+        }) 
+        // console.log(today.toDateString());
+        // console.log(week.monday);
+        // console.log(week.tuesday);
+        // console.log(week.wednesday);
+        // console.log(week.thursday);
+        // console.log(week.friday);
     }
 
     const adjustVacationPie = () => {
@@ -295,40 +295,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     <Calendar calendarType="US" onChange={onChange} value={value} />
                 </div>
 
-                {/* <div className="portal-sick-leave-request">
-                    <div className="sick-leave-request-title">
-                        <h3 id="use-sick-hours">Use Sick Hours</h3>
-                    </div>
-                    <div className="sick-leave-request">                        
-                        <form className="sick-leave-form" onSubmit={useSickHours}>
-                            <div className="form-group">
-                                <label htmlFor="sick-hours-requested">Enter # of Sick Hours to be used this pay check:</label>
-                                <input onChange={checkSickHoursInput} type="number" id="sick-hours-requested" name="sick-hours-requested" defaultValue={0} required></input>
-                            </div>
-                            <div className="form-group">
-                                <button id="sick-hours-request-btn">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div> */}
-
-                {/* <div className="portal-vacation-leave-request">
-                    <div className="vacation-leave-request-title">
-                        <h3 id="use-vacation-hours">Use Vacation Hours</h3>
-                    </div>
-                    <div className="vacation-leave-request">
-                        <form className="vacation-leave-form" onSubmit={useVacationHours}>
-                            <div className="form-group">
-                                <label htmlFor="vacation-hours-requested">Enter # of Vacation Hours to be used this pay check:</label>
-                                <input onChange={checkVacationHoursInput} type="number" id="vacation-hours-requested" name="vacation-hours-requested" defaultValue={0} required></input>
-                            </div>
-                            <div className="form-group">
-                                <button id="vacation-hours-request-btn">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div> */}
-
                 {/* Add hours worked section? */}
                 <div className="time-card">
                     <div className="time-card-header">
@@ -361,7 +327,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="monday-container">
                             <div className="row-one">
                                 <div className="monday-row-one-date">
-                                    <p>Monday</p>
+                                    <p>{week.monday}</p>                                    
                                 </div>   
                                 <div className="monday-row-one-in">
                                     <input id="monday-time-in" type="time"></input>
@@ -422,7 +388,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="tuesday-container">
                             <div className="row-one">
                                 <div className="tuesday-row-one-date">
-                                    <p>Tuesday</p>
+                                    <p>{week.tuesday}</p>
                                 </div>   
                                 <div className="tuesday-row-one-in">
                                     <p>Time in</p>
@@ -477,7 +443,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="wednesday-container">
                             <div className="row-one">
                                 <div className="wednesday-row-one-date">
-                                    <p>Wednesday</p>
+                                    <p>{week.wednesday}</p>
                                 </div>   
                                 <div className="wednesday-row-one-in">
                                     <p>Time in</p>
@@ -532,7 +498,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="thursday-container">
                             <div className="row-one">
                                 <div className="thursday-row-one-date">
-                                    <p>Thursday</p>
+                                    <p>{week.thursday}</p>
                                 </div>   
                                 <div className="thursday-row-one-in">
                                     <p>Time in</p>
@@ -587,7 +553,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="friday-container">
                             <div className="row-one">
                                 <div className="friday-row-one-date">
-                                    <p>Friday</p>
+                                    <p>{week.friday}</p>
                                 </div>   
                                 <div className="friday-row-one-in">
                                     <p>Time in</p>
