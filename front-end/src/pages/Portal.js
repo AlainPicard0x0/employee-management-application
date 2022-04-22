@@ -28,34 +28,46 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const getCurrentWeek = () => {         
         let today = new Date();
-        let numberOfDaysBefore = today.getDay();
-        switch(numberOfDaysBefore) {
+        // let numberOfDaysBefore = today.getDay();
+        // let thisMonday = today.getDay();
+        let thisMonday = 7;
+        let testNum = thisMonday - 1;
+        switch(thisMonday) {
+            case 0:
+                testNum = thisMonday + 3;
+                break;
+            case 1:
+                testNum = thisMonday + 2;
+                break;
             case 2: 
-                numberOfDaysBefore = 1;
+                testNum = thisMonday + 1;
                 break;
             case 3:
-                numberOfDaysBefore = 2;
+                testNum = thisMonday;
                 break;
             case 4:
-                numberOfDaysBefore = 3;
+                testNum = thisMonday - 1;
                 break;
+            case 5:
+                testNum = thisMonday -2;
+                break;
+            case 6: 
+                testNum = thisMonday - 3;
+                break;
+            default:
+                console.log("thisMonday: " + thisMonday);
+                testNum = 0;
         }
-        // let numberOfDaysBefore = today.getDay();
         let monday = new Date();
         let tuesday = new Date();
         let wednesday = new Date();
         let thursday = new Date();
         let friday = new Date();
-        monday.setDate(monday.getDate() - numberOfDaysBefore);
-        tuesday.setDate(tuesday.getDate() - numberOfDaysBefore);
-        wednesday.setDate(wednesday.getDate() - numberOfDaysBefore);
-        thursday.setDate(thursday.getDate() - numberOfDaysBefore);
-        friday.setDate(friday.getDate() - numberOfDaysBefore);
-        // monday.setDate(monday.getDate() - (numberOfDaysBefore - 1));
-        // tuesday.setDate(tuesday.getDate() - (numberOfDaysBefore - 2));
-        // wednesday.setDate(wednesday.getDate() - (numberOfDaysBefore - 3));
-        // thursday.setDate(thursday.getDate() - (numberOfDaysBefore - 4));
-        // friday.setDate(friday.getDate() - (numberOfDaysBefore - 5));
+        monday.setDate(monday.getDate() - testNum);
+        tuesday.setDate(tuesday.getDate() - testNum + 1);
+        wednesday.setDate(wednesday.getDate() - testNum + 2);
+        thursday.setDate(thursday.getDate() - testNum + 3);
+        friday.setDate(friday.getDate() - testNum + 4);
         let week = {
             "monday": monday.toDateString(),
             "tuesday": tuesday.toDateString(),
@@ -63,9 +75,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             "thursday": thursday.toDateString(),
             "friday": friday.toDateString()
         }
-        console.log(numberOfDaysBefore);
         console.log(today.toDateString());
-        console.log(monday.toDateString());
+        console.log(week.monday);
         console.log(week.tuesday);
         console.log(week.wednesday);
         console.log(week.thursday);
