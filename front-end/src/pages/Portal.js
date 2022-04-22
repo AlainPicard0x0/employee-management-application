@@ -28,46 +28,46 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const getCurrentWeek = () => {         
         let today = new Date();
-        // let numberOfDaysBefore = today.getDay();
-        // let thisMonday = today.getDay();
-        let thisMonday = 7;
-        let testNum = thisMonday - 1;
-        switch(thisMonday) {
+        let oldMonday = today.getDay();
+        // let thisMonday = 6;
+        // let newMonday = oldMonday - 1;
+        let newMonday;
+        switch(oldMonday) {
             case 0:
-                testNum = thisMonday + 3;
+                newMonday = oldMonday + 3;
                 break;
             case 1:
-                testNum = thisMonday + 2;
+                newMonday = oldMonday + 2;
                 break;
             case 2: 
-                testNum = thisMonday + 1;
+                newMonday = oldMonday + 1;
                 break;
             case 3:
-                testNum = thisMonday;
+                newMonday = oldMonday;
                 break;
             case 4:
-                testNum = thisMonday - 1;
+                newMonday = oldMonday - 1;
                 break;
             case 5:
-                testNum = thisMonday -2;
+                newMonday = oldMonday -2;
                 break;
             case 6: 
-                testNum = thisMonday - 3;
+                newMonday = oldMonday - 3;
                 break;
             default:
-                console.log("thisMonday: " + thisMonday);
-                testNum = 0;
+                console.log("thisMonday: " + oldMonday);
+                newMonday = 0;
         }
         let monday = new Date();
         let tuesday = new Date();
         let wednesday = new Date();
         let thursday = new Date();
         let friday = new Date();
-        monday.setDate(monday.getDate() - testNum);
-        tuesday.setDate(tuesday.getDate() - testNum + 1);
-        wednesday.setDate(wednesday.getDate() - testNum + 2);
-        thursday.setDate(thursday.getDate() - testNum + 3);
-        friday.setDate(friday.getDate() - testNum + 4);
+        monday.setDate(monday.getDate() - newMonday);
+        tuesday.setDate(tuesday.getDate() - newMonday + 1);
+        wednesday.setDate(wednesday.getDate() - newMonday + 2);
+        thursday.setDate(thursday.getDate() - newMonday + 3);
+        friday.setDate(friday.getDate() - newMonday + 4);
         let week = {
             "monday": monday.toDateString(),
             "tuesday": tuesday.toDateString(),
