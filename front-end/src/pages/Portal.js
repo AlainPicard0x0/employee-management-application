@@ -217,7 +217,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let minutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
         let hours = Math.floor((mondayTimeOut - mondayTimeIn) / 3600000)
         console.log(mondayTimeOut);
-        if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut)) {
+        if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
             mondayRegHours.innerText = "00:00";
             mondayTotalHours.innerText = "00:00";
         }
@@ -326,7 +326,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>{week.monday}</p>                                    
                                 </div>   
                                 <div className="monday-row-one-in">
-                                    <input id="monday-time-in" type="time"></input>
+                                    <input onChange={calculateTime} id="monday-time-in" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-out">
                                     <input id="monday-time-out" type="time"></input>
