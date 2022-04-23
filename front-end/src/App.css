@@ -1041,7 +1041,7 @@ ul a:hover {
 /* 15" Macbook Pro */
 @media (max-width:1680px) {
   body {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .header {
