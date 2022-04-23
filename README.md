@@ -10,6 +10,9 @@
 
     >`create user 'employee01'@'%' identified by 'password';`
 
+- To grant access to "employeeservice" database for new user named "employee01" execute the following command:
+  >`grant all on employeeservice.* to 'employee01'@'%';`
+
 <br />
 
 To start the Application, In the front-end directory, you can run:
