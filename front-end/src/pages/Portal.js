@@ -333,7 +333,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="monday-row-one-reg-hours">
                                     <div className="">
-                                        <input type="number" id="monday-reg-hours-input" defaultValue={0}></input>
+                                        <p id="monday-reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="monday-row-one-vacation-hours">
@@ -394,7 +394,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="tuesday-row-one-reg-hours">
                                     <div className="">
-                                        <input type="number" id="tuesday-reg-hours-input" defaultValue={0}></input>
+                                       <p id="tuesday-reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="tuesday-row-one-vacation-hours">
@@ -455,7 +455,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="wednesday-row-one-reg-hours">
                                     <div className="">
-                                        <input type="number" id="wednesday-reg-hours-input" defaultValue={0}></input>
+                                        <p id="wednesday-reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="wednesday-row-one-vacation-hours">
@@ -516,7 +516,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="thursday-row-one-reg-hours">
                                     <div className="">
-                                        <input type="number" id="thursday-reg-hours-input" defaultValue={0}></input>
+                                        <p id="thursday-reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="thursday-row-one-vacation-hours">
@@ -577,7 +577,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="friday-row-one-reg-hours">
                                     <div className="">
-                                        <input type="number" id="friday-reg-hours-input" defaultValue={0}></input>
+                                        <p id="friday-reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="friday-row-one-vacation-hours">
