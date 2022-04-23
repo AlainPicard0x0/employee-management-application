@@ -19,14 +19,14 @@ To start the front-end of the Application:
 
 - Navigate (cd) to the front-end directory and execute:
 
-#### `npm start`
+  #### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  >Runs the app in the development mode.\
+  >Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 To start the back-end of the Application:
 
-- Open Application in Intellij and run `EmployeeManagementApiApplication`
-  (Be sure you have a MySql Database running on your machine)
+- Open the Application in Intellij and run the `EmployeeManagementApiApplication`
+  >(Be sure you have a MySql Database running on your machine)
 
 
