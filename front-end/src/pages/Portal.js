@@ -30,35 +30,37 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const getCurrentWeek = () => {        
         let today = new Date();
+        console.log(today);
         let oldMonday = today.getDay();
         let newMonday;
         switch(oldMonday) {
             case 0:
-                newMonday = oldMonday + 3;
+                newMonday = -1;
                 break;
             case 1:
-                newMonday = oldMonday + 2;
+                newMonday = 0;
                 break;
             case 2: 
-                newMonday = oldMonday + 1;
+                newMonday = 1;
                 break;
             case 3:
-                newMonday = oldMonday;
+                newMonday = 2;
                 break;
             case 4:
-                newMonday = oldMonday - 1;
+                newMonday = 3;
                 break;
             case 5:
-                newMonday = oldMonday -2;
+                newMonday = 4;
                 break;
             case 6: 
-                newMonday = oldMonday - 3;
+                newMonday = 5;
                 break;
             default:
                 console.log("thisMonday: " + oldMonday);
                 newMonday = 0;
         }
         let monday = new Date();
+        console.log(monday);
         let tuesday = new Date();
         let wednesday = new Date();
         let thursday = new Date();
@@ -74,13 +76,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             "wednesday": wednesday.toDateString(),
             "thursday": thursday.toDateString(),
             "friday": friday.toDateString()
-        }) 
-        // console.log(today.toDateString());
-        // console.log(week.monday);
-        // console.log(week.tuesday);
-        // console.log(week.wednesday);
-        // console.log(week.thursday);
-        // console.log(week.friday);
+        })
     }
 
     const adjustVacationPie = () => {
