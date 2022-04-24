@@ -158,6 +158,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const checkVacationHoursInput = (e) => {
+        // Step 1: find value of vacation hours displayed in html, save to variable
+        // Step 2: find value of vacation hours input field (number of hours being requested)
+        // Step 3: adjust value of html to display vacation hours minus hours being requested from input field
+        // Step 4: adjust pie css 
         let vacationHoursRequestedInput = e.target;
         // let vacationHoursRequestedInput = document.getElementsByClassName("vacation-hours-requested")[0];
         // let vacationHoursRequestedInput = document.getElementById("vacation-hours-requested");
