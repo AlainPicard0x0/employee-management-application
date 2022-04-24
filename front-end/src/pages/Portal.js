@@ -28,6 +28,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }, [login, navigate])
 
+    // TODO implement previous week button and next week button
     const getCurrentWeek = () => {        
         let today = new Date();
         console.log(today);
