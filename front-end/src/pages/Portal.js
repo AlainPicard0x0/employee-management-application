@@ -79,11 +79,21 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
     }
 
+    // const handleVacationHours = () => {
+    //     let vacationHoursRemaining = document.getElementById("vacation-hours-remaining");
+    //     let vacationHoursValue = parseInt(vacationHoursRemaining.innerText);
+    //     let vacationHoursPie = document.getElementById("vacation-pie");
+    //     vacationHoursPie.style.setProperty("--p", vacationHoursValue * 1.25);
+    //     console.log(vacationHoursValue);
+    // }
+
     const adjustVacationPie = () => {
-        const vacationHoursRemaining = document.getElementById("vacation-pie");
-        const vacationValue = parseInt(vacationHoursRemaining.innerText);
+        const vacationPie = document.getElementById("vacation-pie");
+        const vacationHoursRemaining = document.getElementById("vacation-hours-remaining");
+        const vacationValue = parseInt(vacationHoursRemaining.innerText) - 20;
+        vacationHoursRemaining.innerText = vacationValue;
         // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)          
-        vacationHoursRemaining.style.setProperty("--p", vacationValue * 1.25);
+        vacationPie.style.setProperty("--p", vacationValue * 1.25);
     }
 
     const findVacationHoursRemaining = () => {
@@ -100,6 +110,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => {
             setVacationHours(data);
+            // handleVacationHours();
             adjustVacationPie();
         })
         
@@ -346,7 +357,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="monday-row-one-vacation-hours">
                                     <div className="">
-                                        <input onChange={checkVacationHoursInput} type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
+                                        <input onChange={e => {checkVacationHoursInput(e); findVacationHoursRemaining(e) }} type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="monday-row-one-sick-hours">                                    
