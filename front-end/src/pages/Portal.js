@@ -105,7 +105,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         
     }
 
-    
+    const testFunc = () => {
+        console.log("Hello");
+    }
 
     const adjustSickPie = () => {
         const sickHoursRemaining = document.getElementById("sick-pie");
@@ -144,9 +146,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }
 
-    const checkVacationHoursInput = () => {
-        let vacationHoursRequestedInput = document.getElementById("vacation-hours-requested");
+    const checkVacationHoursInput = (e) => {
+        let vacationHoursRequestedInput = e.target;
+        // let vacationHoursRequestedInput = document.getElementsByClassName("vacation-hours-requested")[0];
+        // let vacationHoursRequestedInput = document.getElementById("vacation-hours-requested");
         let vacationHoursRemaining = document.getElementById("vacation-hours-remaining").innerText;
+        if(vacationHoursRequestedInput.value > 8) {
+            alert("Can not use more than 8 hours per day");
+            vacationHoursRequestedInput.value = 8;
+        }
         if(isNaN(vacationHoursRequestedInput.value) || vacationHoursRequestedInput.value < 1) {
             vacationHoursRequestedInput.value = 0;
         }
@@ -329,7 +337,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <input onChange={calculateTime} id="monday-time-in" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-out">
-                                    <input id="monday-time-out" type="time"></input>
+                                    <input onChange={e => {calculateTime(); testFunc() }} id="monday-time-out" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-reg-hours">
                                     <div className="">
@@ -338,7 +346,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="monday-row-one-vacation-hours">
                                     <div className="">
-                                        <input type="number" id="monday-vacation-hours-input" defaultValue={0}></input>
+                                        <input onChange={checkVacationHoursInput} type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="monday-row-one-sick-hours">                                    
