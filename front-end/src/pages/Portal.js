@@ -160,16 +160,23 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const checkVacationHoursInput = (e) => {
         // Step 1: find value of vacation hours displayed in html, save to variable
-        // Step 2: find value of vacation hours input field (number of hours being requested)
-        // Step 3: adjust value of html to display vacation hours minus hours being requested from input field
-        // Step 4: adjust pie css 
+        let vacationHoursRemainingElement = document.getElementById("vacation-hours-remaining");
+        let vacationHoursRemaining = vacationHoursRemainingElement.innerText;
+        // Step 2: find value of vacation hours input field and save to a variable (number of hours being requested)
         let vacationHoursRequestedInput = e.target;
-        // let vacationHoursRequestedInput = document.getElementsByClassName("vacation-hours-requested")[0];
-        // let vacationHoursRequestedInput = document.getElementById("vacation-hours-requested");
-        let vacationHoursRemaining = document.getElementById("vacation-hours-remaining").innerText;
+        let vacationHoursRequested = vacationHoursRequestedInput.value;
+        // Step 3: save the result of adding/subtracting these numbers to a variable
+        let newHours = vacationHours - vacationHoursRequested;
+        console.log(newHours);
+        // Step 4: adjust value of html to display vacation hours minus hours being requested from input field
+        vacationHoursRemainingElement.innerText = newHours;
+        // Step 5: adjust pie css 
+        
+        
         if(vacationHoursRequestedInput.value > 8) {
             alert("Can not use more than 8 hours per day");
             vacationHoursRequestedInput.value = 8;
+            
         }
         if(isNaN(vacationHoursRequestedInput.value) || vacationHoursRequestedInput.value < 1) {
             vacationHoursRequestedInput.value = 0;
@@ -178,13 +185,16 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             alert("You do not have a sufficient number of vacation hours remaining");
             vacationHoursRequestedInput.value = vacationHoursRemaining;
         }
-        // Above code was working, code below added 4/23/2022
+
         const vacationPie = document.getElementById("vacation-pie");
-        const vacationPieHoursRemaining = document.getElementById("vacation-hours-remaining");
-        const vacationValue = parseInt(vacationPieHoursRemaining.innerText) - vacationHoursRequestedInput.value;
-        vacationPieHoursRemaining.innerText = vacationValue;
+        vacationPie.style.setProperty("--p", newHours * 1.25);
+        // Above code was working, code below added 4/23/2022
+        // const vacationPie = document.getElementById("vacation-pie");
+        // const vacationPieHoursRemaining = document.getElementById("vacation-hours-remaining");
+        // const vacationValue = parseInt(vacationPieHoursRemaining.innerText) - vacationHoursRequestedInput.value;
+        // vacationPieHoursRemaining.innerText = vacationValue;
         // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)          
-        vacationPie.style.setProperty("--p", vacationValue * 1.25);
+        // vacationPie.style.setProperty("--p", vacationValue * 1.25);
     }
 
     const useSickHours = (e) => {
