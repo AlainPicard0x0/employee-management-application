@@ -248,9 +248,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
         let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
         let mondayRegHours = document.getElementById("monday-reg-hours");
+        let mondayVacationHours = parseInt(document.getElementById("monday-vacation-hours-input").value);
+        console.log(mondayVacationHours);
         let mondayTotalHours = document.getElementById("monday-total-hours");
         let minutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
-        let hours = Math.floor((mondayTimeOut - mondayTimeIn) / 3600000)
+        let hours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn) / 3600000))
         console.log(mondayTimeOut);
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
             mondayRegHours.innerText = "00:00";
@@ -263,10 +265,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             }
             else {
                 mondayRegHours.innerText = hours + ":" + minutes;
-                mondayTotalHours.innerText = hours + ":" + minutes;
+                let totalHours = hours + mondayVacationHours;
+                mondayTotalHours.innerText = totalHours + ":" + minutes;
             }        
-        }
-        
+        }        
         console.log("hours: " + hours + " minutes: " + minutes);
     }
 
