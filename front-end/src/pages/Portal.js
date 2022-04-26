@@ -246,6 +246,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     // HTML on line 325
     const calculateTime = () => {
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
+        console.log(mondayTimeIn);
         let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
         let mondayRegHours = document.getElementById("monday-reg-hours");
         let mondayVacationHours = parseFloat(document.getElementById("monday-vacation-hours-input").value);
@@ -253,8 +254,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let regMinutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
         let vacationHours = mondayVacationHours * 3600000;
         let vacationMinutes = (mondayVacationHours % 1) * 60;
+        // let totalMinutes = regMinutes + vacationMinutes;
         let regHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn) / 3600000))
         let totalHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn + vacationHours) / 3600000))
+        // refactored code for calculating hours and minutes including vacation time 4/25/22
+        // 60,000ms = 1 minute; 3,600,000ms = 1 hour
+        let regTime = mondayTimeOut - mondayTimeIn;
+        let vacationTime = mondayVacationHours * 3600000;
+        let totalMinutes = regTime + vacationTime;
+        //
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
             mondayRegHours.innerText = "00:00";
             mondayTotalHours.innerText = "00:00";
@@ -375,7 +383,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="monday-row-one-vacation-hours">
                                     <div className="">
-                                        <input onChange={e => {checkVacationHoursInput(e); findVacationHoursRemaining(e); calculateTime() }} type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0.00}></input>
+                                        <input onChange={e => {checkVacationHoursInput(e); findVacationHoursRemaining(e); calculateTime() }} step="any" type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="monday-row-one-sick-hours">                                    
