@@ -248,28 +248,27 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
         let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
         let mondayRegHours = document.getElementById("monday-reg-hours");
-        let mondayVacationHours = parseInt(document.getElementById("monday-vacation-hours-input").value);
-        console.log(mondayVacationHours);
+        let mondayVacationHours = parseFloat(document.getElementById("monday-vacation-hours-input").value);
         let mondayTotalHours = document.getElementById("monday-total-hours");
         let minutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
-        let hours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn) / 3600000))
-        console.log(mondayTimeOut);
+        let vacationHours = mondayVacationHours * 3600000;
+        let regHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn) / 3600000))
+        let totalHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn + vacationHours) / 3600000))
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
             mondayRegHours.innerText = "00:00";
             mondayTotalHours.innerText = "00:00";
         }
         else {
             if(minutes < 10) {
-                mondayRegHours.innerText = hours + ":0" + minutes;
-                mondayTotalHours.innerText = hours + ":0" + minutes;
+                mondayRegHours.innerText = regHours + ":0" + minutes;
+                mondayTotalHours.innerText = totalHours + ":0" + minutes;
             }
             else {
-                mondayRegHours.innerText = hours + ":" + minutes;
-                let totalHours = hours + mondayVacationHours;
+                mondayRegHours.innerText = regHours + ":" + minutes;
                 mondayTotalHours.innerText = totalHours + ":" + minutes;
             }        
         }        
-        console.log("hours: " + hours + " minutes: " + minutes);
+        console.log("hours: " + totalHours + " minutes: " + minutes);
     }
 
     return (
@@ -375,7 +374,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="monday-row-one-vacation-hours">
                                     <div className="">
-                                        <input onChange={e => {checkVacationHoursInput(e); findVacationHoursRemaining(e) }} type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
+                                        <input onChange={e => {checkVacationHoursInput(e); findVacationHoursRemaining(e) }} type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0.00}></input>
                                     </div>
                                 </div>
                                 <div className="monday-row-one-sick-hours">                                    
