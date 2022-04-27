@@ -143,7 +143,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const checkSickHoursInput = () => {
-        let sickHoursRequestedInput = document.getElementById("sick-hours-requested");
+        let sickHoursRequestedInput = document.getElementById("monday-sick-hours-input");
         let sickHoursRemaining = document.getElementsByClassName("sick-hours-remaining")[0].innerText;
         if(isNaN(sickHoursRequestedInput.value) || sickHoursRequestedInput.value < 1) {
             sickHoursRequestedInput.value = 0;
@@ -245,15 +245,22 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
         let mondayRegHoursInput = document.getElementById("monday-reg-hours");
         let mondayVacationHoursInput = parseFloat(document.getElementById("monday-vacation-hours-input").value);
+        let mondaySickHoursInput = parseFloat(document.getElementById("monday-sick-hours-input").value);
         let mondayTotalHoursInput = document.getElementById("monday-total-hours");
         
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
         let mondayRegTime = parseInt(mondayTimeOut - mondayTimeIn);
+        // don't need parseInt here, already use on mondayVacationHoursInput declaration on line 247
+        // also don't need Math.floor on mondayVacationTime?
         let mondayVacationTime = parseInt(Math.floor(mondayVacationHoursInput * 3600000));
+        let mondaySickTime = mondaySickHoursInput * 3600000; 
         let mondayRegHours = Math.floor(mondayRegTime / 3600000);
         let mondayRegMinutes = mondayRegTime % 3600000 / 60000;
         let mondayVacHours = Math.floor(mondayVacationTime / 3600000);
         let mondayVacMinutes = mondayVacationTime % 3600000 / 60000;
+        let mondaySickHours = Math.floor(mondaySickTime / 3600000);
+        let mondaySickMinutes = mondaySickTime % 3600000 / 60000;
+        console.log("sick hours: " + mondaySickHours + " sick minutes: " + mondaySickMinutes);
         let mondayTotalHours = mondayRegHours + mondayVacHours;
         let mondayTotalMinutes = mondayRegMinutes + mondayVacMinutes;
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
