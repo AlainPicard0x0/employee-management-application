@@ -265,6 +265,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 mondayRegHours.innerText = regHours + ":0" + regMinutes;
                 mondayTotalHours.innerText = totalHours + ":0" + totalMinutes;
             }
+            else if(regMinutes < 10) {
+                mondayRegHours.innerText = regHours + ":0" + regMinutes;
+                mondayTotalHours.innerText = totalHours + ":" + totalMinutes;
+            }
             else {
                 mondayRegHours.innerText = regHours + ":" + regMinutes;
                 mondayTotalHours.innerText = totalHours + ":" + totalMinutes;
