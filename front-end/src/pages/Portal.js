@@ -246,13 +246,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let mondayRegHours = document.getElementById("monday-reg-hours");
         let mondayVacationHours = parseFloat(document.getElementById("monday-vacation-hours-input").value);
         let mondayTotalHours = document.getElementById("monday-total-hours");
-        // let regMinutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
-        // let vacationHours = mondayVacationHours * 3600000;
-        // let vacationMinutes = (mondayVacationHours % 1) * 60;
-        // let totalMinutes = regMinutes + vacationMinutes;
-        // let regHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn) / 3600000))
-        // let totalHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn + vacationHours) / 3600000))
-        // refactored code for calculating hours and minutes including vacation time 4/25/22
+        
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
         let regTime = parseInt(mondayTimeOut - mondayTimeIn);
         let vacationTime = parseInt(Math.floor(mondayVacationHours * 3600000));
@@ -262,13 +256,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let vacMinutes = vacationTime % 3600000 / 60000;
         let totalHours = regHours + vacHours;
         let totalMinutes = regMinutes + vacMinutes;
-        //
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
             mondayRegHours.innerText = "00:00";
             mondayTotalHours.innerText = "00:00";
         }
         else {
-            if(regMinutes < 10) {
+            if(regMinutes < 10 && totalMinutes < 10) {
                 mondayRegHours.innerText = regHours + ":0" + regMinutes;
                 mondayTotalHours.innerText = totalHours + ":0" + totalMinutes;
             }
@@ -277,7 +270,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 mondayTotalHours.innerText = totalHours + ":" + totalMinutes;
             }        
         }        
-        console.log("hours: " + totalHours + " minutes: " + regMinutes);
     }
 
     return (
