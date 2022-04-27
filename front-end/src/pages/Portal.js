@@ -31,7 +31,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     // TODO implement previous week button and next week button
     const getCurrentWeek = () => {        
         let today = new Date();
-        console.log(today);
         let oldMonday = today.getDay();
         let newMonday;
         switch(oldMonday) {
@@ -61,7 +60,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 newMonday = 0;
         }
         let monday = new Date();
-        console.log(monday);
         let tuesday = new Date();
         let wednesday = new Date();
         let thursday = new Date();
@@ -106,7 +104,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             },
         })
         .then(response => {
-            console.log(response);
             return response.json();
         })
         .then(data => {
@@ -118,7 +115,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const testFunc = () => {
-        console.log("Hello");
+        
     }
 
     const adjustSickPie = () => {
@@ -137,7 +134,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             },
           })  
           .then(response => {
-              console.log(response);
               return response.json();
           })            
           .then(data => {
@@ -246,22 +242,26 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     // HTML on line 325
     const calculateTime = () => {
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
-        console.log(mondayTimeIn);
         let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
         let mondayRegHours = document.getElementById("monday-reg-hours");
         let mondayVacationHours = parseFloat(document.getElementById("monday-vacation-hours-input").value);
         let mondayTotalHours = document.getElementById("monday-total-hours");
-        let regMinutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
-        let vacationHours = mondayVacationHours * 3600000;
-        let vacationMinutes = (mondayVacationHours % 1) * 60;
+        // let regMinutes = (mondayTimeOut - mondayTimeIn) % 3600000 / 60000;
+        // let vacationHours = mondayVacationHours * 3600000;
+        // let vacationMinutes = (mondayVacationHours % 1) * 60;
         // let totalMinutes = regMinutes + vacationMinutes;
-        let regHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn) / 3600000))
-        let totalHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn + vacationHours) / 3600000))
+        // let regHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn) / 3600000))
+        // let totalHours = parseInt(Math.floor((mondayTimeOut - mondayTimeIn + vacationHours) / 3600000))
         // refactored code for calculating hours and minutes including vacation time 4/25/22
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
-        let regTime = mondayTimeOut - mondayTimeIn;
-        let vacationTime = mondayVacationHours * 3600000;
-        let totalMinutes = regTime + vacationTime;
+        let regTime = parseInt(mondayTimeOut - mondayTimeIn);
+        let vacationTime = parseInt(Math.floor(mondayVacationHours * 3600000));
+        let regHours = Math.floor(regTime / 3600000);
+        let regMinutes = regTime % 3600000 / 60000;
+        let vacHours = Math.floor(vacationTime / 3600000);
+        let vacMinutes = vacationTime % 3600000 / 60000;
+        let totalHours = regHours + vacHours;
+        let totalMinutes = regMinutes + vacMinutes;
         //
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
             mondayRegHours.innerText = "00:00";
@@ -270,11 +270,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         else {
             if(regMinutes < 10) {
                 mondayRegHours.innerText = regHours + ":0" + regMinutes;
-                mondayTotalHours.innerText = totalHours + ":0" + regMinutes;
+                mondayTotalHours.innerText = totalHours + ":0" + totalMinutes;
             }
             else {
                 mondayRegHours.innerText = regHours + ":" + regMinutes;
-                mondayTotalHours.innerText = totalHours + ":" + regMinutes;
+                mondayTotalHours.innerText = totalHours + ":" + totalMinutes;
             }        
         }        
         console.log("hours: " + totalHours + " minutes: " + regMinutes);
