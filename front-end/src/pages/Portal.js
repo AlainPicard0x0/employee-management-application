@@ -243,35 +243,35 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const calculateTime = () => {
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
         let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
-        let mondayRegHours = document.getElementById("monday-reg-hours");
-        let mondayVacationHours = parseFloat(document.getElementById("monday-vacation-hours-input").value);
-        let mondayTotalHours = document.getElementById("monday-total-hours");
+        let mondayRegHoursInput = document.getElementById("monday-reg-hours");
+        let mondayVacationHoursInput = parseFloat(document.getElementById("monday-vacation-hours-input").value);
+        let mondayTotalHoursInput = document.getElementById("monday-total-hours");
         
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
-        let regTime = parseInt(mondayTimeOut - mondayTimeIn);
-        let vacationTime = parseInt(Math.floor(mondayVacationHours * 3600000));
-        let regHours = Math.floor(regTime / 3600000);
-        let regMinutes = regTime % 3600000 / 60000;
-        let vacHours = Math.floor(vacationTime / 3600000);
-        let vacMinutes = vacationTime % 3600000 / 60000;
-        let totalHours = regHours + vacHours;
-        let totalMinutes = regMinutes + vacMinutes;
+        let mondayRegTime = parseInt(mondayTimeOut - mondayTimeIn);
+        let mondayVacationTime = parseInt(Math.floor(mondayVacationHoursInput * 3600000));
+        let mondayRegHours = Math.floor(mondayRegTime / 3600000);
+        let mondayRegMinutes = mondayRegTime % 3600000 / 60000;
+        let mondayVacHours = Math.floor(mondayVacationTime / 3600000);
+        let mondayVacMinutes = mondayVacationTime % 3600000 / 60000;
+        let mondayTotalHours = mondayRegHours + mondayVacHours;
+        let mondayTotalMinutes = mondayRegMinutes + mondayVacMinutes;
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
-            mondayRegHours.innerText = "00:00";
+            mondayRegHoursInput.innerText = "00:00";
             mondayTotalHours.innerText = "00:00";
         }
         else {
-            if(regMinutes < 10 && totalMinutes < 10) {
-                mondayRegHours.innerText = regHours + ":0" + regMinutes;
-                mondayTotalHours.innerText = totalHours + ":0" + totalMinutes;
+            if(mondayRegMinutes < 10 && mondayTotalMinutes < 10) {
+                mondayRegHoursInput.innerText = mondayRegHours + ":0" + mondayRegMinutes;
+                mondayTotalHoursInput.innerText = mondayTotalHours + ":0" + mondayTotalMinutes;
             }
-            else if(regMinutes < 10) {
-                mondayRegHours.innerText = regHours + ":0" + regMinutes;
-                mondayTotalHours.innerText = totalHours + ":" + totalMinutes;
+            else if(mondayRegMinutes < 10) {
+                mondayRegHoursInput.innerText = mondayRegHours + ":0" + mondayRegMinutes;
+                mondayTotalHoursInput.innerText = mondayTotalHours + ":" + mondayTotalMinutes;
             }
             else {
-                mondayRegHours.innerText = regHours + ":" + regMinutes;
-                mondayTotalHours.innerText = totalHours + ":" + totalMinutes;
+                mondayRegHoursInput.innerText = mondayRegHours + ":" + mondayRegMinutes;
+                mondayTotalHoursInput.innerText = mondayTotalHours + ":" + mondayTotalMinutes;
             }        
         }        
     }
