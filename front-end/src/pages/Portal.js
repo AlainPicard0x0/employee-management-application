@@ -89,7 +89,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const adjustVacationPie = () => {
         const vacationPie = document.getElementById("vacation-pie");
         const vacationHoursRemaining = document.getElementById("vacation-hours-remaining");
-        const vacationValue = parseInt(vacationHoursRemaining.innerText) - 20;
+        const vacationValue = parseInt(vacationHoursRemaining.innerText);
         vacationHoursRemaining.innerText = vacationValue;
         // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)          
         vacationPie.style.setProperty("--p", vacationValue * 1.25);
@@ -118,12 +118,21 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         
     }
 
+    // const adjustSickPie = () => {
+    //     const sickHoursRemaining = document.getElementById("sick-pie");
+    //     const sickValue = parseInt(sickHoursRemaining.innerText);
+    //     // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
+    //     sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
+    // }
+
     const adjustSickPie = () => {
-        const sickHoursRemaining = document.getElementById("sick-pie");
+        const sickPie = document.getElementById("sick-pie");
+        const sickHoursRemaining = document.getElementById("sick-hours-remaining");
         const sickValue = parseInt(sickHoursRemaining.innerText);
-        // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
-        sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
-}
+        sickHoursRemaining.innerText = sickValue;
+        // Set value of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)          
+        sickPie.style.setProperty("--p", sickValue * 4.17);
+    }
 
     const findSickHoursRemaining = () => {
         fetch(`${api}/login/sick`, {
