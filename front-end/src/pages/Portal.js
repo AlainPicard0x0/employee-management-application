@@ -431,7 +431,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="monday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); calculateTime() }} step="any" type="number" id="monday-sick-hours-input" name="" defaultValue={0}></input>
+                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} step="any" type="number" id="monday-sick-hours-input" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="monday-row-one-account-code">
