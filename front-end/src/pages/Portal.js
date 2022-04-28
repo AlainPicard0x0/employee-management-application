@@ -302,10 +302,19 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let mondaySickMinutes = mondaySickTime % 3600000 / 60000;
         console.log("sick hours: " + mondaySickHours + " sick minutes: " + mondaySickMinutes);
         let mondayTotalHours = mondayRegHours + mondayVacHours + mondaySickHours;
-        let mondayTotalMinutes = mondayRegMinutes + mondayVacMinutes + mondaySickMinutes;
+        let mondayTotalMinutes = mondayRegMinutes + mondayVacMinutes + mondaySickMinutes;        
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
-            mondayRegHoursInput.innerText = "00:00";
-            mondayTotalHoursInput.innerText = "00:00";
+            if(mondayVacMinutes + mondaySickMinutes == 0 && mondayVacHours + mondaySickHours == 0) {
+                mondayTotalHoursInput.innerText = "00:00";
+            }
+            else if(mondayVacMinutes + mondaySickMinutes < 10) {
+                mondayTotalHoursInput.innerText = mondayVacHours + mondaySickHours + ":0" + mondayVacMinutes + mondaySickMinutes;
+            }
+            else {
+                mondayRegHoursInput.innerText = "00:00";
+                mondayTotalHoursInput.innerText = mondayVacHours + mondaySickHours + ":" + mondayVacMinutes + mondaySickMinutes;
+            }         
+            // mondayTotalHoursInput.innerText = mondayTotalHours + ":" + mondayTotalMinutes;
         }
         else {
             if(mondayRegMinutes < 10 && mondayTotalMinutes < 10) {
