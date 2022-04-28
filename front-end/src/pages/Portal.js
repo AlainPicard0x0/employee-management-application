@@ -142,16 +142,49 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
     }
 
-    const checkSickHoursInput = () => {
-        let sickHoursRequestedInput = document.getElementById("monday-sick-hours-input");
-        let sickHoursRemaining = document.getElementsByClassName("sick-hours-remaining")[0].innerText;
-        if(isNaN(sickHoursRequestedInput.value) || sickHoursRequestedInput.value < 1) {
-            sickHoursRequestedInput.value = 0;
-        }
-        if((sickHoursRemaining - sickHoursRequestedInput.value) < 0) {
-            alert("You do not have a sufficient number of sick hours remaining");
-            sickHoursRequestedInput.value = sickHoursRemaining;
-        }
+    // const checkSickHoursInput = () => {
+    //     let sickHoursRequestedInput = document.getElementById("monday-sick-hours-input");
+    //     let sickHoursRemaining = document.getElementsByClassName("sick-hours-remaining")[0].innerText;
+    //     if(isNaN(sickHoursRequestedInput.value) || sickHoursRequestedInput.value < 1) {
+    //         sickHoursRequestedInput.value = 0;
+    //     }
+    //     if((sickHoursRemaining - sickHoursRequestedInput.value) < 0) {
+    //         alert("You do not have a sufficient number of sick hours remaining");
+    //         sickHoursRequestedInput.value = sickHoursRemaining;
+    //     }
+    // }
+
+    const checkSickHoursInput = (e) => {
+         // get html element for hours left display 
+         let sickHoursRemainingElement = document.getElementById("sick-hours-remaining");
+         // save number of sick hours displayed in html element to a variable
+         let sickHoursRemaining = sickHoursRemainingElement.innerText;
+         // find value of sick hours input field and save to a variable (number of hours being requested)
+         let sickHoursRequestedInput = e.target;
+         let sickHoursRequested = sickHoursRequestedInput.value;
+         // get result of adding/subtracting hours requested from remaining hours and store in a variable
+         let newHours = sickHours - sickHoursRequested;         
+         const sickPie = document.getElementById("sick-pie");
+         
+         if(sickHoursRequestedInput.value > 8) {
+             sickHoursRequestedInput.value = 8;
+             alert("Can not use more than 8 hours per day");      
+             return;                  
+         }
+         else {
+             if(isNaN(sickHoursRequestedInput.value) || sickHoursRequestedInput.value < 1) {
+                 sickHoursRequestedInput.value = 0;
+                 sickHoursRemainingElement.innerText = sickHours;
+                 return;
+             }
+             if((sickHoursRemaining - sickHoursRequestedInput.value) < 0) {
+                 alert("You do not have a sufficient number of sick hours remaining");
+                 sickHoursRequestedInput.value = sickHoursRemaining;
+             }
+             // adjust pie chart for sick hours
+             sickHoursRemainingElement.innerText = newHours;
+             sickPie.style.setProperty("--p", newHours * 1.25);
+         }
     }
 
     const checkVacationHoursInput = (e) => {
@@ -307,7 +340,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             
                             </div>
                             <div className="hours-left">
-                                <h2 className="sick-hours-remaining">{sickHours}</h2>
+                                <h2 id="sick-hours-remaining">{sickHours}</h2>
                                 <p>hours left</p>
                             </div>                            
                         </div>
