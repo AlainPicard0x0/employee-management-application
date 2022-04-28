@@ -250,9 +250,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
         let mondayRegTime = parseInt(mondayTimeOut - mondayTimeIn);
-        // don't need parseInt here, already use on mondayVacationHoursInput declaration on line 247
-        // also don't need Math.floor on mondayVacationTime?
-        let mondayVacationTime = parseInt(Math.floor(mondayVacationHoursInput * 3600000));
+        let mondayVacationTime = mondayVacationHoursInput * 3600000;
         let mondaySickTime = mondaySickHoursInput * 3600000; 
         let mondayRegHours = Math.floor(mondayRegTime / 3600000);
         let mondayRegMinutes = mondayRegTime % 3600000 / 60000;
