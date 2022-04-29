@@ -114,10 +114,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         
     }
 
-    const testFunc = () => {
-        
-    }
-
     // const adjustSickPie = () => {
     //     const sickHoursRemaining = document.getElementById("sick-pie");
     //     const sickValue = parseInt(sickHoursRemaining.innerText);
@@ -424,7 +420,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <input onChange={calculateTime} id="monday-time-in" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-out">
-                                    <input onChange={e => {calculateTime(); testFunc() }} id="monday-time-out" type="time"></input>
+                                    <input onChange={calculateTime} id="monday-time-out" type="time"></input>
                                 </div>
                                 <div className="monday-row-one-reg-hours">
                                     <div className="">
