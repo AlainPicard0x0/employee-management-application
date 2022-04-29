@@ -253,8 +253,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     
     const useVacationHours = (e) => {
         e.preventDefault();
-        let vacationHoursRequestedField = document.getElementById("vacation-hours-requested");
-        let vacationHoursRequested = vacationHoursRequestedField.value;
+        // let vacationHoursRequestedField = document.getElementById("vacation-hours-requested");
+        let mondayVacationHoursRequestedField = document.getElementById("monday-vacation-hours-input");
+        let vacationHoursRequested = mondayVacationHoursRequestedField.value;
         fetch(`${api}/portal/vacation-leave`, {
             method: "GET",
             headers: {
@@ -268,7 +269,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => {
             setVacationHours(data);
-            vacationHoursRequestedField.value = 0;
+            mondayVacationHoursRequestedField.value = 0;
             adjustVacationPie();
             return data;
         })
@@ -718,7 +719,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
                         <div className="submit-container">
                             <div className="save-btn-container">
-                                <button id="time-card-save-btn">Save</button>
+                                <button onClick={useVacationHours} id="time-card-save-btn">Save</button>
                             </div>
                             <div className="submit-btn-container">
                                 <button onClick={getCurrentWeek} id="time-card-submit-btn">Submit for Approval</button>
