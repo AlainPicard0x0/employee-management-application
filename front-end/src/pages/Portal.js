@@ -225,10 +225,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }
 
-    const useSickHours = (e) => {
+    const spendSickHours = (e) => {
         e.preventDefault();
-        let sickHoursRequestedField = document.getElementById("sick-hours-requested");
-        let sickHoursRequestedInput = sickHoursRequestedField.value;
+        let mondaySickHoursRequestedField = document.getElementById("monday-sick-hours-input");
+        let sickHoursRequestedInput = mondaySickHoursRequestedField.value;
         fetch(`${api}/portal/sick-leave`, {
             method: "GET",
             headers: {
@@ -242,7 +242,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => { 
             setSickHours(data);  
-            sickHoursRequestedField.value = 0;    
+            mondaySickHoursRequestedField.value = 0;    
             adjustSickPie(); 
             return data;
         })
@@ -251,9 +251,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
     }   
     
-    const useVacationHours = (e) => {
+    const spendVacationHours = (e) => {
         e.preventDefault();
-        // let vacationHoursRequestedField = document.getElementById("vacation-hours-requested");
         let mondayVacationHoursRequestedField = document.getElementById("monday-vacation-hours-input");
         let vacationHoursRequested = mondayVacationHoursRequestedField.value;
         fetch(`${api}/portal/vacation-leave`, {
@@ -719,7 +718,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
                         <div className="submit-container">
                             <div className="save-btn-container">
-                                <button onClick={useVacationHours} id="time-card-save-btn">Save</button>
+                                <button onClick={ e => {spendVacationHours(e); spendSickHours(e) } } id="time-card-save-btn">Save</button>
                             </div>
                             <div className="submit-btn-container">
                                 <button onClick={getCurrentWeek} id="time-card-submit-btn">Submit for Approval</button>
