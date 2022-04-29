@@ -78,14 +78,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
     }
 
-    // const handleVacationHours = () => {
-    //     let vacationHoursRemaining = document.getElementById("vacation-hours-remaining");
-    //     let vacationHoursValue = parseInt(vacationHoursRemaining.innerText);
-    //     let vacationHoursPie = document.getElementById("vacation-pie");
-    //     vacationHoursPie.style.setProperty("--p", vacationHoursValue * 1.25);
-    //     console.log(vacationHoursValue);
-    // }
-
     const adjustVacationPie = () => {
         const vacationPie = document.getElementById("vacation-pie");
         const vacationHoursRemaining = document.getElementById("vacation-hours-remaining");
@@ -108,18 +100,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => {
             setVacationHours(data);
-            // handleVacationHours();
             adjustVacationPie();
         })
         
     }
-
-    // const adjustSickPie = () => {
-    //     const sickHoursRemaining = document.getElementById("sick-pie");
-    //     const sickValue = parseInt(sickHoursRemaining.innerText);
-    //     // Set value of style of --p(css variable) equal to number of hours remaining (multiply by 4.17 to base 100% on 24 sick hours)
-    //     sickHoursRemaining.style.setProperty("--p", sickValue * 4.17);
-    // }
 
     const adjustSickPie = () => {
         const sickPie = document.getElementById("sick-pie");
@@ -146,18 +130,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             adjustSickPie();
         })
     }
-
-    // const checkSickHoursInput = () => {
-    //     let sickHoursRequestedInput = document.getElementById("monday-sick-hours-input");
-    //     let sickHoursRemaining = document.getElementsByClassName("sick-hours-remaining")[0].innerText;
-    //     if(isNaN(sickHoursRequestedInput.value) || sickHoursRequestedInput.value < 1) {
-    //         sickHoursRequestedInput.value = 0;
-    //     }
-    //     if((sickHoursRemaining - sickHoursRequestedInput.value) < 0) {
-    //         alert("You do not have a sufficient number of sick hours remaining");
-    //         sickHoursRequestedInput.value = sickHoursRemaining;
-    //     }
-    // }
 
     const checkSickHoursInput = (e) => {
          // get html element for hours left display 
@@ -226,7 +198,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const spendSickHours = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         let mondaySickHoursRequestedField = document.getElementById("monday-sick-hours-input");
         let sickHoursRequestedInput = mondaySickHoursRequestedField.value;
         fetch(`${api}/portal/sick-leave`, {
@@ -242,7 +214,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => { 
             setSickHours(data);  
-            mondaySickHoursRequestedField.value = 0;    
+            mondaySickHoursRequestedField.value = 0;   
             adjustSickPie(); 
             return data;
         })
@@ -252,7 +224,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }   
     
     const spendVacationHours = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         let mondayVacationHoursRequestedField = document.getElementById("monday-vacation-hours-input");
         let vacationHoursRequested = mondayVacationHoursRequestedField.value;
         fetch(`${api}/portal/vacation-leave`, {
@@ -275,6 +247,21 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .catch((err) => {
             console.log(err);
         })        
+    }
+
+    const adjustVacationSickHours = () => {
+        const myPromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Success");
+            }, 300);
+        });
+        myPromise.then(spendSickHours)
+        .then(spendVacationHours)
+        .catch((reason) => {
+            console.log(reason);
+        })
+        // spendSickHours();
+        // spendVacationHours();
     }
 
     // HTML on line 325
@@ -717,11 +704,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         </div>
 
                         <div className="submit-container">
-                            <div className="save-btn-container">
-                                <button onClick={ e => {spendVacationHours(e); spendSickHours(e) } } id="time-card-save-btn">Save</button>
-                            </div>
                             <div className="submit-btn-container">
-                                <button onClick={getCurrentWeek} id="time-card-submit-btn">Submit for Approval</button>
+                                {/* <button onClick={e => {spendVacationHours(e); spendSickHours(e); getCurrentWeek() }} id="time-card-submit-btn">Submit for Approval</button> */}
+                                <button onClick={adjustVacationSickHours} id="time-card-submit-btn">Submit for Approval</button>
                             </div>
                             <div className="reg-hours-total-container">
                                 <p className="reg-hours-total">0:00</p>
