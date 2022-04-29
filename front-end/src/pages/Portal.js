@@ -109,7 +109,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .then(data => {
             setVacationHours(data);
             // handleVacationHours();
-            // adjustVacationPie();
+            adjustVacationPie();
         })
         
     }
