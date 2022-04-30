@@ -215,7 +215,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             setVacationHours(data);
             mondayVacationHoursRequestedField.value = 0;
             adjustVacationPie();
-            console.log("spendVacationHours")
             return data;
         })
         .then(function () {
@@ -230,14 +229,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 },
             })
             .then(response => {
-                console.log(sickHoursRequestedInput);
                 return response.json();
             })
             .then(data => { 
                 setSickHours(data);  
                 mondaySickHoursRequestedField.value = 0;   
                 adjustSickPie(); 
-                console.log("spendSickHours()");
                 return data;
             })
             document.getElementById("monday-total-hours").innerText = "00:00";
