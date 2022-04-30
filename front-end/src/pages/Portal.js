@@ -240,10 +240,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 console.log("spendSickHours()");
                 return data;
             })
-
+            document.getElementById("monday-total-hours").innerText = "00:00";
         })       
     }
-    
+
     // HTML on line 325
     const calculateTime = () => {
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
