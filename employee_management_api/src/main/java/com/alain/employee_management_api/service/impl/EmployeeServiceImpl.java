@@ -102,6 +102,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         Long sickLeaveRemaining = employee.getSickLeave() - sickHoursUsed;
         employee.setSickLeave(sickLeaveRemaining);
+        System.out.println("sickLeaveRemaining: " + sickLeaveRemaining);
         return employee.getSickLeave();
     }
 
@@ -123,6 +124,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         Long vacationHoursRemaining = employee.getVacationLeave() - vacationHoursUsed;
         employee.setVacationLeave(vacationHoursRemaining);
+        System.out.println("Vacation Hours Remaining: " + vacationHoursRemaining);
         return employee.getVacationLeave();
     }
 }

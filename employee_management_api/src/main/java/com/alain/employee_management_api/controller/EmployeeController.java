@@ -65,6 +65,7 @@ public class EmployeeController {
     @CrossOrigin
     @GetMapping("/portal/sick-leave")
     public Long useSickHours(@RequestHeader("email") String email, @RequestHeader("sick-hours") Long sickHours) {
+        System.out.println("spendSickLeave()");
         return employeeService.useSickHours(email, sickHours);
     }
 
@@ -78,6 +79,7 @@ public class EmployeeController {
     @CrossOrigin
     @GetMapping("/portal/vacation-leave")
     public Long useVacationHours(@RequestHeader("email") String email, @RequestHeader("vacation-hours") Long vacationHours) {
+        System.out.println("spendVacationLeave()");
         return employeeService.useVacationHours(email, vacationHours);
     }
 

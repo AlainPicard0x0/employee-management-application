@@ -197,34 +197,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }
 
-    const spendSickHours = (e) => {
-        // e.preventDefault();
-        let mondaySickHoursRequestedField = document.getElementById("monday-sick-hours-input");
-        let sickHoursRequestedInput = mondaySickHoursRequestedField.value;
-        fetch(`${api}/portal/sick-leave`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "email": email,
-                "sick-hours": sickHoursRequestedInput 
-            },
-        })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => { 
-            setSickHours(data);  
-            mondaySickHoursRequestedField.value = 0;   
-            adjustSickPie(); 
-            return data;
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-    }   
-    
-    const spendVacationHours = (e) => {
-        // e.preventDefault();
+    const adjustVacationSickHours = () => {
         let mondayVacationHoursRequestedField = document.getElementById("monday-vacation-hours-input");
         let vacationHoursRequested = mondayVacationHoursRequestedField.value;
         fetch(`${api}/portal/vacation-leave`, {
@@ -242,27 +215,47 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             setVacationHours(data);
             mondayVacationHoursRequestedField.value = 0;
             adjustVacationPie();
+            console.log("spendVacationHours")
             return data;
         })
-        .catch((err) => {
-            console.log(err);
-        })        
+        .then(function () {
+            let mondaySickHoursRequestedField = document.getElementById("monday-sick-hours-input");
+            let sickHoursRequestedInput = mondaySickHoursRequestedField.value;
+            fetch(`${api}/portal/sick-leave`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "email": email,
+                    "sick-hours": sickHoursRequestedInput 
+                },
+            })
+            .then(response => {
+                console.log(sickHoursRequestedInput);
+                return response.json();
+            })
+            .then(data => { 
+                setSickHours(data);  
+                mondaySickHoursRequestedField.value = 0;   
+                adjustSickPie(); 
+                console.log("spendSickHours()");
+                return data;
+            })
+
+        })       
     }
 
-    const adjustVacationSickHours = () => {
-        const myPromise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve("Success");
-            }, 300);
-        });
-        myPromise.then(spendSickHours)
-        .then(spendVacationHours)
-        .catch((reason) => {
-            console.log(reason);
-        })
-        // spendSickHours();
-        // spendVacationHours();
-    }
+    // const adjustVacationSickHours = () => {
+    //     const myPromise = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve("Success");
+    //         }, 300);
+    //     });
+    //     myPromise.then(spendSickHours)
+    //     .then(spendVacationHours)
+    //     .catch((reason) => {
+    //         console.log(reason);
+    //     })
+    // }
 
     // HTML on line 325
     const calculateTime = () => {
