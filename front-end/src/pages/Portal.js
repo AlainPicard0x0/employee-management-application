@@ -243,20 +243,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
         })       
     }
-
-    // const adjustVacationSickHours = () => {
-    //     const myPromise = new Promise((resolve, reject) => {
-    //         setTimeout(() => {
-    //             resolve("Success");
-    //         }, 300);
-    //     });
-    //     myPromise.then(spendSickHours)
-    //     .then(spendVacationHours)
-    //     .catch((reason) => {
-    //         console.log(reason);
-    //     })
-    // }
-
+    
     // HTML on line 325
     const calculateTime = () => {
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
