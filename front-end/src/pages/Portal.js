@@ -243,6 +243,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     // HTML on line 325
     const calculateTime = () => {
+        // Monday
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
         let mondayTimeOut = document.getElementById("monday-time-out").valueAsNumber;
         let mondayRegHoursInput = document.getElementById("monday-reg-hours");
@@ -287,7 +288,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 mondayRegHoursInput.innerText = mondayRegHours + ":" + mondayRegMinutes;
                 mondayTotalHoursInput.innerText = mondayTotalHours + ":" + mondayTotalMinutes;
             }        
-        }        
+        }  
+        // Tuesday
+        let tuesdayTimeIn = document.getElementById("tuesday-time-in").valueAsNumber;
+        let tuesdayTimeOut = document.getElementById("tuesday-time-out").valueAsNumber;
+        let tuesdayRegHoursInput = document.getElementById("tuesday-reg-hours");
+        let tuesdayVacationHoursInput = parseFloat(document.getElementById("tuesday-vacation-hours-input").value);
+        let tuesdaySickHoursInput = parseFloat(document.getElementById("tuesday-sick-hours-input").value);
+        let tuesdayTotalHoursInput = document.getElementById("tuesday-total-hours");
+
     }
 
     return (
