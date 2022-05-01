@@ -237,7 +237,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 adjustSickPie(); 
                 return data;
             })
-            document.getElementById("monday-total-hours").innerText = "00:00";
+            document.getElementById("monday-total-hours").innerText = "0:00";
         })       
     }
 
@@ -265,13 +265,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let mondayTotalMinutes = mondayRegMinutes + mondayVacMinutes + mondaySickMinutes;        
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
             if(mondayVacMinutes + mondaySickMinutes == 0 && mondayVacHours + mondaySickHours == 0) {
-                mondayTotalHoursInput.innerText = "00:00";
+                mondayTotalHoursInput.innerText = "0:00";
             }
             else if(mondayVacMinutes + mondaySickMinutes < 10) {
                 mondayTotalHoursInput.innerText = Math.floor(mondayVacHours + mondaySickHours) + ":0" + Math.floor(mondayVacMinutes + mondaySickMinutes);
             }
             else {
-                mondayRegHoursInput.innerText = "00:00";
+                mondayRegHoursInput.innerText = "0:00";
                 mondayTotalHoursInput.innerText = Math.floor(mondayVacHours + mondaySickHours) + ":" + Math.floor(mondayVacMinutes + mondaySickMinutes);
             }         
         }
