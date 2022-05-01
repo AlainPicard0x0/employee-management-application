@@ -239,6 +239,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 return data;
             })
             document.getElementById("monday-total-hours").innerText = "0:00";
+            document.getElementById("tuesday-total-hours").innerText = "0:00";
         })       
     }
 
