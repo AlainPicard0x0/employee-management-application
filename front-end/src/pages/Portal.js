@@ -87,6 +87,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         vacationPie.style.setProperty("--p", vacationValue * 1.25);
     }
 
+    // removed this from vacation-hours-input onChange() 4/30/2022
     const findVacationHoursRemaining = () => {
         fetch(`${api}/login/vacation`, {
             method: "GET",
@@ -338,6 +339,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     }
 
+    const getTotalVacationHours = () => {
+        const vacationHoursRequested = document.getElementsByClassName("vacation-hours-requested");
+        let totalVacationHours = 0;
+        for(let i = 0; i < vacationHoursRequested.length; i++) {
+            let vacationHours = vacationHoursRequested[i].value;
+            console.log(vacationHours);
+        }
+    }
+
     return (
         <div className="portal">
             <main id="portal-main">
@@ -441,7 +451,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="monday-row-one-vacation-hours">
                                     <div className="">
-                                        <input onChange={e => {checkVacationHoursInput(e); findVacationHoursRemaining(e); calculateTime(); adjustVacationPie() }} step="any" type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
+                                        <input onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} step="any" type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="monday-row-one-sick-hours">                                    
@@ -502,12 +512,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="tuesday-row-one-vacation-hours">
                                     <div className="">
-                                        <input type="number" onChange={e => {checkVacationHoursInput(e); findVacationHoursRemaining(e); calculateTime(); adjustVacationPie() }} id="tuesday-vacation-hours-input" step="any" defaultValue={0}></input>
+                                        <input type="number" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} id="tuesday-vacation-hours-input" className="vacation-hours-requested" step="any" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="tuesday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); findSickHoursRemaining(e); calculateTime(); adjustSickPie() }} type="number" id="tuesday-sick-hours-input" step="any" name="" defaultValue={0}></input>
+                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="tuesday-sick-hours-input" step="any" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="tuesday-row-one-account-code">
@@ -731,7 +741,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="submit-container">
                             <div className="submit-btn-container">
                                 {/* <button onClick={e => {spendVacationHours(e); spendSickHours(e); getCurrentWeek() }} id="time-card-submit-btn">Submit for Approval</button> */}
-                                <button onClick={adjustVacationSickHours} id="time-card-submit-btn">Submit for Approval</button>
+                                <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours()}} id="time-card-submit-btn">Submit for Approval</button>
                             </div>
                             <div className="reg-hours-total-container">
                                 <p className="reg-hours-total">0:00</p>
