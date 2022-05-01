@@ -297,6 +297,45 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let tuesdaySickHoursInput = parseFloat(document.getElementById("tuesday-sick-hours-input").value);
         let tuesdayTotalHoursInput = document.getElementById("tuesday-total-hours");
 
+        // 60,000ms = 1 minute; 3,600,000ms = 1 hour
+        let tuesdayRegTime = parseInt(tuesdayTimeOut - tuesdayTimeIn);
+        let tuesdayVacationTime = tuesdayVacationHoursInput * 3600000;
+        let tuesdaySickTime = tuesdaySickHoursInput * 3600000; 
+        let tuesdayRegHours = Math.floor(tuesdayRegTime / 3600000);
+        let tuesdayRegMinutes = tuesdayRegTime % 3600000 / 60000;
+        let tuesdayVacHours = Math.floor(tuesdayVacationTime / 3600000);
+        let tuesdayVacMinutes = tuesdayVacationTime % 3600000 / 60000;
+        let tuesdaySickHours = Math.floor(tuesdaySickTime / 3600000);
+        let tuesdaySickMinutes = tuesdaySickTime % 3600000 / 60000;
+        let tuesdayTotalHours = tuesdayRegHours + tuesdayVacHours + tuesdaySickHours;
+        let tuesdayTotalMinutes = tuesdayRegMinutes + tuesdayVacMinutes + tuesdaySickMinutes;        
+        if(isNaN(tuesdayTimeIn) || isNaN(tuesdayTimeOut) || tuesdayTimeIn > tuesdayTimeOut) {
+            if(tuesdayVacMinutes + tuesdaySickMinutes == 0 && tuesdayVacHours + tuesdaySickHours == 0) {
+                tuesdayTotalHoursInput.innerText = "0:00";
+            }
+            else if(tuesdayVacMinutes + tuesdaySickMinutes < 10) {
+                tuesdayTotalHoursInput.innerText = Math.floor(tuesdayVacHours + tuesdaySickHours) + ":0" + Math.floor(tuesdayVacMinutes + tuesdaySickMinutes);
+            }
+            else {
+                tuesdayRegHoursInput.innerText = "0:00";
+                tuesdayTotalHoursInput.innerText = Math.floor(tuesdayVacHours + tuesdaySickHours) + ":" + Math.floor(tuesdayVacMinutes + tuesdaySickMinutes);
+            }         
+        }
+        else {
+            if(tuesdayRegMinutes < 10 && tuesdayTotalMinutes < 10) {
+                tuesdayRegHoursInput.innerText = tuesdayRegHours + ":0" + tuesdayRegMinutes;
+                tuesdayTotalHoursInput.innerText = tuesdayTotalHours + ":0" + tuesdayTotalMinutes;
+            }
+            else if(tuesdayRegMinutes < 10) {
+                tuesdayRegHoursInput.innerText = tuesdayRegHours + ":0" + tuesdayRegMinutes;
+                tuesdayTotalHoursInput.innerText = tuesdayTotalHours + ":" + tuesdayTotalMinutes;
+            }
+            else {
+                tuesdayRegHoursInput.innerText = tuesdayRegHours + ":" + tuesdayRegMinutes;
+                tuesdayTotalHoursInput.innerText = tuesdayTotalHours + ":" + tuesdayTotalMinutes;
+            }        
+        }
+
     }
 
     return (
@@ -451,10 +490,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>{week.tuesday}</p>
                                 </div>   
                                 <div className="tuesday-row-one-in">
-                                    <input id="tuesday-time-in" type="time"></input>
+                                    <input onChange={calculateTime} id="tuesday-time-in" type="time"></input>
                                 </div>
                                 <div className="tuesday-row-one-out">
-                                    <input id="tuesday-time-out" type="time"></input>
+                                    <input onChange={calculateTime} id="tuesday-time-out" type="time"></input>
                                 </div>
                                 <div className="tuesday-row-one-reg-hours">
                                     <div className="">
@@ -463,12 +502,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="tuesday-row-one-vacation-hours">
                                     <div className="">
-                                        <input type="number" id="tuesday-vacation-hours-input" defaultValue={0}></input>
+                                        <input type="number" onChange={e => {checkVacationHoursInput(e); findVacationHoursRemaining(e); calculateTime(); adjustVacationPie() }} id="tuesday-vacation-hours-input" step="any" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="tuesday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={checkSickHoursInput} type="number" id="tuesday-sick-hours-input" name="" defaultValue={0}></input>
+                                        <input onChange={e => {checkSickHoursInput(e); findSickHoursRemaining(e); calculateTime(); adjustSickPie() }} type="number" id="tuesday-sick-hours-input" step="any" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="tuesday-row-one-account-code">
