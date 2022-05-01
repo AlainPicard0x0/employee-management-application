@@ -349,9 +349,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         const vacationHoursRequested = document.getElementsByClassName("vacation-hours-requested");
         let totalVacationHours = 0;
         for(let i = 0; i < vacationHoursRequested.length; i++) {
-            let vacationHours = vacationHoursRequested[i].value;
-            console.log(vacationHours);
+            let vacationHoursValue = parseFloat(vacationHoursRequested[i].value);
+            totalVacationHours += vacationHoursValue;
         }
+        console.log(totalVacationHours);
     }
 
     return (
