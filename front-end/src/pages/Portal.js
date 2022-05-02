@@ -193,7 +193,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 vacationHoursRequestedInput.value = vacationHoursRemaining;
             }
             // adjust pie chart for vacation hours
-            getTotalVacationHours();
+            // getTotalVacationHours(e);
             // vacationHoursRemainingElement.innerText = newHours;
             // vacationPie.style.setProperty("--p", newHours * 1.25);
         }
@@ -346,7 +346,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     }
 
-    const getTotalVacationHours = () => {
+    let vacHoursReqInput = document.getElementsByClassName("vacation-hours-requested");
+    for(let i = 0; i < vacHoursReqInput.length; i++) {
+        vacHoursReqInput[i].addEventListener("change", () => {
+            getTotalVacationHours();
+        })
+    }
+
+    const getTotalVacationHours = (e) => {
         const vacationHoursRequested = document.getElementsByClassName("vacation-hours-requested");
         const vacationHoursRemaining = document.getElementById("vacation-hours-remaining");
         const vacationPie = document.getElementById("vacation-pie");
