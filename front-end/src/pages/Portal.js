@@ -193,8 +193,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 vacationHoursRequestedInput.value = vacationHoursRemaining;
             }
             // adjust pie chart for vacation hours
-            vacationHoursRemainingElement.innerText = newHours;
-            vacationPie.style.setProperty("--p", newHours * 1.25);
+            getTotalVacationHours();
+            // vacationHoursRemainingElement.innerText = newHours;
+            // vacationPie.style.setProperty("--p", newHours * 1.25);
         }
     }
 
@@ -347,12 +348,16 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const getTotalVacationHours = () => {
         const vacationHoursRequested = document.getElementsByClassName("vacation-hours-requested");
-        let totalVacationHours = 0;
+        const vacationHoursRemaining = document.getElementById("vacation-hours-remaining");
+        const vacationPie = document.getElementById("vacation-pie");
+        let totalVacationHoursRequested = 0;
         for(let i = 0; i < vacationHoursRequested.length; i++) {
             let vacationHoursValue = parseFloat(vacationHoursRequested[i].value);
-            totalVacationHours += vacationHoursValue;
+            totalVacationHoursRequested += vacationHoursValue;
         }
-        console.log(totalVacationHours);
+        let newHours = parseFloat(vacationHours - totalVacationHoursRequested);
+        vacationHoursRemaining.innerText = newHours;
+        vacationPie.style.setProperty("--p", newHours * 1.25);
     }
 
     return (
