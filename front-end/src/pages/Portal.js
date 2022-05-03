@@ -630,10 +630,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>{week.wednesday}</p>
                                 </div>   
                                 <div className="wednesday-row-one-in">
-                                    <input id="wednesday-time-in" type="time"></input>
+                                    <input id="wednesday-time-in" onChange={calculateTime} type="time"></input>
                                 </div>
                                 <div className="wednesday-row-one-out">
-                                    <input id="wednesday-time-out" type="time"></input>
+                                    <input id="wednesday-time-out" onChange={calculateTime} type="time"></input>
                                 </div>
                                 <div className="wednesday-row-one-reg-hours">
                                     <div className="">
@@ -642,12 +642,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="wednesday-row-one-vacation-hours">
                                     <div className="">
-                                        <input type="number" id="wednesday-vacation-hours-input" defaultValue={0}></input>
+                                        <input type="number" id="wednesday-vacation-hours-input" onChange={calculateTime} step="any" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="wednesday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={checkSickHoursInput} type="number" id="wednesday-sick-hours-input" name="" defaultValue={0}></input>
+                                        <input onChange={(e) => {checkSickHoursInput(e); calculateTime()}} type="number" id="wednesday-sick-hours-input" step="any" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="wednesday-row-one-account-code">
