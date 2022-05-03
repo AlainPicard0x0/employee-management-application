@@ -347,6 +347,52 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 tuesdayTotalHoursInput.innerText = tuesdayTotalHours + ":" + tuesdayTotalMinutes;
             }        
         }
+        // Wednesday
+        let wednesdayTimeIn = document.getElementById("wednesday-time-in").valueAsNumber;
+        let wednesdayTimeOut = document.getElementById("wednesday-time-out").valueAsNumber;
+        let wednesdayRegHoursInput = document.getElementById("wednesday-reg-hours");
+        let wednesdayVacationHoursInput = parseFloat(document.getElementById("wednesday-vacation-hours-input").value);
+        let wednesdaySickHoursInput = parseFloat(document.getElementById("wednesday-sick-hours-input").value);
+        let wednesdayTotalHoursInput = document.getElementById("wednesday-total-hours");
+        
+        // 60,000ms = 1 minute; 3,600,000ms = 1 hour
+        let wednesdayRegTime = parseInt(wednesdayTimeOut - wednesdayTimeIn);
+        let wednesdayVacationTime = wednesdayVacationHoursInput * 3600000;
+        let wednesdaySickTime = wednesdaySickHoursInput * 3600000; 
+        let wednesdayRegHours = Math.floor(wednesdayRegTime / 3600000);
+        let wednesdayRegMinutes = wednesdayRegTime % 3600000 / 60000;
+        let wednesdayVacHours = Math.floor(wednesdayVacationTime / 3600000);
+        let wednesdayVacMinutes = wednesdayVacationTime % 3600000 / 60000;
+        let wednesdaySickHours = Math.floor(wednesdaySickTime / 3600000);
+        let wednesdaySickMinutes = wednesdaySickTime % 3600000 / 60000;
+        let wednesdayTotalHours = wednesdayRegHours + wednesdayVacHours + wednesdaySickHours;
+        let wednesdayTotalMinutes = wednesdayRegMinutes + wednesdayVacMinutes + wednesdaySickMinutes;        
+        if(isNaN(wednesdayTimeIn) || isNaN(wednesdayTimeOut) || wednesdayTimeIn > wednesdayTimeOut) {
+            if(wednesdayVacMinutes + wednesdaySickMinutes == 0 && wednesdayVacHours + wednesdaySickHours == 0) {
+                wednesdayTotalHoursInput.innerText = "0:00";
+            }
+            else if(wednesdayVacMinutes + wednesdaySickMinutes < 10) {
+                wednesdayTotalHoursInput.innerText = Math.floor(wednesdayVacHours + wednesdaySickHours) + ":0" + Math.floor(wednesdayVacMinutes + wednesdaySickMinutes);
+            }
+            else {
+                wednesdayRegHoursInput.innerText = "0:00";
+                wednesdayTotalHoursInput.innerText = Math.floor(wednesdayVacHours + wednesdaySickHours) + ":" + Math.floor(wednesdayVacMinutes + wednesdaySickMinutes);
+            }         
+        }
+        else {
+            if(wednesdayRegMinutes < 10 && wednesdayTotalMinutes < 10) {
+                wednesdayRegHoursInput.innerText = wednesdayRegHours + ":0" + wednesdayRegMinutes;
+                wednesdayTotalHoursInput.innerText = wednesdayTotalHours + ":0" + wednesdayTotalMinutes;
+            }
+            else if(wednesdayRegMinutes < 10) {
+                wednesdayRegHoursInput.innerText = wednesdayRegHours + ":0" + wednesdayRegMinutes;
+                wednesdayTotalHoursInput.innerText = wednesdayTotalHours + ":" + wednesdayTotalMinutes;
+            }
+            else {
+                wednesdayRegHoursInput.innerText = wednesdayRegHours + ":" + wednesdayRegMinutes;
+                wednesdayTotalHoursInput.innerText = wednesdayTotalHours + ":" + wednesdayTotalMinutes;
+            }        
+        }
 
     }
 
