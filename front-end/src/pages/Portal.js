@@ -223,6 +223,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             setVacationHours(data);
             mondayVacationHoursRequestedField.value = 0;
             tuesdayVacationHoursRequestedField.value = 0;
+            wednesdayVacationHoursRequestedField.value = 0;
             adjustVacationPie();
             return data;
         })
