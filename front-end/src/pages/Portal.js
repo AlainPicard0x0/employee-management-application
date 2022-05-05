@@ -752,10 +752,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <p>{week.friday}</p>
                                 </div>   
                                 <div className="friday-row-one-in">
-                                    <input id="friday-time-in" type="time"></input>
+                                    <input id="friday-time-in" onChange={calculateTime} type="time"></input>
                                 </div>
                                 <div className="friday-row-one-out">
-                                    <input id="friday-time-out" type="time"></input>
+                                    <input id="friday-time-out" onChange={calculateTime} type="time"></input>
                                 </div>
                                 <div className="friday-row-one-reg-hours">
                                     <div className="">
