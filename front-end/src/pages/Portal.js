@@ -642,7 +642,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="wednesday-row-one-vacation-hours">
                                     <div className="">
-                                        <input type="number" id="wednesday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} step="any" defaultValue={0}></input>
+                                        <input type="number" id="wednesday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" step="any" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="wednesday-row-one-sick-hours">                                    
@@ -703,7 +703,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="thursday-row-one-vacation-hours">
                                     <div className="">
-                                        <input type="number" id="thursday-vacation-hours-input" defaultValue={0}></input>
+                                        <input type="number" id="thursday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="thursday-row-one-sick-hours">                                    
@@ -764,7 +764,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="friday-row-one-vacation-hours">
                                     <div className="">
-                                        <input type="number" id="friday-vacation-hours-input" defaultValue={0}></input>
+                                        <input type="number" id="friday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="friday-row-one-sick-hours">                                    
