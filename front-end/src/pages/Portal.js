@@ -12,7 +12,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const [vacationHours, setVacationHours] = useState(null);
     const [value, onChange] = useState(new Date());
     const navigate = useNavigate();
-    const api = `http://localhost:8080/api/employees`    
+    const api = `http://localhost:8080/api/employees`;    
     const [week, setWeek] = useState({});
 
     useEffect(() => {
@@ -185,7 +185,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         else {
             if(isNaN(vacationHoursRequestedInput.value) || vacationHoursRequestedInput.value < 1) {
                 vacationHoursRequestedInput.value = 0;
-                vacationHoursRemainingElement.innerText = vacationHours;
+                //vacationHoursRemainingElement.innerText = vacationHours;
                 return;
             }
             if((vacationHoursRemaining - vacationHoursRequestedInput.value) < 0) {
