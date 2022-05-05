@@ -276,7 +276,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let mondayTotalHours = mondayRegHours + mondayVacHours + mondaySickHours;
         let mondayTotalMinutes = mondayRegMinutes + mondayVacMinutes + mondaySickMinutes;        
         if(isNaN(mondayTimeIn) || isNaN(mondayTimeOut) || mondayTimeIn > mondayTimeOut) {
-            if(mondayVacMinutes + mondaySickMinutes == 0 && mondayVacHours + mondaySickHours == 0) {
+            if(mondayVacMinutes + mondaySickMinutes === 0 && mondayVacHours + mondaySickHours === 0) {
                 mondayTotalHoursInput.innerText = "0:00";
             }
             else if(mondayVacMinutes + mondaySickMinutes < 10) {
@@ -322,7 +322,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let tuesdayTotalHours = tuesdayRegHours + tuesdayVacHours + tuesdaySickHours;
         let tuesdayTotalMinutes = tuesdayRegMinutes + tuesdayVacMinutes + tuesdaySickMinutes;        
         if(isNaN(tuesdayTimeIn) || isNaN(tuesdayTimeOut) || tuesdayTimeIn > tuesdayTimeOut) {
-            if(tuesdayVacMinutes + tuesdaySickMinutes == 0 && tuesdayVacHours + tuesdaySickHours == 0) {
+            if(tuesdayVacMinutes + tuesdaySickMinutes === 0 && tuesdayVacHours + tuesdaySickHours === 0) {
                 tuesdayTotalHoursInput.innerText = "0:00";
             }
             else if(tuesdayVacMinutes + tuesdaySickMinutes < 10) {
@@ -368,7 +368,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let wednesdayTotalHours = wednesdayRegHours + wednesdayVacHours + wednesdaySickHours;
         let wednesdayTotalMinutes = wednesdayRegMinutes + wednesdayVacMinutes + wednesdaySickMinutes;        
         if(isNaN(wednesdayTimeIn) || isNaN(wednesdayTimeOut) || wednesdayTimeIn > wednesdayTimeOut) {
-            if(wednesdayVacMinutes + wednesdaySickMinutes == 0 && wednesdayVacHours + wednesdaySickHours == 0) {
+            if(wednesdayVacMinutes + wednesdaySickMinutes === 0 && wednesdayVacHours + wednesdaySickHours === 0) {
                 wednesdayTotalHoursInput.innerText = "0:00";
             }
             else if(wednesdayVacMinutes + wednesdaySickMinutes < 10) {
