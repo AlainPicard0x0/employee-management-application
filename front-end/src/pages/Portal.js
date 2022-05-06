@@ -817,12 +817,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="thursday-row-one-vacation-hours">
                                     <div className="">
-                                        <input type="number" id="thursday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" defaultValue={0}></input>
+                                        <input type="number" id="thursday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" step="any" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="thursday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="thursday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
+                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="thursday-sick-hours-input" className="sick-hours-requested" step="any" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="thursday-row-one-account-code">
@@ -878,12 +878,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="friday-row-one-vacation-hours">
                                     <div className="">
-                                        <input type="number" id="friday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" defaultValue={0}></input>
+                                        <input type="number" id="friday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" step="any" defaultValue={0}></input>
                                     </div>
                                 </div>
                                 <div className="friday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="friday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
+                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="friday-sick-hours-input" className="sick-hours-requested" step="any" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="friday-row-one-account-code">
