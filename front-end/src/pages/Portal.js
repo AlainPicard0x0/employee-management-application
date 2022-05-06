@@ -496,7 +496,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
     }
 
-    let sickHoursReqInput = document.getElementsByClassName("")
+    let sickHoursReqInput = document.getElementsByClassName("sick-hours-requested");
+    for(let i = 0; i < sickHoursReqInput.length; i++) {
+        sickHoursReqInput[i].addEventListener("change", () => {
+            
+        })
+    }
 
     const getTotalVacationHours = (e) => {
         const vacationHoursRequested = document.getElementsByClassName("vacation-hours-requested");
