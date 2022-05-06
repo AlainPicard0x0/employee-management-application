@@ -153,7 +153,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
              if(isNaN(sickHoursRequestedInput.value) || sickHoursRequestedInput.value < 1) {
                  sickHoursRequestedInput.value = 0;
                  // won't need this line once eventListener added to sick-hours input
-                 sickHoursRemainingElement.innerText = sickHours;
+                 // sickHoursRemainingElement.innerText = sickHours;
                  //
                  return;
              }
@@ -822,7 +822,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="thursday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={checkSickHoursInput} type="number" id="thursday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
+                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="thursday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="thursday-row-one-account-code">
@@ -883,7 +883,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="friday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={checkSickHoursInput} type="number" id="friday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
+                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="friday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="friday-row-one-account-code">
