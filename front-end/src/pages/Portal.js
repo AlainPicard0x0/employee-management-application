@@ -152,7 +152,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
          else {
              if(isNaN(sickHoursRequestedInput.value) || sickHoursRequestedInput.value < 1) {
                  sickHoursRequestedInput.value = 0;
+                 // won't need this line once eventListener added to sick-hours input
                  sickHoursRemainingElement.innerText = sickHours;
+                 //
                  return;
              }
              if((sickHoursRemaining - sickHoursRequestedInput.value) < 0) {
@@ -494,6 +496,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
     }
 
+    let sickHoursReqInput = document.getElementsByClassName("")
+
     const getTotalVacationHours = (e) => {
         const vacationHoursRequested = document.getElementsByClassName("vacation-hours-requested");
         const vacationHoursRemaining = document.getElementById("vacation-hours-remaining");
@@ -616,7 +620,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="monday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} step="any" type="number" id="monday-sick-hours-input" name="" defaultValue={0}></input>
+                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} step="any" type="number" id="monday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="monday-row-one-account-code">
@@ -677,7 +681,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="tuesday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="tuesday-sick-hours-input" step="any" name="" defaultValue={0}></input>
+                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="tuesday-sick-hours-input" className="sick-hours-requested" step="any" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="tuesday-row-one-account-code">
@@ -738,7 +742,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="wednesday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={(e) => {checkSickHoursInput(e); calculateTime()}} type="number" id="wednesday-sick-hours-input" step="any" name="" defaultValue={0}></input>
+                                        <input onChange={(e) => {checkSickHoursInput(e); calculateTime()}} type="number" id="wednesday-sick-hours-input" className="sick-hours-requested" step="any" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="wednesday-row-one-account-code">
@@ -799,7 +803,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="thursday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={checkSickHoursInput} type="number" id="thursday-sick-hours-input" name="" defaultValue={0}></input>
+                                        <input onChange={checkSickHoursInput} type="number" id="thursday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="thursday-row-one-account-code">
@@ -860,7 +864,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="friday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={checkSickHoursInput} type="number" id="friday-sick-hours-input" name="" defaultValue={0}></input>
+                                        <input onChange={checkSickHoursInput} type="number" id="friday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="friday-row-one-account-code">
