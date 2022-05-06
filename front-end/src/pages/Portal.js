@@ -162,8 +162,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                  sickHoursRequestedInput.value = sickHoursRemaining;
              }
              // adjust pie chart for sick hours
-             sickHoursRemainingElement.innerText = newHours;
-             sickPie.style.setProperty("--p", newHours * 1.25);
+            //  sickHoursRemainingElement.innerText = newHours;
+            //  sickPie.style.setProperty("--p", newHours * 1.25);
          }
     }
 
@@ -499,7 +499,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     let sickHoursReqInput = document.getElementsByClassName("sick-hours-requested");
     for(let i = 0; i < sickHoursReqInput.length; i++) {
         sickHoursReqInput[i].addEventListener("change", () => {
-            
+            getTotalSickHours();
         })
     }
 
@@ -515,6 +515,20 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let newHours = parseFloat(vacationHours - totalVacationHoursRequested);
         vacationHoursRemaining.innerText = newHours;
         vacationPie.style.setProperty("--p", newHours * 1.25);
+    }
+
+    const getTotalSickHours = (e) => {
+        const sickHoursRequested = document.getElementsByClassName("sick-hours-requested");
+        const sickHoursRemaining = document.getElementById("sick-hours-remaining");
+        const sickPie = document.getElementById("sick-pie");
+        let totalSickHoursRequested = 0;
+        for(let i = 0; i < sickHoursRequested.length; i++) {
+            let sickHoursValue = parseFloat(sickHoursRequested[i].value);
+            totalSickHoursRequested += sickHoursValue;
+        }
+        let newHours = parseFloat(sickHours - totalSickHoursRequested);
+        sickHoursRemaining.innerText = newHours;
+        sickPie.style.setProperty("--p", newHours * 4.17);
     }
 
     return (
