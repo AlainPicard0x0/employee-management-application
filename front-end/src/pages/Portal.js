@@ -629,7 +629,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="monday-row-one-reg-hours">
                                     <div className="">
-                                        <p id="monday-reg-hours">0:00</p>
+                                        <p id="monday-reg-hours" className="reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="monday-row-one-vacation-hours">
@@ -690,7 +690,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="tuesday-row-one-reg-hours">
                                     <div className="">
-                                       <p id="tuesday-reg-hours">0:00</p>
+                                       <p id="tuesday-reg-hours" className="reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="tuesday-row-one-vacation-hours">
@@ -751,7 +751,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="wednesday-row-one-reg-hours">
                                     <div className="">
-                                        <p id="wednesday-reg-hours">0:00</p>
+                                        <p id="wednesday-reg-hours" className="reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="wednesday-row-one-vacation-hours">
@@ -812,7 +812,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="thursday-row-one-reg-hours">
                                     <div className="">
-                                        <p id="thursday-reg-hours">0:00</p>
+                                        <p id="thursday-reg-hours" className="reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="thursday-row-one-vacation-hours">
@@ -873,7 +873,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="friday-row-one-reg-hours">
                                     <div className="">
-                                        <p id="friday-reg-hours">0:00</p>
+                                        <p id="friday-reg-hours" className="reg-hours">0:00</p>
                                     </div>    
                                 </div>
                                 <div className="friday-row-one-vacation-hours">
