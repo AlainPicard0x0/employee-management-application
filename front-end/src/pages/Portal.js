@@ -439,7 +439,52 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 thursdayTotalHoursInput.innerText = thursdayTotalHours + ":" + thursdayTotalMinutes;
             }        
         }  
-
+        // Friday
+        let fridayTimeIn = document.getElementById("friday-time-in").valueAsNumber;
+        let fridayTimeOut = document.getElementById("friday-time-out").valueAsNumber;
+        let fridayRegHoursInput = document.getElementById("friday-reg-hours");
+        let fridayVacationHoursInput = parseFloat(document.getElementById("friday-vacation-hours-input").value);
+        let fridaySickHoursInput = parseFloat(document.getElementById("friday-sick-hours-input").value);
+        let fridayTotalHoursInput = document.getElementById("friday-total-hours");
+        
+        // 60,000ms = 1 minute; 3,600,000ms = 1 hour
+        let fridayRegTime = parseInt(fridayTimeOut - fridayTimeIn);
+        let fridayVacationTime = fridayVacationHoursInput * 3600000;
+        let fridaySickTime = fridaySickHoursInput * 3600000; 
+        let fridayRegHours = Math.floor(fridayRegTime / 3600000);
+        let fridayRegMinutes = fridayRegTime % 3600000 / 60000;
+        let fridayVacHours = Math.floor(fridayVacationTime / 3600000);
+        let fridayVacMinutes = fridayVacationTime % 3600000 / 60000;
+        let fridaySickHours = Math.floor(fridaySickTime / 3600000);
+        let fridaySickMinutes = fridaySickTime % 3600000 / 60000;
+        let fridayTotalHours = fridayRegHours + fridayVacHours + fridaySickHours;
+        let fridayTotalMinutes = fridayRegMinutes + fridayVacMinutes + fridaySickMinutes;        
+        if(isNaN(fridayTimeIn) || isNaN(fridayTimeOut) || fridayTimeIn > fridayTimeOut) {
+            if(fridayVacMinutes + fridaySickMinutes === 0 && fridayVacHours + fridaySickHours === 0) {
+                fridayTotalHoursInput.innerText = "0:00";
+            }
+            else if(fridayVacMinutes + fridaySickMinutes < 10) {
+                fridayTotalHoursInput.innerText = Math.floor(fridayVacHours + fridaySickHours) + ":0" + Math.floor(fridayVacMinutes + fridaySickMinutes);
+            }
+            else {
+                fridayRegHoursInput.innerText = "0:00";
+                fridayTotalHoursInput.innerText = Math.floor(fridayVacHours + fridaySickHours) + ":" + Math.floor(fridayVacMinutes + fridaySickMinutes);
+            }         
+        }
+        else {
+            if(fridayRegMinutes < 10 && fridayTotalMinutes < 10) {
+                fridayRegHoursInput.innerText = fridayRegHours + ":0" + fridayRegMinutes;
+                fridayTotalHoursInput.innerText = fridayTotalHours + ":0" + fridayTotalMinutes;
+            }
+            else if(fridayRegMinutes < 10) {
+                fridayRegHoursInput.innerText = fridayRegHours + ":0" + fridayRegMinutes;
+                fridayTotalHoursInput.innerText = fridayTotalHours + ":" + fridayTotalMinutes;
+            }
+            else {
+                fridayRegHoursInput.innerText = fridayRegHours + ":" + fridayRegMinutes;
+                fridayTotalHoursInput.innerText = fridayTotalHours + ":" + fridayTotalMinutes;
+            }        
+        }
     }
 
     let vacHoursReqInput = document.getElementsByClassName("vacation-hours-requested");
