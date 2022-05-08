@@ -157,13 +157,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                  //
                  return;
              }
-             if((sickHoursRemaining - sickHoursRequestedInput.value) < 0) {
+             if(sickHoursRemaining < 0) {
                  alert("You do not have a sufficient number of sick hours remaining");
                  sickHoursRequestedInput.value = sickHoursRemaining;
              }
-             // adjust pie chart for sick hours
-            //  sickHoursRemainingElement.innerText = newHours;
-            //  sickPie.style.setProperty("--p", newHours * 1.25);
          }
     }
 
