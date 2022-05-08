@@ -490,7 +490,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         findTotalRegHours(mondayRegTime, tuesdayRegTime, wednesdayRegTime, thursdayRegTime, fridayRegTime);      
         findTotalVacHours(mondayVacationTime, tuesdayVacationTime, wednesdayVacationTime, thursdayVacationTime, fridayVacationTime);
         findTotalSickHours(mondaySickTime, tuesdaySickTime, wednesdaySickTime, thursdaySickTime, fridaySickTime);
-        findTotalWeeklyHours(mondayRegTime, mondaySickTime, mondayVacationTime);
+        let totalTime = mondayRegTime + mondaySickTime + mondayVacationTime + tuesdayRegTime + tuesdaySickTime + tuesdayVacationTime + wednesdayRegTime + wednesdaySickTime + wednesdayVacationTime + thursdayRegTime + thursdaySickTime + thursdayVacationTime + fridayRegTime + fridaySickTime + fridayVacationTime;
+        findTotalWeeklyHours(totalTime);
     }
 
     const findTotalRegHours = (mondayRegTime, tuesdayRegTime, wednesdayRegTime, thursdayRegTime, fridayRegTime) => {
@@ -517,9 +518,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         weeklySickMinutes < 10 ? totalSickHoursDisplay.innerText = weeklySickHours + ":0" + weeklySickMinutes : totalSickHoursDisplay.innerText = weeklySickHours + ":" + weeklySickMinutes;
     }
 
-    const findTotalWeeklyHours = (mondayRegTime, mondaySickTime, mondayVacationTime) => {
-        let totalWeeklyHours = mondayRegTime + mondaySickTime + mondayVacationTime;
+    const findTotalWeeklyHours = (totalTime) => {
+        let totalWeeklyHours = Math.floor((totalTime) / 3600000);
+        let totalWeeklyMinutes = ((totalTime % 3600000) / 60000)
+        let totalHoursDisplay = document.getElementsByClassName("total-hours-total")[0];
+        totalWeeklyMinutes < 10 ? totalHoursDisplay.innerText = totalWeeklyHours + ":0" + totalWeeklyMinutes : totalHoursDisplay.innerText = totalWeeklyHours + ":" + totalWeeklyMinutes;
         console.log(totalWeeklyHours);
+        console.log(totalWeeklyMinutes);
     }
 
     let vacHoursReqInput = document.getElementsByClassName("vacation-hours-requested");
