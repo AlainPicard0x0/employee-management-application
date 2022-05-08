@@ -190,7 +190,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 //vacationHoursRemainingElement.innerText = vacationHours;
                 return;
             }
-            if((vacationHoursRemaining - vacationHoursRequestedInput.value) < 0) {
+            if(vacationHoursRemaining < 0) {
+                console.log("VacationHoursRemaining: " + vacationHoursRemaining);
+                console.log("VacationHoursRequestedInput.value: " + vacationHoursRequestedInput.value);
+                console.log(vacationHoursRemaining - vacationHoursRequestedInput.value);
                 alert("You do not have a sufficient number of vacation hours remaining");
                 vacationHoursRequestedInput.value = vacationHoursRemaining;
             }
