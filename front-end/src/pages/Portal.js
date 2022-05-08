@@ -266,7 +266,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let mondayTotalHoursInput = document.getElementById("monday-total-hours");
         
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
-        let mondayRegTime = parseInt(mondayTimeOut - mondayTimeIn);
+        let mondayRegTime = parseInt(mondayTimeOut - mondayTimeIn) || 0;
         let mondayVacationTime = mondayVacationHoursInput * 3600000;
         let mondaySickTime = mondaySickHoursInput * 3600000; 
         let mondayRegHours = Math.floor(mondayRegTime / 3600000);
@@ -312,7 +312,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let tuesdayTotalHoursInput = document.getElementById("tuesday-total-hours");
 
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
-        let tuesdayRegTime = parseInt(tuesdayTimeOut - tuesdayTimeIn);
+        let tuesdayRegTime = parseInt(tuesdayTimeOut - tuesdayTimeIn) || 0;
         let tuesdayVacationTime = tuesdayVacationHoursInput * 3600000;
         let tuesdaySickTime = tuesdaySickHoursInput * 3600000; 
         let tuesdayRegHours = Math.floor(tuesdayRegTime / 3600000);
@@ -358,7 +358,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let wednesdayTotalHoursInput = document.getElementById("wednesday-total-hours");
         
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
-        let wednesdayRegTime = parseInt(wednesdayTimeOut - wednesdayTimeIn);
+        let wednesdayRegTime = parseInt(wednesdayTimeOut - wednesdayTimeIn) || 0;
         let wednesdayVacationTime = wednesdayVacationHoursInput * 3600000;
         let wednesdaySickTime = wednesdaySickHoursInput * 3600000; 
         let wednesdayRegHours = Math.floor(wednesdayRegTime / 3600000);
@@ -404,7 +404,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let thursdayTotalHoursInput = document.getElementById("thursday-total-hours");
         
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
-        let thursdayRegTime = parseInt(thursdayTimeOut - thursdayTimeIn);
+        let thursdayRegTime = parseInt(thursdayTimeOut - thursdayTimeIn) || 0;
         let thursdayVacationTime = thursdayVacationHoursInput * 3600000;
         let thursdaySickTime = thursdaySickHoursInput * 3600000; 
         let thursdayRegHours = Math.floor(thursdayRegTime / 3600000);
@@ -450,7 +450,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let fridayTotalHoursInput = document.getElementById("friday-total-hours");
         
         // 60,000ms = 1 minute; 3,600,000ms = 1 hour
-        let fridayRegTime = parseInt(fridayTimeOut - fridayTimeIn);
+        let fridayRegTime = parseInt(fridayTimeOut - fridayTimeIn) || 0;
         let fridayVacationTime = fridayVacationHoursInput * 3600000;
         let fridaySickTime = fridaySickHoursInput * 3600000; 
         let fridayRegHours = Math.floor(fridayRegTime / 3600000);
@@ -490,6 +490,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         findTotalRegHours(mondayRegTime, tuesdayRegTime, wednesdayRegTime, thursdayRegTime, fridayRegTime);      
         findTotalVacHours(mondayVacationTime, tuesdayVacationTime, wednesdayVacationTime, thursdayVacationTime, fridayVacationTime);
         findTotalSickHours(mondaySickTime, tuesdaySickTime, wednesdaySickTime, thursdaySickTime, fridaySickTime);
+        findTotalWeeklyHours(mondayRegTime, mondaySickTime, mondayVacationTime);
     }
 
     const findTotalRegHours = (mondayRegTime, tuesdayRegTime, wednesdayRegTime, thursdayRegTime, fridayRegTime) => {
@@ -514,6 +515,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let weeklySickMinutes = (weeklySickTime % 3600000) / 60000;
         let totalSickHoursDisplay = document.getElementsByClassName("sick-hours-total")[0];
         weeklySickMinutes < 10 ? totalSickHoursDisplay.innerText = weeklySickHours + ":0" + weeklySickMinutes : totalSickHoursDisplay.innerText = weeklySickHours + ":" + weeklySickMinutes;
+    }
+
+    const findTotalWeeklyHours = (mondayRegTime, mondaySickTime, mondayVacationTime) => {
+        let totalWeeklyHours = mondayRegTime + mondaySickTime + mondayVacationTime;
+        console.log(totalWeeklyHours);
     }
 
     let vacHoursReqInput = document.getElementsByClassName("vacation-hours-requested");
