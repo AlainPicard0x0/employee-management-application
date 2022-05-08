@@ -494,7 +494,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let weeklyRegTime = (mondayRegTime || 0) + (tuesdayRegTime || 0) + (wednesdayRegTime || 0) + (thursdayRegTime || 0) + (fridayRegTime || 0);
         let weeklyRegHours = Math.floor(weeklyRegTime / 3600000);
         let weeklyRegMinutes = (weeklyRegTime % 3600000) / 60000
-        document.getElementsByClassName("reg-hours-total")[0].innerText = weeklyRegHours + ":" + weeklyRegMinutes;
+        let totalRegHoursDisplay = document.getElementsByClassName("reg-hours-total")[0];
+        weeklyRegMinutes < 10 ? totalRegHoursDisplay.innerText = weeklyRegHours + ":0" + weeklyRegMinutes : totalRegHoursDisplay.innerText = weeklyRegHours + ":" + weeklyRegMinutes;
     }
 
     let vacHoursReqInput = document.getElementsByClassName("vacation-hours-requested");
