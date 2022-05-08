@@ -488,6 +488,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             }        
         }
         findTotalRegHours(mondayRegTime, tuesdayRegTime, wednesdayRegTime, thursdayRegTime, fridayRegTime);      
+        findTotalVacHours(mondayVacationTime, tuesdayVacationTime, wednesdayVacationTime, thursdayVacationTime, fridayVacationTime);
     }
 
     const findTotalRegHours = (mondayRegTime, tuesdayRegTime, wednesdayRegTime, thursdayRegTime, fridayRegTime) => {
@@ -496,6 +497,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let weeklyRegMinutes = (weeklyRegTime % 3600000) / 60000
         let totalRegHoursDisplay = document.getElementsByClassName("reg-hours-total")[0];
         weeklyRegMinutes < 10 ? totalRegHoursDisplay.innerText = weeklyRegHours + ":0" + weeklyRegMinutes : totalRegHoursDisplay.innerText = weeklyRegHours + ":" + weeklyRegMinutes;
+    }
+
+    const findTotalVacHours = (mondayVacationTime, tuesdayVacationTime, wednesdayVacationTime, thursdayVacationTime, fridayVacationTime) => {
+        let weeklyVacTime = mondayVacationTime + tuesdayVacationTime + wednesdayVacationTime + thursdayVacationTime + fridayVacationTime;
+        let weeklyVacHours = Math.floor(weeklyVacTime / 3600000);
+        let weeklyVacMinutes = (weeklyVacTime % 3600000) / 60000;
+        let totalVacHoursDisplay = document.getElementsByClassName("vacation-hours-total")[0];
+        weeklyVacMinutes < 10 ? totalVacHoursDisplay.innerText = weeklyVacHours + ":0" + weeklyVacMinutes : totalVacHoursDisplay.innerText = weeklyVacHours + ":" + weeklyVacMinutes;
     }
 
     let vacHoursReqInput = document.getElementsByClassName("vacation-hours-requested");
