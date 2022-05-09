@@ -210,7 +210,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let wednesdayVacationHoursRequested = parseFloat(wednesdayVacationHoursRequestedField.value);
         let thursdayVacationHoursRequestedField = document.getElementById("thursday-vacation-hours-input");
         let thursdayVacationHoursRequested = parseFloat(thursdayVacationHoursRequestedField.value);
-        let totalVacationHours = mondayVacationHoursRequested + tuesdayVacationHoursRequested + wednesdayVacationHoursRequested + thursdayVacationHoursRequested;
+        let fridayVacationHoursRequestedField = document.getElementById("friday-vacation-hours-input");
+        let fridayVacationHoursRequested = parseFloat(fridayVacationHoursRequestedField.value);
+        let totalVacationHours = mondayVacationHoursRequested + tuesdayVacationHoursRequested + wednesdayVacationHoursRequested + thursdayVacationHoursRequested + fridayVacationHoursRequested;
         console.log(totalVacationHours);
         fetch(`${api}/portal/vacation-leave`, {
             method: "GET",
@@ -228,6 +230,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             mondayVacationHoursRequestedField.value = 0;
             tuesdayVacationHoursRequestedField.value = 0;
             wednesdayVacationHoursRequestedField.value = 0;
+            thursdayVacationHoursRequestedField.value = 0;
+            fridayVacationHoursRequestedField.value = 0;
             adjustVacationPie();
             return data;
         })
