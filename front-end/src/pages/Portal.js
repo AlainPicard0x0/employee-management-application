@@ -208,7 +208,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let tuesdayVacationHoursRequested = parseFloat(tuesdayVacationHoursRequestedField.value);
         let wednesdayVacationHoursRequestedField = document.getElementById("wednesday-vacation-hours-input");
         let wednesdayVacationHoursRequested = parseFloat(wednesdayVacationHoursRequestedField.value);
-        let totalVacationHours = mondayVacationHoursRequested + tuesdayVacationHoursRequested + wednesdayVacationHoursRequested;
+        let thursdayVacationHoursRequestedField = document.getElementById("thursday-vacation-hours-input");
+        let thursdayVacationHoursRequested = parseFloat(thursdayVacationHoursRequestedField.value);
+        let totalVacationHours = mondayVacationHoursRequested + tuesdayVacationHoursRequested + wednesdayVacationHoursRequested + thursdayVacationHoursRequested;
         console.log(totalVacationHours);
         fetch(`${api}/portal/vacation-leave`, {
             method: "GET",
@@ -860,7 +862,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                                 <div className="thursday-row-one-sick-hours">                                    
                                     <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="thursday-sick-hours-input" className="sick-hours-requested" step="any" defaultValue={0}></input>
+                                        <input type="number" id="thursday-sick-hours-input" onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} className="sick-hours-requested" step="any" defaultValue={0}></input>
                                     </div>                                                 
                                 </div>                
                                 <div className="thursday-row-one-account-code">
@@ -962,7 +964,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="submit-container">
                             <div className="submit-btn-container">
                                 {/* <button onClick={e => {spendVacationHours(e); spendSickHours(e); getCurrentWeek() }} id="time-card-submit-btn">Submit for Approval</button> */}
-                                <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours()}} id="time-card-submit-btn">Submit for Approval</button>
+                                <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours(); getTotalSickHours()}} id="time-card-submit-btn">Submit for Approval</button>
                             </div>
                             <div className="reg-hours-total-container">
                                 <p className="reg-hours-total">0:00</p>
