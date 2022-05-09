@@ -237,13 +237,23 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(function () {
             let mondaySickHoursRequestedField = document.getElementById("monday-sick-hours-input");
-            let sickHoursRequestedInput = mondaySickHoursRequestedField.value;
+            let mondaySickHoursRequested = parseFloat(mondaySickHoursRequestedField.value);
+            let tuesdaySickHoursRequestedField = document.getElementById("tuesday-sick-hours-input");
+            let tuesdaySickHoursRequested = parseFloat(tuesdaySickHoursRequestedField.value);
+            let wednesdaySickHoursRequestedField = document.getElementById("wednesday-sick-hours-input");
+            let wednesdaySickHoursRequested = parseFloat(wednesdaySickHoursRequestedField.value);
+            let thursdaySickHoursRequestedField = document.getElementById("thursday-sick-hours-input");
+            let thursdaySickHoursRequested = parseFloat(thursdaySickHoursRequestedField.value);
+            let fridaySickHoursRequestedField = document.getElementById("friday-sick-hours-input");
+            let fridaySickHoursRequested = parseFloat(fridaySickHoursRequestedField.value);
+            let totalSickHours = mondaySickHoursRequested + tuesdaySickHoursRequested + wednesdaySickHoursRequested + thursdaySickHoursRequested + fridaySickHoursRequested;
+            console.log(totalSickHours);
             fetch(`${api}/portal/sick-leave`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "email": email,
-                    "sick-hours": sickHoursRequestedInput 
+                    "sick-hours": totalSickHours 
                 },
             })
             .then(response => {
@@ -252,6 +262,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             .then(data => { 
                 setSickHours(data);  
                 mondaySickHoursRequestedField.value = 0;   
+                tuesdaySickHoursRequestedField.value = 0;
+                wednesdaySickHoursRequestedField.value = 0;
+                thursdaySickHoursRequestedField.value = 0;
+                fridaySickHoursRequestedField.value = 0;
                 adjustSickPie(); 
                 return data;
             })
