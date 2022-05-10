@@ -589,6 +589,19 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         sickPie.style.setProperty("--p", newHours * 4.17);
     }
 
+    const resetInputValues = () => {
+        document.getElementById("monday-time-in").value = "";
+        document.getElementById("monday-time-out").value = "";
+        document.getElementById("tuesday-time-in").value = "";
+        document.getElementById("tuesday-time-out").value = "";
+        document.getElementById("wednesday-time-in").value = "";
+        document.getElementById("wednesday-time-out").value = "";
+        document.getElementById("thursday-time-in").value = "";
+        document.getElementById("thursday-time-out").value = "";
+        document.getElementById("friday-time-in").value = "";
+        document.getElementById("friday-time-out").value = "";
+    }
+
     return (
         <div className="portal">
             <main id="portal-main">
@@ -982,7 +995,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="submit-container">
                             <div className="submit-btn-container">
                                 {/* <button onClick={e => {spendVacationHours(e); spendSickHours(e); getCurrentWeek() }} id="time-card-submit-btn">Submit for Approval</button> */}
-                                <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours(); getTotalSickHours()}} id="time-card-submit-btn">Submit for Approval</button>
+                                <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours(); getTotalSickHours(); resetInputValues()}} id="time-card-submit-btn">Submit for Approval</button>
                             </div>
                             <div className="reg-hours-total-container">
                                 <p className="reg-hours-total">0:00</p>
