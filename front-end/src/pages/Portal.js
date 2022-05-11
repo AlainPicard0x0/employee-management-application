@@ -213,7 +213,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let fridayVacationHoursRequestedField = document.getElementById("friday-vacation-hours-input");
         let fridayVacationHoursRequested = parseFloat(fridayVacationHoursRequestedField.value);
         let totalVacationHours = mondayVacationHoursRequested + tuesdayVacationHoursRequested + wednesdayVacationHoursRequested + thursdayVacationHoursRequested + fridayVacationHoursRequested;
-        console.log(totalVacationHours);
         fetch(`${api}/portal/vacation-leave`, {
             method: "GET",
             headers: {
@@ -247,7 +246,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             let fridaySickHoursRequestedField = document.getElementById("friday-sick-hours-input");
             let fridaySickHoursRequested = parseFloat(fridaySickHoursRequestedField.value);
             let totalSickHours = mondaySickHoursRequested + tuesdaySickHoursRequested + wednesdaySickHoursRequested + thursdaySickHoursRequested + fridaySickHoursRequested;
-            console.log(totalSickHours);
             fetch(`${api}/portal/sick-leave`, {
                 method: "GET",
                 headers: {
@@ -543,8 +541,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let totalWeeklyMinutes = ((totalTime % 3600000) / 60000)
         let totalHoursDisplay = document.getElementsByClassName("total-hours-total")[0];
         totalWeeklyMinutes < 10 ? totalHoursDisplay.innerText = totalWeeklyHours + ":0" + totalWeeklyMinutes : totalHoursDisplay.innerText = totalWeeklyHours + ":" + totalWeeklyMinutes;
-        console.log(totalWeeklyHours);
-        console.log(totalWeeklyMinutes);
     }
 
     let vacHoursReqInput = document.getElementsByClassName("vacation-hours-requested");
@@ -600,6 +596,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         document.getElementById("thursday-time-out").value = "";
         document.getElementById("friday-time-in").value = "";
         document.getElementById("friday-time-out").value = "";
+        let regHoursField = document.getElementsByClassName("reg-hours");
+        for(let i = 0; i < regHoursField; i++) {
+            regHoursField[i].innerText = "0:00";
+            console.log(regHoursField.innerText);
+        }
     }
 
     return (
