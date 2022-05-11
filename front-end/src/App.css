@@ -1096,8 +1096,10 @@ ul a:hover {
   }
   .portal-profile {
     grid-area: 1 / 1 / 2 / 2;
-    margin: 10px;
-    grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(2, 1fr);
+  }
+  .portal-leave-balance {
+    margin: 10px 0;
+    grid-area: 2 / 1 / 3 / 2; 
   }
 }
