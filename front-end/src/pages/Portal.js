@@ -265,6 +265,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 wednesdaySickHoursRequestedField.value = 0;
                 thursdaySickHoursRequestedField.value = 0;
                 fridaySickHoursRequestedField.value = 0;
+                document.getElementsByClassName("sick-hours-total")[0].innerText = "0:00";
                 adjustSickPie(); 
                 return data;
             })
