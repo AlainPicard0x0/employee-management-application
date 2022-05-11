@@ -597,10 +597,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         document.getElementById("friday-time-in").value = "";
         document.getElementById("friday-time-out").value = "";
         let regHoursField = document.getElementsByClassName("reg-hours");
-        for(let i = 0; i < regHoursField; i++) {
+        for(let i = 0; i < regHoursField.length; i++) {
             regHoursField[i].innerText = "0:00";
-            console.log(regHoursField.innerText);
         }
+        document.getElementsByClassName("reg-hours-total")[0].innerText = "0:00";
     }
 
     return (
