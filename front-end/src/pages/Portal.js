@@ -231,6 +231,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             wednesdayVacationHoursRequestedField.value = 0;
             thursdayVacationHoursRequestedField.value = 0;
             fridayVacationHoursRequestedField.value = 0;
+            document.getElementsByClassName("vacation-hours-total")[0].innerText = "0:00";
             adjustVacationPie();
             return data;
         })
