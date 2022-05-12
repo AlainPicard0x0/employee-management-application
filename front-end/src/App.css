@@ -1107,12 +1107,5 @@ ul a:hover {
   }
   .time-card {
     grid-area: 4 / 1 / 5 / 4;
-    background-color: #fff;
-    margin: 0 10px 5px 0;
-    border-radius: 5px;
-    box-shadow: #000 1px 1px 10px;
-    display: grid;
-    grid-template: 1fr repeat(6, 2fr) / 1.5fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr;
-    color: #000;
   }
 }
