@@ -1083,7 +1083,20 @@ ul a:hover {
 }
 /* mobile device */
 @media only screen and (max-width: 600px) {
-  .header {
+  .header,
+  .portal,
+  .app-footer {
+    display: none;
+  }
+  .mobile-header {
+    width: 100%;
+    height: 125px;
+    background-image: linear-gradient(#2544cc, #1a2c80);
+    display: flex;
+  }
+
+
+  /* .header {
     width: 100vw;
     margin: auto;  
     padding: 0 15px 0 15px;
@@ -1107,5 +1120,5 @@ ul a:hover {
   }
   .time-card {
     grid-area: 4 / 1 / 5 / 4;
-  }
+  } */
 }
