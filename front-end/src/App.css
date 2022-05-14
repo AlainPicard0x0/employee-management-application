@@ -1093,6 +1093,24 @@ ul a:hover {
     height: 125px;
     background-image: linear-gradient(#2544cc, #1a2c80);
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-header-selection-container {
+    display: flex;
+    justify-content: center;
+  }
+  .mobile-time-sheet,
+  .mobile-vacation,
+  .mobile-sick-leave {
+    border: solid 1px #fff;
+    width: 22vw;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #fff;
   }
 
 
