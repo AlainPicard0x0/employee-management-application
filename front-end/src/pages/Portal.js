@@ -609,423 +609,427 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     return (
-        <div className="portal">
-            <main id="portal-main">
+        <>
+            <div className="portal">
+                <main id="portal-main">
 
-                <div className="portal-profile">
-                    <h3>My Profile</h3>                    
-                    <div className="user-icon-background">
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>                    
-                    <h2>{`${employee.firstName} ${employee.lastName}`}</h2>
-                    <button id="my-profile-btn">My Profile</button>  
-                    <button id="logout-btn" onClick={() => setLogin(false)}>Logout</button>                  
-                </div>
-
-                <div className="portal-leave-balance">
-
-                    <div className="leave-balance-title">
-                        <h3>My Leave</h3>
+                    <div className="portal-profile">
+                        <h3>My Profile</h3>                    
+                        <div className="user-icon-background">
+                            <FontAwesomeIcon icon={faUser} />
+                        </div>                    
+                        <h2>{`${employee.firstName} ${employee.lastName}`}</h2>
+                        <button id="my-profile-btn">My Profile</button>  
+                        <button id="logout-btn" onClick={() => setLogin(false)}>Logout</button>                  
                     </div>
 
-                    <div className="portal-sick-leave">                        
-                        <div id="sick-pie">
-                            <div id="sick-pie-background">
-                            
-                            </div>
-                            <div className="hours-left">
-                                <h2 id="sick-hours-remaining">{sickHours}</h2>
-                                <p>hours left</p>
-                            </div>                            
-                        </div>
-                        <div className="sick-leave-title">
-                            <h4>Sick Leave</h4>
-                        </div>
-                    </div>
+                    <div className="portal-leave-balance">
 
-                    <div className="portal-vacation-leave">
-                        <div id="vacation-pie">
-                            <div id="vacation-pie-background">
+                        <div className="leave-balance-title">
+                            <h3>My Leave</h3>
+                        </div>
+
+                        <div className="portal-sick-leave">                        
+                            <div id="sick-pie">
+                                <div id="sick-pie-background">
                                 
+                                </div>
+                                <div className="hours-left">
+                                    <h2 id="sick-hours-remaining">{sickHours}</h2>
+                                    <p>hours left</p>
+                                </div>                            
                             </div>
-                            <div className="hours-left">
-                                <h2 id="vacation-hours-remaining">{vacationHours}</h2>
-                                <p>hours left</p>
-                            </div>
-                        </div>
-                        <div className="vacation-leave-title">
-                            <h4>Vacation Leave</h4>
-                        </div>
-                    </div>
-
-                </div>
-                
-                <div className="portal-calendar">
-                    <Calendar calendarType="US" onChange={onChange} value={value} />
-                </div>
-
-                {/* Add hours worked section? */}
-                <div className="mobile-time-card">
-                        <h1>Time Card</h1>
-                    </div>
-                <div className="time-card">
-                    <div className="time-card-header">
-                        <div id="time-card-date">
-                            <p>Date</p>
-                        </div>
-                        <div id="time-card-in">
-                            <p>In</p>
-                        </div>
-                        <div id="time-card-out">
-                            <p>Out</p>
-                        </div>
-                        <div id="time-card-reg-hours">
-                            <p>Reg<br></br>Hours</p>
-                        </div>
-                        <div id="time-card-vacation-hours">
-                            <p>Vacation Hours</p>
-                        </div>
-                        <div id="time-card-sick-hours">
-                            <p>Sick Hours</p>
-                        </div>
-                        <div id="time-card-account-code">
-                            <p>Account Code</p>
-                        </div>
-                        <div id="time-card-total-hours">
-                            <p>Total<br></br> Hours</p>
-                        </div>
-                    </div>
-                    <div className="time-card-body">
-                        <div className="monday-container">
-                            <div className="row-one">
-                                <div className="monday-row-one-date">
-                                    <p>{week.monday}</p>                                    
-                                </div>   
-                                <div className="monday-row-one-in">
-                                    <input onChange={calculateTime} id="monday-time-in" type="time"></input>
-                                </div>
-                                <div className="monday-row-one-out">
-                                    <input onChange={calculateTime} id="monday-time-out" type="time"></input>
-                                </div>
-                                <div className="monday-row-one-reg-hours">
-                                    <div className="">
-                                        <p id="monday-reg-hours" className="reg-hours">0:00</p>
-                                    </div>    
-                                </div>
-                                <div className="monday-row-one-vacation-hours">
-                                    <div className="">
-                                        <input onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} step="any" type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
-                                    </div>
-                                </div>
-                                <div className="monday-row-one-sick-hours">                                    
-                                    <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} step="any" type="number" id="monday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
-                                    </div>                                                 
-                                </div>                
-                                <div className="monday-row-one-account-code">
-                                    <p>11559 (Software Engineer)</p>
-                                </div>
-                                <div className="monday-row-one-total-hours">
-                                    <p id="monday-total-hours">0:00</p>
-                                </div>
-                            </div>
-                            <div className="row-two">
-                                <div className="monday-row-two-date">
-                                    
-                                </div>
-                                <div className="monday-row-two-in">
-                                    
-                                </div>
-                                <div className="monday-row-two-out">
-                                    
-                                </div>
-                                <div className="monday-row-two-reg-hours">
-                                        
-                                </div>
-                                <div className="monday-row-two-vacation-hours">
-                                    
-                                </div>
-                                <div className="monday-row-two-sick-hours">
-                                                    
-                                </div>                
-                                <div className="monday-row-two-account-code">
-                                    
-                                </div>
-                                <div className="monday-row-two-total-hours">
-                                    
-                                </div>                                
+                            <div className="sick-leave-title">
+                                <h4>Sick Leave</h4>
                             </div>
                         </div>
 
-                        <div className="tuesday-container">
-                            <div className="row-one">
-                                <div className="tuesday-row-one-date">
-                                    <p>{week.tuesday}</p>
-                                </div>   
-                                <div className="tuesday-row-one-in">
-                                    <input onChange={calculateTime} id="tuesday-time-in" type="time"></input>
+                        <div className="portal-vacation-leave">
+                            <div id="vacation-pie">
+                                <div id="vacation-pie-background">
+                                    
                                 </div>
-                                <div className="tuesday-row-one-out">
-                                    <input onChange={calculateTime} id="tuesday-time-out" type="time"></input>
-                                </div>
-                                <div className="tuesday-row-one-reg-hours">
-                                    <div className="">
-                                       <p id="tuesday-reg-hours" className="reg-hours">0:00</p>
-                                    </div>    
-                                </div>
-                                <div className="tuesday-row-one-vacation-hours">
-                                    <div className="">
-                                        <input type="number" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} id="tuesday-vacation-hours-input" className="vacation-hours-requested" step="any" defaultValue={0}></input>
-                                    </div>
-                                </div>
-                                <div className="tuesday-row-one-sick-hours">                                    
-                                    <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="tuesday-sick-hours-input" className="sick-hours-requested" step="any" name="" defaultValue={0}></input>
-                                    </div>                                                 
-                                </div>                
-                                <div className="tuesday-row-one-account-code">
-                                    <p>11559 (Software Engineer)</p>
-                                </div>
-                                <div className="tuesday-row-one-total-hours">
-                                    <p id="tuesday-total-hours">0:00</p>
+                                <div className="hours-left">
+                                    <h2 id="vacation-hours-remaining">{vacationHours}</h2>
+                                    <p>hours left</p>
                                 </div>
                             </div>
-                            <div className="row-two">
-                                <div className="tuesday-row-two-date">
-                                    
-                                </div>
-                                <div className="tuesday-row-two-in">
-                                    
-                                </div>
-                                <div className="tuesday-row-two-out">
-                                    
-                                </div>
-                                <div className="tuesday-row-two-reg-hours">
-                                        
-                                </div>
-                                <div className="tuesday-row-two-vacation-hours">
-                                    
-                                </div>
-                                <div className="tuesday-row-two-sick-hours">
-                                                    
-                                </div>                
-                                <div className="tuesday-row-two-account-code">
-                                    
-                                </div>
-                                <div className="tuesday-row-two-total-hours">
-                                    
-                                </div>                                
-                            </div>
-                        </div>
-
-                        <div className="wednesday-container">
-                            <div className="row-one">
-                                <div className="wednesday-row-one-date">
-                                    <p>{week.wednesday}</p>
-                                </div>   
-                                <div className="wednesday-row-one-in">
-                                    <input id="wednesday-time-in" onChange={calculateTime} type="time"></input>
-                                </div>
-                                <div className="wednesday-row-one-out">
-                                    <input id="wednesday-time-out" onChange={calculateTime} type="time"></input>
-                                </div>
-                                <div className="wednesday-row-one-reg-hours">
-                                    <div className="">
-                                        <p id="wednesday-reg-hours" className="reg-hours">0:00</p>
-                                    </div>    
-                                </div>
-                                <div className="wednesday-row-one-vacation-hours">
-                                    <div className="">
-                                        <input type="number" id="wednesday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" step="any" defaultValue={0}></input>
-                                    </div>
-                                </div>
-                                <div className="wednesday-row-one-sick-hours">                                    
-                                    <div className="">
-                                        <input onChange={(e) => {checkSickHoursInput(e); calculateTime()}} type="number" id="wednesday-sick-hours-input" className="sick-hours-requested" step="any" name="" defaultValue={0}></input>
-                                    </div>                                                 
-                                </div>                
-                                <div className="wednesday-row-one-account-code">
-                                    <p>11559 (Software Engineer)</p>
-                                </div>
-                                <div className="wednesday-row-one-total-hours">
-                                    <p id="wednesday-total-hours">0:00</p>
-                                </div>
-                            </div>
-                            <div className="row-two">
-                                <div className="wednesday-row-two-date">
-                                    
-                                </div>
-                                <div className="wednesday-row-two-in">
-                                    
-                                </div>
-                                <div className="wednesday-row-two-out">
-                                    
-                                </div>
-                                <div className="wednesday-row-two-reg-hours">
-                                        
-                                </div>
-                                <div className="wednesday-row-two-vacation-hours">
-                                    
-                                </div>
-                                <div className="wednesday-row-two-sick-hours">
-                                                    
-                                </div>                
-                                <div className="wednesday-row-two-account-code">
-                                    
-                                </div>
-                                <div className="wednesday-row-two-total-hours">
-                                    
-                                </div>                                
-                            </div>
-                        </div>
-
-                        <div className="thursday-container">
-                            <div className="row-one">
-                                <div className="thursday-row-one-date">
-                                    <p>{week.thursday}</p>
-                                </div>   
-                                <div className="thursday-row-one-in">
-                                    <input id="thursday-time-in" onChange={calculateTime} type="time"></input>
-                                </div>
-                                <div className="thursday-row-one-out">
-                                    <input id="thursday-time-out" onChange={calculateTime} type="time"></input>
-                                </div>
-                                <div className="thursday-row-one-reg-hours">
-                                    <div className="">
-                                        <p id="thursday-reg-hours" className="reg-hours">0:00</p>
-                                    </div>    
-                                </div>
-                                <div className="thursday-row-one-vacation-hours">
-                                    <div className="">
-                                        <input type="number" id="thursday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" step="any" defaultValue={0}></input>
-                                    </div>
-                                </div>
-                                <div className="thursday-row-one-sick-hours">                                    
-                                    <div className="">
-                                        <input type="number" id="thursday-sick-hours-input" onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} className="sick-hours-requested" step="any" defaultValue={0}></input>
-                                    </div>                                                 
-                                </div>                
-                                <div className="thursday-row-one-account-code">
-                                    <p>11559 (Software Engineer)</p>
-                                </div>
-                                <div className="thursday-row-one-total-hours">
-                                    <p id="thursday-total-hours">0:00</p>
-                                </div>
-                            </div>
-                            <div className="row-two">
-                                <div className="thursday-row-two-date">
-                                    
-                                </div>
-                                <div className="thursday-row-two-in">
-                                    
-                                </div>
-                                <div className="thursday-row-two-out">
-                                    
-                                </div>
-                                <div className="thursday-row-two-reg-hours">
-                                       
-                                </div>
-                                <div className="thursday-row-two-vacation-hours">
-                                    
-                                </div>
-                                <div className="thursday-row-two-sick-hours">
-                                                   
-                                </div>                
-                                <div className="thursday-row-two-account-code">
-                                    
-                                </div>
-                                <div className="thursday-row-two-total-hours">
-                                    
-                                </div>                                
-                            </div>
-                        </div>
-
-                        <div className="friday-container">
-                            <div className="row-one">
-                                <div className="friday-row-one-date">
-                                    <p>{week.friday}</p>
-                                </div>   
-                                <div className="friday-row-one-in">
-                                    <input id="friday-time-in" onChange={calculateTime} type="time"></input>
-                                </div>
-                                <div className="friday-row-one-out">
-                                    <input id="friday-time-out" onChange={calculateTime} type="time"></input>
-                                </div>
-                                <div className="friday-row-one-reg-hours">
-                                    <div className="">
-                                        <p id="friday-reg-hours" className="reg-hours">0:00</p>
-                                    </div>    
-                                </div>
-                                <div className="friday-row-one-vacation-hours">
-                                    <div className="">
-                                        <input type="number" id="friday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" step="any" defaultValue={0}></input>
-                                    </div>
-                                </div>
-                                <div className="friday-row-one-sick-hours">                                    
-                                    <div className="">
-                                        <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="friday-sick-hours-input" className="sick-hours-requested" step="any" defaultValue={0}></input>
-                                    </div>                                                 
-                                </div>                
-                                <div className="friday-row-one-account-code">
-                                    <p>11559 (Software Engineer)</p>
-                                </div>
-                                <div className="friday-row-one-total-hours">
-                                    <p id="friday-total-hours">0:00</p>
-                                </div>
-                            </div>
-                            <div className="row-two">
-                                <div className="friday-row-two-date">
-                                    
-                                </div>
-                                <div className="friday-row-two-in">
-                                    
-                                </div>
-                                <div className="friday-row-two-out">
-                                    
-                                </div>
-                                <div className="friday-row-two-reg-hours">
-                                       
-                                </div>
-                                <div className="friday-row-two-vacation-hours">
-                                    
-                                </div>
-                                <div className="friday-row-two-sick-hours">
-                                                   
-                                </div>                
-                                <div className="friday-row-two-account-code">
-                                    
-                                </div>
-                                <div className="friday-row-two-total-hours">
-                                    
-                                </div>                                
-                            </div>
-                        </div>
-
-                        <div className="submit-container">
-                            <div className="submit-btn-container">
-                                {/* <button onClick={e => {spendVacationHours(e); spendSickHours(e); getCurrentWeek() }} id="time-card-submit-btn">Submit for Approval</button> */}
-                                <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours(); getTotalSickHours(); resetInputValues()}} id="time-card-submit-btn">Submit for Approval</button>
-                            </div>
-                            <div className="reg-hours-total-container">
-                                <p className="reg-hours-total">0:00</p>
-                            </div>
-                            <div className="vacation-hours-total-container">
-                                <p className="vacation-hours-total">0:00</p>
-                            </div>
-                            <div className="sick-hours-total-container">
-                                <p className="sick-hours-total">0:00</p>
-                            </div>
-                            <div className="total-hours-total-container">
-                                <p className="total-hours-total">0:00</p>
+                            <div className="vacation-leave-title">
+                                <h4>Vacation Leave</h4>
                             </div>
                         </div>
 
                     </div>
                     
-                </div>
+                    <div className="portal-calendar">
+                        <Calendar calendarType="US" onChange={onChange} value={value} />
+                    </div>
 
-            </main>            
-        </div>
+                    {/* Add hours worked section? */}
+                    <div className="time-card">
+                        <div className="time-card-header">
+                            <div id="time-card-date">
+                                <p>Date</p>
+                            </div>
+                            <div id="time-card-in">
+                                <p>In</p>
+                            </div>
+                            <div id="time-card-out">
+                                <p>Out</p>
+                            </div>
+                            <div id="time-card-reg-hours">
+                                <p>Reg<br></br>Hours</p>
+                            </div>
+                            <div id="time-card-vacation-hours">
+                                <p>Vacation Hours</p>
+                            </div>
+                            <div id="time-card-sick-hours">
+                                <p>Sick Hours</p>
+                            </div>
+                            <div id="time-card-account-code">
+                                <p>Account Code</p>
+                            </div>
+                            <div id="time-card-total-hours">
+                                <p>Total<br></br> Hours</p>
+                            </div>
+                        </div>
+                        <div className="time-card-body">
+                            <div className="monday-container">
+                                <div className="row-one">
+                                    <div className="monday-row-one-date">
+                                        <p>{week.monday}</p>                                    
+                                    </div>   
+                                    <div className="monday-row-one-in">
+                                        <input onChange={calculateTime} id="monday-time-in" type="time"></input>
+                                    </div>
+                                    <div className="monday-row-one-out">
+                                        <input onChange={calculateTime} id="monday-time-out" type="time"></input>
+                                    </div>
+                                    <div className="monday-row-one-reg-hours">
+                                        <div className="">
+                                            <p id="monday-reg-hours" className="reg-hours">0:00</p>
+                                        </div>    
+                                    </div>
+                                    <div className="monday-row-one-vacation-hours">
+                                        <div className="">
+                                            <input onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} step="any" type="number" id="monday-vacation-hours-input" className="vacation-hours-requested" defaultValue={0}></input>
+                                        </div>
+                                    </div>
+                                    <div className="monday-row-one-sick-hours">                                    
+                                        <div className="">
+                                            <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} step="any" type="number" id="monday-sick-hours-input" className="sick-hours-requested" name="" defaultValue={0}></input>
+                                        </div>                                                 
+                                    </div>                
+                                    <div className="monday-row-one-account-code">
+                                        <p>11559 (Software Engineer)</p>
+                                    </div>
+                                    <div className="monday-row-one-total-hours">
+                                        <p id="monday-total-hours">0:00</p>
+                                    </div>
+                                </div>
+                                <div className="row-two">
+                                    <div className="monday-row-two-date">
+                                        
+                                    </div>
+                                    <div className="monday-row-two-in">
+                                        
+                                    </div>
+                                    <div className="monday-row-two-out">
+                                        
+                                    </div>
+                                    <div className="monday-row-two-reg-hours">
+                                            
+                                    </div>
+                                    <div className="monday-row-two-vacation-hours">
+                                        
+                                    </div>
+                                    <div className="monday-row-two-sick-hours">
+                                                        
+                                    </div>                
+                                    <div className="monday-row-two-account-code">
+                                        
+                                    </div>
+                                    <div className="monday-row-two-total-hours">
+                                        
+                                    </div>                                
+                                </div>
+                            </div>
+
+                            <div className="tuesday-container">
+                                <div className="row-one">
+                                    <div className="tuesday-row-one-date">
+                                        <p>{week.tuesday}</p>
+                                    </div>   
+                                    <div className="tuesday-row-one-in">
+                                        <input onChange={calculateTime} id="tuesday-time-in" type="time"></input>
+                                    </div>
+                                    <div className="tuesday-row-one-out">
+                                        <input onChange={calculateTime} id="tuesday-time-out" type="time"></input>
+                                    </div>
+                                    <div className="tuesday-row-one-reg-hours">
+                                        <div className="">
+                                        <p id="tuesday-reg-hours" className="reg-hours">0:00</p>
+                                        </div>    
+                                    </div>
+                                    <div className="tuesday-row-one-vacation-hours">
+                                        <div className="">
+                                            <input type="number" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} id="tuesday-vacation-hours-input" className="vacation-hours-requested" step="any" defaultValue={0}></input>
+                                        </div>
+                                    </div>
+                                    <div className="tuesday-row-one-sick-hours">                                    
+                                        <div className="">
+                                            <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="tuesday-sick-hours-input" className="sick-hours-requested" step="any" name="" defaultValue={0}></input>
+                                        </div>                                                 
+                                    </div>                
+                                    <div className="tuesday-row-one-account-code">
+                                        <p>11559 (Software Engineer)</p>
+                                    </div>
+                                    <div className="tuesday-row-one-total-hours">
+                                        <p id="tuesday-total-hours">0:00</p>
+                                    </div>
+                                </div>
+                                <div className="row-two">
+                                    <div className="tuesday-row-two-date">
+                                        
+                                    </div>
+                                    <div className="tuesday-row-two-in">
+                                        
+                                    </div>
+                                    <div className="tuesday-row-two-out">
+                                        
+                                    </div>
+                                    <div className="tuesday-row-two-reg-hours">
+                                            
+                                    </div>
+                                    <div className="tuesday-row-two-vacation-hours">
+                                        
+                                    </div>
+                                    <div className="tuesday-row-two-sick-hours">
+                                                        
+                                    </div>                
+                                    <div className="tuesday-row-two-account-code">
+                                        
+                                    </div>
+                                    <div className="tuesday-row-two-total-hours">
+                                        
+                                    </div>                                
+                                </div>
+                            </div>
+
+                            <div className="wednesday-container">
+                                <div className="row-one">
+                                    <div className="wednesday-row-one-date">
+                                        <p>{week.wednesday}</p>
+                                    </div>   
+                                    <div className="wednesday-row-one-in">
+                                        <input id="wednesday-time-in" onChange={calculateTime} type="time"></input>
+                                    </div>
+                                    <div className="wednesday-row-one-out">
+                                        <input id="wednesday-time-out" onChange={calculateTime} type="time"></input>
+                                    </div>
+                                    <div className="wednesday-row-one-reg-hours">
+                                        <div className="">
+                                            <p id="wednesday-reg-hours" className="reg-hours">0:00</p>
+                                        </div>    
+                                    </div>
+                                    <div className="wednesday-row-one-vacation-hours">
+                                        <div className="">
+                                            <input type="number" id="wednesday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" step="any" defaultValue={0}></input>
+                                        </div>
+                                    </div>
+                                    <div className="wednesday-row-one-sick-hours">                                    
+                                        <div className="">
+                                            <input onChange={(e) => {checkSickHoursInput(e); calculateTime()}} type="number" id="wednesday-sick-hours-input" className="sick-hours-requested" step="any" name="" defaultValue={0}></input>
+                                        </div>                                                 
+                                    </div>                
+                                    <div className="wednesday-row-one-account-code">
+                                        <p>11559 (Software Engineer)</p>
+                                    </div>
+                                    <div className="wednesday-row-one-total-hours">
+                                        <p id="wednesday-total-hours">0:00</p>
+                                    </div>
+                                </div>
+                                <div className="row-two">
+                                    <div className="wednesday-row-two-date">
+                                        
+                                    </div>
+                                    <div className="wednesday-row-two-in">
+                                        
+                                    </div>
+                                    <div className="wednesday-row-two-out">
+                                        
+                                    </div>
+                                    <div className="wednesday-row-two-reg-hours">
+                                            
+                                    </div>
+                                    <div className="wednesday-row-two-vacation-hours">
+                                        
+                                    </div>
+                                    <div className="wednesday-row-two-sick-hours">
+                                                        
+                                    </div>                
+                                    <div className="wednesday-row-two-account-code">
+                                        
+                                    </div>
+                                    <div className="wednesday-row-two-total-hours">
+                                        
+                                    </div>                                
+                                </div>
+                            </div>
+
+                            <div className="thursday-container">
+                                <div className="row-one">
+                                    <div className="thursday-row-one-date">
+                                        <p>{week.thursday}</p>
+                                    </div>   
+                                    <div className="thursday-row-one-in">
+                                        <input id="thursday-time-in" onChange={calculateTime} type="time"></input>
+                                    </div>
+                                    <div className="thursday-row-one-out">
+                                        <input id="thursday-time-out" onChange={calculateTime} type="time"></input>
+                                    </div>
+                                    <div className="thursday-row-one-reg-hours">
+                                        <div className="">
+                                            <p id="thursday-reg-hours" className="reg-hours">0:00</p>
+                                        </div>    
+                                    </div>
+                                    <div className="thursday-row-one-vacation-hours">
+                                        <div className="">
+                                            <input type="number" id="thursday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" step="any" defaultValue={0}></input>
+                                        </div>
+                                    </div>
+                                    <div className="thursday-row-one-sick-hours">                                    
+                                        <div className="">
+                                            <input type="number" id="thursday-sick-hours-input" onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} className="sick-hours-requested" step="any" defaultValue={0}></input>
+                                        </div>                                                 
+                                    </div>                
+                                    <div className="thursday-row-one-account-code">
+                                        <p>11559 (Software Engineer)</p>
+                                    </div>
+                                    <div className="thursday-row-one-total-hours">
+                                        <p id="thursday-total-hours">0:00</p>
+                                    </div>
+                                </div>
+                                <div className="row-two">
+                                    <div className="thursday-row-two-date">
+                                        
+                                    </div>
+                                    <div className="thursday-row-two-in">
+                                        
+                                    </div>
+                                    <div className="thursday-row-two-out">
+                                        
+                                    </div>
+                                    <div className="thursday-row-two-reg-hours">
+                                        
+                                    </div>
+                                    <div className="thursday-row-two-vacation-hours">
+                                        
+                                    </div>
+                                    <div className="thursday-row-two-sick-hours">
+                                                    
+                                    </div>                
+                                    <div className="thursday-row-two-account-code">
+                                        
+                                    </div>
+                                    <div className="thursday-row-two-total-hours">
+                                        
+                                    </div>                                
+                                </div>
+                            </div>
+
+                            <div className="friday-container">
+                                <div className="row-one">
+                                    <div className="friday-row-one-date">
+                                        <p>{week.friday}</p>
+                                    </div>   
+                                    <div className="friday-row-one-in">
+                                        <input id="friday-time-in" onChange={calculateTime} type="time"></input>
+                                    </div>
+                                    <div className="friday-row-one-out">
+                                        <input id="friday-time-out" onChange={calculateTime} type="time"></input>
+                                    </div>
+                                    <div className="friday-row-one-reg-hours">
+                                        <div className="">
+                                            <p id="friday-reg-hours" className="reg-hours">0:00</p>
+                                        </div>    
+                                    </div>
+                                    <div className="friday-row-one-vacation-hours">
+                                        <div className="">
+                                            <input type="number" id="friday-vacation-hours-input" onChange={e => {checkVacationHoursInput(e); calculateTime(); adjustVacationPie() }} className="vacation-hours-requested" step="any" defaultValue={0}></input>
+                                        </div>
+                                    </div>
+                                    <div className="friday-row-one-sick-hours">                                    
+                                        <div className="">
+                                            <input onChange={e => {checkSickHoursInput(e); calculateTime(); adjustSickPie() }} type="number" id="friday-sick-hours-input" className="sick-hours-requested" step="any" defaultValue={0}></input>
+                                        </div>                                                 
+                                    </div>                
+                                    <div className="friday-row-one-account-code">
+                                        <p>11559 (Software Engineer)</p>
+                                    </div>
+                                    <div className="friday-row-one-total-hours">
+                                        <p id="friday-total-hours">0:00</p>
+                                    </div>
+                                </div>
+                                <div className="row-two">
+                                    <div className="friday-row-two-date">
+                                        
+                                    </div>
+                                    <div className="friday-row-two-in">
+                                        
+                                    </div>
+                                    <div className="friday-row-two-out">
+                                        
+                                    </div>
+                                    <div className="friday-row-two-reg-hours">
+                                        
+                                    </div>
+                                    <div className="friday-row-two-vacation-hours">
+                                        
+                                    </div>
+                                    <div className="friday-row-two-sick-hours">
+                                                    
+                                    </div>                
+                                    <div className="friday-row-two-account-code">
+                                        
+                                    </div>
+                                    <div className="friday-row-two-total-hours">
+                                        
+                                    </div>                                
+                                </div>
+                            </div>
+
+                            <div className="submit-container">
+                                <div className="submit-btn-container">
+                                    {/* <button onClick={e => {spendVacationHours(e); spendSickHours(e); getCurrentWeek() }} id="time-card-submit-btn">Submit for Approval</button> */}
+                                    <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours(); getTotalSickHours(); resetInputValues()}} id="time-card-submit-btn">Submit for Approval</button>
+                                </div>
+                                <div className="reg-hours-total-container">
+                                    <p className="reg-hours-total">0:00</p>
+                                </div>
+                                <div className="vacation-hours-total-container">
+                                    <p className="vacation-hours-total">0:00</p>
+                                </div>
+                                <div className="sick-hours-total-container">
+                                    <p className="sick-hours-total">0:00</p>
+                                </div>
+                                <div className="total-hours-total-container">
+                                    <p className="total-hours-total">0:00</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </main>            
+            </div>
+            <div className="mobile-portal">
+                <div className="mobile-header">
+
+                </div>
+            </div>
+        </>
     )
 }
 
