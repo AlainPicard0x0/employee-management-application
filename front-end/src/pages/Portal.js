@@ -1028,7 +1028,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 <div className="mobile-header">
                     <div className="mobile-header-selection-container">
                         <div className="mobile-time-sheet">Time Sheet</div>
-                        <div className="mobile-vacation">Vacation</div>
+                        <div className="mobile-vacation active">Vacation</div>
                         <div className="mobile-sick-leave">Sick Leave</div>
                     </div>
                 </div>
