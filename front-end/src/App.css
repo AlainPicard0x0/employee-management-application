@@ -1088,6 +1088,7 @@ ul a:hover {
   .app-footer {
     display: none;
   }
+
   .mobile-header {
     width: 100%;
     height: 125px;
@@ -1096,11 +1097,13 @@ ul a:hover {
     justify-content: center;
     align-items: center;
   }
+
   .mobile-header-selection-container {
     width: 100%;
     display: flex;
     justify-content: center;
   }
+
   .mobile-time-sheet,
   .mobile-vacation,
   .mobile-sick-leave {
@@ -1114,14 +1117,26 @@ ul a:hover {
     font-size: 0.9rem;
     color: #fff;
   }
+
   .mobile-time-sheet {
     border-radius: 5px 0 0 5px;
   }
+
   .mobile-sick-leave {
     border-radius: 0 5px 5px 0;
   }
+
+  /*Apply .active class to current selection in mobile-header*/
   .active {
     background-image: linear-gradient(#ffb507, #5e4200);
+  }
+
+  .mobile-body {
+    width: 100%;
+    height: 85vh;
+    background-color:rgb(66, 75, 83);
+    display: grid;
+    grid-template: 1fr 2fr / 1fr ;
   }
   
 
