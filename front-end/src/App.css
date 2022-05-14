@@ -1100,6 +1100,18 @@ ul a:hover {
     display: flex;
     justify-content: center;
   }
+  .mobile-time-sheet,
+  .mobile-vacation,
+  .mobile-sick-leave {
+    border: solid 1px #fff;
+    width: 22vw;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #fff;
+  }
 
 
   /* .header {
