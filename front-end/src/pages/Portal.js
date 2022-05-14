@@ -1033,6 +1033,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </div>
                 </div>
             </div>
+            <div className="mobile-body">
+                <p>Body</p>
+            </div>
         </>
     )
 }
