@@ -665,6 +665,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 </div>
 
                 {/* Add hours worked section? */}
+                <div className="mobile-time-card">
+                        <h1>Time Card</h1>
+                    </div>
                 <div className="time-card">
                     <div className="time-card-header">
                         <div id="time-card-date">
