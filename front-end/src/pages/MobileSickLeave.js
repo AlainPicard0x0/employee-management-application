@@ -1,13 +1,13 @@
 
-const MobileVacation = () => {
+const MobileSickLeave = () => {
     return (
         <>
             <div className="mobile-portal">
                 <div className="mobile-header">
                     <div className="mobile-header-selection-container">
                         <div className="mobile-time-sheet"><a href="./time-sheet">Time Sheet</a></div>
-                        <div className="mobile-vacation active">Vacation</div>
-                        <div className="mobile-sick-leave"><a href="./sick-leave">Sick Leave</a></div>                       
+                        <div className="mobile-vacation"><a href="./vacation">Vacation</a></div>
+                        <div className="mobile-sick-leave active">Sick Leave</div>                       
                     </div>
                 </div>
             </div>
@@ -22,5 +22,5 @@ const MobileVacation = () => {
         </>
     )
 }
-export default MobileVacation;
 
+export default MobileSickLeave;
