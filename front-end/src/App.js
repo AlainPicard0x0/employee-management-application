@@ -6,7 +6,8 @@ import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
 import Portal from "./pages/Portal.js";
 import NotFound from "./pages/NotFound.js";
-import MobileVacation from "./pages/Mobile-vacation.js";
+import MobileVacation from "./pages/MobileVacation.js";
+import MobileTimeSheet from "./pages/MobileTimeSheet.js";
 import "./App.css";
 
 function App() {
@@ -123,6 +124,7 @@ function App() {
           <Route path="/" element={ <Login login={login} authenticateEmployee={authenticateEmployee} /> }></Route>
           <Route path="/register" element={ <Register login={login} createEmployee={createEmployee} /> }></Route>
           <Route path="/portal/vacation" element={<MobileVacation />}></Route>
+          <Route path="/portal/time-sheet" element={<MobileTimeSheet />}></Route>
           <Route path="/portal" element={ <Portal email={email} login={login} setLogin={setLogin} getEmployee={getEmployee} employee={employee} /> }></Route>
           <Route path="*" element={ <NotFound /> }></Route>
         </Routes>
