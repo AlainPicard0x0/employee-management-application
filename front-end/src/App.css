@@ -1107,7 +1107,7 @@ ul a:hover {
   .mobile-time-sheet,
   .mobile-vacation,
   .mobile-sick-leave {
-    background-image: linear-gradient(#ffbf27, #9c6e01);
+    background-image: radial-gradient(#ffbf27, #9c6e01);
     /* background-image: linear-gradient(#b4c0f3, #748dfb); */
     width: 22vw;
     height: 35px;
@@ -1146,6 +1146,13 @@ ul a:hover {
   .row-1-col-1,
   .row-2-col-1 {
     background-color: #fff;
+  }
+
+  .mobile-time-sheet a,
+  .mobile-vacation a,
+  .mobile-sick-leave a {
+    text-decoration: none;
+    color: #fff;
   }
   
 
