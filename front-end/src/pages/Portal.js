@@ -608,6 +608,26 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         document.getElementsByClassName("reg-hours-total")[0].innerText = "0:00";
     }
 
+    const mobileHeaderSelection = document.getElementsByClassName("mobile-header-selection");
+    for(let i = 0; i < mobileHeaderSelection.length; i++) {
+        let selection = mobileHeaderSelection[i];
+        selection.addEventListener("click", (e) => {
+            if(e.target.classList.contains("active")) {
+                return;
+            }
+            else {
+                let selectedClass = e.target.classList[1];
+                if(selection.contains(selectedClass)) {
+                    selection.classList.add("active");
+                }
+                else {
+                    selection.classList.remove("active");
+                }
+            }
+        })
+        
+    }
+
     return (
         <>
             <div className="portal">
@@ -1027,9 +1047,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             <div className="mobile-portal">
                 <div className="mobile-header">
                     <div className="mobile-header-selection-container">
-                        <div className="mobile-time-sheet">Time Sheet</div>
-                        <div className="mobile-vacation active"><a href="./portal/vacation">Vacation</a></div>
-                        <div className="mobile-sick-leave">Sick Leave</div>                       
+                        <div className="mobile-header-selection mobile-time-sheet">Time Sheet</div>
+                        <div className="mobile-header-selection mobile-vacation active">Vacation</div>
+                        <div className="mobile-header-selection mobile-sick-leave">Sick Leave</div>                       
                     </div>
                 </div>
             </div>
