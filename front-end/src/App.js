@@ -124,9 +124,6 @@ function App() {
         <Routes>
           <Route path="/" element={ <Login login={login} authenticateEmployee={authenticateEmployee} /> }></Route>
           <Route path="/register" element={ <Register login={login} createEmployee={createEmployee} /> }></Route>
-          <Route path="/portal/vacation" element={<MobileVacation />}></Route>
-          <Route path="/portal/time-sheet" element={<MobileTimeSheet />}></Route>
-          <Route path="/portal/sick-leave" element={<MobileSickLeave />}></Route>
           <Route path="/portal" element={ <Portal email={email} login={login} setLogin={setLogin} getEmployee={getEmployee} employee={employee} /> }></Route>
           <Route path="*" element={ <NotFound /> }></Route>
         </Routes>
