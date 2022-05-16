@@ -14,10 +14,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const navigate = useNavigate();
     const api = `http://localhost:8080/api/employees`;    
     const [week, setWeek] = useState({});
-    const [windowDimension, detectHW] = useState({
-        winWidth: window.innerWidth,
-        winHeight: window.innerHeight
-    });
 
     useEffect(() => {
         if(login) {
@@ -31,25 +27,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             navigate("/");
         }
     }, [login, navigate])
-
-    useEffect(() => {
-        window.addEventListener("resize", detectSize);
-        if(windowDimension.winWidth > 600) {
-            navigate("/portal");
-        }
-        else {
-            navigate("/portal/vacation");
-        }
-    }, [windowDimension]);
-
-    
-
-    const detectSize = () => {
-        detectHW({
-            winWidth: window.innerWidth,
-            winHeight: window.innerHeight
-        })
-    }
 
     // TODO implement previous week button and next week button
     const getCurrentWeek = () => {        
