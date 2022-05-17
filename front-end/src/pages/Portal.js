@@ -1044,7 +1044,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 </main>            
             </div>
             <div className="mobile-portal">
-                <div className="mobile-header">
+                <div className="mobile-header hidden">
                     <div className="mobile-header-selection-container">
                         <div className="mobile-header-selection mobile-time-sheet">Time Sheet</div>
                         <div className="mobile-header-selection mobile-vacation active">Vacation</div>
