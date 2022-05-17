@@ -609,23 +609,22 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const mobileHeaderSelection = document.getElementsByClassName("mobile-header-selection");
-    for(let i = 0; i < mobileHeaderSelection.length; i++) {
-        let selection = mobileHeaderSelection[i];
-        selection.addEventListener("click", (e) => {
-            if(e.target.classList.contains("active")) {
-                return;
+    const handleSelection = (e) => {
+        for(let i = 0; i < mobileHeaderSelection.length; i++) {
+            let selectedMenu = e.target.classList[1];
+            if(!mobileHeaderSelection[i].classList.contains("active") && mobileHeaderSelection[i].classList.contains(selectedMenu)) {
+                mobileHeaderSelection[i].classList.add("active");
+            }
+            else if(mobileHeaderSelection[i].classList.contains("active") && mobileHeaderSelection[i].classList.contains(selectedMenu)) {
+                continue;
             }
             else {
-                let selectedClass = e.target.classList[1];
-                if(selection.contains(selectedClass)) {
-                    selection.classList.add("active");
-                }
-                else {
-                    selection.classList.remove("active");
-                }
+                mobileHeaderSelection[i].classList.remove("active");
             }
-        })
-        
+        }
+    }
+    for(let i = 0; i < mobileHeaderSelection.length; i++) {
+        mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
 
     return (
