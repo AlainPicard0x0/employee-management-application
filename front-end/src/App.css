@@ -1081,6 +1081,10 @@ ul a:hover {
     font-size: medium;
   }
 
+  .mobile-header {
+    display: none;
+  }
+
   .hidden {
     display: none;
   }
@@ -1135,7 +1139,7 @@ ul a:hover {
     background-image: linear-gradient(#ffb507, #5e4200);
   }
 
-  .mobile-body {
+  .vacation-mobile-body.active {
     width: 100%;
     height: 85vh;
     background-color: #f4f4f4;
