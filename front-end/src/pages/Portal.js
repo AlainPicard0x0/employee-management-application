@@ -1054,7 +1054,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 </div>
             </div>
             <div className="mobile-body">
-                <div className="vacation-mobile-body hidden">
+                <div className="vacation-mobile-body selected">
                     <div className="row-1-col-1">
                         <h2>Vacation Page</h2>
                     </div>
