@@ -609,10 +609,20 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const mobileHeaderSelection = document.getElementsByClassName("mobile-header-selection");
-    const mobileHeaderBody = document.getElementsByClassName("")
+    
     const handleSelection = (e) => {
         for(let i = 0; i < mobileHeaderSelection.length; i++) {
             let selectedMenu = e.target.classList[1];
+            // Start
+            console.log(selectedMenu);
+            let selectedPage = document.getElementsByClassName("mobile-container");
+            for(let i = 0; i < selectedPage.length; i++) {
+                console.log(selectedPage[i].classList);
+                if(selectedPage[i].classList.contains(selectedMenu)) {
+                    selectedPage[i].classList.add("selected");
+                }
+            }
+            // end
             if(!mobileHeaderSelection[i].classList.contains("active") && mobileHeaderSelection[i].classList.contains(selectedMenu)) {
                 mobileHeaderSelection[i].classList.add("active");
             }
@@ -624,9 +634,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             }
         }
     }
+
     for(let i = 0; i < mobileHeaderSelection.length; i++) {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
+
 
     return (
         <>
@@ -1054,7 +1066,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 </div>
             </div>
             <div className="mobile-body">
-                <div className="vacation-mobile-body selected">
+                <div className="vacation-mobile-body mobile-container">
                     <div className="row-1-col-1">
                         <h2>Vacation Page</h2>
                     </div>
