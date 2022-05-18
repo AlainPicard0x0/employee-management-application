@@ -1039,6 +1039,11 @@ ul a:hover {
   background-image: linear-gradient(#2544cc, #1a2c80);
   color: #fff;
 }
+
+.vacation-mobile-body { 
+  display: none;
+}
+
 /* 15" Macbook Pro */
 @media (max-width:1680px) {
   body {
@@ -1139,7 +1144,7 @@ ul a:hover {
     background-image: linear-gradient(#ffb507, #5e4200);
   }
 
-  .vacation-mobile-body.active {
+  .vacation-mobile-body.selected {
     width: 100%;
     height: 85vh;
     background-color: #f4f4f4;
