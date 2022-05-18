@@ -1040,6 +1040,14 @@ ul a:hover {
   color: #fff;
 }
 
+.mobile-header {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
 .vacation-mobile-body { 
   display: none;
 }
@@ -1086,13 +1094,6 @@ ul a:hover {
     font-size: medium;
   }
 
-  .mobile-header {
-    display: none;
-  }
-
-  .hidden {
-    display: none;
-  }
 }
 /* mobile device */
 @media only screen and (max-width: 600px) {
