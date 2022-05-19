@@ -609,14 +609,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const mobileHeaderSelection = document.getElementsByClassName("mobile-header-selection");
-    // New
-    const mobileHeaderSelectionContainer = document.getElementsByClassName("mobile-header-selection");
     const mobileContainer = document.getElementsByClassName("mobile-container");
-    //
     const handleSelection = (e) => {
         for(let i = 0; i < mobileHeaderSelection.length; i++) {
-            let selectedMenu = e.target.classList[1];
-           
+            let selectedMenu = e.target.classList[1];           
             if(!mobileHeaderSelection[i].classList.contains("active") && mobileHeaderSelection[i].classList.contains(selectedMenu)) {
                 mobileHeaderSelection[i].classList.add("active");
             }
@@ -630,9 +626,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         for(let i = 0; i < mobileContainer.length; i++) {
             mobileContainer[i].classList.remove("selected");
         }
-        for(let i = 0; i < mobileHeaderSelectionContainer.length; i++) {
-            if(mobileHeaderSelectionContainer[i].classList.contains("active")) {
-                let selectedDataset = mobileHeaderSelectionContainer[i].dataset.page;
+        for(let i = 0; i < mobileHeaderSelection.length; i++) {
+            if(mobileHeaderSelection[i].classList.contains("active")) {
+                let selectedDataset = mobileHeaderSelection[i].dataset.page;
                 
                 document.getElementById(selectedDataset).classList.add("selected");
             }
@@ -642,7 +638,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     for(let i = 0; i < mobileHeaderSelection.length; i++) {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
-
 
     return (
         <>
