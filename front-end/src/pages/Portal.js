@@ -610,7 +610,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const mobileHeaderSelection = document.getElementsByClassName("mobile-header-selection");
     // New
-    let mobileHeaderSelectionContainer = document.getElementsByClassName("mobile-header-selection");
+    const mobileHeaderSelectionContainer = document.getElementsByClassName("mobile-header-selection");
+    const mobileContainer = document.getElementsByClassName("mobile-container");
     //
     const handleSelection = (e) => {
         for(let i = 0; i < mobileHeaderSelection.length; i++) {
@@ -634,10 +635,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 mobileHeaderSelection[i].classList.remove("active");
             }
         }
+        for(let i = 0; i < mobileContainer.length; i++) {
+            mobileContainer[i].classList.remove("selected");
+        }
         for(let i = 0; i < mobileHeaderSelectionContainer.length; i++) {
             if(mobileHeaderSelectionContainer[i].classList.contains("active")) {
                 let selectedDataset = mobileHeaderSelectionContainer[i].dataset.page;
-                console.log(selectedDataset);
+                
                 document.getElementById(selectedDataset).classList.add("selected");
             }
         }
