@@ -609,19 +609,20 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const mobileHeaderSelection = document.getElementsByClassName("mobile-header-selection");
-    
+    // New
+    let mobileHeaderSelectionContainer = document.getElementsByClassName("mobile-header-selection");
+    //
     const handleSelection = (e) => {
         for(let i = 0; i < mobileHeaderSelection.length; i++) {
             let selectedMenu = e.target.classList[1];
             // Start
-            console.log(selectedMenu);
-            let selectedPage = document.getElementsByClassName("mobile-container");
-            for(let i = 0; i < selectedPage.length; i++) {
-                console.log(selectedPage[i].classList);
-                if(selectedPage[i].classList.contains(selectedMenu)) {
-                    selectedPage[i].classList.add("selected");
-                }
-            }
+            // When a page is selected from menu, add .selected class to corresponding page and remove .selected class
+            // all other pages.
+
+            // Determine which page was selected, save dataset to variable.
+            // Find page that corresponds to menu selection.
+            // Add .selected class to corresponding page
+            
             // end
             if(!mobileHeaderSelection[i].classList.contains("active") && mobileHeaderSelection[i].classList.contains(selectedMenu)) {
                 mobileHeaderSelection[i].classList.add("active");
@@ -631,6 +632,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             }
             else {
                 mobileHeaderSelection[i].classList.remove("active");
+            }
+        }
+        for(let i = 0; i < mobileHeaderSelectionContainer.length; i++) {
+            if(mobileHeaderSelectionContainer[i].classList.contains("active")) {
+                let selectedDataset = mobileHeaderSelectionContainer[i].dataset.page;
+                console.log(selectedDataset);
+                document.getElementById(selectedDataset).classList.add("selected");
             }
         }
     }
@@ -1066,7 +1074,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 </div>
             </div>
             <div className="mobile-body">
-                <div className="vacation-mobile-body mobile-container">
+                <div id="vacation-page" className="vacation-mobile-body mobile-container">
                     <div className="row-1-col-1">
                         <h2>Vacation Page</h2>
                     </div>
