@@ -1078,12 +1078,28 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 </div>
             </div>
             <div className="mobile-body">
+                <div id="time-sheet-page" className="time-sheet-mobile-body mobile-container">
+                    <div className="row-1-col-1">
+                        <h2>Time Sheet Page</h2>
+                    </div>
+                    <div className="row-2-col-1">
+                        <h2>Time Sheet Page</h2>
+                    </div>
+                </div>
                 <div id="vacation-page" className="vacation-mobile-body mobile-container">
                     <div className="row-1-col-1">
                         <h2>Vacation Page</h2>
                     </div>
                     <div className="row-2-col-1">
                         <h2>Vacation Page</h2>
+                    </div>
+                </div>
+                <div id="sick-leave-page" className="sick-leave-mobile-body mobile-container">
+                    <div className="row-1-col-1">
+                        <h2>Sick Leave Page</h2>
+                    </div>
+                    <div className="row-2-col-1">
+                        <h2>Sick Leave Page</h2>
                     </div>
                 </div>
             </div>            
