@@ -1048,7 +1048,15 @@ ul a:hover {
   display: none;
 }
 
+.time-sheet-mobile-body {
+  display: none;
+}
+
 .vacation-mobile-body { 
+  display: none;
+}
+
+.sick-leave-mobile-body {
   display: none;
 }
 
@@ -1145,7 +1153,23 @@ ul a:hover {
     background-image: linear-gradient(#ffb507, #5e4200);
   }
 
+  .time-sheet-mobile-body.selected {
+    width: 100%;
+    height: 85vh;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template: 1fr 2fr / 1fr ;
+  }
+
   .vacation-mobile-body.selected {
+    width: 100%;
+    height: 85vh;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template: 1fr 2fr / 1fr ;
+  }
+
+  .sick-leave-mobile-body.selected {
     width: 100%;
     height: 85vh;
     background-color: #f4f4f4;
