@@ -616,15 +616,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const handleSelection = (e) => {
         for(let i = 0; i < mobileHeaderSelection.length; i++) {
             let selectedMenu = e.target.classList[1];
-            // Start
-            // When a page is selected from menu, add .selected class to corresponding page and remove .selected class
-            // all other pages.
-
-            // Determine which page was selected, save dataset to variable.
-            // Find page that corresponds to menu selection.
-            // Add .selected class to corresponding page
-            
-            // end
+           
             if(!mobileHeaderSelection[i].classList.contains("active") && mobileHeaderSelection[i].classList.contains(selectedMenu)) {
                 mobileHeaderSelection[i].classList.add("active");
             }
@@ -1086,7 +1078,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <h2>Time Sheet Page</h2>
                     </div>
                 </div>
-                <div id="vacation-page" className="vacation-mobile-body mobile-container">
+                <div id="vacation-page" className="vacation-mobile-body mobile-container selected">
                     <div className="row-1-col-1">
                         <h2>Vacation Page</h2>
                     </div>
