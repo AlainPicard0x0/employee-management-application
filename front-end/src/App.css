@@ -1202,6 +1202,11 @@ ul a:hover {
     align-items: center;
     justify-content: center;
   }
+
+  .hours-left {
+    transform: rotate(0);
+    grid-area: 1 / 2 / 2 / 3;
+  }
   
 
 
