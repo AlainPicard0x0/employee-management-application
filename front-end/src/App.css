@@ -1210,6 +1210,7 @@ ul a:hover {
   #vacation-pie {
     border-radius: 50%;
     box-shadow: 1px 1px 12px #c0c0c0;
+    --p: 50;
   }
 
   .hours-left {
