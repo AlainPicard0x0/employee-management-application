@@ -309,7 +309,7 @@ ul a:hover {
 
 #vacation-pie {
   --p: 40;
-  --b: 26px;
+  --b: 27px;
   --c: orange; 
   --w: 150px;
   width: var(--w);
@@ -323,7 +323,7 @@ ul a:hover {
 
 #sick-pie {
   --p: 75;
-  --b: 26px;
+  --b: 27px;
   --c: orange; 
   --w: 150px;
   width: var(--w);
@@ -339,7 +339,7 @@ ul a:hover {
 #sick-pie-background,
 #vacation-pie-background {
   --p: 100;
-  --b: 26px;
+  --b: 27px;
   --c: #7e7e7e;
   --w: 150px;
   width: var(--w);
@@ -1205,7 +1205,12 @@ ul a:hover {
 
   .hours-left {
     transform: rotate(0);
-    grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1 / 2 / 3 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
   }
   
 
