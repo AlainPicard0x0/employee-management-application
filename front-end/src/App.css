@@ -309,7 +309,7 @@ ul a:hover {
 
 #vacation-pie {
   --p: 40;
-  --b: 14px;
+  --b: 26px;
   --c: orange; 
   --w: 150px;
   width: var(--w);
@@ -323,7 +323,7 @@ ul a:hover {
 
 #sick-pie {
   --p: 75;
-  --b: 14px;
+  --b: 26px;
   --c: orange; 
   --w: 150px;
   width: var(--w);
@@ -339,7 +339,7 @@ ul a:hover {
 #sick-pie-background,
 #vacation-pie-background {
   --p: 100;
-  --b: 14px;
+  --b: 26px;
   --c: #7e7e7e;
   --w: 150px;
   width: var(--w);
