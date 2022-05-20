@@ -1158,7 +1158,7 @@ ul a:hover {
     height: 85vh;
     background-color: #f4f4f4;
     display: grid;
-    grid-template: 1fr 2fr / 1fr ;
+    grid-template: 1.25fr 2fr / 1fr ;
   }
 
   .vacation-mobile-body.selected {
@@ -1166,7 +1166,7 @@ ul a:hover {
     height: 85vh;
     background-color: #f4f4f4;
     display: grid;
-    grid-template: 1fr 2fr / 1fr ;
+    grid-template: 1.25fr 2fr / 1fr ;
   }
 
   .sick-leave-mobile-body.selected {
@@ -1174,7 +1174,7 @@ ul a:hover {
     height: 85vh;
     background-color: #f4f4f4;
     display: grid;
-    grid-template: 1fr 2fr / 1fr ;
+    grid-template: 1.25fr 2fr / 1fr ;
   }
 
   .row-1-col-1 {
