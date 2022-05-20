@@ -1207,6 +1207,11 @@ ul a:hover {
     justify-content: center;
   }
 
+  #vacation-pie {
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px #555;
+  }
+
   .hours-left {
     transform: rotate(0);
     grid-area: 1 / 2 / 3 / 3;
