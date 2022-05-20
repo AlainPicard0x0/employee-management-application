@@ -1131,7 +1131,7 @@ ul a:hover {
   .mobile-sick-leave {
     background-image: radial-gradient(#ffbf27, #9c6e01);
     /* background-image: linear-gradient(#b4c0f3, #748dfb); */
-    width: 22vw;
+    width: 26vw;
     height: 35px;
     display: flex;
     justify-content: center;
@@ -1184,6 +1184,10 @@ ul a:hover {
   .row-1-col-1,
   .row-2-col-1 {
     background-color: #fff;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 2px;
+    box-shadow: 1px 1px 7px, -1px -1px #f1f1f1;
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
   }
@@ -1210,6 +1214,13 @@ ul a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
+  }
+
+  .vacation-leave-title {
+    grid-area: 1 / 1 / 2 / 3;
+    justify-self: center;
+    margin-top: 10px;
     font-size: 1rem;
   }
   
