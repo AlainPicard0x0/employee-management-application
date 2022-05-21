@@ -1232,8 +1232,19 @@ ul a:hover {
   .vacation-leave-title {
     grid-area: 1 / 1 / 2 / 3;
     justify-self: center;
-    margin-top: 10px;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    color:#1a2c80;
+  }
+
+  #vacation-hours-remaining {
+    font-size: 2rem;
+    color:#ffb302;
+  }
+
+  .hours-left p {
+    color:#1a2c80;
+    text-transform: capitalize;
+    font-weight: 700;
   }
   
 }
