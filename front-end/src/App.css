@@ -1181,8 +1181,7 @@ ul a:hover {
     margin-bottom: 10px;
   }
 
-  .row-1-col-1,
-  .row-2-col-1 {
+  .row-1-col-1 {
     background-color: #fff;
     border-radius: 5px;
     margin: 5px;
@@ -1190,6 +1189,16 @@ ul a:hover {
     box-shadow: 1px 1px 7px, -1px -1px #f1f1f1;
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  }
+
+  .row-2-col-1 {
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 2px;
+    box-shadow: 1px 1px 7px, -1px -1px #f1f1f1;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(2, 1fr);
   }
 
   .mobile-time-sheet a,
@@ -1245,6 +1254,22 @@ ul a:hover {
     color:#1a2c80;
     text-transform: capitalize;
     font-weight: 700;
+  }
+
+  .row-2-title {
+    grid-area: 1 / 1 / 2 / 3;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .row-2-title {
+    color:#1a2c80;
+  }
+
+  .underline {
+    height: 1px;
+    background-color: #000;
   }
   
 }
