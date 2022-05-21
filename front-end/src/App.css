@@ -1158,7 +1158,7 @@ ul a:hover {
     height: 85vh;
     background-color: #f4f4f4;
     display: grid;
-    grid-template: 1.25fr 2fr / 1fr ;
+    grid-template: 1fr 2fr / 1fr ;
   }
 
   .vacation-mobile-body.selected {
@@ -1166,7 +1166,7 @@ ul a:hover {
     height: 85vh;
     background-color: #f4f4f4;
     display: grid;
-    grid-template: 1.25fr 2fr / 1fr ;
+    grid-template: 1fr 2fr / 1fr ;
   }
 
   .sick-leave-mobile-body.selected {
@@ -1174,7 +1174,7 @@ ul a:hover {
     height: 85vh;
     background-color: #f4f4f4;
     display: grid;
-    grid-template: 1.25fr 2fr / 1fr ;
+    grid-template: 1fr 2fr / 1fr ;
   }
 
   .row-1-col-1 {
@@ -1211,7 +1211,46 @@ ul a:hover {
     border-radius: 50%;
     box-shadow: 1px 1px 12px #c0c0c0;
     --p: 50;
+    --w: 110px;
   }
+
+
+  #sick-pie:before,
+  #vacation-pie:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+    z-index: 10;
+  }
+
+  #sick-pie-background,
+  #vacation-pie-background {
+    --p: 100;
+    --b: 27px;
+    --c: #7e7e7e;
+    --w: 110px;
+    width: var(--w);
+    height: var(--w);
+    top: -5px;
+    left: -5px;
+    display: inline-grid;
+    position: absolute;
+    margin: 5px;
+    transform: rotate(180deg);
+  }
+
+#sick-pie-background:before,
+#vacation-pie-background:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+  mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
 
   .hours-left {
     transform: rotate(0);
