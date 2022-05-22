@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import {faMinusCircle} from '@fortawesome/free-solid-svg-icons';
+import {faPersonWalkingLuggage} from '@fortawesome/free-solid-svg-icons';
 
 
 const Portal = ({email, login, setLogin, getEmployee, employee}) => {
@@ -1101,6 +1102,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="vac-minus-hour">
                                 <FontAwesomeIcon icon={faMinusCircle} />
+                            </div>
+                            <div>
+                                <FontAwesomeIcon icon={faPersonWalkingLuggage} />
                             </div>
                         </div>                      
                     </div>
