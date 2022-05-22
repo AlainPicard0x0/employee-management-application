@@ -161,17 +161,6 @@ ul a:hover {
   font-weight: bold;
 }
 
-/* .portal-nav {
-  min-height: 5rem;
-  background-image: linear-gradient(#2544cc, #1a2c80);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-  line-height: 1.0;
-} */
-
 #portal-main {
   height: 800px;
   display: grid;
@@ -1270,6 +1259,11 @@ ul a:hover {
   .underline {
     height: 1px;
     background-color: #000;
+  }
+
+  .fa-circle-plus {
+    width: 45px;
+    height: 45px;
   }
   
 }
