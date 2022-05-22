@@ -1097,14 +1097,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <h3>Request Vacation Hours</h3>
                             <div className="underline"></div>
                         </div>  
-                        <div className="request-vac-button">
+                        
                             <div className="vac-plus-btn">
                                 <FontAwesomeIcon icon={faPlusCircle} />
                             </div>
                             <div className="vac-minus-btn">
                                 <FontAwesomeIcon icon={faMinusCircle} />
                             </div>                            
-                        </div>
+                        
                         <div>
                             <div>
                                 <div>
