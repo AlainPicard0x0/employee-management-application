@@ -1096,14 +1096,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="row-2-title">
                             <h3>Request Vacation Hours</h3>
                             <div className="underline"></div>
-                        </div>  
-                        
-                            <div className="vac-plus-btn">
-                                <FontAwesomeIcon icon={faPlusCircle} />
-                            </div>
-                            <div className="vac-minus-btn">
-                                <FontAwesomeIcon icon={faMinusCircle} />
-                            </div>                            
+                        </div>                        
+                        <div className="vac-plus-btn">
+                            <FontAwesomeIcon icon={faPlusCircle} />
+                        </div>
+                        <div className="vac-minus-btn">
+                            <FontAwesomeIcon icon={faMinusCircle} />
+                        </div>                            
                         
                         <div>
                             <div>
