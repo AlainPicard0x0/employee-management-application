@@ -1261,6 +1261,12 @@ ul a:hover {
     background-color: #000;
   }
 
+  .vac-plus-btn {
+    box-shadow: 2px 2px 8px #333;
+    width: 95px;
+    height: 105px;
+  }
+
   .fa-circle-plus {
     width: 45px;
     height: 45px;
