@@ -5,6 +5,7 @@ import "react-calendar/dist/Calendar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
+import {faMinusCircle} from '@fortawesome/free-solid-svg-icons';
 
 
 const Portal = ({email, login, setLogin, getEmployee, employee}) => {
@@ -1095,8 +1096,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="underline"></div>
                         </div>  
                         <div className="request-vac-button">
-                            <div className="vac-btn">
+                            <div className="vac-plus-btn">
                                 <FontAwesomeIcon icon={faPlusCircle} />
+                            </div>
+                            <div className="vac-minus-hour">
+                                <FontAwesomeIcon icon={faMinusCircle} />
                             </div>
                         </div>                      
                     </div>
