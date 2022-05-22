@@ -1265,5 +1265,10 @@ ul a:hover {
     width: 45px;
     height: 45px;
   }
+
+  .fa-circle-minus {
+    width: 45px;
+    height: 45px;
+  }
   
 }
