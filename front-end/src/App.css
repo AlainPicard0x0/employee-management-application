@@ -1281,6 +1281,10 @@ ul a:hover {
     grid-area: 4 / 2 / 6 / 3;
     justify-self: center;
     align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
   }
 
   .fa-circle-plus {
