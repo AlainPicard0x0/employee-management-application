@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { BrowserRouter,Routes, Route, useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 
 
 const Portal = ({email, login, setLogin, getEmployee, employee}) => {
@@ -1092,7 +1093,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="row-2-title">
                             <h3>Request Vacation Hours</h3>
                             <div className="underline"></div>
-                        </div>                        
+                        </div>  
+                        <div className="request-vac-button">
+                            <div className="vac-btn">
+                                <FontAwesomeIcon icon={faPlusCircle} />
+                            </div>
+                        </div>                      
                     </div>
                 </div>
                 <div id="sick-leave-page" className="sick-leave-mobile-body mobile-container">
