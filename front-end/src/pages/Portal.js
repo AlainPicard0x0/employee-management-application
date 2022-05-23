@@ -653,7 +653,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="user-icon-background">
                             <FontAwesomeIcon icon={faUser} />
                         </div>                    
-                        <h2>{`${ employee.firstName } ${ employee.lastName }`}</h2>
+                        <h2>{`${ employee.firstName } ${ employee.lastName }` || "Line 656 Portal.js: name"}</h2>
                         <button id="my-profile-btn">My Profile</button>  
                         <button id="logout-btn" onClick={() => setLogin(false)}>Logout</button>                  
                     </div>
@@ -1104,18 +1104,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="vac-minus-btn">
                             <h3>Remove</h3>
                             <FontAwesomeIcon icon={faMinusCircle} />
-                        </div>                            
-                        
-                        <div>
-                            <div>
-                                <div className="person-walking-image">
-                                    <FontAwesomeIcon icon={faPersonWalkingLuggage} />
-                                </div>
-                                <div className="beach-umbrella-image">
-                                    <FontAwesomeIcon icon={faUmbrellaBeach} />
-                                </div>
-                            </div>
-                        </div>                                             
+                        </div>                           
+                        <div className="person-walking-image">
+                            <FontAwesomeIcon icon={faPersonWalkingLuggage} />
+                        </div>
+                        <div className="beach-umbrella-image">
+                            <FontAwesomeIcon icon={faUmbrellaBeach} />
+                        </div>
+                            
+                                                                     
                     </div>
                 </div>
                 <div id="sick-leave-page" className="sick-leave-mobile-body mobile-container">
