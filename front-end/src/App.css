@@ -1273,6 +1273,7 @@ ul a:hover {
     justify-content: space-around;
     align-items: center;
     padding: 10px;
+    color: #1a2c80;
     background-image: linear-gradient(#ffb507, #ab7800);
   }
 
@@ -1288,6 +1289,7 @@ ul a:hover {
     justify-content: space-around;
     align-items: center;
     padding: 10px;
+    color: #1a2c80;
     background-image: linear-gradient(#ffb507, #ab7800);
   }
 
