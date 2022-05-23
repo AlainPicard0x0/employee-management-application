@@ -1306,5 +1306,10 @@ ul a:hover {
     background-color: #fff;
     border-radius: 50%;
   }
+
+  .fa-person-walking-luggage {
+    width: 75px;
+    height: 75px;
+  }
   
 }
