@@ -1294,11 +1294,15 @@ ul a:hover {
   .fa-circle-plus {
     width: 25px;
     height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
   }
 
   .fa-circle-minus {
     width: 25px;
     height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
   }
   
 }
