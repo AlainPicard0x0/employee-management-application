@@ -1098,9 +1098,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="underline"></div>
                         </div>                        
                         <div className="vac-plus-btn">
+                            <h3>Add</h3>
                             <FontAwesomeIcon icon={faPlusCircle} />
                         </div>
                         <div className="vac-minus-btn">
+                            <h3>Remove</h3>
                             <FontAwesomeIcon icon={faMinusCircle} />
                         </div>                            
                         
