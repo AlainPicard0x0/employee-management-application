@@ -1269,8 +1269,9 @@ ul a:hover {
     justify-self: center;
     align-self: center;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     padding: 10px;
   }
 
@@ -1282,8 +1283,9 @@ ul a:hover {
     justify-self: center;
     align-self: center;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     padding: 10px;
   }
 
