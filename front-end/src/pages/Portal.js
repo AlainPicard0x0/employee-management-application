@@ -1111,8 +1111,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="beach-umbrella-image">
                             <FontAwesomeIcon icon={faUmbrellaBeach} />
                         </div>
-                        <div className="mobile-vacation-hours-selected">
-                            <p>Test</p>
+                        <div className="mobile-vacation-hours-selected-display">
+                            <p id="mobile-vacation-hours-display">0</p>
                         </div>
                             
                                                                      
