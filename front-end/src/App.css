@@ -1354,5 +1354,12 @@ ul a:hover {
     height: 75px;
     color: rgba(001, 001, 001, .10);
   }
+
+  .mobile-vacation-submit-btn {
+    grid-area: 5 / 1 / 6 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
 }
