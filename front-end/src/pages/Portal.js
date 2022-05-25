@@ -1114,8 +1114,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="mobile-vacation-hours-selected-display">
                             <p id="mobile-vacation-hours-display">0</p>
                         </div>
-                            
-                                                                     
+                        <div className="mobile-vacation-submit-btn">
+                            <button id="mobile-vacation-submit-btn">Submit</button>
+                        </div>                                                                    
                     </div>
                 </div>
                 <div id="sick-leave-page" className="sick-leave-mobile-body mobile-container">
