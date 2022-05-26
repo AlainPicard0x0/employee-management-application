@@ -1102,7 +1102,7 @@ ul a:hover {
 
   .mobile-header {
     width: 100%;
-    height: 125px;
+    height: 100px;
     background-image: linear-gradient(#2544cc, #1a2c80);
     display: flex;
     justify-content: center;
