@@ -1086,7 +1086,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         </div>
                         <div className="hours-left">
                                 <h2 id="vacation-hours-remaining">{vacationHours}</h2>
-                                <p>hours left</p>
+                                <p>hours remaining</p>
                         </div>
                         <div className="vacation-leave-title">
                             <h4>Vacation Leave</h4>
