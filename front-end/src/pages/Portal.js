@@ -1078,7 +1078,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </div>
                 </div>
                 <div id="vacation-page" className="vacation-mobile-body mobile-container selected">
-                    <div className="row-1-col-1">
+                    {/* <div className="row-1-col-1"> */}
                         <div className="portal-vacation-leave">
                             <div id="vacation-pie">
                                 <div id="vacation-pie-background"></div>
@@ -1091,8 +1091,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="vacation-leave-title">
                             <h4>Vacation Leave</h4>
                         </div>
-                    </div>
-                    <div className="row-2-col-1">
+                    {/* </div> */}
+                    {/* <div className="row-2-col-1"> */}
                         <div className="row-2-title">
                             <h3>Request Vacation Hours</h3>
                             <div className="underline"></div>
@@ -1117,7 +1117,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="mobile-vacation-submit-btn">
                             <button id="mobile-vacation-submit-btn">Submit</button>
                         </div>                                                                    
-                    </div>
+                    {/* </div> */}
                 </div>
                 <div id="sick-leave-page" className="sick-leave-mobile-body mobile-container">
                     <div className="row-1-col-1">
