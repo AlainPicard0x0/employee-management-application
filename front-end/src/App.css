@@ -1266,6 +1266,7 @@ ul a:hover {
 
   .mobile-vacation-hours-selected-display {
     /* grid-area: 3 / 1 / 4 / 3; */
+    grid-area: 7 / 2 / 9 / 4;
     display: flex;
     height: 35px;
     width: 35px;
@@ -1343,6 +1344,7 @@ ul a:hover {
 
   .beach-umbrella-image {
     /* grid-area: 2 / 2 / 4 / 3; */
+    grid-area: 8 / 1 / 11 / 3;
     justify-self: center;
     align-self: center;
     position: relative;
