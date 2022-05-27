@@ -1304,6 +1304,7 @@ ul a:hover {
     width: 50px;
     height: 55px;
     /* grid-area: 4 / 2 / 5 / 3; */
+    grid-area: 7 / 3 / 10 / 5;
     justify-self: flex-start;
     margin: 20px;
     align-self: center;
