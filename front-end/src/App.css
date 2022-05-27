@@ -1199,7 +1199,7 @@ ul a:hover {
 
   .portal-vacation-leave {
     /* grid-area: 1 / 1 / 3 / 2; */
-    grid-area: 3 / 1 / 7 / 5;
+    grid-area: 4 / 1 / 8 / 5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1221,7 +1221,7 @@ ul a:hover {
   .hours-left {
     transform: rotate(0);
     /* grid-area: 1 / 2 / 3 / 3; */
-    grid-area: 1 / 1 / 3 / 5;
+    grid-area: 2 / 1 / 4 / 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1231,6 +1231,7 @@ ul a:hover {
 
   .vacation-leave-title {
     /* grid-area: 1 / 1 / 2 / 3; */
+    grid-area: 1 / 1 / 2 / 5; 
     justify-self: center;
     font-size: 1.5rem;
     color:#1a2c80;
@@ -1332,6 +1333,7 @@ ul a:hover {
 
   .person-walking-image {
     /* grid-area: 2 / 1 / 4 / 2;  */
+    grid-area: 7 / 2 / 11 / 5; 
     justify-self: center;
     align-self: center;
     position: relative;
@@ -1360,6 +1362,7 @@ ul a:hover {
 
   .mobile-vacation-submit-btn {
     /* grid-area: 5 / 1 / 6 / 3; */
+    grid-area: 9 / 1 / 10 / 5;
     display: flex;
     justify-content: center;
     align-items: center;
