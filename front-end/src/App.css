@@ -1144,7 +1144,7 @@ ul a:hover {
   .time-sheet-mobile-body.selected {
     width: 100%;
     height: 85vh;
-    background-color: #f4f4f4;
+    background-color: #fff;
     display: grid;
     grid-template: 1fr 2.5fr / 1fr ;
   }
@@ -1152,7 +1152,7 @@ ul a:hover {
   .vacation-mobile-body.selected {
     width: 100%;
     height: 525px;
-    background-color: #f4f4f4;
+    background-color: #fff;
     display: grid;
     grid-template: 1fr 1.25fr 1fr / 1fr;
   }
@@ -1160,7 +1160,7 @@ ul a:hover {
   .sick-leave-mobile-body.selected {
     width: 100%;
     height: 85vh;
-    background-color: #f4f4f4;
+    background-color: #fff;
     display: grid;
     grid-template: 1fr 2.5fr / 1fr ;
   }
@@ -1176,6 +1176,7 @@ ul a:hover {
   .mobile-vacation-greet-title {
     grid-area: 1 / 1 / 2 / 3;
     justify-self: center;
+    padding-top: 25px;
   }
 
   .mobile-user-icon-background {
@@ -1183,15 +1184,29 @@ ul a:hover {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    box-shadow: #5d637e 1px 1px 12px;    
-    grid-area: 1 / 3 / 2 / 5;
-    margin: 10px;
+    box-shadow: #5d637e 1px 1px 7px;    
+    grid-area: 1 / 3 / 2 / 5;    
     justify-self: center;
+    margin-top: 10px;
   }
 
   .fa-user {
     width: 30px;
     height: 30px;
+  }
+
+  .row-1-lower-row {
+    grid-area: 2 / 1 / 3 / 5;
+    display: grid;
+    grid-template: 1fr / repeat(4, 1fr);    
+  }
+
+  .oval {
+    width: 55px;
+    height: 12px;
+    border-radius: 15px;
+    background-color: #e2e2e2;
+    justify-self: center;
   }
 
   /* .row-1-col-1 {
