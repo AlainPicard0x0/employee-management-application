@@ -1080,7 +1080,17 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 <div id="vacation-page" className="vacation-mobile-body mobile-container selected">
                     <section id="row-1">
                         <div className="mobile-vacation-greeting-section">
-
+                            <h3>Welcome,</h3>                                        
+                            {/* <h3>{`Welcome ${ employee.firstName }`}</h3> */}
+                            <div className="user-icon-background">
+                                <FontAwesomeIcon icon={faUser} />
+                            </div>
+                            <div className="row-1-inner-row">
+                                <div className="oval"></div>
+                                <div className="oval"></div>
+                                <div className="oval"></div>
+                                <div className="oval"></div>
+                            </div>  
                         </div>
                     </section>
                     <section id="row-two">
@@ -1090,7 +1100,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </section>
                     <section id="row-three">
                         <div className="mobile-vacation-add-remove-section">
-                            
+
                         </div>
                     </section>
                     
