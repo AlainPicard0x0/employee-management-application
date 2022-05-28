@@ -1119,13 +1119,12 @@ ul a:hover {
   .mobile-vacation,
   .mobile-sick-leave {
     background-image: radial-gradient(#ffbf27, #9c6e01);
-    /* background-image: linear-gradient(#b4c0f3, #748dfb); */
     width: 26vw;
     height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #fff;
   }
 
@@ -1155,7 +1154,7 @@ ul a:hover {
     height: 525px;
     background-color: #f4f4f4;
     display: grid;
-    grid-template: repeat(10, 1fr) / repeat(4, 1fr);
+    grid-template: 1fr 1.25fr 1fr / 1fr;
   }
 
   .sick-leave-mobile-body.selected {
