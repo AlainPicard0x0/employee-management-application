@@ -1081,18 +1081,18 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     <section id="row-1">
                         <div className="mobile-vacation-greeting-section">
                             <div className="mobile-vacation-greet-title">
-                                <h3>Welcome,</h3>
+                                <h2>Welcome,</h2>
                             </div>
                                                                     
                             {/* <h3>{`Welcome ${ employee.firstName }`}</h3> */}
                             <div className="mobile-user-icon-background">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
-                            <div className="row-1-inner-row">
-                                <div className="oval"></div>
-                                <div className="oval"></div>
-                                <div className="oval"></div>
-                                <div className="oval"></div>
+                            <div className="row-1-lower-row">
+                                <div className="oval oval-one"></div>
+                                <div className="oval oval-two"></div>
+                                <div className="oval oval-three"></div>
+                                <div className="oval oval-four"></div>
                             </div>  
                         </div>
                     </section>
