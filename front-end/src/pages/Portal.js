@@ -1078,21 +1078,34 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </div>
                 </div>
                 <div id="vacation-page" className="vacation-mobile-body mobile-container selected">
+                    <section id="row-1">
+                        <div className="mobile-vacation-greeting-section">
+
+                        </div>
+                    </section>
+                    <section id="row-two">
+                        <div className="mobile-vacation-leave-section">
+
+                        </div>
+                    </section>
+                    <section id="row-three">
+                        <div className="mobile-vacation-add-remove-section">
+                            
+                        </div>
+                    </section>
                     
-                        <div className="portal-vacation-leave">
+                        {/* <div className="portal-vacation-leave">
                             <div id="vacation-pie">
                                 <div id="vacation-pie-background"></div>
                             </div>                            
                         </div>
                         <div className="hours-left">
-                                <h2 id="vacation-hours-remaining">{vacationHours}</h2>
-                                <p>hours remaining</p>
+                            <h2 id="vacation-hours-remaining">{vacationHours}</h2>
+                            <p>hours remaining</p>
                         </div>
                         <div className="vacation-leave-title">
                             <h4>Vacation Leave</h4>
-                        </div>
-                    
-                   
+                        </div>                   
                         <div className="vac-plus-btn">
                             <h3>Add</h3>
                             <FontAwesomeIcon icon={faPlusCircle} />
@@ -1112,7 +1125,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         </div>
                         <div className="mobile-vacation-submit-btn">
                             <button id="mobile-vacation-submit-btn">Submit</button>
-                        </div>                                                                    
+                        </div>                                                                     */}
                     
                 </div>
                 <div id="sick-leave-page" className="sick-leave-mobile-body mobile-container">
