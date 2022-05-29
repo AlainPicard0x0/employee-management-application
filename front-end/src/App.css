@@ -1354,12 +1354,15 @@ ul a:hover {
     border-radius: 50%;
     box-shadow: 1px 1px 8px #c0c0c0;
     --p: 50;
-    --w: 110px;
+    --w: 100px;
+    --b: 20px;
   }  
 
   #sick-pie-background,
   #vacation-pie-background {    
-    --w: 110px;   
+    --w: 100px;
+    --p: 100;
+    --b: 20px; 
   }
 
   .hours-left {
