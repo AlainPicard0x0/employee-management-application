@@ -1094,8 +1094,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     </div>
                                     <div className="oval oval-one"></div>
                                 </div>
+                                <div className="oval-image-two">
+                                    <div className="mobile-beach-umbrella-image">
+                                        <FontAwesomeIcon icon={faUmbrellaBeach} />
+                                    </div>
+                                    <div className="oval oval-two"></div>
+                                </div>
                                 
-                                <div className="oval oval-two"></div>
+                                
                                 <div className="oval oval-three"></div>
                                 <div className="oval oval-four"></div>
                             </div>  
