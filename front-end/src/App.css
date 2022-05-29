@@ -1207,7 +1207,8 @@ ul a:hover {
     grid-template: 1fr / repeat(4, 1fr);    
   }
 
-  .oval-image-one {
+  .oval-image-one,
+  .oval-image-two {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -1215,7 +1216,8 @@ ul a:hover {
     align-items: center;
   }
 
-  .mobile-person-walking-image .fa-person-walking-luggage {
+  .mobile-person-walking-image .fa-person-walking-luggage,
+  .mobile-beach-umbrella-image .fa-umbrella-beach {
     width: 25px;
     height: 25px;
   }
