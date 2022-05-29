@@ -1294,6 +1294,23 @@ ul a:hover {
     margin-right: 10px;
   }
 
+  .mobile-vacation-request-btn-container {
+    grid-area: 5 / 1 / 6 / 4;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  #mobile-vacation-request-btn {
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-image: linear-gradient(#ffbf27, #c08e1a);
+    color: #1a2c80;
+    font-weight: 600;
+  }
+
   /* .row-1-col-1 {
     margin-bottom: 10px;
   } */
