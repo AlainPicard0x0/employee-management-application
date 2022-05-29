@@ -1207,6 +1207,19 @@ ul a:hover {
     grid-template: 1fr / repeat(4, 1fr);    
   }
 
+  .oval-image-one {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-person-walking-image .fa-person-walking-luggage {
+    width: 25px;
+    height: 25px;
+  }
+
   .oval {
     width: 55px;
     height: 12px;

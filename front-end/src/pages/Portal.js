@@ -1084,12 +1084,17 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <h2>Welcome,</h2>
                             </div>
                                                                     
-                            {/* <h3>{`Welcome ${ employee.firstName }`}</h3> */}
                             <div className="mobile-user-icon-background">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
                             <div className="row-1-lower-row">
-                                <div className="oval oval-one"></div>
+                                <div className="oval-image-one">
+                                    <div className="mobile-person-walking-image">
+                                        <FontAwesomeIcon icon={faPersonWalkingLuggage} />
+                                    </div>
+                                    <div className="oval oval-one"></div>
+                                </div>
+                                
                                 <div className="oval oval-two"></div>
                                 <div className="oval oval-three"></div>
                                 <div className="oval oval-four"></div>
