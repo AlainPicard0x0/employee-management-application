@@ -1131,6 +1131,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <div className="mobile-vacation-block mobile-vacation-used-block">16.0</div>
                                 <p>Vacation Used</p>
                             </div>
+                            <div className="mobile-vacation-pie-container">
+                                <div className="portal-vacation-leave">
+                                    <div id="vacation-pie">
+                                        <div id="vacation-pie-background"></div>
+                                    </div>                            
+                                </div>
+                            </div>
+                            
                         </div>
                     </section>
                     <section id="row-three">
@@ -1140,10 +1148,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </section>
                     
                         {/* <div className="portal-vacation-leave">
-                            <div id="vacation-pie">
-                                <div id="vacation-pie-background"></div>
-                            </div>                            
-                        </div>
+                                <div id="vacation-pie">
+                                    <div id="vacation-pie-background"></div>
+                                </div>                            
+                            </div>
                         <div className="hours-left">
                             <h2 id="vacation-hours-remaining">{vacationHours}</h2>
                             <p>hours remaining</p>
