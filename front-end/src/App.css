@@ -1238,6 +1238,11 @@ ul a:hover {
     grid-template: 0.5fr 1fr 1fr 1fr 1.75fr / repeat(3, 1fr);
   }
 
+  .mobile-vacation-leave-section p {
+    color: #1a2c80;
+    font-weight: 600;
+  }
+
   .annual-leave-banner {
     grid-area: 1 / 1 / 2 / 4;
     height: 25px;
@@ -1265,6 +1270,7 @@ ul a:hover {
     align-items: center;
     color: #fff;
     font-weight: 600;
+    border: #1a2c80 solid 1.0px;
   }
 
   .mobile-vacation-spacer-container {
@@ -1276,7 +1282,16 @@ ul a:hover {
   .mobile-vacation-used-container {
     grid-area: 4 / 1 / 5 / 3;
     display: flex;
+    align-items: center;
     margin: 15px;
+  }
+
+  .mobile-vacation-pie-container {
+    grid-area: 2 / 2 / 5 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
   }
 
   /* .row-1-col-1 {
@@ -1320,7 +1335,7 @@ ul a:hover {
 
   #vacation-pie {
     border-radius: 50%;
-    box-shadow: 1px 1px 12px #c0c0c0;
+    box-shadow: 1px 1px 8px #c0c0c0;
     --p: 50;
     --w: 110px;
   }  
