@@ -1208,7 +1208,9 @@ ul a:hover {
   }
 
   .oval-image-one,
-  .oval-image-two {
+  .oval-image-two,
+  .oval-image-three,
+  .oval-image-four {
     display: flex;
     flex-direction: column;
     width: 100%;

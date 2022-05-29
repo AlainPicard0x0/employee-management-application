@@ -1100,10 +1100,18 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     </div>
                                     <div className="oval oval-two"></div>
                                 </div>
-                                
-                                
-                                <div className="oval oval-three"></div>
-                                <div className="oval oval-four"></div>
+                                <div className="oval-image-three">
+                                    <div className="mobile-person-walking-image">
+                                        <FontAwesomeIcon icon={faPersonWalkingLuggage} />
+                                    </div>
+                                    <div className="oval oval-three"></div>
+                                </div>
+                                <div className="oval-image-four">
+                                    <div className="mobile-beach-umbrella-image">
+                                        <FontAwesomeIcon icon={faUmbrellaBeach} />
+                                    </div>
+                                    <div className="oval oval-four"></div>
+                                </div>
                             </div>  
                         </div>
                     </section>
