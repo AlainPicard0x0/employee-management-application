@@ -1152,10 +1152,10 @@ ul a:hover {
 
   .vacation-mobile-body.selected {
     width: 100%;
-    height: 525px;
+    height: 674px;
     background-color: #fff;
     display: grid;
-    grid-template: .5fr 1.25fr 1fr / 1fr;
+    grid-template: .5fr 1.25fr 1fr 1fr / 1fr;
   }
 
   .sick-leave-mobile-body.selected {
@@ -1317,7 +1317,7 @@ ul a:hover {
     grid-area: 3 / 1 / 4 / 2;
     display: grid;
     min-height: 100%;
-    grid-template: 1fr 1.5fr 1.5fr 2fr / repeat(3, 1fr); 
+    grid-template: 1fr 1.5fr 1.5fr / repeat(3, 1fr); 
   }
 
   .add-remove-banner {
@@ -1331,7 +1331,7 @@ ul a:hover {
   .add-remove-vacation-text {
     grid-area: 2 / 1 / 3 / 4;
     justify-self: center; 
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     color: #1a2c80;
     font-weight: 600;
   }
@@ -1342,11 +1342,12 @@ ul a:hover {
     height: 55px;
     grid-area:2 / 1 / 4 / 3; 
     justify-self: center;
-    align-self: center;
+    align-self: flex-end;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 15px;
     padding: 10px;
     color: #1a2c80;
     background-image: linear-gradient(#ffb507, #ab7800);
@@ -1359,7 +1360,8 @@ ul a:hover {
     height: 55px;
     grid-area: 2 / 2 / 4 / 4;
     justify-self: center;
-    align-self: center;
+    align-self: flex-end;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -1382,6 +1384,11 @@ ul a:hover {
     height: 20px;
     background-color: #fff;
     border-radius: 50%;
+  }
+
+  .mobile-vacation-company-section {
+    min-height: 100%;
+    grid-area: 4 / 1 / 5 / 2;
   }
 
 
