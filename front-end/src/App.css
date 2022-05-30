@@ -1389,8 +1389,17 @@ ul a:hover {
   .mobile-vacation-company-section {
     min-height: 100%;
     grid-area: 4 / 1 / 5 / 2;
+    display: grid;
+    grid-template: 1fr 2fr 1.5fr / repeat(2, 1fr);
   }
 
+  .company-section-banner {
+    grid-area: 1 / 1 / 2 / 3;
+    height: 25px;
+    width: 100%;
+    background-color: #e2e2e2;
+    margin: 15px 0;
+  }
 
 
 
