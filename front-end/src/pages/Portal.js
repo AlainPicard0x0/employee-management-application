@@ -1166,7 +1166,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     <section id="row-four">
                         <div className="mobile-vacation-company-section">
                             <div className="company-section-banner">
-                                
+
+                            </div>
+                            <div className="company-section-pictures">
+                                <div className="company-section-picture-1">
+                                    <img src="/images/hr-pic01.jpeg"></img>
+                                </div> 
+                                <div className="company-section-picture-2">
+                                    <img src="/images/hr-pic02.jpg"></img>
+                                </div>                               
                             </div>
                         </div>
                     </section>
