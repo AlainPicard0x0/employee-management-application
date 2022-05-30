@@ -1320,6 +1320,14 @@ ul a:hover {
     grid-template: 1fr 1.5fr 1.5fr 2fr / repeat(3, 1fr); 
   }
 
+  .add-remove-banner {
+    grid-area: 1 / 1 / 2 / 4;
+    height: 25px;
+    width: 100%;
+    background-color: #e2e2e2;
+    margin-bottom: 15px;
+  }
+
   /* .row-1-col-1 {
     margin-bottom: 10px;
   } */
