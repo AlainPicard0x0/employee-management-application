@@ -1163,6 +1163,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>          
                         </div>
                     </section>
+                    <section id="row-four">
+                        <div className="mobile-vacation-company-section">
+                            
+                        </div>
+                    </section>
                     
                         {/* <div className="portal-vacation-leave">
                                 <div id="vacation-pie">
