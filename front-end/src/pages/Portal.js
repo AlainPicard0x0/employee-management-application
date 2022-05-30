@@ -1149,6 +1149,18 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="add-remove-banner">
 
                             </div>
+                            <div className="add-remove-vacation-text">
+                                <p>Add / Remove Vacation Hours</p>
+                            </div>
+                            
+                            <div className="vac-plus-btn">
+                                <h3>Add</h3>
+                                <FontAwesomeIcon icon={faPlusCircle} />
+                            </div>
+                            <div className="vac-minus-btn">
+                                <h3>Remove</h3>
+                                <FontAwesomeIcon icon={faMinusCircle} />
+                            </div>          
                         </div>
                     </section>
                     
