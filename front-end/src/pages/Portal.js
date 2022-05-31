@@ -1176,6 +1176,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <img src="/images/hr-pic02.jpg"></img>
                                 </div>                               
                             </div>
+                            <div className="company-section-boxes">
+                                <div className="left-box"></div>
+                                <div className="right-box"></div>
+                                <div className="left-box"></div>
+                                <div className="right-box"></div>
+                            </div>
                         </div>
                     </section>
                     
