@@ -281,6 +281,7 @@ ul a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .vacation-leave-hours {
@@ -1294,6 +1295,12 @@ ul a:hover {
     justify-content: flex-end;
     align-items: center;
     margin-right: 10px;
+  }
+
+  .vacation-pie-hours {
+    position: absolute;
+    right: 50px;
+    font-size: 1.0rem;
   }
 
   .mobile-vacation-request-btn-container {
