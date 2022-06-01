@@ -1232,15 +1232,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <p>Sick Leave</p>
                             </div>
                             <div className="mobile-vacation-remaining-container">
-                                <div className="mobile-vacation-block mobile-vacation-remaining-block">40.0</div>
-                                <p>Vacation Remaining</p>
+                                <div className="mobile-vacation-block mobile-vacation-remaining-block">16.0</div>
+                                <p>Sick Hours Remaining</p>
                             </div>
                             <div className="mobile-vacation-spacer-container">
                                 <div className="mobile-vacation-block"></div>
                             </div>
                             <div className="mobile-vacation-used-container">
-                                <div className="mobile-vacation-block mobile-vacation-used-block">16.0</div>
-                                <p>Vacation Used</p>
+                                <div className="mobile-vacation-block mobile-vacation-used-block">8.0</div>
+                                <p>Sick Hours Used</p>
                             </div>
                             <div className="mobile-vacation-pie-container">
                                 <div className="portal-vacation-leave">
@@ -1249,7 +1249,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     </div>                            
                                 </div>
                                 <div className="vacation-pie-hours">
-                                    <p>40.0</p>
+                                    <p>16.0</p>
                                 </div>
                             </div>
                             <div className="mobile-vacation-request-btn-container">
