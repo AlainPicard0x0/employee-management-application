@@ -1186,9 +1186,123 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <div className="right-box"></div>
                             </div>
                         </div>
+                    </section>                 
+                </div>
+                <div id="sick-leave-page" className="sick-leave-mobile-body mobile-container">
+                    <section id="row-1">
+                        <div className="mobile-vacation-greeting-section">
+                            <div className="mobile-vacation-greet-title">
+                                <h2>Welcome,</h2>
+                            </div>
+                                                                    
+                            <div className="mobile-user-icon-background">
+                                <FontAwesomeIcon icon={faUser} />
+                            </div>
+                            <div className="row-1-lower-row">
+                                <div className="oval-image-one">
+                                    <div className="mobile-person-walking-image">
+                                        <FontAwesomeIcon icon={faPersonWalkingLuggage} />
+                                    </div>
+                                    <div className="oval oval-one"></div>
+                                </div>
+                                <div className="oval-image-two">
+                                    <div className="mobile-beach-umbrella-image">
+                                        <FontAwesomeIcon icon={faUmbrellaBeach} />
+                                    </div>
+                                    <div className="oval oval-two"></div>
+                                </div>
+                                <div className="oval-image-three">
+                                    <div className="mobile-person-walking-image">
+                                        <FontAwesomeIcon icon={faPersonWalkingLuggage} />
+                                    </div>
+                                    <div className="oval oval-three"></div>
+                                </div>
+                                <div className="oval-image-four">
+                                    <div className="mobile-beach-umbrella-image">
+                                        <FontAwesomeIcon icon={faUmbrellaBeach} />
+                                    </div>
+                                    <div className="oval oval-four"></div>
+                                </div>
+                            </div>  
+                        </div>
                     </section>
-                    
-                        {/* <div className="portal-vacation-leave">
+                    <section id="row-2">
+                        <div className="mobile-vacation-leave-section">
+                            <div className="annual-leave-banner">
+                                <p>Annual Leave</p>
+                            </div>
+                            <div className="mobile-vacation-remaining-container">
+                                <div className="mobile-vacation-block mobile-vacation-remaining-block">40.0</div>
+                                <p>Vacation Remaining</p>
+                            </div>
+                            <div className="mobile-vacation-spacer-container">
+                                <div className="mobile-vacation-block"></div>
+                            </div>
+                            <div className="mobile-vacation-used-container">
+                                <div className="mobile-vacation-block mobile-vacation-used-block">16.0</div>
+                                <p>Vacation Used</p>
+                            </div>
+                            <div className="mobile-vacation-pie-container">
+                                <div className="portal-vacation-leave">
+                                    <div id="vacation-pie">
+                                        <div id="vacation-pie-background"></div>
+                                    </div>                            
+                                </div>
+                                <div className="vacation-pie-hours">
+                                    <p>40.0</p>
+                                </div>
+                            </div>
+                            <div className="mobile-vacation-request-btn-container">
+                                <button id="mobile-vacation-request-btn">Request Vacation</button>
+                            </div>
+                            
+                        </div>
+                    </section>
+                    <section id="row-three">
+                        <div className="mobile-vacation-add-remove-section">
+                            <div className="add-remove-banner">
+
+                            </div>
+                            <div className="add-remove-vacation-text">
+                                <p>Add / Remove Vacation Hours</p>
+                            </div>
+                            
+                            <div className="vac-plus-btn">
+                                <h3>Add</h3>
+                                <FontAwesomeIcon icon={faPlusCircle} />
+                            </div>
+                            <div className="vac-minus-btn">
+                                <h3>Remove</h3>
+                                <FontAwesomeIcon icon={faMinusCircle} />
+                            </div>          
+                        </div>
+                    </section>
+                    <section id="row-four">
+                        <div className="mobile-vacation-company-section">
+                            <div className="company-section-banner">
+
+                            </div>
+                            <div className="company-section-pictures">
+                                <div className="company-section-picture-1">
+                                    <img src="/images/hr-pic01.jpeg"></img>
+                                </div> 
+                                <div className="company-section-picture-2">
+                                    <img src="/images/hr-pic02.jpg"></img>
+                                </div>                               
+                            </div>
+                            <div className="company-section-boxes">
+                                <div className="left-box"></div>
+                                <div className="right-box"></div>
+                                <div className="left-box"></div>
+                                <div className="right-box"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+            {/* <div className="portal-vacation-leave">
                                 <div id="vacation-pie">
                                     <div id="vacation-pie-background"></div>
                                 </div>                            
@@ -1220,17 +1334,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <div className="mobile-vacation-submit-btn">
                             <button id="mobile-vacation-submit-btn">Submit</button>
                         </div>                                                                     */}
-                    
-                </div>
-                <div id="sick-leave-page" className="sick-leave-mobile-body mobile-container">
-                    <div className="row-1-col-1">
-                        <h2>Sick Leave Page</h2>
-                    </div>
-                    <div className="row-2-col-1">
-                        <h2>Sick Leave Page</h2>
-                    </div>
-                </div>
-            </div>            
+
+
+
+
+
         </>
     )
 }
