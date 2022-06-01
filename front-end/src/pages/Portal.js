@@ -1189,7 +1189,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </section>                 
                 </div>
                 <div id="sick-leave-page" className="sick-leave-mobile-body mobile-container">
-                    <section id="row-1">
+                    <section id="sick-row-1">
                         <div className="mobile-vacation-greeting-section">
                             <div className="mobile-vacation-greet-title">
                                 <h2>Welcome,</h2>
@@ -1226,7 +1226,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>  
                         </div>
                     </section>
-                    <section id="row-2">
+                    <section id="sick-row-2">
                         <div className="mobile-vacation-leave-section">
                             <div className="annual-leave-banner">
                                 <p>Annual Leave</p>
@@ -1253,12 +1253,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                             </div>
                             <div className="mobile-vacation-request-btn-container">
-                                <button id="mobile-vacation-request-btn">Request Vacation</button>
+                                <button id="mobile-sick-request-btn">Request Vacation</button>
                             </div>
                             
                         </div>
                     </section>
-                    <section id="row-three">
+                    <section id="sick-row-three">
                         <div className="mobile-vacation-add-remove-section">
                             <div className="add-remove-banner">
 
@@ -1277,7 +1277,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>          
                         </div>
                     </section>
-                    <section id="row-four">
+                    <section id="sick-row-four">
                         <div className="mobile-vacation-company-section">
                             <div className="company-section-banner">
 
