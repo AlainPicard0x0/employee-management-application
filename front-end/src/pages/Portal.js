@@ -1264,7 +1264,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
                             </div>
                             <div className="add-remove-vacation-text">
-                                <p>Add / Remove Vacation Hours</p>
+                                <p>Add / Remove Sick Hours</p>
                             </div>
                             
                             <div className="vac-plus-btn">
