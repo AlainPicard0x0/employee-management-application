@@ -1198,7 +1198,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="mobile-user-icon-background">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
-                            <div className="row-1-lower-row">
+                            <div className="sick-row-1-lower-row">
                                 <div className="oval-image-one">
                                     <div className="mobile-person-walking-image">
                                         <FontAwesomeIcon icon={faPersonWalkingLuggage} />
