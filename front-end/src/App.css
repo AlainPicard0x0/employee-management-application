@@ -1167,7 +1167,8 @@ ul a:hover {
     grid-template: 1fr 2.5fr / 1fr ;
   }
 
-  .mobile-vacation-greeting-section {
+  .mobile-vacation-greeting-section,
+  .mobile-sick-greeting-section {
     grid-area: 1 / 1 / 2 / 2;
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(4, 14fr);
@@ -1175,7 +1176,8 @@ ul a:hover {
     align-items: center;
   }
 
-  .mobile-vacation-greet-title {
+  .mobile-vacation-greet-title,
+  .mobile-sick-greet-title {
     grid-area: 1 / 1 / 2 / 3;
     justify-self: center;
     padding-top: 25px;
