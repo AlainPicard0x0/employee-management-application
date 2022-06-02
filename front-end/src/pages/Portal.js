@@ -1078,7 +1078,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </div>
                 </div>
                 <div id="vacation-page" className="vacation-mobile-body mobile-container selected">
-                    <section id="row-1">
+                    <section id="mobile-row-1">
                         <div className="mobile-vacation-greeting-section">
                             <div className="mobile-vacation-greet-title">
                                 <h2>Welcome,</h2>
@@ -1087,7 +1087,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="mobile-user-icon-background">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
-                            <div className="row-1-lower-row">
+                            <div className="vacation-row-1-lower-row">
                                 <div className="oval-image-one">
                                     <div className="mobile-person-walking-image">
                                         <FontAwesomeIcon icon={faPersonWalkingLuggage} />
