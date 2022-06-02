@@ -1115,7 +1115,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>  
                         </div>
                     </section>
-                    <section id="row-2">
+                    <section id="vacation-row-2">
                         <div className="mobile-vacation-leave-section">
                             <div className="annual-leave-banner">
                                 <p>Annual Leave</p>
@@ -1147,7 +1147,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             
                         </div>
                     </section>
-                    <section id="row-three">
+                    <section id="vacation-row-three">
                         <div className="mobile-vacation-add-remove-section">
                             <div className="add-remove-banner">
 
@@ -1166,7 +1166,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>          
                         </div>
                     </section>
-                    <section id="row-four">
+                    <section id="vacation-row-four">
                         <div className="mobile-vacation-company-section">
                             <div className="company-section-banner">
 
