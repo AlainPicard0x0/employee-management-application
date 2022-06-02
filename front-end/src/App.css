@@ -1183,7 +1183,8 @@ ul a:hover {
     padding-top: 25px;
   }
 
-  .mobile-vacation-greet-title h2 {
+  .mobile-vacation-greet-title h2,
+  .mobile-sick-greet-title h2 {
     font-weight: 800;
     color: #1a2c80;
   }
