@@ -1223,7 +1223,9 @@ ul a:hover {
   }
 
   .mobile-person-walking-image .fa-person-walking-luggage,
-  .mobile-beach-umbrella-image .fa-umbrella-beach {
+  .mobile-beach-umbrella-image .fa-umbrella-beach,
+  .mobile-notes-medical-image .fa-notes-medical,
+  .mobile-syringe-image .fa-syringe {
     width: 25px;
     height: 25px;
   }
