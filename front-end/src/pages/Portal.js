@@ -10,6 +10,8 @@ import {faPersonWalkingLuggage} from '@fortawesome/free-solid-svg-icons';
 import {faUmbrellaBeach} from '@fortawesome/free-solid-svg-icons'
 import {faNotesMedical} from '@fortawesome/free-solid-svg-icons';
 import {faSyringe} from '@fortawesome/free-solid-svg-icons';
+import {faBuildingUser} from '@fortawesome/free-solid-svg-icons';
+import {faBusinessTime} from '@fortawesome/free-solid-svg-icons';
 
 
 const Portal = ({email, login, setLogin, getEmployee, employee}) => {
@@ -1084,25 +1086,25 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="vacation-row-1-lower-row">
                                 <div className="oval-image-one">
                                     <div className="mobile-person-walking-image">
-                                        <FontAwesomeIcon icon={faPersonWalkingLuggage} />
+                                        <FontAwesomeIcon icon={faBuildingUser} />
                                     </div>
                                     <div className="oval oval-one"></div>
                                 </div>
                                 <div className="oval-image-two">
                                     <div className="mobile-beach-umbrella-image">
-                                        <FontAwesomeIcon icon={faUmbrellaBeach} />
+                                        <FontAwesomeIcon icon={faBusinessTime} />
                                     </div>
                                     <div className="oval oval-two"></div>
                                 </div>
                                 <div className="oval-image-three">
                                     <div className="mobile-person-walking-image">
-                                        <FontAwesomeIcon icon={faPersonWalkingLuggage} />
+                                        <FontAwesomeIcon icon={faBuildingUser} />
                                     </div>
                                     <div className="oval oval-three"></div>
                                 </div>
                                 <div className="oval-image-four">
                                     <div className="mobile-beach-umbrella-image">
-                                        <FontAwesomeIcon icon={faUmbrellaBeach} />
+                                        <FontAwesomeIcon icon={faBusinessTime} />
                                     </div>
                                     <div className="oval oval-four"></div>
                                 </div>
