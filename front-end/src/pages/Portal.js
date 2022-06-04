@@ -1075,15 +1075,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             <div className="mobile-body">
                 <div id="time-sheet-page" className="time-sheet-mobile-body mobile-container">
                     <section id="mobile-row-1">
-                        <div className="mobile-vacation-greeting-section">
-                            <div className="mobile-vacation-greet-title">
+                        <div className="mobile-time-sheet-greeting-section">
+                            <div className="mobile-time-sheet-greet-title">
                                 <h2>Welcome,</h2>
                             </div>
                                                                     
                             <div className="mobile-user-icon-background">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
-                            <div className="vacation-row-1-lower-row">
+                            <div className="time-sheet-row-1-lower-row">
                                 <div className="oval-image-one">
                                     <div className="mobile-building-user-image">
                                         <FontAwesomeIcon icon={faBuildingUser} />
