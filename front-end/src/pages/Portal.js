@@ -1111,59 +1111,35 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>  
                         </div>
                     </section>
-                    <section id="vacation-row-2">
-                        <div className="mobile-vacation-leave-section">
-                            <div className="annual-leave-banner">
-                                <p>Annual Leave</p>
+                    <section id="time-sheet-row-2">
+                        <div className="mobile-time-sheet-section">
+                            <div className="time-sheet-banner">
+                                <p>Home</p>
                             </div>
-                            <div className="mobile-vacation-remaining-container">
-                                <div className="mobile-vacation-block mobile-vacation-remaining-block">40.0</div>
-                                <p>Vacation Remaining</p>
-                            </div>
-                            <div className="mobile-vacation-spacer-container">
-                                <div className="mobile-vacation-block"></div>
-                            </div>
-                            <div className="mobile-vacation-used-container">
-                                <div className="mobile-vacation-block mobile-vacation-used-block">16.0</div>
-                                <p>Vacation Used</p>
-                            </div>
-                            <div className="mobile-vacation-pie-container">
-                                <div className="portal-vacation-leave">
-                                    <div id="vacation-pie">
-                                        <div id="vacation-pie-background"></div>
-                                    </div>                            
-                                </div>
-                                <div className="vacation-pie-hours">
-                                    <p>40.0</p>
-                                </div>
-                            </div>
-                            <div className="mobile-vacation-request-btn-container">
-                                <button id="mobile-vacation-request-btn">Request Vacation</button>
-                            </div>
-                            
+                            <div className="mobile-pay-details-container">
+
+                            </div>                            
                         </div>
                     </section>
-                    <section id="vacation-row-three">
-                        <div className="mobile-vacation-add-remove-section">
+                    <section id="time-sheet-row-three">
+                        <div className="mobile-time-sheet-vacation-sick-section">
                             <div className="add-remove-banner">
 
                             </div>
-                            <div className="add-remove-vacation-text">
-                                <p>Add / Remove Vacation Hours</p>
+                            <div className="mobile-time-sheet-vacation-pie-container">
+                                <div className="portal-time-sheet">
+                                    <div id="time-sheet-vacation-pie">
+                                        <div id="time-sheet-vacation-pie-background"></div>
+                                    </div>                            
+                                </div>
+                                <div className="time-sheet-vacation-pie-hours">
+                                    <p>40.0</p>
+                                </div>
                             </div>
-                            
-                            <div className="vac-plus-btn">
-                                <h3>Add</h3>
-                                <FontAwesomeIcon icon={faPlusCircle} />
-                            </div>
-                            <div className="vac-minus-btn">
-                                <h3>Remove</h3>
-                                <FontAwesomeIcon icon={faMinusCircle} />
-                            </div>          
                         </div>
                     </section>
-                    <section id="vacation-row-four">
-                        <div className="mobile-vacation-company-section">
+                    <section id="time-sheet-row-four">
+                        <div className="mobile-time-sheet-company-section">
                             <div className="company-section-banner">
 
                             </div>
