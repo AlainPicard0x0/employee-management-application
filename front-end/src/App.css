@@ -1282,6 +1282,7 @@ ul a:hover {
   .time-sheet-row-2-container {
     display: grid;
     grid-template: 0.5fr 1.5fr 1.5fr 0.75fr / repeat(2, 1fr);
+    min-height: 100%;
   }
 
   /* .mobile-time-sheet-section {
