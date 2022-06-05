@@ -1121,44 +1121,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>                            
                         </div>
                     </section>
-                    <section id="time-sheet-row-three">
-                        <div className="mobile-time-sheet-vacation-sick-section">
-                            <div className="add-remove-banner">
-
-                            </div>
-                            <div className="mobile-time-sheet-vacation-pie-container">
-                                <div className="portal-time-sheet">
-                                    <div id="time-sheet-vacation-pie">
-                                        <div id="time-sheet-vacation-pie-background"></div>
-                                    </div>                            
-                                </div>
-                                <div className="time-sheet-vacation-pie-hours">
-                                    <p>40.0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section id="time-sheet-row-four">
-                        <div className="mobile-time-sheet-company-section">
-                            <div className="company-section-banner">
-
-                            </div>
-                            <div className="company-section-pictures">
-                                <div className="company-section-picture-1">
-                                    <img src="/images/hr-pic01.jpeg"></img>
-                                </div> 
-                                <div className="company-section-picture-2">
-                                    <img src="/images/hr-pic02.jpg"></img>
-                                </div>                               
-                            </div>
-                            <div className="company-section-boxes">
-                                <div className="left-box"></div>
-                                <div className="right-box"></div>
-                                <div className="left-box"></div>
-                                <div className="right-box"></div>
-                            </div>
-                        </div>
-                    </section>
+                    
                 </div>
                 <div id="vacation-page" className="vacation-mobile-body mobile-container selected">
                     <section id="mobile-row-1">
