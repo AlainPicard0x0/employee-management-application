@@ -1145,10 +1145,10 @@ ul a:hover {
 
   .time-sheet-mobile-body.selected {
     width: 100%;
-    height: 85vh;
+    height: 700px;
     background-color: #fff;
     display: grid;
-    grid-template: 1fr 2.5fr / 1fr;
+    grid-template: 1.0fr 2.0fr 2.5fr 1fr / repeat(2, 2fr);
   }
 
   .vacation-mobile-body.selected {
