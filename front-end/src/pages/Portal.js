@@ -1074,7 +1074,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             </div>
             <div className="mobile-body">
                 <div id="time-sheet-page" className="time-sheet-mobile-body mobile-container">
-                    <section id="mobile-row-1">
+                    <section id="mobile-time-sheet-row-1">
                         <div className="mobile-time-sheet-greeting-section">
                             <div className="mobile-time-sheet-greet-title">
                                 <h2>Welcome,</h2>

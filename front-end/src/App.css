@@ -1168,8 +1168,7 @@ ul a:hover {
   }
 
   .mobile-vacation-greeting-section,
-  .mobile-sick-greeting-section,
-  .mobile-time-sheet-greeting-section {
+  .mobile-sick-greeting-section {
     grid-area: 1 / 1 / 2 / 2;
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(4, 14fr);
@@ -1177,12 +1176,29 @@ ul a:hover {
     align-items: center;
   }
 
+  #mobile-time-sheet-row-1 {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .mobile-time-sheet-greeting-section {
+    grid-area: 1 / 1 / 2 / 3;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 14fr);
+    width: 100%;
+    align-items: center;
+  }
+
   .mobile-vacation-greet-title,
-  .mobile-sick-greet-title,
-  .mobile-time-sheet-greet-title {
+  .mobile-sick-greet-title {
     grid-area: 1 / 1 / 2 / 3;
     justify-self: center;
     padding-top: 25px;
+  }
+
+  .mobile-time-sheet-greet-title {
+    grid-area: 1 / 1 / 2 / 3;
+    justify-content: center;
+    padding-top: 15px;
   }
 
   .mobile-vacation-greet-title h2,
@@ -1245,12 +1261,20 @@ ul a:hover {
     justify-self: center;
   }
 
+  #time-sheet-row-2 {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+
   .mobile-vacation-leave-section,
-  .mobile-sick-leave-section,
-  .mobile-time-sheet-section {
+  .mobile-sick-leave-section {
     display: grid;
     grid-area: 2 / 1 / 3 / 2;
     grid-template: 0.5fr 0.75fr 0.75fr 0.75fr 1.75fr / repeat(3, 1fr);
+  }
+
+  .mobile-time-sheet-section {
+    display: grid;
+    grid-area: 2 / 1 / 3 / 3;
   }
 
   .mobile-vacation-leave-section p,
@@ -1261,9 +1285,19 @@ ul a:hover {
   }
 
   .annual-leave-banner,
-  .sick-leave-banner,
-  .time-sheet-banner {
+  .sick-leave-banner {
     grid-area: 1 / 1 / 2 / 4;
+    height: 25px;
+    width: 100%;
+    background-color: #e2e2e2;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-left: 15px;
+  }
+
+  .time-sheet-banner {
+    grid-area: 2 / 1 / 3 / 3;
     height: 25px;
     width: 100%;
     background-color: #e2e2e2;
