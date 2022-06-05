@@ -1112,13 +1112,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         </div>
                     </section>
                     <section id="time-sheet-row-2">
-                        <div className="mobile-time-sheet-section">
-                            <div className="time-sheet-banner">
-                                <p>Home</p>
+                        <div className="time-sheet-row-2-container">
+                            <div className="mobile-time-sheet-banner">
+                                <p>Pay Detail</p>
                             </div>
-                            <div className="mobile-pay-details-container">
-
-                            </div>                            
+                            <p>Row 2</p>
                         </div>
                     </section>
                     
