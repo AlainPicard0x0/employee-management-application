@@ -1325,6 +1325,13 @@ ul a:hover {
     padding-left: 15px;
   }
 
+  .take-home-main-section-row-1-col-1 {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .time-sheet-banner {
     /* grid-area: 1 / 1 / 2 / 2;
     height: 25px;
