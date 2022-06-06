@@ -1280,21 +1280,13 @@ ul a:hover {
   }
 
   .time-sheet-row-2-container {
-    display: grid;
-    grid-template: 0.55fr 1.75fr 1.5fr 0.75fr / repeat(2, 1fr);
-    min-height: 100%;
+    
   }
 
   .mobile-take-home-main-section {
-    grid-area: 2 / 1 / 3 / 3;
-    display: grid;
-    grid-template: 2.5fr 1fr / repeat(2, 1fr);
+    
   }
 
-  /* .mobile-time-sheet-section {
-    grid-area: 2 / 1 / 3 / 3;
-    display: grid;
-  } */
 
   .mobile-vacation-leave-section p,
   .mobile-sick-leave-section p,
