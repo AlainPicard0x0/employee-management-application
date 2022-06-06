@@ -1117,7 +1117,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <p>Pay Detail</p>
                             </div>
                             <div className="mobile-take-home-main-section">
-                                <div className="portal-vacation-leave">
+                                <div className="take-home-main-section-row-1-col-1">
                                     <div id="take-home-pie">
                                         <div id="take-home-pie-background"></div>
                                     </div>                            
