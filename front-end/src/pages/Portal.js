@@ -1116,7 +1116,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="mobile-time-sheet-banner">
                                 <p>Pay Detail</p>
                             </div>
-                            <p>Row 2</p>
+                            <div className="mobile-take-home-main-section">
+                                <div className="portal-vacation-leave">
+                                    <div id="vacation-pie">
+                                        <div id="vacation-pie-background"></div>
+                                    </div>                            
+                                </div>
+                            </div>
                         </div>
                     </section>
                     
