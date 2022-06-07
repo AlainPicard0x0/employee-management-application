@@ -1321,14 +1321,14 @@ ul a:hover {
   }
 
   .take-home-main-section-row-1-col-1 {
-    grid-area: 1 / 1 / 2 / 2;
+    grid-area: 2 / 1 / 3 / 2;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .take-home-main-section-row-1-col-2 {
-    grid-area: 1 / 2 / 2 / 3;
+    grid-area: 2 / 2 / 3 / 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
