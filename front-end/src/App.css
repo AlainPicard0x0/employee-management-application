@@ -1335,6 +1335,18 @@ ul a:hover {
     align-items: center;
   }
 
+  .mobile-take-home-p {
+    color: #1a2c80;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .mobile-deduction-p {
+    color: orange;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
   .time-sheet-banner {
     /* grid-area: 1 / 1 / 2 / 2;
     height: 25px;
