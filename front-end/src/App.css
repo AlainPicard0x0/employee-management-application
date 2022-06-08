@@ -1283,7 +1283,7 @@ ul a:hover {
   .time-sheet-row-2-container {
     height: 100%;
     display: grid;
-    grid-template: 1fr 5fr 1fr / repeat(2, 1fr);
+    grid-template: 1fr 6fr 1fr / repeat(2, 1fr);
   }
 
   .mobile-take-home-main-section {
@@ -1345,6 +1345,14 @@ ul a:hover {
     color: orange;
     font-size: 1.1rem;
     font-weight: 700;
+  }
+
+  .take-home-main-section-row-3-banner {
+    grid-area: 3 / 1 / 4 / 3;
+    width: 100%;
+    height: 15px;
+    background-color: #e2e2e2;
+    align-self: flex-end;
   }
 
   .time-sheet-banner {

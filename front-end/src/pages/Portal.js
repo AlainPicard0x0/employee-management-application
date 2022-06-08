@@ -1117,21 +1117,24 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <p>Pay Detail</p>
                             </div>
                             {/* <div className="mobile-take-home-main-section"> */}
-                                <div className="take-home-main-section-row-1-col-1">
-                                    <div id="take-home-pie">
-                                        <div id="take-home-pie-background"></div>
-                                    </div>                            
+                            <div className="take-home-main-section-row-1-col-1">
+                                <div id="take-home-pie">
+                                    <div id="take-home-pie-background"></div>
+                                </div>                            
+                            </div>
+                            <div className="take-home-main-section-row-1-col-2">
+                                <div className="mobile-take-home-p">
+                                    <p>Take Home</p>
+                                    <p>$4,587.00</p>
                                 </div>
-                                <div className="take-home-main-section-row-1-col-2">
-                                    <div className="mobile-take-home-p">
-                                        <p>Take Home</p>
-                                        <p>$4,587.00</p>
-                                    </div>
-                                    <div className="mobile-deduction-p">
-                                        <p>Deduction</p>
-                                        <p>$1,233.00</p>
-                                    </div>
+                                <div className="mobile-deduction-p">
+                                    <p>Deduction</p>
+                                    <p>$1,233.00</p>
                                 </div>
+                            </div>
+                            <div className="take-home-main-section-row-3-banner">
+                                
+                            </div>
                             {/* </div> */}
                         </div>
                     </section>
