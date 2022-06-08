@@ -1283,7 +1283,7 @@ ul a:hover {
   .time-sheet-row-2-container {
     height: 100%;
     display: grid;
-    grid-template: 1fr 5fr / repeat(2, 1fr);
+    grid-template: 1fr 5fr 1fr / repeat(2, 1fr);
   }
 
   .mobile-take-home-main-section {
