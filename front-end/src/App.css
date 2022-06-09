@@ -1155,6 +1155,13 @@ ul a:hover {
     grid-area: 4 / 1 / 5 / 3;
   }
 
+  .time-sheet-row-4-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template: 1fr 3fr / repeat(2, 1fr);
+  }
+
   .vacation-mobile-body.selected {
     width: 100%;
     height: 700px;
