@@ -1151,6 +1151,10 @@ ul a:hover {
     grid-template: 1.0fr 2.0fr 2.5fr 1fr / repeat(2, 2fr);
   }
 
+  #mobile-time-sheet-row-4 {
+    grid-area: 4 / 1 / 5 / 3;
+  }
+
   .vacation-mobile-body.selected {
     width: 100%;
     height: 700px;
