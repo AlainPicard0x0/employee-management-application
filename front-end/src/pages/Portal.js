@@ -1160,6 +1160,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                         </div>
                     </section>
+                    <section id="mobile-time-sheet-row-4">
+                        <div className="time-sheet-row-4-container">
+                            
+                        </div>
+                    </section>
                 </div>
                 <div id="vacation-page" className="vacation-mobile-body mobile-container selected">
                     <section id="mobile-row-1">
