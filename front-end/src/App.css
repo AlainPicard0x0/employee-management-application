@@ -1361,6 +1361,11 @@ ul a:hover {
     height: 264px;
   }
 
+  .time-sheet-row-3-container {
+    display: grid;
+    grid-template: 1fr 6fr / repeat(2 1fr);
+  }
+
   .time-sheet-banner {
     /* grid-area: 1 / 1 / 2 / 2;
     height: 25px;
