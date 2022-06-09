@@ -1363,7 +1363,11 @@ ul a:hover {
 
   .time-sheet-row-3-container {
     display: grid;
-    grid-template: 1fr 6fr / repeat(2 1fr);
+    grid-template: 1fr 6fr / repeat(2, 1fr);
+  }
+
+  .time-sheet-earnings-header {
+    grid-area: 1 / 1 / 2 / 3
   }
 
   .time-sheet-banner {
