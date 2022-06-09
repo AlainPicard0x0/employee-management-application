@@ -1141,6 +1141,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     <section id="mobile-time-sheet-row-3">
                         <div className="time-sheet-row-3-container">
                             <p className="time-sheet-earnings-heading">Earnings</p>
+                            <div className="row-3-underline"></div>
                             <div className="time-sheet-row-3-col-1">
                                 <p>Basic Pay</p>
                                 <p>Overtime</p>
