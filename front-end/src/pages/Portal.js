@@ -1116,7 +1116,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="mobile-time-sheet-banner">
                                 <p>Pay Detail</p>
                             </div>
-                            {/* <div className="mobile-take-home-main-section"> */}
+                            
                             <div className="take-home-main-section-row-1-col-1">
                                 <div id="take-home-pie">
                                     <div id="take-home-pie-background"></div>
@@ -1133,12 +1133,16 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                             </div>
                             <div className="take-home-main-section-row-3-banner">
-                                
+
                             </div>
-                            {/* </div> */}
+                            
                         </div>
                     </section>
-                    
+                    <section id="mobile-time-sheet-row-3">
+                        <div className="time-sheet-row-3-container">
+                            
+                        </div>
+                    </section>
                 </div>
                 <div id="vacation-page" className="vacation-mobile-body mobile-container selected">
                     <section id="mobile-row-1">
