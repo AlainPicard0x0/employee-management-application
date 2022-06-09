@@ -1364,6 +1364,7 @@ ul a:hover {
   .time-sheet-row-3-container {
     display: grid;
     grid-template: 1fr 6fr / repeat(2, 1fr);
+    color: #1a2c80;
   }
 
   .time-sheet-earnings-heading {
