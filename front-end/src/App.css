@@ -1355,6 +1355,12 @@ ul a:hover {
     align-self: flex-end;
   }
 
+  #mobile-time-sheet-row-3 {
+    grid-area: 3 / 1 / 4 / 3;
+    width: 100%;
+    height: 264px;
+  }
+
   .time-sheet-banner {
     /* grid-area: 1 / 1 / 2 / 2;
     height: 25px;
