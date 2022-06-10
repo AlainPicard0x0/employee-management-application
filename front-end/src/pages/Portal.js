@@ -1162,7 +1162,19 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     </section>
                     <section id="mobile-time-sheet-row-4">
                         <div className="time-sheet-row-4-container">
-                            
+                            <div className="time-sheet-deductions-heading">
+                                <p>Deductions</p>
+                            </div>
+                            <div className="time-sheet-deductions-list">
+                                <p>Federal Income Tax</p>
+                                <p>Social Security</p>
+                                <p>Medicare</p>
+                            </div>
+                            <div className="time-sheet-deductions-amounts">
+                                <p>$503.45</p>
+                                <p>$409.12</p>
+                                <p>$114.85</p>
+                            </div>
                         </div>
                     </section>
                 </div>
