@@ -1565,8 +1565,8 @@ ul a:hover {
   }  
 
   #take-home-pie {
-    --c: orange; 
-    --p: 50;
+    --c: #1a2c80; 
+    --p: 85;
     --w: 100px;
     --b: 20px;
     width: var(--w);
@@ -1575,14 +1575,14 @@ ul a:hover {
     display: inline-grid;
     place-content: center;
     margin: 5px;
-    transform: rotate(180deg);
+    /* transform: rotate(0deg); */
     border-radius: 50%;
     box-shadow: 1px 1px 8px #c0c0c0;
     
   }
 
   #take-home-pie-background {
-    --c: #7e7e7e;
+    --c: orange;
     --w: 100px;
     --p: 100;
     --b: 20px;
@@ -1614,6 +1614,33 @@ ul a:hover {
     mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
     z-index: 10;
   }
+
+  /* ***************Add white border in #take-home-pie******************** */
+  #take-home-pie-foreground-left {
+    --c2: #fff;
+    --w: 100px;
+    --p2: 36.5;
+    --b: 20px;
+    width: var(--w);
+    height: var(--w);
+    top: -5px;
+    left: -5px;
+    display: inline-grid;
+    position: absolute;
+    margin: 5px;
+    transform: rotate(180deg);
+  }
+
+  #take-home-pie-foreground-left:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c2), calc(var(--p2)*1%), #0000 0);
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+  }
+
+  /* *********************************** */
 
   #sick-pie-background,
   #vacation-pie-background {    
