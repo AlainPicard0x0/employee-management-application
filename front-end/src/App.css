@@ -1337,13 +1337,14 @@ ul a:hover {
 
   .mobile-take-home-p {
     color: #1a2c80;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     font-weight: 700;
+    margin-bottom: 10px;
   }
 
   .mobile-deduction-p {
     color: orange;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     font-weight: 700;
   }
 
