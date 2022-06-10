@@ -1165,6 +1165,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="time-sheet-deductions-heading">
                                 <p>Deductions</p>
                             </div>
+                            <div className="time-sheet-deductions-heading-underline"></div>
                             <div className="time-sheet-deductions-list">
                                 <p>Fed Income Tax</p>
                                 <p>Social Security</p>
