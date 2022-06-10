@@ -1424,6 +1424,14 @@ ul a:hover {
     font-weight: 700;
   }
 
+  .time-sheet-deductions-amounts {
+    grid-area: 2 / 2 / 3 / 3;
+    padding: 0 20px;
+    line-height: 2.0;
+    font-weight: 700;
+    justify-self: flex-end;
+  }
+
   .time-sheet-banner {
     /* grid-area: 1 / 1 / 2 / 2;
     height: 25px;
