@@ -384,84 +384,6 @@ ul a:hover {
   border: none !important;
 }
 
-/* .portal-leave-status {
-  grid-area: 1 / 3 / 5 / 4;
-  background-color: #fff;
-  margin: 10px;
-  border-radius: 5px;
-  box-shadow: #000 1px 1px 10px;
-  color: #000; 
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-}
-
-#on-sick-leave-today {
-  grid-area: 1 / 1 / 2 / 2; 
-}
-
-#on-sick-leave-tomorrow {
-  grid-area: 1 / 2 / 2 / 3;
-}
-
-#on-vacation-today {
-  grid-area: 2 / 1 / 3 / 2;
-}
-
-#on-vacation-tomorrow {
-  grid-area: 2 / 2 / 3 / 3;
-}
-
-#sick-leave-awaiting-approval {
-  grid-area: 3 / 1 / 4 / 2;
-}
-
-#vacation-awaiting-approval {
-  grid-area: 3 / 2 / 4 / 3;
-}
-
-.portal-leave-number {
-  font-size: 2.5rem;
-}
-
-.portal-leave-text {
-  font-size: .8rem;
-} */
-
-/* .portal-sick-leave-request {
-  grid-area: 3 / 1 / 5 / 2;
-  background-color: #fff;
-  margin: 0 10px 5px 10px;
-  border-radius: 5px;
-  box-shadow: #000 1px 1px 10px; 
-}
-
-.sick-leave-request {
-  display: flex;
-  height: 84%;
-  justify-content: center;
-  align-items: center;
-}
-
-#use-sick-hours {
-  color: #ffbf27;
-  margin-top: 10px;
-}
-
-.portal-vacation-leave-request {
-  grid-area: 5 / 1 / 7 / 2;
-  background-color: #fff;
-  margin: 5px 10px 5px 10px;
-  box-shadow: #000 1px 1px 10px;
-  border-radius: 5px; 
-}
-
-#use-vacation-hours {
-  color: #ffbf27;
-  margin-top: 10px;
-} */
-
 .time-card {
   grid-area: 4 / 1 / 7 / 4;
   background-color: #fff;
@@ -1269,8 +1191,6 @@ ul a:hover {
   #time-sheet-row-2 {
     grid-area: 2 / 1 / 3 / 3;
     height: 200px;
-    /* display: grid;
-    grid-template: 0.5fr 2fr 1fr / repeat(2, 1fr); */
   }
 
   .mobile-vacation-leave-section,
@@ -1285,11 +1205,6 @@ ul a:hover {
     display: grid;
     grid-template: 1fr 6fr 1fr / repeat(2, 1fr);
   }
-
-  .mobile-take-home-main-section {
-    
-  }
-
 
   .mobile-vacation-leave-section p,
   .mobile-sick-leave-section p,
@@ -1444,17 +1359,6 @@ ul a:hover {
     line-height: 2.0;
     font-weight: 700;
     justify-self: flex-end;
-  }
-
-  .time-sheet-banner {
-    /* grid-area: 1 / 1 / 2 / 2;
-    height: 25px;
-    width: 100%;
-    background-color: #e2e2e2;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    padding-left: 15px; */
   }
 
   .mobile-vacation-remaining-container {
@@ -1645,48 +1549,11 @@ ul a:hover {
     flex-basis: calc(100% * (1/2) - 25px);
   }
 
-
-
-
-
-
-  /* .row-1-col-1 {
-    margin-bottom: 10px;
-  } */
-
-  /* .row-1-col-1 {
-    background-color: #fff;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 2px;
-    box-shadow: 1px 1px 7px, -1px -1px #f1f1f1;
-    display: grid;
-    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-  } */
-
-  /* .row-2-col-1 {
-    background-color: #fff;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 2px;
-    box-shadow: 1px 1px 7px, -1px -1px #f1f1f1;
-    display: grid;
-    grid-template: repeat(5, 1fr) / repeat(2, 1fr);
-  } */
-
   .mobile-time-sheet a,
   .mobile-vacation a,
   .mobile-sick-leave a {
     text-decoration: none;
     color: #fff;
-  }
-
-  .portal-vacation-leave {
-    /* grid-area: 4 / 1 / 8 / 5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
   }
 
   #vacation-pie {
@@ -1763,106 +1630,6 @@ ul a:hover {
     justify-content: center;
     align-items: center;
     font-size: 1rem;
-  }
-
-  .vacation-leave-title {
-    /* grid-area: 1 / 1 / 2 / 5; 
-    justify-self: center;
-    font-size: 1.5rem;
-    color:#1a2c80; */
-  }
-
-  #vacation-hours-remaining {
-    /* font-size: 2rem;
-    color:#ffb302; */
-  }
-
-  .hours-left p {
-    /* color:#1a2c80;
-    text-transform: capitalize;
-    font-weight: 700; */
-  }
-
-  /* .row-2-title {
-    grid-area: 1 / 1 / 2 / 3;
-    width: 90%;
-    margin: auto;
-    text-align: center;
-  } */
-
-  /* .row-2-title {
-    color:#1a2c80;
-  } */
-
-  .underline {
-    /* height: 1px;
-    background-color: #000; */
-  }
-
-  .mobile-vacation-hours-selected-display {
-    /* grid-area: 7 / 2 / 9 / 4;
-    display: flex;
-    height: 35px;
-    width: 35px;
-    font-size: 2rem;
-    color: #1a2c80;
-    background-image: linear-gradient(#ffb507, #ab7800);
-    border-radius: 50%;
-    text-align: center;
-    justify-self: center;
-    align-self: flex-end;
-    justify-content: center;
-    align-items: center; */
-  }
-
-  
-
-  
-
-  
-  .person-walking-image {
-    /* grid-area: 7 / 2 / 11 / 5; 
-    justify-self: center;
-    align-self: center;
-    position: relative;
-    z-index: 1; */
-  }
-
-  .beach-umbrella-image {
-    /* grid-area: 8 / 1 / 11 / 3;
-    justify-self: center;
-    align-self: center;
-    position: relative;
-    z-index: 1; */
-  }
-
-  .fa-person-walking-luggage {
-    /* width: 125px;
-    height: 125px;
-    color: rgba(001, 001, 001, .10); */
-  }
-
-  .fa-umbrella-beach {
-    /* width: 75px;
-    height: 75px;
-    color: rgba(001, 001, 001, .10); */
-  }
-
-  .mobile-vacation-submit-btn {
-    /* grid-area: 9 / 1 / 10 / 5;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-  }
-
-  #mobile-vacation-submit-btn {
-    /* width: 110px;
-    height: 32px;
-    border-radius: 5px;
-    border: none;
-    background-image: linear-gradient(#ffb507, #ab7800);
-    color: #1a2c80;
-    font-weight: 700; */
   }
   
 }
