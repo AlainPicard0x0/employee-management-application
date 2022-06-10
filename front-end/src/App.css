@@ -1640,6 +1640,30 @@ ul a:hover {
     mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
   }
 
+  #take-home-pie-foreground-right {
+    --c2: #fff;
+    --w: 100px;
+    --p3: 36.5;
+    --b: 20px;
+    width: var(--w);
+    height: var(--w);
+    top: -5px;
+    left: -5px;
+    display: inline-grid;
+    position: absolute;
+    margin: 5px;
+    transform: rotate(-0.015turn);
+  }
+
+  #take-home-pie-foreground-right:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c2), calc(var(--p3)*1%), #0000 0);
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+  }
+
   /* *********************************** */
 
   #sick-pie-background,

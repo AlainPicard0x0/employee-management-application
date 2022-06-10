@@ -1122,6 +1122,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                     <div id="take-home-pie-background"></div>
                                     {/* Add white border to take-home-pie */}
                                     <div id="take-home-pie-foreground-left"></div>
+                                    <div id="take-home-pie-foreground-right"></div>
                                     {/* ******************************* */}
                                 </div>                            
                             </div>
