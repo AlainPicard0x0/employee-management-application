@@ -1149,18 +1149,7 @@ ul a:hover {
     background-color: #fff;
     display: grid;
     grid-template: 1.0fr 2.0fr 2.5fr 1fr / repeat(2, 2fr);
-  }
-
-  #mobile-time-sheet-row-4 {
-    grid-area: 4 / 1 / 5 / 3;
-  }
-
-  .time-sheet-row-4-container {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template: 1fr 3fr / repeat(2, 1fr);
-  }
+  }  
 
   .vacation-mobile-body.selected {
     width: 100%;
@@ -1407,6 +1396,24 @@ ul a:hover {
     line-height: 2.0;
     justify-self: flex-end;
     font-weight: 700;
+  }
+
+  #mobile-time-sheet-row-4 {
+    grid-area: 4 / 1 / 5 / 3;
+  }
+
+  .time-sheet-row-4-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template: 1fr 3fr / repeat(2, 1fr);
+  }
+
+  .time-sheet-deductions-heading {
+    grid-area: 1 / 1 / 2 / 3; 
+    padding-left: 20px;
+    color: #1a2c80;
+    font-weight: 800;
   }
 
   .time-sheet-banner {
