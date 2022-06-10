@@ -1125,11 +1125,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="take-home-main-section-row-1-col-2">
                                 <div className="mobile-take-home-p">
                                     <p>Take Home</p>
-                                    <p>$4,587.00</p>
+                                    <p className="row-1-text-lg">$4,587.00</p>
                                 </div>
                                 <div className="mobile-deduction-p">
                                     <p>Deduction</p>
-                                    <p>$1,233.00</p>
+                                    <p className="row-1-text-lg">$1,233.00</p>
                                 </div>
                             </div>
                             <div className="take-home-main-section-row-3-banner">

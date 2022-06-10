@@ -1348,6 +1348,10 @@ ul a:hover {
     font-weight: 700;
   }
 
+  .row-1-text-lg {
+    font-size: 1.2rem;
+  }
+
   .take-home-main-section-row-3-banner {
     grid-area: 3 / 1 / 4 / 3;
     width: 100%;
