@@ -1407,13 +1407,18 @@ ul a:hover {
     width: 100%;
     display: grid;
     grid-template: 1fr 3fr / repeat(2, 1fr);
+    color: #1a2c80;
   }
 
   .time-sheet-deductions-heading {
     grid-area: 1 / 1 / 2 / 3; 
     padding-left: 20px;
-    color: #1a2c80;
+    color: orange;
     font-weight: 800;
+  }
+
+  .time-sheet-deduction-list {
+    grid-area: 2 / 1 / 3 / 2;
   }
 
   .time-sheet-banner {
