@@ -1066,14 +1066,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             <div className="mobile-portal">
                 <div className="mobile-header hidden">
                     <div className="mobile-header-selection-container">
-                        <div data-page="time-sheet-page" className="mobile-header-selection mobile-time-sheet">Time Sheet</div>
-                        <div data-page="vacation-page" className="mobile-header-selection mobile-vacation active">Vacation</div>
+                        <div data-page="time-sheet-page" className="mobile-header-selection mobile-time-sheet active">Time Sheet</div>
+                        <div data-page="vacation-page" className="mobile-header-selection mobile-vacation">Vacation</div>
                         <div data-page="sick-leave-page" className="mobile-header-selection mobile-sick-leave">Sick Leave</div>                       
                     </div>
                 </div>
             </div>
             <div className="mobile-body">
-                <div id="time-sheet-page" className="time-sheet-mobile-body mobile-container">
+                <div id="time-sheet-page" className="time-sheet-mobile-body mobile-container selected">
                     <section id="mobile-time-sheet-row-1">
                         <div className="mobile-time-sheet-greeting-section">
                             <div className="mobile-time-sheet-greet-title">
@@ -1183,7 +1183,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         </div>
                     </section>
                 </div>
-                <div id="vacation-page" className="vacation-mobile-body mobile-container selected">
+                <div id="vacation-page" className="vacation-mobile-body mobile-container">
                     <section id="mobile-row-1">
                         <div className="mobile-vacation-greeting-section">
                             <div className="mobile-vacation-greet-title">
