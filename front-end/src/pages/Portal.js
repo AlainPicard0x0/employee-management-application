@@ -650,10 +650,19 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
 
+    let mobileVacationHoursToUse = 0;
     const addMobileVacationHours = () => {
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
         mobileVacationPlusBtn.addEventListener("click", (e) => {
-            console.log("Clicked");
+            console.log(mobileVacationHoursToUse);
+            if(mobileVacationHoursToUse < 8) {
+                mobileVacationHoursToUse ++;
+            }
+            else {
+                alert("Unable to use more than 8 hours");
+            }
+            
+            console.log(mobileVacationHoursToUse);
         })
     }
     
