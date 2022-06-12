@@ -23,6 +23,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const api = `http://localhost:8080/api/employees`;    
     const [week, setWeek] = useState({});
 
+    
+
     useEffect(() => {
         if(login) {
             navigate("/portal");
@@ -30,6 +32,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             findSickHoursRemaining();  
             getEmployee(api, 1);
             getCurrentWeek();
+            addMobileVacationHours();
         }
         else {
             navigate("/");
@@ -646,6 +649,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     for(let i = 0; i < mobileHeaderSelection.length; i++) {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
+
+    const addMobileVacationHours = () => {
+        const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
+        mobileVacationPlusBtn.addEventListener("click", (e) => {
+            console.log("Clicked");
+        })
+    }
+    
 
     return (
         <>
