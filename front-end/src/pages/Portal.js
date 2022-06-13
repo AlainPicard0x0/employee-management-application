@@ -670,9 +670,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     
     const subtractMobileVacationHours = () => {
         const mobileVacationMinusBtn = document.getElementsByClassName("vac-minus-btn")[0];
+        const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         mobileVacationMinusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse > 0) {
                 mobileVacationHoursToUse --;
+                mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
             }
             else {
                 alert("Cannot use less than 0 hours");
