@@ -1371,14 +1371,13 @@ ul a:hover {
   .mobile-vacation-block {
     background-image: linear-gradient(#ffbf27, #c08e1a);
     min-width: 40px;
-    height: 22.5px;
+    min-height: 24px;
     margin-right: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
     font-weight: 600;
-    border: #1a2c80 solid 1.0px;
   }
 
   .mobile-vacation-spacer-container {
