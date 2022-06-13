@@ -33,6 +33,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             getEmployee(api, 1);
             getCurrentWeek();
             addMobileVacationHours();
+            subtractMobileVacationHours();
         }
         else {
             navigate("/");
@@ -654,7 +655,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const addMobileVacationHours = () => {
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
         mobileVacationPlusBtn.addEventListener("click", (e) => {
-            console.log(mobileVacationHoursToUse);
             if(mobileVacationHoursToUse < 8) {
                 mobileVacationHoursToUse ++;
             }
@@ -662,6 +662,19 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 alert("Unable to use more than 8 hours");
             }
             
+            console.log(mobileVacationHoursToUse);
+        })
+    }
+    
+    const subtractMobileVacationHours = () => {
+        const mobileVacationMinusBtn = document.getElementsByClassName("vac-minus-btn")[0];
+        mobileVacationMinusBtn.addEventListener("click", (e) => {
+            if(mobileVacationHoursToUse > 0) {
+                mobileVacationHoursToUse --;
+            }
+            else {
+                alert("Cannot use less than 0 hours");
+            }
             console.log(mobileVacationHoursToUse);
         })
     }
