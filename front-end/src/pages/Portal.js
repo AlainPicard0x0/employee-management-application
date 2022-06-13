@@ -654,9 +654,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     let mobileVacationHoursToUse = 0;
     const addMobileVacationHours = () => {
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
+        const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         mobileVacationPlusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse < 8) {
                 mobileVacationHoursToUse ++;
+                mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
             }
             else {
                 alert("Unable to use more than 8 hours");
@@ -1267,7 +1269,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <div className="mobile-vacation-block"></div>
                             </div>
                             <div className="mobile-vacation-used-container">
-                                <div className="mobile-vacation-block mobile-vacation-used-block">16.0</div>
+                                <div className="mobile-vacation-block mobile-vacation-used-block">0</div>
                                 <p>Vacation Used</p>
                             </div>
                             <div className="mobile-vacation-pie-container">
