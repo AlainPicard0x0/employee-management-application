@@ -652,19 +652,24 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     let mobileVacationHoursToUse = 0;
+    let vacationBlockHoursRemaining = vacationHours;
+    console.log(vacationHours);
     const addMobileVacationHours = () => {
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
+        const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
         mobileVacationPlusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse < 8) {
                 mobileVacationHoursToUse ++;
                 mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
+                // vacationBlockHoursRemaining = vacationBlockHoursRemaining - mobileVacationHoursToUse;
+                mobileVacationRemainingBlock.innerText = vacationBlockHoursRemaining;
             }
             else {
                 alert("Unable to use more than 8 hours");
             }
-            
-            console.log(mobileVacationHoursToUse);
+            console.log(vacationHours);
+            console.log(vacationBlockHoursRemaining);
         })
     }
     
@@ -1264,7 +1269,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <p>Annual Leave</p>
                             </div>
                             <div className="mobile-vacation-remaining-container">
-                                <div className="mobile-vacation-block mobile-vacation-remaining-block">{vacationHours}</div>
+                                <div className="mobile-vacation-block mobile-vacation-remaining-block">{vacationBlockHoursRemaining}</div>
                                 <p>Vacation Remaining</p>
                             </div>
                             <div className="mobile-vacation-spacer-container">
