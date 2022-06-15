@@ -657,7 +657,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
         mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
-        console.log(mobileVacationRemainingBlock);
         mobileVacationPlusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse < 8) {
                 mobileVacationHoursToUse ++;
@@ -673,10 +672,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const subtractMobileVacationHours = () => {
         const mobileVacationMinusBtn = document.getElementsByClassName("vac-minus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
+        const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
+        mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
         mobileVacationMinusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse > 0) {
                 mobileVacationHoursToUse --;
                 mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
+                mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse;
             }
             else {
                 alert("Cannot use less than 0 hours");
