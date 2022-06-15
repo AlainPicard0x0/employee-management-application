@@ -22,7 +22,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     const navigate = useNavigate();
     const api = `http://localhost:8080/api/employees`;    
     const [week, setWeek] = useState({});
-
+    
     
 
     useEffect(() => {
@@ -650,26 +650,25 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     for(let i = 0; i < mobileHeaderSelection.length; i++) {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
-
     let mobileVacationHoursToUse = 0;
-    let vacationBlockHoursRemaining = vacationHours;
-    console.log(vacationHours);
+      
     const addMobileVacationHours = () => {
+        setVacationHours(5);
+        
+        
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
+        mobileVacationRemainingBlock.innerText = vacationHours;
+        console.log(mobileVacationRemainingBlock);
         mobileVacationPlusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse < 8) {
                 mobileVacationHoursToUse ++;
-                mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
-                // vacationBlockHoursRemaining = vacationBlockHoursRemaining - mobileVacationHoursToUse;
-                mobileVacationRemainingBlock.innerText = vacationBlockHoursRemaining;
+                mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;                
             }
             else {
                 alert("Unable to use more than 8 hours");
             }
-            console.log(vacationHours);
-            console.log(vacationBlockHoursRemaining);
         })
     }
     
@@ -1269,7 +1268,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <p>Annual Leave</p>
                             </div>
                             <div className="mobile-vacation-remaining-container">
-                                <div className="mobile-vacation-block mobile-vacation-remaining-block">{vacationBlockHoursRemaining}</div>
+                                <div className="mobile-vacation-block mobile-vacation-remaining-block"></div>
                                 <p>Vacation Remaining</p>
                             </div>
                             <div className="mobile-vacation-spacer-container">
