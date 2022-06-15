@@ -651,20 +651,18 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
     let mobileVacationHoursToUse = 0;
-      
+    let mobileVacationHoursRemaining = vacationHours || 40;  
     const addMobileVacationHours = () => {
-        setVacationHours(5);
-        
-        
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
-        mobileVacationRemainingBlock.innerText = vacationHours;
+        mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
         console.log(mobileVacationRemainingBlock);
         mobileVacationPlusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse < 8) {
                 mobileVacationHoursToUse ++;
-                mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;                
+                mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
+                mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse;                
             }
             else {
                 alert("Unable to use more than 8 hours");
