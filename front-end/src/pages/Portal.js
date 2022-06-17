@@ -653,15 +653,17 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     
       
     let mobileVacationHoursToUse = 0;
-    let mobileVacationHoursRemaining;
-    const addMobileVacationHours = () => {
+    let mobileVacationHoursRemaining = vacationHours;
+    const addMobileVacationHours = (vacationHours) => {
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
-        
-        if(mobileVacationHoursRemaining == null) {
-            mobileVacationHoursRemaining = vacationHours;
-        }  
+        if(isNaN(mobileVacationHoursRemaining) || mobileVacationHoursRemaining == null || mobileVacationHoursRemaining == undefined) {
+            mobileVacationHoursRemaining = vacationHours;            
+        } 
+        console.log("Vacation Remaining is " + mobileVacationHoursRemaining);
+        console.log("Vacation hours are " + vacationHours)
+        console.log("Vacation Remaining is " + mobileVacationHoursRemaining); 
         mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
         mobileVacationPlusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse < 8) {
@@ -681,7 +683,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         const mobileVacationMinusBtn = document.getElementsByClassName("vac-minus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
-        // let mobileVacationHoursRemaining;
+        let mobileVacationHoursRemaining;
         if(mobileVacationHoursRemaining == null) {
             mobileVacationHoursRemaining = vacationHours;
         }
