@@ -675,10 +675,28 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         console.log("Vacation Remaining is " + mobileVacationHoursRemaining);
         mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
         mobileVacationPlusBtn.addEventListener("click", (e) => {
+            fetch(`${api}/login/vacation`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "email": email
+                },
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                setVacationHours(data);
+                adjustVacationPie();
+                if(isNaN(mobVacHours) || mobVacHours == undefined || mobVacHours == null) {
+                    mobVacHours = data;
+                }                
+                console.log("mobVacHours are " + mobVacHours);
+            })
             if(mobileVacationHoursToUse < 8) {
                 mobileVacationHoursToUse ++;
                 mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
-                mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse;                
+                mobileVacationRemainingBlock.innerText = mobVacHours - mobileVacationHoursToUse;                
             }
             else {
                 console.log(mobileVacationHoursToUse);
