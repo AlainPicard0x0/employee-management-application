@@ -13,6 +13,7 @@ import {faSyringe} from '@fortawesome/free-solid-svg-icons';
 import {faBuildingUser} from '@fortawesome/free-solid-svg-icons';
 import {faBusinessTime} from '@fortawesome/free-solid-svg-icons';
 
+let mobVacHours;
 
 const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
@@ -114,6 +115,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .then(data => {
             setVacationHours(data);
             adjustVacationPie();
+            mobVacHours = data;
+            console.log("mobVacHours are " + mobVacHours);
         })
         
     }
@@ -650,20 +653,26 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     for(let i = 0; i < mobileHeaderSelection.length; i++) {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
-    
-      
+          
     let mobileVacationHoursToUse = 0;
-    let mobileVacationHoursRemaining = vacationHours;
-    const addMobileVacationHours = (vacationHours) => {
+    let mobileVacationHoursRemaining;
+    console.log(mobVacHours);
+    if(mobVacHours != undefined) {
+        mobileVacationHoursRemaining = mobVacHours;
+    }
+    else {
+        console.log("Undefined");
+    }
+    
+    const addMobileVacationHours = () => {
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
         if(isNaN(mobileVacationHoursRemaining) || mobileVacationHoursRemaining == null || mobileVacationHoursRemaining == undefined) {
-            mobileVacationHoursRemaining = vacationHours;            
+            console.log(mobVacHours);
+            mobileVacationHoursRemaining = mobVacHours;            
         } 
         console.log("Vacation Remaining is " + mobileVacationHoursRemaining);
-        console.log("Vacation hours are " + vacationHours)
-        console.log("Vacation Remaining is " + mobileVacationHoursRemaining); 
         mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
         mobileVacationPlusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse < 8) {
