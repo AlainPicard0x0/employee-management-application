@@ -650,12 +650,18 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     for(let i = 0; i < mobileHeaderSelection.length; i++) {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
+    
+      
     let mobileVacationHoursToUse = 0;
-    let mobileVacationHoursRemaining = vacationHours || 40;  
+    let mobileVacationHoursRemaining;
     const addMobileVacationHours = () => {
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
+        
+        if(mobileVacationHoursRemaining == null) {
+            mobileVacationHoursRemaining = vacationHours;
+        }  
         mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
         mobileVacationPlusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse < 8) {
@@ -664,8 +670,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse;                
             }
             else {
+                console.log(mobileVacationHoursToUse);
                 alert("Unable to use more than 8 hours");
             }
+            
         })
     }
     
@@ -673,6 +681,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         const mobileVacationMinusBtn = document.getElementsByClassName("vac-minus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
+        // let mobileVacationHoursRemaining;
+        if(mobileVacationHoursRemaining == null) {
+            mobileVacationHoursRemaining = vacationHours;
+        }
         mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
         mobileVacationMinusBtn.addEventListener("click", (e) => {
             if(mobileVacationHoursToUse > 0) {
@@ -1268,7 +1280,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <p>Annual Leave</p>
                             </div>
                             <div className="mobile-vacation-remaining-container">
-                                <div className="mobile-vacation-block mobile-vacation-remaining-block"></div>
+                                <div className="mobile-vacation-block mobile-vacation-remaining-block">{vacationHours}</div>
                                 <p>Vacation Remaining</p>
                             </div>
                             <div className="mobile-vacation-spacer-container">
