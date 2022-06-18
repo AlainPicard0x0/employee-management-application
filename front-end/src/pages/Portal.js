@@ -688,20 +688,30 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
         let mobileVacationHoursRemaining;
-        if(mobileVacationHoursRemaining == null) {
-            mobileVacationHoursRemaining = vacationHours;
-        }
-        mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
         mobileVacationMinusBtn.addEventListener("click", (e) => {
-            if(mobileVacationHoursToUse > 0) {
-                mobileVacationHoursToUse --;
-                mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
-                mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse;
-            }
-            else {
-                alert("Cannot use less than 0 hours");
-            }
-            console.log(mobileVacationHoursToUse);
+            fetch(`${api}/login/vacation`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "email": email
+                },
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                setVacationHours(data);
+                adjustVacationPie();
+                mobileVacationHoursRemaining = data;
+                if(mobileVacationHoursToUse > 0) {
+                    mobileVacationHoursToUse --;
+                    mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
+                    mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse;
+                }
+                else {
+                    alert("Cannot use less than 0 hours");
+                }      
+            })      
         })
     }
     
