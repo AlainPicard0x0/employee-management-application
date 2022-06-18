@@ -648,6 +648,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     for(let i = 0; i < mobileHeaderSelection.length; i++) {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
+
+    let mobileRequestVacationBtn = document.getElementById("mobile-vacation-request-btn");
+    if(mobileRequestVacationBtn) {
+        mobileRequestVacationBtn.addEventListener("click", () => {
+            console.log("Clicked");
+        })
+    }
+    
           
     let mobileVacationHoursToUse = 0;
     let mobileVacationHoursRemaining;    
