@@ -13,8 +13,6 @@ import {faSyringe} from '@fortawesome/free-solid-svg-icons';
 import {faBuildingUser} from '@fortawesome/free-solid-svg-icons';
 import {faBusinessTime} from '@fortawesome/free-solid-svg-icons';
 
-let mobVacHours;
-
 const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const [sickHours, setSickHours] = useState(null);
@@ -115,10 +113,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .then(data => {
             setVacationHours(data);
             adjustVacationPie();
-            mobVacHours = data;
-            console.log("mobVacHours are " + mobVacHours);
-        })
-        
+        })        
     }
 
     const adjustSickPie = () => {
@@ -655,24 +650,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
           
     let mobileVacationHoursToUse = 0;
-    let mobileVacationHoursRemaining;
-    console.log(mobVacHours);
-    if(mobVacHours != undefined) {
-        mobileVacationHoursRemaining = mobVacHours;
-    }
-    else {
-        console.log("Undefined");
-    }
-    
+    let mobileVacationHoursRemaining;    
     const addMobileVacationHours = () => {
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
         const mobileVacationRemainingBlock = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
-        if(isNaN(mobileVacationHoursRemaining) || mobileVacationHoursRemaining == null || mobileVacationHoursRemaining == undefined) {
-            console.log(mobVacHours);
-            mobileVacationHoursRemaining = mobVacHours;            
-        } 
-        console.log("Vacation Remaining is " + mobileVacationHoursRemaining);
         mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining;
         mobileVacationPlusBtn.addEventListener("click", (e) => {
             fetch(`${api}/login/vacation`, {
@@ -688,21 +670,16 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             .then(data => {
                 setVacationHours(data);
                 adjustVacationPie();
-                if(isNaN(mobVacHours) || mobVacHours == undefined || mobVacHours == null) {
-                    mobVacHours = data;
-                }                
-                console.log("mobVacHours are " + mobVacHours);
-            })
-            if(mobileVacationHoursToUse < 8) {
-                mobileVacationHoursToUse ++;
-                mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
-                mobileVacationRemainingBlock.innerText = mobVacHours - mobileVacationHoursToUse;                
-            }
-            else {
-                console.log(mobileVacationHoursToUse);
-                alert("Unable to use more than 8 hours");
-            }
-            
+                mobileVacationHoursRemaining = data;
+                if(mobileVacationHoursToUse < 8) {
+                    mobileVacationHoursToUse ++;
+                    mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
+                    mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse;                
+                }
+                else {
+                    alert("Unable to use more than 8 hours");
+                }
+            })            
         })
     }
     
