@@ -1500,46 +1500,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         </div>
                     </section>
                 </div>
-            </div>
-
-
-            {/* <div className="portal-vacation-leave">
-                                <div id="vacation-pie">
-                                    <div id="vacation-pie-background"></div>
-                                </div>                            
-                            </div>
-                        <div className="hours-left">
-                            <h2 id="vacation-hours-remaining">{vacationHours}</h2>
-                            <p>hours remaining</p>
-                        </div>
-                        <div className="vacation-leave-title">
-                            <h4>Vacation Leave</h4>
-                        </div>                   
-                        <div className="vac-plus-btn">
-                            <h3>Add</h3>
-                            <FontAwesomeIcon icon={faPlusCircle} />
-                        </div>
-                        <div className="vac-minus-btn">
-                            <h3>Remove</h3>
-                            <FontAwesomeIcon icon={faMinusCircle} />
-                        </div>                           
-                        <div className="person-walking-image">
-                            <FontAwesomeIcon icon={faPersonWalkingLuggage} />
-                        </div>
-                        <div className="beach-umbrella-image">
-                            <FontAwesomeIcon icon={faUmbrellaBeach} />
-                        </div>
-                        <div className="mobile-vacation-hours-selected-display">
-                            <p id="mobile-vacation-hours-display">0</p>
-                        </div>
-                        <div className="mobile-vacation-submit-btn">
-                            <button id="mobile-vacation-submit-btn">Submit</button>
-                        </div>                                                                     */}
-
-
-
-
-
+            </div>            
         </>
     )
 }
