@@ -667,11 +667,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })
             .then(data => {
                 setVacationHours(data);
-                // document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
+                document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
                 adjustVacationPie();
                 return data;
-            }) 
-            // getTotalVacationHours();
+            })
         })
     }
     
