@@ -123,6 +123,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         Long vacationHoursRemaining = employee.getVacationLeave() - vacationHoursUsed;
         employee.setVacationLeave(vacationHoursRemaining);
+        System.out.println("useVacationHours() method called: " + employee.getVacationLeave());
         return employee.getVacationLeave();
     }
 }
