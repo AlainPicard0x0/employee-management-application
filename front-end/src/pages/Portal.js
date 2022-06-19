@@ -651,7 +651,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     let mobileRequestVacationBtn = document.getElementById("mobile-vacation-request-btn");
     if(mobileRequestVacationBtn) {
-        let totalVacHoursToUse = parseInt(document.getElementsByClassName("mobile-vacation-used-block")[0].innerText);
+        let totalVacHoursToUse = document.getElementsByClassName("mobile-vacation-used-block")[0].innerText;
         console.log(totalVacHoursToUse);
         mobileRequestVacationBtn.addEventListener("click", () => {
             fetch(`${api}/portal/vacation-leave`, {
@@ -667,8 +667,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })
             .then(data => {
                 setVacationHours(data);
-                document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
-                // adjustVacationPie();
+                // document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
+                adjustVacationPie();
                 return data;
             }) 
             // getTotalVacationHours();
