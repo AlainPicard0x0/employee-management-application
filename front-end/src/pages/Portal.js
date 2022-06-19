@@ -651,8 +651,27 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     let mobileRequestVacationBtn = document.getElementById("mobile-vacation-request-btn");
     if(mobileRequestVacationBtn) {
+        let totalVacHoursToUse = parseInt(document.getElementsByClassName("mobile-vacation-used-block")[0].innerText);
+        console.log(totalVacHoursToUse);
         mobileRequestVacationBtn.addEventListener("click", () => {
-            console.log("Clicked");
+            fetch(`${api}/portal/vacation-leave`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "email": email,
+                    "vacation-hours": totalVacHoursToUse
+                }
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                setVacationHours(data);
+                document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
+                // adjustVacationPie();
+                return data;
+            }) 
+            // getTotalVacationHours();
         })
     }
     
