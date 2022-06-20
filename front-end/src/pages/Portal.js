@@ -721,7 +721,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const useMobileVacationHours = () => {
-        console.log("Hours to use are: " + mobileVacationHoursToUse);
+        let mobileVacationHoursToUse = parseInt(document.getElementsByClassName("mobile-vacation-used-block")[0].innerText);
         fetch(`${api}/portal/vacation-leave`, {
             method: "GET",
             headers: {
