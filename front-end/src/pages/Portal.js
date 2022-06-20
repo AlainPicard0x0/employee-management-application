@@ -647,35 +647,14 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     for(let i = 0; i < mobileHeaderSelection.length; i++) {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
-    }
-
-    let mobileRequestVacationBtn = document.getElementById("mobile-vacation-request-btn");
-    if(mobileRequestVacationBtn) {
-        let totalVacHoursToUse = document.getElementsByClassName("mobile-vacation-used-block")[0].innerText;
-        console.log(totalVacHoursToUse);
-        mobileRequestVacationBtn.addEventListener("click", () => {
-            fetch(`${api}/portal/vacation-leave`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "email": email,
-                    "vacation-hours": totalVacHoursToUse
-                }
-            })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                setVacationHours(data);
-                document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
-                adjustVacationPie();
-                return data;
-            })
-        })
+    }    
+    
+    let mobileVacationHoursToUse;
+    console.log(mobileVacationHoursToUse)
+    if(mobileVacationHoursToUse == undefined) {
+        mobileVacationHoursToUse = 0;
     }
     
-          
-    let mobileVacationHoursToUse = 0;
     let mobileVacationHoursRemaining;    
     const addMobileVacationHours = () => {
         const mobileVacationPlusBtn = document.getElementsByClassName("vac-plus-btn")[0];
@@ -740,6 +719,54 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })      
         })
     }
+
+    const useMobileVacationHours = () => {
+        console.log("Hours to use are: " + mobileVacationHoursToUse);
+        fetch(`${api}/portal/vacation-leave`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "email": email,
+                "vacation-hours": mobileVacationHoursToUse
+            }
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            setVacationHours(data);
+            document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
+            adjustVacationPie();
+            return data;
+        })
+    }
+
+    // let mobileRequestVacationBtn = document.getElementById("mobile-vacation-request-btn");
+    //if(mobileRequestVacationBtn) {
+        //let totalVacHoursToUse = 2;
+        // let totalVacHoursToUse = document.getElementsByClassName("mobile-vacation-used-block")[0].innerText;
+        //console.log(totalVacHoursToUse);
+        // mobileRequestVacationBtn.addEventListener("click", () => {
+        //     fetch(`${api}/portal/vacation-leave`, {
+        //         method: "GET",
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //             "email": email,
+        //             "vacation-hours": totalVacHoursToUse
+        //         }
+        //     })
+        //     .then(response => {
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         console.log(totalVacHoursToUse);
+        //         setVacationHours(data);
+        //         document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
+        //         adjustVacationPie();
+        //         return data;
+        //     })
+        // })
+    //}
     
 
     return (
@@ -1343,7 +1370,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                             </div>
                             <div className="mobile-vacation-request-btn-container">
-                                <button id="mobile-vacation-request-btn">Request Vacation</button>
+                                <button onClick={useMobileVacationHours} id="mobile-vacation-request-btn">Request Vacation</button>
                             </div>
                             
                         </div>
