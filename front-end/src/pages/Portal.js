@@ -650,7 +650,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }    
     
     let mobileVacationHoursToUse;
-    console.log(mobileVacationHoursToUse)
     if(mobileVacationHoursToUse == undefined) {
         mobileVacationHoursToUse = 0;
     }
