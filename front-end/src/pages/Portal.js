@@ -1486,7 +1486,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         </div>
                     </section>
                     <section id="sick-row-three">
-                        <div className="mobile-vacation-add-remove-section">
+                        <div className="mobile-sick-add-remove-section">
                             <div className="add-remove-banner">
 
                             </div>
