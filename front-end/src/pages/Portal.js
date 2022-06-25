@@ -1469,7 +1469,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <div className="mobile-vacation-block mobile-vacation-used-block">8.0</div>
                                 <p>Sick Hours Used</p>
                             </div>
-                            <div className="mobile-vacation-pie-container">
+                            <div className="mobile-sick-pie-container">
                                 <div className="portal-vacation-leave">
                                     <div id="vacation-pie">
                                         <div id="vacation-pie-background"></div>
