@@ -1083,10 +1083,10 @@ ul a:hover {
 
   .sick-leave-mobile-body.selected {
     width: 100%;
-    height: 85vh;
+    height: 700px;
     background-color: #fff;
     display: grid;
-    grid-template: 1fr 2.5fr / 1fr ;
+    grid-template: .5fr 1.25fr 1fr 1fr / 1fr;
   }
 
   .mobile-vacation-greeting-section,
