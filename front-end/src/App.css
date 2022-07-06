@@ -1089,7 +1089,14 @@ ul a:hover {
     grid-template: .5fr 1.25fr 1fr 1fr / 1fr;
   }
 
-  .mobile-vacation-greeting-section,
+  .mobile-vacation-greeting-section {
+    grid-area: 1 / 1 / 2 / 2;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 14fr);
+    width: 100%;
+    align-items: center;
+  }
+
   .mobile-sick-greeting-section {
     grid-area: 1 / 1 / 2 / 2;
     display: grid;
