@@ -1376,7 +1376,8 @@ ul a:hover {
     margin: 0 15px;
   }
 
-  .mobile-vacation-block {
+  .mobile-vacation-block,
+  .mobile-sick-block {
     background-image: linear-gradient(#ffbf27, #c08e1a);
     min-width: 40px;
     min-height: 24px;
