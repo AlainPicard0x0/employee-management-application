@@ -1389,7 +1389,8 @@ ul a:hover {
     font-weight: 600;
   }
 
-  .mobile-vacation-spacer-container {
+  .mobile-vacation-spacer-container,
+  .mobile-sick-spacer-container {
     grid-area: 3 / 1 / 4 / 3;
     display: flex;
     align-items: center;
