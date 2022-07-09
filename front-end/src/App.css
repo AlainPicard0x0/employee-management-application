@@ -1405,7 +1405,8 @@ ul a:hover {
     margin: 0 15px;
   }
 
-  .mobile-vacation-pie-container {
+  .mobile-vacation-pie-container,
+  .mobile-sick-pie-container {
     grid-area: 2 / 2 / 5 / 4;
     display: flex;
     justify-content: flex-end;
