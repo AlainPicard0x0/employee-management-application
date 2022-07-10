@@ -1414,7 +1414,8 @@ ul a:hover {
     margin-right: 10px;
   }
 
-  .vacation-pie-hours {
+  .vacation-pie-hours,
+  .sick-pie-hours {
     position: absolute;
     font-size: 1.0rem;   
   }
