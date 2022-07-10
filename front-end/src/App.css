@@ -1445,7 +1445,8 @@ ul a:hover {
     font-weight: 600;
   }
 
-  .mobile-vacation-add-remove-section {
+  .mobile-vacation-add-remove-section,
+  .mobile-sick-add-remove-section {
     grid-area: 3 / 1 / 4 / 2;
     display: grid;
     min-height: 100%;
