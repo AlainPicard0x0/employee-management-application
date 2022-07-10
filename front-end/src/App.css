@@ -1420,7 +1420,8 @@ ul a:hover {
     font-size: 1.0rem;   
   }
 
-  .mobile-vacation-pie-hours-text {
+  .mobile-vacation-pie-hours-text,
+  .mobile-sick-pie-hours-text {
     position: relative;
     right: 255%;
   }
