@@ -1461,7 +1461,8 @@ ul a:hover {
     margin-bottom: 15px;
   }
 
-  .add-remove-vacation-text {
+  .add-remove-vacation-text,
+  .add-remove-sick-text {
     grid-area: 2 / 1 / 3 / 4;
     justify-self: center; 
     font-size: 1.0rem;
