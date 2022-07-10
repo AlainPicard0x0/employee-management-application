@@ -1426,7 +1426,8 @@ ul a:hover {
     right: 255%;
   }
 
-  .mobile-vacation-request-btn-container {
+  .mobile-vacation-request-btn-container,
+  .mobile-sick-request-btn-container {
     grid-area: 5 / 1 / 6 / 4;
     display: flex;
     justify-content: center; 
