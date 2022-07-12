@@ -1470,7 +1470,8 @@ ul a:hover {
     font-weight: 600;
   }
 
-  .vac-plus-btn {
+  .vac-plus-btn,
+  .sick-plus-btn {
     box-shadow: 1px 1px 6px #333;
     width: 50px;
     height: 55px;
