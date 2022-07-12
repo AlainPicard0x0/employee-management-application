@@ -1522,7 +1522,8 @@ ul a:hover {
     border-radius: 50%;
   }
 
-  .mobile-vacation-company-section {
+  .mobile-vacation-company-section,
+  .mobile-sick-company-section {
     min-height: 100%;
     grid-area: 4 / 1 / 5 / 2;
     display: grid;
