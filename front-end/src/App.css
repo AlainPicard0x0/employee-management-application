@@ -1489,7 +1489,8 @@ ul a:hover {
     font-size: 0.6rem;
   }
 
-  .vac-minus-btn {
+  .vac-minus-btn,
+  .sick-minus-btn {
     box-shadow: 1px 1px 6px #333;
     width: 50px;
     height: 55px;
