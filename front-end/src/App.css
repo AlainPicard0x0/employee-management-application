@@ -1579,7 +1579,8 @@ ul a:hover {
     color: #fff;
   }
 
-  #vacation-pie {
+  #vacation-pie,
+  #sick-pie {
     border-radius: 50%;
     box-shadow: 1px 1px 8px #c0c0c0;
     --p: 50;
