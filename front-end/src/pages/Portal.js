@@ -1466,7 +1466,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <div className="mobile-sick-block"></div>
                             </div>
                             <div className="mobile-sick-used-container">
-                                <div className="mobile-sick-block mobile-sick-used-block">8.0</div>
+                                <div className="mobile-sick-block mobile-sick-used-block">0</div>
                                 <p>Sick Hours Used</p>
                             </div>
                             <div className="mobile-sick-pie-container">
