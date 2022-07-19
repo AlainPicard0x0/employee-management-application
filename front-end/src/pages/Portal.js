@@ -766,6 +766,44 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         //     })
         // })
     //}
+
+    let mobileSickHoursToUse;
+    if(mobileSickHoursToUse == undefined) {
+        mobileSickHoursToUse = 0;
+    }
+    
+    let mobileSickHoursRemaining;    
+    const addMobileSickHours = () => {
+        const mobileSickPlusBtn = document.getElementsByClassName("sick-plus-btn")[0];
+        const mobileSickUsedBlock = document.getElementsByClassName("mobile-sick-used-block")[0];
+        const mobileSickRemainingBlock = document.getElementsByClassName("mobile-sick-remaining-block")[0];
+        mobileSickRemainingBlock.innerText = mobileSickHoursRemaining;
+        mobileSickPlusBtn.addEventListener("click", (e) => {
+            fetch(`${api}/login/sick`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "email": email
+                },
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                setSickHours(data);
+                adjustSickPie();
+                mobileSickHoursRemaining = data;
+                if(mobileSickHoursToUse < 8) {
+                    mobileSickHoursToUse ++;
+                    mobileSickUsedBlock.innerText = mobileSickHoursToUse;
+                    mobileSickRemainingBlock.innerText = mobileSickHoursRemaining - mobileSickHoursToUse;                
+                }
+                else {
+                    alert("Unable to use more than 8 hours");
+                }
+            })            
+        })
+    }
     
 
     return (
