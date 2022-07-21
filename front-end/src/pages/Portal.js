@@ -740,35 +740,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             adjustVacationPie();
             return data;
         })
-    }
-
-    // let mobileRequestVacationBtn = document.getElementById("mobile-vacation-request-btn");
-    //if(mobileRequestVacationBtn) {
-        //let totalVacHoursToUse = 2;
-        // let totalVacHoursToUse = document.getElementsByClassName("mobile-vacation-used-block")[0].innerText;
-        //console.log(totalVacHoursToUse);
-        // mobileRequestVacationBtn.addEventListener("click", () => {
-        //     fetch(`${api}/portal/vacation-leave`, {
-        //         method: "GET",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //             "email": email,
-        //             "vacation-hours": totalVacHoursToUse
-        //         }
-        //     })
-        //     .then(response => {
-        //         return response.json();
-        //     })
-        //     .then(data => {
-        //         console.log(totalVacHoursToUse);
-        //         setVacationHours(data);
-        //         document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
-        //         adjustVacationPie();
-        //         return data;
-        //     })
-        // })
-    //}
-
+    }    
+    
     let mobileSickHoursToUse;
     if(mobileSickHoursToUse == undefined) {
         mobileSickHoursToUse = 0;
