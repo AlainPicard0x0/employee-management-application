@@ -805,6 +805,38 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })            
         })
     }
+
+    const subtractMobileSickHours = () => {
+        const mobileSickMinusBtn = document.getElementsByClassName("sick-minus-btn")[0];
+        const mobileSickUsedBlock = document.getElementsByClassName("mobile-sick-used-block")[0];
+        const mobileSickRemainingBlock = document.getElementsByClassName("mobile-sick-remaining-block")[0];
+        let mobileSickHoursRemaining;
+        mobileSickMinusBtn.addEventListener("click", (e) => {
+            fetch(`${api}/login/sick`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "email": email
+                },
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                setSickHours(data);
+                adjustSickPie();
+                mobileSickHoursRemaining = data;
+                if(mobileSickHoursToUse > 0) {
+                    mobileSickHoursToUse --;
+                    mobileSickUsedBlock.innerText = mobileSickHoursToUse;
+                    mobileSickRemainingBlock.innerText = mobileSickHoursRemaining - mobileSickHoursToUse;
+                }
+                else {
+                    alert("Cannot use less than 0 hours");
+                }      
+            })      
+        })
+    }
     
 
     return (
