@@ -34,6 +34,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             addMobileVacationHours();
             subtractMobileVacationHours();
             addMobileSickHours();
+            subtractMobileSickHours();
         }
         else {
             navigate("/");
