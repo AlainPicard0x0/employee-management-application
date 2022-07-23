@@ -811,6 +811,27 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })      
         })
     }
+
+    const useMobileSickHours = () => {
+        let mobileSickHoursToUse = parseInt(document.getElementsByClassName("mobile-sick-used-block")[0].innerText);
+        fetch(`${api}/portal/sick-leave`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "email": email,
+                "sick-hours": mobileSickHoursToUse
+            }
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            setSickHours(data);
+            document.getElementsByClassName("mobile-sick-used-block")[0].innerText = 0;
+            adjustSickPie();
+            return data;
+        })
+    }
     
 
     return (
@@ -1525,7 +1546,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                             </div>
                             <div className="mobile-sick-request-btn-container">
-                                <button id="mobile-sick-request-btn">Apply Sick Leave</button>
+                                <button onClick={useMobileSickHours} id="mobile-sick-request-btn">Apply Sick Leave</button>
                             </div>
                             
                         </div>
