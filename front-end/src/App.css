@@ -1023,6 +1023,19 @@ ul a:hover {
     display: none;
   }
 
+  .home,
+  .login,
+  .register,
+  .portal,
+  .not-found {
+    width: 95vw;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    min-height: 85.75vh;
+    display: flex;
+  }
+
   .mobile-header {
     width: 100%;
     height: 80px;
