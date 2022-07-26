@@ -1039,7 +1039,7 @@ ul a:hover {
   .login-form-container,
   .register-form-container {
     width: 95vw;
-    height: 750px;
+    height: 650px;
     margin: auto;
     display: grid;
     grid-template-rows: 1fr;
