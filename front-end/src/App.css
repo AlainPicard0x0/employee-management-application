@@ -1023,9 +1023,13 @@ ul a:hover {
     display: none;
   }
 
+  .login {
+    display: none;
+  }
+
   .home,
-  .login,
-  .register,
+  .login-mobile,
+  .register-mobile,
   .portal,
   .not-found {
     width: 95vw;
