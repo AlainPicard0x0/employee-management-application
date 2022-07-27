@@ -29,6 +29,7 @@ const Login = ({login, authenticateEmployee }) => {
     }
 
     return (
+        <>
         <div className="login">
             <div className="login-form-container">
                 <div className="login-col-left">
@@ -55,6 +56,33 @@ const Login = ({login, authenticateEmployee }) => {
                 </div>        
             </div>            
         </div>
+        <div className="login-mobile">
+            <div className="login-form-container">
+                <div className="login-col-left">
+                    <div className="login-form-header">
+                        <h2>Login</h2>
+                        <p>Mobile Don't have an account yet? <a href="./register">Sign Up</a></p>
+                    </div>
+                    <form className="login-form" onSubmit={ handleSubmit }>
+                        <div className="form-group">
+                            <label htmlFor="email">Email Address</label>
+                            <input id="email" type="text" placeholder="Enter Email" name="email" required></input>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input id="password" type="password" placeholder="Enter Password" name="password" required></input>
+                        </div>
+                        <div className="form-group">
+                            <button id="login-button" >Login</button>
+                        </div>
+                    </form>   
+                </div>                 
+                <div className="login-col-right">
+
+                </div>        
+            </div>            
+        </div>
+        </>
     )
 }
 
