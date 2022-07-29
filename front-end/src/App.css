@@ -129,6 +129,10 @@ ul a:hover {
   background-position: center;
 }
 
+.login-mobile {
+  display: none;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
