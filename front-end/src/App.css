@@ -129,7 +129,8 @@ ul a:hover {
   background-position: center;
 }
 
-.login-mobile {
+.login-mobile,
+.register-mobile {
   display: none;
 }
 
