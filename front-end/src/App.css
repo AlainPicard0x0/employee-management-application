@@ -1020,7 +1020,7 @@ ul a:hover {
   }
 
 }
-/* mobile device */
+/********************************************* mobile device *******************************************/
 @media only screen and (max-width: 600px) {
   .header,
   .portal,
@@ -1028,7 +1028,8 @@ ul a:hover {
     display: none;
   }
 
-  .login {
+  .login,
+  .register {
     display: none;
   }
 
