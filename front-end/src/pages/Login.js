@@ -76,10 +76,7 @@ const Login = ({login, authenticateEmployee }) => {
                             <button id="login-button" >Login</button>
                         </div>
                     </form>   
-                </div>                 
-                <div className="login-col-right">
-
-                </div>        
+                </div>                
             </div>            
         </div>
         </>
