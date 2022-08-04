@@ -85,9 +85,6 @@ const Register = ({login, createEmployee}) => {
                             </div>
                         </form>
                     </div>
-                    <div className="register-col-right">
-                        
-                    </div>
                 </div>
             </div>  
         </>      
