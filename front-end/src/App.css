@@ -1060,6 +1060,18 @@ ul a:hover {
     display: none;
   }
 
+  .login-col-left {
+    /* grid-area: 1 / 1 / 2 / 2; */
+    width: 100vw;
+    /* height: 550px;
+    margin: auto; */
+    /* display: grid;
+    grid-template-rows: 1fr 2.5fr 1fr;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: darkgray 0.5px 0.5px 6px; */
+  }
+
   .mobile-header {
     width: 100%;
     height: 80px;
