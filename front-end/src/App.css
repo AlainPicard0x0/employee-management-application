@@ -1047,7 +1047,7 @@ ul a:hover {
 
   .login-form-container,
   .register-form-container {
-    width: 95vw;
+    width: 100vw;
     height: 650px;
     margin: auto;
     display: grid;
