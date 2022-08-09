@@ -1064,6 +1064,11 @@ ul a:hover {
     width: 100vw;
   }
 
+  .form-group input,
+  .form-group button {
+    width: 225px;
+  }
+
   .mobile-header {
     width: 100%;
     height: 80px;
