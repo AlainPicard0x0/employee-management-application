@@ -1065,7 +1065,8 @@ ul a:hover {
   }
 
   .form-group input,
-  .form-group button {
+  .form-group button,
+  .form-group label {
     width: 225px;
   }
 
