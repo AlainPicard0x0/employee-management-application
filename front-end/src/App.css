@@ -1058,8 +1058,10 @@ ul a:hover {
     display: none;
   }
 
-  .login-col-left {
+  .login-col-left,
+  .register-col-left {
     width: 100vw;
+    height: 100vh;
   }
 
   .form-group input,
