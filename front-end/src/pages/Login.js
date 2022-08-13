@@ -57,8 +57,7 @@ const Login = ({login, authenticateEmployee }) => {
             </div>            
         </div>
         <div className="login-mobile">
-            <div className="mobile-login-form-container">
-                
+            <div className="mobile-login-form-container">                
                 <div className="mobile-login-form-header">
                     <h2>Login</h2>
                     <p>Mobile Don't have an account yet? <a href="./register">Sign Up</a></p>
@@ -75,8 +74,7 @@ const Login = ({login, authenticateEmployee }) => {
                     <div className="form-group">
                         <button id="login-button" >Login</button>
                     </div>
-                </form>   
-                                
+                </form>                               
             </div>            
         </div>
         </>
