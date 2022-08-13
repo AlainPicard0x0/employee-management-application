@@ -102,6 +102,7 @@ ul a:hover {
 }
 
 .login-form-header,
+.mobile-login-form-header,
 .register-form-header {
   color: #000;
   grid-row: 1 / 2;
