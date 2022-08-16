@@ -1038,13 +1038,19 @@ ul a:hover {
   .login-mobile,
   .register-mobile,
   .not-found {
-    width: 95vw;
+    width: 100vw;
     margin: auto;
     padding: 5px;
     text-align: center;
     color: #fff;
     min-height: 85.75vh;
     display: flex;
+  }
+
+  .login-mobile {
+    background: url("../public/images/employee-management-background-image01.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   .login-form-container,
