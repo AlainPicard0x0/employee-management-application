@@ -1039,12 +1039,13 @@ ul a:hover {
   .register-mobile,
   .not-found {
     width: 100vw;
-    margin: auto;
+    margin: 25px auto;
     padding: 5px;
     text-align: center;
     color: #fff;
-    min-height: 98vh;
+    min-height: 95vh;
     display: flex;
+    justify-content: center;
   }
 
   .login-mobile {
