@@ -1076,7 +1076,11 @@ ul a:hover {
   .form-group input,
   .form-group button,
   .form-group label {
-    width: 225px;
+    width: 225px;    
+  }
+
+  .form-group input {
+    background: rgba(255, 255, 255, 0.75);
   }
 
   .mobile-header {
