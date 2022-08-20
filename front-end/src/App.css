@@ -1098,6 +1098,10 @@ ul a:hover {
     margin: 25px auto 10px auto;
   }
 
+  .mobile-login-form-header h2 {
+    color: #1a2c80;
+  }
+
   .mobile-header-selection-container {
     width: 100%;
     display: flex;
