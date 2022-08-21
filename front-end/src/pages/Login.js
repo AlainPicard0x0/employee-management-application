@@ -60,7 +60,7 @@ const Login = ({login, authenticateEmployee }) => {
             <div className="mobile-login-form-container">                
                 <div className="mobile-login-form-header">
                     <h2>Login</h2>
-                    <p>Mobile Don't have an account yet? <a href="./register">Sign Up</a></p>
+                    <p>Don't have an account yet? <a href="./register">Sign Up</a></p>
                 </div>
                 <form className="login-form" onSubmit={ handleSubmit }>
                     <div className="form-group">
