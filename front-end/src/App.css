@@ -1098,7 +1098,8 @@ ul a:hover {
     margin: 25px auto 10px auto;
   }
 
-  .mobile-login-form-header h2 {
+  .mobile-login-form-header h2,
+  .mobile-login-form-header p {
     color: #1a2c80;
   }
 
