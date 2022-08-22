@@ -1048,7 +1048,8 @@ ul a:hover {
     justify-content: center;
   }
 
-  .login-mobile {
+  .login-mobile,
+  .register-mobile {
     background: url("../public/images/employee-management-background-image01.jpg") no-repeat;
     background-position: center;
     background-size: cover;
