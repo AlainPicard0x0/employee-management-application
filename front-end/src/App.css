@@ -1064,10 +1064,6 @@ ul a:hover {
     background-color: #fff;
   }
 
-  .register-col-right {
-    display: none;
-  }
-
   .login-col-left,
   .register-col-left {
     width: 100vw;
