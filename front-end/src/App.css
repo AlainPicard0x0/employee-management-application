@@ -1090,7 +1090,8 @@ ul a:hover {
     border-radius: 5px 5px 0 0;
   }
 
-  .mobile-login-form-header {
+  .mobile-login-form-header,
+  .mobile-register-form-header {
     width: 225px;
     margin: 25px auto 10px auto;
   }
