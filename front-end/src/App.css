@@ -1097,7 +1097,8 @@ ul a:hover {
   }
 
   .mobile-login-form-header h2,
-  .mobile-login-form-header p {
+  .mobile-login-form-header p,
+  .mobile-register-form-header h2 {
     color: #1a2c80;
   }
 
