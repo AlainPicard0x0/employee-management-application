@@ -1269,6 +1269,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                                                     
                             <div className="mobile-user-icon-background">
                                 <FontAwesomeIcon icon={faUser} />
+                                <button id="logout-btn" onClick={() => setLogin(false)}>Logout</button>
                             </div>
                             <div className="time-sheet-row-1-lower-row">
                                 <div className="oval-image-one">
