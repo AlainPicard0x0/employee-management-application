@@ -1267,7 +1267,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
                                                                     
-                            <div className="">
+                            <div className="mobile-logout-btn-container">
                                 
                                 <button id="logout-btn" onClick={() => setLogin(false)}>Logout</button>
                             </div>
