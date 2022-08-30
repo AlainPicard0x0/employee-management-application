@@ -1263,12 +1263,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 <div id="time-sheet-page" className="time-sheet-mobile-body mobile-container selected">
                     <section id="mobile-time-sheet-row-1">
                         <div className="mobile-time-sheet-greeting-section">
-                            <div className="mobile-time-sheet-greet-title">
-                                <h2>Welcome,</h2>
-                            </div>
-                                                                    
                             <div className="mobile-user-icon-background">
                                 <FontAwesomeIcon icon={faUser} />
+                            </div>
+                                                                    
+                            <div className="">
+                                
                                 <button id="logout-btn" onClick={() => setLogin(false)}>Logout</button>
                             </div>
                             <div className="time-sheet-row-1-lower-row">
