@@ -1269,7 +1269,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                                                     
                             <div className="mobile-logout-btn-container">
                                 
-                                <button id="logout-btn" onClick={() => setLogin(false)}>Logout</button>
+                                <button id="mobile-logout-btn" onClick={() => setLogin(false)}>Logout</button>
                             </div>
                             <div className="time-sheet-row-1-lower-row">
                                 <div className="oval-image-one">
