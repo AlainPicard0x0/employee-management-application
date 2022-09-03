@@ -1441,7 +1441,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             <div className="mobile-vacation-request-btn-container">
                                  {/* button on line 1440 was only calling useMobileVacationHours()  */}
-                                <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours(); getTotalSickHours(); resetInputValues()}} id="mobile-vacation-request-btn">Request Vacation</button>
+                                <button onClick={useMobileVacationHours} id="mobile-vacation-request-btn">Request Vacation</button>
                             </div>
                             
                         </div>
