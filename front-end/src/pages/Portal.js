@@ -736,6 +736,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => {
             setVacationHours(data);
+            adjustVacationSickHours(); 
+            getTotalVacationHours(); 
+            // getTotalSickHours(); 
+            resetInputValues()
             document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
             adjustVacationPie();
             return data;
@@ -1436,7 +1440,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 </div>
                             </div>
                             <div className="mobile-vacation-request-btn-container">
-                                <button onClick={useMobileVacationHours} id="mobile-vacation-request-btn">Request Vacation</button>
+                                 {/* button on line 1440 was only calling useMobileVacationHours()  */}
+                                <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours(); getTotalSickHours(); resetInputValues()}} id="mobile-vacation-request-btn">Request Vacation</button>
                             </div>
                             
                         </div>
