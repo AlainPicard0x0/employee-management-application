@@ -328,10 +328,10 @@ ul a:hover {
 }
 
 #mobile-vacation-pie {
-  --p: 40;
-  --b: 27px;
+  --p: 80;
+  --b: 22px;
   --c: orange; 
-  --w: 150px;
+  --w: 100px;
   width: var(--w);
   height: var(--w);
   position: relative;
@@ -374,9 +374,9 @@ ul a:hover {
 
 #mobile-vacation-pie-background {
   --p: 100;
-  --b: 27px;
+  --b: 22px;
   --c: #7e7e7e;
-  --w: 150px;
+  --w: 100px;
   width: var(--w);
   height: var(--w);
   top: -5px;
