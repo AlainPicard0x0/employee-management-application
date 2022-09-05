@@ -100,6 +100,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         vacationPie.style.setProperty("--p", vacationValue * 1.25);
     }
 
+    const adjustMobileVacationPie = () => {
+        
+    }
+
     // removed this from vacation-hours-input onChange() 4/30/2022
     const findVacationHoursRemaining = () => {
         fetch(`${api}/login/vacation`, {
@@ -1430,7 +1434,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <p>Vacation Used</p>
                             </div>
                             <div className="mobile-vacation-pie-container">
-                                <div className="portal-vacation-leave">
+                                <div className="mobile-portal-vacation-leave">
                                     <div id="vacation-pie">
                                         <div id="vacation-pie-background"></div>
                                     </div>                            
@@ -1456,7 +1460,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             </div>
                             
                             <div className="vac-plus-btn">
-                                <h3>Add</h3>
+                                <button onClick={adjustMobileVacationPie}>Add</button>
                                 <FontAwesomeIcon icon={faPlusCircle} />
                             </div>
                             <div className="vac-minus-btn">
