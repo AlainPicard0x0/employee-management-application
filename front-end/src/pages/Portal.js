@@ -101,7 +101,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const adjustMobileVacationPie = () => {
-        
+        const mobileVacationPie = document.getElementById("mobile-vacation-pie");
+        const mobileVacationHoursRemaining = document.getElementsByClassName("mobile-vacation-pie-hours-text")[0];
+        const mobileVacationValue = parseInt(mobileVacationHoursRemaining.innerText);
+        mobileVacationHoursRemaining.innerText = mobileVacationValue;
+        // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)
+        mobileVacationPie.style.setProperty("--p", mobileVacationValue * 1.25);
     }
 
     // removed this from vacation-hours-input onChange() 4/30/2022
@@ -119,6 +124,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .then(data => {
             setVacationHours(data);
             adjustVacationPie();
+            adjustMobileVacationPie();
         })        
     }
 
@@ -680,6 +686,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             .then(data => {
                 setVacationHours(data);
                 adjustVacationPie();
+                adjustMobileVacationPie();
                 mobileVacationHoursRemaining = data;
                 if(mobileVacationHoursToUse < 8) {
                     mobileVacationHoursToUse ++;
@@ -712,6 +719,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             .then(data => {
                 setVacationHours(data);
                 adjustVacationPie();
+                adjustMobileVacationPie();
                 mobileVacationHoursRemaining = data;
                 if(mobileVacationHoursToUse > 0) {
                     mobileVacationHoursToUse --;
@@ -746,6 +754,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             resetInputValues()
             document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
             adjustVacationPie();
+            adjustMobileVacationPie();
             return data;
         })
     }    
