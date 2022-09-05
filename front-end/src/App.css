@@ -291,6 +291,15 @@ ul a:hover {
   position: relative;
 }
 
+.mobile-portal-vacation-leave {
+  grid-area: 2 / 2 / 6 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .vacation-leave-hours {
   border: #000 1px solid;
   height: 160px;
