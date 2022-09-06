@@ -1467,11 +1467,17 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                             <div className="add-remove-vacation-text">
                                 <p>Add / Remove Vacation Hours</p>
                             </div>
+
+                            <button className="vac-plus-btn" onClick={adjustMobileVacationPie}>
+                                <h3>Add</h3>
+                                <FontAwesomeIcon icon={faPlusCircle} />
+                            </button>
                             
-                            <div className="vac-plus-btn">
+                            {/* <div className="vac-plus-btn">
                                 <button onClick={adjustMobileVacationPie}>Add</button>
                                 <FontAwesomeIcon icon={faPlusCircle} />
-                            </div>
+                            </div> */}
+
                             <div className="vac-minus-btn">
                                 <h3>Remove</h3>
                                 <FontAwesomeIcon icon={faMinusCircle} />
