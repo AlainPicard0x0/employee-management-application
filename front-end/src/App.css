@@ -1636,6 +1636,7 @@ ul a:hover {
     color: #1a2c80;
     background-image: linear-gradient(#ffb507, #ab7800);
     font-size: 0.6rem;
+    border: none;
   }
 
   .vac-minus-btn,
