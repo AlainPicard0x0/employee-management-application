@@ -1472,16 +1472,21 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <h3>Add</h3>
                                 <FontAwesomeIcon icon={faPlusCircle} />
                             </button>
+
+                            <button className="vac-minus-btn" onClick={adjustMobileVacationPie}>
+                                <h3>Remove</h3>
+                                <FontAwesomeIcon icon={faMinusCircle} />
+                            </button>
                             
                             {/* <div className="vac-plus-btn">
                                 <button onClick={adjustMobileVacationPie}>Add</button>
                                 <FontAwesomeIcon icon={faPlusCircle} />
                             </div> */}
 
-                            <div className="vac-minus-btn">
+                            {/* <div className="vac-minus-btn">
                                 <h3>Remove</h3>
                                 <FontAwesomeIcon icon={faMinusCircle} />
-                            </div>          
+                            </div>           */}
                         </div>
                     </section>
                     <section id="vacation-row-four">
