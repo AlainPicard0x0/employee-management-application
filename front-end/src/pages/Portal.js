@@ -41,6 +41,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }, [login, navigate])
 
+    const printRemainingMobileVacHours = () => {
+        const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
+        let remainingHours = parseInt(mobileVacationContainer.innerText);
+        
+        console.log(remainingHours);
+    }
+
     // TODO implement previous week button and next week button
     const getCurrentWeek = () => {        
         let today = new Date();
@@ -107,6 +114,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         mobileVacationHoursRemaining.innerText = mobileVacationValue;
         // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)
         mobileVacationPie.style.setProperty("--p", mobileVacationValue * 1.25);
+        printRemainingMobileVacHours();
     }
 
     // removed this from vacation-hours-input onChange() 4/30/2022
