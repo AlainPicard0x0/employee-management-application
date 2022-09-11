@@ -41,11 +41,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }, [login, navigate])
 
-    const printRemainingMobileVacHours = () => {
+    // Currently vacationPie is changing but is behind by one. Value is pulled from UI and is not updated before adjust
+    // fires off. Need to pull from db instead?
+    const adjustMobileVacHoursPie = () => {
         const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
         let remainingHours = parseInt(mobileVacationContainer.innerText);
-        
-        console.log(remainingHours);
+        const mobileVacationPie = document.getElementById("mobile-vacation-pie");
+        mobileVacationPie.style.setProperty("--p", remainingHours * 1.25);       
     }
 
     // TODO implement previous week button and next week button
@@ -114,7 +116,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         mobileVacationHoursRemaining.innerText = mobileVacationValue;
         // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)
         mobileVacationPie.style.setProperty("--p", mobileVacationValue * 1.25);
-        printRemainingMobileVacHours();
+        adjustMobileVacHoursPie();
     }
 
     // removed this from vacation-hours-input onChange() 4/30/2022
