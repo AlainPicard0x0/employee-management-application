@@ -47,6 +47,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
         let remainingHours = parseInt(mobileVacationContainer.innerText);
         const mobileVacationPie = document.getElementById("mobile-vacation-pie");
+        // mobileVacationContainer.innerText = remainingHours;
         mobileVacationPie.style.setProperty("--p", remainingHours * 1.25);       
     }
 
