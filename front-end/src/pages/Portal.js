@@ -43,12 +43,16 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     // Currently vacationPie is changing but is behind by one. Value is pulled from UI and is not updated before adjust
     // fires off. Need to pull from db instead?
-    const adjustMobileVacHoursPie = () => {
+    const adjustMobileVacHours = () => {
         const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
-        let remainingHours = parseInt(mobileVacationContainer.innerText);
+        let remainingHours = parseInt(mobileVacationContainer.innerText);        
+        mobileVacationContainer.innerText = remainingHours;
+        console.log(remainingHours);
+    }
+
+    const adjustMobileVacationPie = (remainingHours) => {
         const mobileVacationPie = document.getElementById("mobile-vacation-pie");
-        // mobileVacationContainer.innerText = remainingHours;
-        mobileVacationPie.style.setProperty("--p", remainingHours * 1.25);       
+        mobileVacationPie.style.setProperty("--p", remainingHours * 1.25);
     }
 
     // TODO implement previous week button and next week button
@@ -110,15 +114,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         vacationPie.style.setProperty("--p", vacationValue * 1.25);
     }
 
-    const adjustMobileVacationPie = () => {
-        const mobileVacationPie = document.getElementById("mobile-vacation-pie");
-        const mobileVacationHoursRemaining = document.getElementsByClassName("mobile-vacation-pie-hours-text")[0];
-        const mobileVacationValue = parseInt(mobileVacationHoursRemaining.innerText);
-        mobileVacationHoursRemaining.innerText = mobileVacationValue;
-        // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)
-        mobileVacationPie.style.setProperty("--p", mobileVacationValue * 1.25);
-        adjustMobileVacHoursPie();
-    }
+    // const adjustMobileVacationPie = () => {
+    //     const mobileVacationPie = document.getElementById("mobile-vacation-pie");
+    //     const mobileVacationHoursRemaining = document.getElementsByClassName("mobile-vacation-pie-hours-text")[0];
+    //     const mobileVacationValue = parseInt(mobileVacationHoursRemaining.innerText);
+    //     mobileVacationHoursRemaining.innerText = mobileVacationValue;
+    //     // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)
+    //     mobileVacationPie.style.setProperty("--p", mobileVacationValue * 1.25);
+    //     adjustMobileVacHoursPie();
+    // }
 
     // removed this from vacation-hours-input onChange() 4/30/2022
     const findVacationHoursRemaining = () => {
@@ -696,8 +700,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })
             .then(data => {
                 setVacationHours(data);
-                adjustVacationPie();
-                adjustMobileVacationPie();
+                // adjustVacationPie();
+                // adjustMobileVacationPie();
                 mobileVacationHoursRemaining = data;
                 if(mobileVacationHoursToUse < 8) {
                     mobileVacationHoursToUse ++;
@@ -729,8 +733,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })
             .then(data => {
                 setVacationHours(data);
-                adjustVacationPie();
-                adjustMobileVacationPie();
+                // adjustVacationPie();
+                // adjustMobileVacationPie();
                 mobileVacationHoursRemaining = data;
                 if(mobileVacationHoursToUse > 0) {
                     mobileVacationHoursToUse --;
@@ -1479,12 +1483,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                                 <p>Add / Remove Vacation Hours</p>
                             </div>
 
-                            <button className="vac-plus-btn" onClick={adjustMobileVacationPie}>
+                            <button className="vac-plus-btn" onClick={adjustMobileVacHours}>
                                 <h3>Add</h3>
                                 <FontAwesomeIcon icon={faPlusCircle} />
                             </button>
 
-                            <button className="vac-minus-btn" onClick={adjustMobileVacationPie}>
+                            <button className="vac-minus-btn" onClick={adjustMobileVacHours}>
                                 <h3>Remove</h3>
                                 <FontAwesomeIcon icon={faMinusCircle} />
                             </button>
