@@ -48,11 +48,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         let remainingHours = parseInt(mobileVacationContainer.innerText);        
         mobileVacationContainer.innerText = remainingHours;
         console.log(remainingHours);
+        return remainingHours;
     }
 
-    const adjustMobileVacationPie = (remainingHours) => {
+    const adjustMobileVacationPie = () => {
+        let hours = adjustMobileVacHours();
         const mobileVacationPie = document.getElementById("mobile-vacation-pie");
-        mobileVacationPie.style.setProperty("--p", remainingHours * 1.25);
+        mobileVacationPie.style.setProperty("--p", hours * 1.25);
     }
 
     // TODO implement previous week button and next week button
@@ -803,7 +805,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 if(mobileSickHoursToUse < 8) {
                     mobileSickHoursToUse ++;
                     mobileSickUsedBlock.innerText = mobileSickHoursToUse;
-                    mobileSickRemainingBlock.innerText = mobileSickHoursRemaining - mobileSickHoursToUse;                
+                    mobileSickRemainingBlock.innerText = mobileSickHoursRemaining - mobileSickHoursToUse;
+                    adjustMobileVacationPie();                
                 }
                 else {
                     alert("Unable to use more than 8 hours");
