@@ -53,6 +53,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const adjustMobileVacationPie = () => {
         let hours = adjustMobileVacHours();
+        console.log("Hours are: " + hours);
         const mobileVacationPie = document.getElementById("mobile-vacation-pie");
         mobileVacationPie.style.setProperty("--p", hours * 1.25);
     }
@@ -708,7 +709,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 if(mobileVacationHoursToUse < 8) {
                     mobileVacationHoursToUse ++;
                     mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
-                    mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse;                
+                    mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse; 
+                    adjustMobileVacationPie();               
                 }
                 else {
                     alert("Unable to use more than 8 hours");
@@ -805,8 +807,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 if(mobileSickHoursToUse < 8) {
                     mobileSickHoursToUse ++;
                     mobileSickUsedBlock.innerText = mobileSickHoursToUse;
-                    mobileSickRemainingBlock.innerText = mobileSickHoursRemaining - mobileSickHoursToUse;
-                    adjustMobileVacationPie();                
+                    mobileSickRemainingBlock.innerText = mobileSickHoursRemaining - mobileSickHoursToUse;                
                 }
                 else {
                     alert("Unable to use more than 8 hours");
