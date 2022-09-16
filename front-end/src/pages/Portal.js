@@ -744,6 +744,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     mobileVacationHoursToUse --;
                     mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
                     mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse;
+                    adjustMobileVacationPie();
                 }
                 else {
                     alert("Cannot use less than 0 hours");
