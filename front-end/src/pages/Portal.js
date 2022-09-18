@@ -703,8 +703,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })
             .then(data => {
                 setVacationHours(data);
-                // adjustVacationPie();
-                // adjustMobileVacationPie();
                 mobileVacationHoursRemaining = data;
                 if(mobileVacationHoursToUse < 8) {
                     mobileVacationHoursToUse ++;
