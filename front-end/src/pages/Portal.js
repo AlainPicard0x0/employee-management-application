@@ -117,16 +117,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         vacationPie.style.setProperty("--p", vacationValue * 1.25);
     }
 
-    // const adjustMobileVacationPie = () => {
-    //     const mobileVacationPie = document.getElementById("mobile-vacation-pie");
-    //     const mobileVacationHoursRemaining = document.getElementsByClassName("mobile-vacation-pie-hours-text")[0];
-    //     const mobileVacationValue = parseInt(mobileVacationHoursRemaining.innerText);
-    //     mobileVacationHoursRemaining.innerText = mobileVacationValue;
-    //     // Set value of --p(css variable) equal to number of hours remaining (multiply by 1.25 to base 100% on 80 vacation hours)
-    //     mobileVacationPie.style.setProperty("--p", mobileVacationValue * 1.25);
-    //     adjustMobileVacHoursPie();
-    // }
-
     // removed this from vacation-hours-input onChange() 4/30/2022
     const findVacationHoursRemaining = () => {
         fetch(`${api}/login/vacation`, {
