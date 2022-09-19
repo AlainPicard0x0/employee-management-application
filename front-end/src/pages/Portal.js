@@ -182,9 +182,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
          else {
              if(isNaN(sickHoursRequestedInput.value) || sickHoursRequestedInput.value < 1) {
                  sickHoursRequestedInput.value = 0;
-                 // won't need this line once eventListener added to sick-hours input
-                 // sickHoursRemainingElement.innerText = sickHours;
-                 //
                  return;
              }
              if(sickHoursRemaining < 0) {
