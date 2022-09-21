@@ -220,10 +220,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 alert("You do not have a sufficient number of vacation hours remaining");
                 vacationHoursRequestedInput.value = vacationHoursRemaining;
             }
-            // adjust pie chart for vacation hours
-            // getTotalVacationHours(e);
-            // vacationHoursRemainingElement.innerText = newHours;
-            // vacationPie.style.setProperty("--p", newHours * 1.25);
         }
     }
 
