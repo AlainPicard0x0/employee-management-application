@@ -211,7 +211,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         else {
             if(isNaN(vacationHoursRequestedInput.value) || vacationHoursRequestedInput.value < 1) {
                 vacationHoursRequestedInput.value = 0;
-                //vacationHoursRemainingElement.innerText = vacationHours;
                 return;
             }
             if(vacationHoursRemaining < 0) {
