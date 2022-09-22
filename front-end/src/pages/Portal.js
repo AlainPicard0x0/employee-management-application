@@ -747,8 +747,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         .then(data => {
             setVacationHours(data);
             adjustVacationSickHours(); 
-            getTotalVacationHours(); 
-            // getTotalSickHours(); 
+            getTotalVacationHours();  
             resetInputValues()
             document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
             adjustVacationPie();
