@@ -905,7 +905,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                         <Calendar calendarType="US" onChange={onChange} value={value} />
                     </div>
 
-                    {/* Add hours worked section? */}
                     <div className="time-card">
                         <div className="time-card-header">
                             <div id="time-card-date">
