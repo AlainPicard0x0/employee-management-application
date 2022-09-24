@@ -1240,7 +1240,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
                             <div className="submit-container">
                                 <div className="submit-btn-container">
-                                    {/* <button onClick={e => {spendVacationHours(e); spendSickHours(e); getCurrentWeek() }} id="time-card-submit-btn">Submit for Approval</button> */}
                                     <button onClick={(e) => {adjustVacationSickHours(); getTotalVacationHours(); getTotalSickHours(); resetInputValues()}} id="time-card-submit-btn">Submit for Approval</button>
                                 </div>
                                 <div className="reg-hours-total-container">
