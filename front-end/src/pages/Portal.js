@@ -300,7 +300,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })       
     }
 
-    // HTML on line 325
     const calculateTime = () => {
         // Monday
         let mondayTimeIn = document.getElementById("monday-time-in").valueAsNumber;
