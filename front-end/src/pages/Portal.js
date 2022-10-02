@@ -41,8 +41,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         }
     }, [login, navigate])
 
-    // Currently vacationPie is changing but is behind by one. Value is pulled from UI and is not updated before adjust
-    // fires off. Need to pull from db instead?
+    // Currently when you press the Request Vacation btn, the vacation Used value is being carried over
+    // to the next time you press Add Vacation Hours. 
     const adjustMobileVacHours = () => {
         const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
         let remainingHours = parseInt(mobileVacationContainer.innerText);        
@@ -690,7 +690,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     mobileVacationHoursToUse ++;
                     mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
                     mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse; 
-                    adjustMobileVacationPie();               
+                    adjustMobileVacationPie();            
                 }
                 else {
                     alert("Unable to use more than 8 hours");
