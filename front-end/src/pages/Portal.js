@@ -45,7 +45,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     // to the next time you press Add Vacation Hours. 
     const adjustMobileVacHours = () => {
         const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
-        let remainingHours = parseInt(mobileVacationContainer.innerText);        
+        let remainingHours = parseInt(mobileVacationContainer.innerText);
         mobileVacationContainer.innerText = remainingHours;
         console.log(remainingHours);
         return remainingHours;
@@ -689,7 +689,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     mobileVacationHoursToUse ++;
                     mobileVacationUsedBlock.innerText = mobileVacationHoursToUse;
                     mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse; 
-                    adjustMobileVacationPie();            
+                    adjustMobileVacationPie();    
+                    // mobileVacationUsedBlock.innerText = 0;     
                 }
                 else {
                     alert("Unable to use more than 8 hours");
@@ -749,8 +750,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             getTotalVacationHours();  
             resetInputValues()
             document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
-            adjustVacationPie();
-            adjustMobileVacationPie();
+            // adjustVacationPie();
+            // adjustMobileVacationPie();
             return data;
         })
     }    
