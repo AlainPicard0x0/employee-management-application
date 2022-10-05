@@ -39,24 +39,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         else {
             navigate("/");
         }
-    }, [login, navigate])
-
-    // Currently when you press the Request Vacation btn, the vacation Used value is being carried over
-    // to the next time you press Add Vacation Hours. 
-    const adjustMobileVacHours = () => {
-        const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
-        let remainingHours = parseInt(mobileVacationContainer.innerText);
-        mobileVacationContainer.innerText = remainingHours;
-        console.log(remainingHours);
-        return remainingHours;
-    }
-
-    const adjustMobileVacationPie = () => {
-        let hours = adjustMobileVacHours();
-        console.log("Hours are: " + hours);
-        const mobileVacationPie = document.getElementById("mobile-vacation-pie");
-        mobileVacationPie.style.setProperty("--p", hours * 1.25);
-    }
+    }, [login, navigate])   
 
     // TODO implement previous week button and next week button
     const getCurrentWeek = () => {        
@@ -629,6 +612,26 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         document.getElementsByClassName("reg-hours-total")[0].innerText = "0:00";
     }
 
+    /* ###########################################   Mobile    ################################################## */
+
+    // Currently when you press the Request Vacation btn, the vacation Used value is being carried over
+    // to the next time you press Add Vacation Hours. 
+    const adjustMobileVacHours = () => {
+        const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
+        let remainingHours = parseInt(mobileVacationContainer.innerText);
+        mobileVacationContainer.innerText = remainingHours;
+        console.log(remainingHours);
+        return remainingHours;
+    }
+
+
+    const adjustMobileVacationPie = () => {
+        let hours = adjustMobileVacHours();
+        console.log("Hours are: " + hours);
+        const mobileVacationPie = document.getElementById("mobile-vacation-pie");
+        mobileVacationPie.style.setProperty("--p", hours * 1.25);
+    }
+
     const mobileHeaderSelection = document.getElementsByClassName("mobile-header-selection");
     const mobileContainer = document.getElementsByClassName("mobile-container");
     const handleSelection = (e) => {
@@ -698,7 +701,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })            
         })
     }
-    
+
     const subtractMobileVacationHours = () => {
         const mobileVacationMinusBtn = document.getElementsByClassName("vac-minus-btn")[0];
         const mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
@@ -754,13 +757,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             // adjustMobileVacationPie();
             return data;
         })
-    }    
-    
+    }
+
     let mobileSickHoursToUse;
     if(mobileSickHoursToUse == undefined) {
         mobileSickHoursToUse = 0;
     }
-    
+
     let mobileSickHoursRemaining;    
     const addMobileSickHours = () => {
         const mobileSickPlusBtn = document.getElementsByClassName("sick-plus-btn")[0];
@@ -846,6 +849,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             return data;
         })
     }
+
+
     
 
     return (
