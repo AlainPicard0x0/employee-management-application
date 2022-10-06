@@ -614,24 +614,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     /* ###########################################   Mobile    ################################################## */
 
-    // Currently when you press the Request Vacation btn, the vacation Used value is being carried over
-    // to the next time you press Add Vacation Hours. 
-    const adjustMobileVacHours = () => {
-        const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
-        let remainingHours = parseInt(mobileVacationContainer.innerText);
-        mobileVacationContainer.innerText = remainingHours;
-        console.log(remainingHours);
-        return remainingHours;
-    }
-
-
-    const adjustMobileVacationPie = () => {
-        let hours = adjustMobileVacHours();
-        console.log("Hours are: " + hours);
-        const mobileVacationPie = document.getElementById("mobile-vacation-pie");
-        mobileVacationPie.style.setProperty("--p", hours * 1.25);
-    }
-
+    // Handle selection of mobile pages.
     const mobileHeaderSelection = document.getElementsByClassName("mobile-header-selection");
     const mobileContainer = document.getElementsByClassName("mobile-container");
     const handleSelection = (e) => {
@@ -661,7 +644,29 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     for(let i = 0; i < mobileHeaderSelection.length; i++) {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
-    }    
+    }
+
+    // Handle adjustment of mobile vacation hours.
+
+    // Currently when you press the Request Vacation btn, the vacation Used value is being carried over
+    // to the next time you press Add Vacation Hours. 
+    const adjustMobileVacHours = () => {
+        const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
+        let remainingHours = parseInt(mobileVacationContainer.innerText);
+        mobileVacationContainer.innerText = remainingHours;
+        console.log(remainingHours);
+        return remainingHours;
+    }
+
+
+    const adjustMobileVacationPie = () => {
+        let hours = adjustMobileVacHours();
+        console.log("Hours are: " + hours);
+        const mobileVacationPie = document.getElementById("mobile-vacation-pie");
+        mobileVacationPie.style.setProperty("--p", hours * 1.25);
+    }
+
+        
     
     let mobileVacationHoursToUse;
     if(mobileVacationHoursToUse == undefined) {
