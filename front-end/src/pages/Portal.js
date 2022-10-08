@@ -612,9 +612,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         document.getElementsByClassName("reg-hours-total")[0].innerText = "0:00";
     }
 
-    /* ###########################################   Mobile    ################################################## */
+    /* #######################################   Mobile Section   ############################################# */
 
-    // Handle selection of mobile pages.
+
+    //********************************  Handle selection of mobile pages  *************************************//    
     const mobileHeaderSelection = document.getElementsByClassName("mobile-header-selection");
     const mobileContainer = document.getElementsByClassName("mobile-container");
     const handleSelection = (e) => {
@@ -646,14 +647,20 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         mobileHeaderSelection[i].addEventListener("click", handleSelection);
     }
 
-    // Handle adjustment of mobile vacation hours.
+    //****************************  Handle adjustment of mobile vacation hours  ***********************/
 
     // Currently when you press the Request Vacation btn, the vacation Used value is being carried over
     // to the next time you press Add Vacation Hours. 
     let mobileVacationUsedBlock;
     if(document.getElementsByClassName("mobile-vacation-used-block")[0]) {
         mobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0].innerText;
-    } 
+        console.log(mobileVacationUsedBlock)
+    }
+
+    let mobileVacationHoursToUse;
+    if(mobileVacationHoursToUse == undefined) {
+        mobileVacationHoursToUse = 0;
+    }
 
     const adjustMobileVacHours = () => {
         const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
@@ -673,10 +680,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
         
     
-    let mobileVacationHoursToUse;
-    if(mobileVacationHoursToUse == undefined) {
-        mobileVacationHoursToUse = 0;
-    }
+    
     
     let mobileVacationHoursRemaining;    
     const addMobileVacationHours = () => {
@@ -703,8 +707,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                     mobileVacationUsedBlock = mobileVacationHoursToUse;
                     mobileVacationRemainingBlock.innerText = mobileVacationHoursRemaining - mobileVacationHoursToUse; 
                     adjustMobileVacationPie();    
-                    // mobileVacationUsedBlock.innerText = 0;    
-                    mobileVacationUsedBlock = 0; 
+                    // mobileVacationUsedBlock.innerText = 0; 
                     console.log(mobileVacationUsedBlock);
                 }
                 else {
@@ -748,6 +751,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const useMobileVacationHours = () => {
         let displayedMobileVacationHoursToUse = parseInt(document.getElementsByClassName("mobile-vacation-used-block")[0].innerText);
+        mobileVacationUsedBlock = 0;
         fetch(`${api}/portal/vacation-leave`, {
             method: "GET",
             headers: {
@@ -772,7 +776,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             // adjustVacationPie();
             // adjustMobileVacationPie();
             console.log(mobileVacationUsedBlock);
-            console.log(mobileVacationHoursToUse);
+            // console.log(mobileVacationHoursToUse);
             return data;
         })
     }
