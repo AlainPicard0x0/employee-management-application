@@ -652,8 +652,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     // Currently when you press the Request Vacation btn, the vacation Used value is being carried over
     // to the next time you press Add Vacation Hours. 
     
-    let mobileVacationHoursRemaining;
-    let mobileVacationHoursToUse;
+    let mobileVacationHoursRemaining; // Vacation Remaining
+    let mobileVacationHoursToUse; // Vacation Used
     
     if(mobileVacationHoursToUse == undefined) {
         mobileVacationHoursToUse = 0;
