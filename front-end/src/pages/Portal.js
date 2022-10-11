@@ -13,6 +13,8 @@ import {faSyringe} from '@fortawesome/free-solid-svg-icons';
 import {faBuildingUser} from '@fortawesome/free-solid-svg-icons';
 import {faBusinessTime} from '@fortawesome/free-solid-svg-icons';
 
+let mobileVacationHoursToUse = 0; // Vacation Used
+
 const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     const [sickHours, setSickHours] = useState(null);
@@ -653,7 +655,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     // to the next time you press Add Vacation Hours. 
     
     let mobileVacationHoursRemaining; // Vacation Remaining
-    let mobileVacationHoursToUse; // Vacation Used
+    
     
     if(mobileVacationHoursToUse == undefined) {
         mobileVacationHoursToUse = 0;
@@ -663,13 +665,11 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         const mobileVacationContainer = document.getElementsByClassName("mobile-vacation-remaining-block")[0];
         let remainingHours = parseInt(mobileVacationContainer.innerText);
         mobileVacationContainer.innerText = remainingHours;
-        // console.log(remainingHours);
         return remainingHours;
     }
 
     const adjustMobileVacationPie = () => {
         let hours = adjustMobileVacHours();
-        // console.log("Hours are: " + hours);
         const mobileVacationPie = document.getElementById("mobile-vacation-pie");
         mobileVacationPie.style.setProperty("--p", hours * 1.25);
     }
@@ -754,16 +754,15 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => {
             setVacationHours(data);
-            adjustVacationSickHours(); 
-            getTotalVacationHours();  
+            // adjustVacationSickHours(); 
+            // getTotalVacationHours();  
             resetInputValues()
-            // document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
+            document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
             // let currentMobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
             mobileVacationHoursToUse = 0;
             // console.log(currentMobileVacationUsedBlock.innerText);
             // adjustVacationPie();
             // adjustMobileVacationPie();
-            // console.log(mobileVacationHoursToUse);
             return data;
         })
     }
