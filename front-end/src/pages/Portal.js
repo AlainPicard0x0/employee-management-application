@@ -753,16 +753,10 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             return response.json();
         })
         .then(data => {
-            setVacationHours(data);
-            // adjustVacationSickHours(); 
-            // getTotalVacationHours();  
+            setVacationHours(data); 
             resetInputValues()
             document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
-            // let currentMobileVacationUsedBlock = document.getElementsByClassName("mobile-vacation-used-block")[0];
             mobileVacationHoursToUse = 0;
-            // console.log(currentMobileVacationUsedBlock.innerText);
-            // adjustVacationPie();
-            // adjustMobileVacationPie();
             return data;
         })
     }
