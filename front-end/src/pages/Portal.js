@@ -14,6 +14,7 @@ import {faBuildingUser} from '@fortawesome/free-solid-svg-icons';
 import {faBusinessTime} from '@fortawesome/free-solid-svg-icons';
 
 let mobileVacationHoursToUse = 0; // Vacation Used
+let mobileSickHoursToUse = 0; // Sick Hours Used
 
 const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
@@ -651,11 +652,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     //****************************  Handle adjustment of mobile vacation hours  ***********************/
 
-    // Currently when you press the Request Vacation btn, the vacation Used value is being carried over
-    // to the next time you press Add Vacation Hours. 
     
-    let mobileVacationHoursRemaining; // Vacation Remaining
     
+    //******************************* Mobile Vacation Hours **************************************/
+
+
+    let mobileVacationHoursRemaining; // Vacation Remaining    
     
     if(mobileVacationHoursToUse == undefined) {
         mobileVacationHoursToUse = 0;
@@ -760,7 +762,8 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
     }
 
-    let mobileSickHoursToUse;
+    //******************************* Mobile Sick Hours **************************************/
+
     if(mobileSickHoursToUse == undefined) {
         mobileSickHoursToUse = 0;
     }
