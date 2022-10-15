@@ -764,11 +764,19 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
 
     //******************************* Mobile Sick Hours **************************************/
 
+    let mobileSickHoursRemaining; // Sick Hours Remaining
+
     if(mobileSickHoursToUse == undefined) {
         mobileSickHoursToUse = 0;
     }
 
-    let mobileSickHoursRemaining;    
+    const adjustMobileSickHours = () => {
+        const mobileSickContainer = document.getElementsByClassName("mobile-sick-remaining-block")[0];
+        let remainingHours = parseInt(mobileSickContainer.innerText);
+        mobileSickContainer.innerText = remainingHours;
+        return remainingHours;
+    }
+    
     const addMobileSickHours = () => {
         const mobileSickPlusBtn = document.getElementsByClassName("sick-plus-btn")[0];
         const mobileSickUsedBlock = document.getElementsByClassName("mobile-sick-used-block")[0];
