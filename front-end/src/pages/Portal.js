@@ -800,13 +800,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
                 return response.json();
             })
             .then(data => {
-                setSickHours(data);
-                adjustSickPie();
+                setSickHours(data);                
                 mobileSickHoursRemaining = data;
                 if(mobileSickHoursToUse < 8) {
-                    mobileSickHoursToUse ++;
-                    mobileSickUsedBlock.innerText = mobileSickHoursToUse;
-                    mobileSickRemainingBlock.innerText = mobileSickHoursRemaining - mobileSickHoursToUse;                
+                    mobileSickHoursToUse ++;                    
+                    mobileSickRemainingBlock.innerText = mobileSickHoursRemaining - mobileSickHoursToUse;
+                    adjustMobileSickPie();
+                    mobileSickUsedBlock.innerText = mobileSickHoursToUse;                
                 }
                 else {
                     alert("Unable to use more than 8 hours");
