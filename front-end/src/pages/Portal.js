@@ -776,6 +776,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         mobileSickContainer.innerText = remainingHours;
         return remainingHours;
     }
+
+    const adjustMobileSickPie = () => {
+        let hours = adjustMobileSickHours();
+        const mobileSickPie = document.getElementById("mobile-sick-pie");
+        mobileSickPie.style.setProperty("--p", hours * 4.17);
+    }
     
     const addMobileSickHours = () => {
         const mobileSickPlusBtn = document.getElementsByClassName("sick-plus-btn")[0];
