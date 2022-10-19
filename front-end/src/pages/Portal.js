@@ -833,12 +833,12 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
             })
             .then(data => {
                 setSickHours(data);
-                adjustSickPie();
                 mobileSickHoursRemaining = data;
                 if(mobileSickHoursToUse > 0) {
                     mobileSickHoursToUse --;
                     mobileSickUsedBlock.innerText = mobileSickHoursToUse;
                     mobileSickRemainingBlock.innerText = mobileSickHoursRemaining - mobileSickHoursToUse;
+                    adjustSickPie();
                 }
                 else {
                     alert("Cannot use less than 0 hours");
