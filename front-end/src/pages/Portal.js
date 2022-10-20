@@ -755,7 +755,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => {
             setVacationHours(data); 
-            resetInputValues()
+            // Removed resetInputValues() from this function.
             document.getElementsByClassName("mobile-vacation-used-block")[0].innerText = 0;
             mobileVacationHoursToUse = 0;
             return data;
