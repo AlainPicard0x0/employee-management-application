@@ -848,13 +848,13 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
     }
 
     const useMobileSickHours = () => {
-        let mobileSickHoursToUse = parseInt(document.getElementsByClassName("mobile-sick-used-block")[0].innerText);
+        let displayedMobileSickHoursToUse = parseInt(document.getElementsByClassName("mobile-sick-used-block")[0].innerText);
         fetch(`${api}/portal/sick-leave`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 "email": email,
-                "sick-hours": mobileSickHoursToUse
+                "sick-hours": displayedMobileSickHoursToUse
             }
         })
         .then(response => {
@@ -862,8 +862,9 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         })
         .then(data => {
             setSickHours(data);
+            // Removed resetInputValues() from this function. Maybe remove this from useMobileVacationHours() as well?
             document.getElementsByClassName("mobile-sick-used-block")[0].innerText = 0;
-            adjustSickPie();
+            mobileSickHoursToUse = 0;
             return data;
         })
     }
