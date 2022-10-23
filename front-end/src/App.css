@@ -291,7 +291,8 @@ ul a:hover {
   position: relative;
 }
 
-.mobile-portal-vacation-leave {
+.mobile-portal-vacation-leave,
+.mobile-portal-sick-leave {
   grid-area: 2 / 2 / 6 / 3;
   display: flex;
   flex-direction: column;
@@ -327,7 +328,8 @@ ul a:hover {
   transform: rotate(180deg);
 }
 
-#mobile-vacation-pie {
+#mobile-vacation-pie,
+#mobile-sick-pie {
   --p: 40;
   --b: 22px;
   --c: orange; 
