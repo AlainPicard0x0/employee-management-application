@@ -45,8 +45,6 @@ public class EmployeeController {
             Long sickHours = employeeService.getSickHours(user.getEmail());
             ResponseEntity<Employee> emplRes = ResponseEntity.ok(user);
             System.out.println("Employee line 48 " + emplRes);
-//            return ResponseEntity.ok().build();
-//            return new ResponseEntity<Employee>();
             return ResponseEntity.ok(user);
         }
         else {
