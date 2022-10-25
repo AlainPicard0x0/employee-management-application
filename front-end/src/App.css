@@ -1841,15 +1841,6 @@ ul a:hover {
     mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
   }
 
-  /* *********************************** */
-
-  /* #sick-pie-background,
-  #vacation-pie-background {    
-    --w: 100px;
-    --p: 100;
-    --b: 20px; 
-  } */
-
   .hours-left {
     transform: rotate(0);
     grid-area: 2 / 1 / 4 / 5;
