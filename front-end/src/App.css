@@ -374,7 +374,8 @@ ul a:hover {
   transform: rotate(180deg);
 }
 
-#mobile-vacation-pie-background {
+#mobile-vacation-pie-background,
+#mobile-sick-pie-background {
   --p: 100;
   --b: 22px;
   --c: #7e7e7e;
