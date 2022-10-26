@@ -423,7 +423,8 @@ ul a:hover {
   z-index: 10;
 }
 
-#mobile-vacation-pie:before {
+#mobile-vacation-pie:before,
+#mobile-sick-pie:before {
   content: "";
   position: absolute;
   border-radius: 50%;
