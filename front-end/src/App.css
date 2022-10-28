@@ -400,7 +400,8 @@ ul a:hover {
   mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
 }
 
-#mobile-vacation-pie-background:before {
+#mobile-vacation-pie-background:before,
+#mobile-sick-pie-background:before {
   content: "";
   position: absolute;
   border-radius: 50%;
