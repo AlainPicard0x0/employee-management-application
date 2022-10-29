@@ -1517,7 +1517,7 @@ ul a:hover {
     font-weight: 700;
     justify-self: flex-end;
   }
-  /* Need the following rule sets for .sick className */
+  
   .mobile-vacation-remaining-container,
   .mobile-sick-remaining-container {
     grid-area: 2 / 1 / 3 / 3;
