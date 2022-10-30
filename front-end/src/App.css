@@ -1735,15 +1735,6 @@ ul a:hover {
     color: #fff;
   }
 
-  /* #vacation-pie,
-  #sick-pie {
-    border-radius: 50%;
-    box-shadow: 1px 1px 8px #c0c0c0;
-    --p: 50;
-    --w: 100px;
-    --b: 20px;
-  }   */
-
   #take-home-pie {
     --c: #1a2c80; 
     --p: 85;
