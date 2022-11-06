@@ -3,7 +3,6 @@ package com.alain.employee_management_api.service;
 import com.alain.employee_management_api.entity.Employee;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface EmployeeService {
     List<Employee> findAllEmployees();
