@@ -103,7 +103,6 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
         vacationPie.style.setProperty("--p", vacationValue * 1.25);
     }
 
-    // removed this from vacation-hours-input onChange() 4/30/2022
     const findVacationHoursRemaining = () => {
         fetch(`${api}/login/vacation`, {
             method: "GET",
