@@ -155,8 +155,7 @@ const Portal = ({email, login, setLogin, getEmployee, employee}) => {
          // find value of sick hours input field and save to a variable (number of hours being requested)
          let sickHoursRequestedInput = e.target;
          let sickHoursRequested = sickHoursRequestedInput.value;
-         // get result of adding/subtracting hours requested from remaining hours and store in a variable
-         let newHours = sickHours - sickHoursRequested;         
+         // get result of adding/subtracting hours requested from remaining hours and store in a variable   
          const sickPie = document.getElementById("sick-pie");
          
          if(sickHoursRequestedInput.value > 8) {
